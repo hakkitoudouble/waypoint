@@ -14,7 +14,9 @@ Drawn at 4x and downsampled, so every size stays clean.
 from __future__ import annotations
 
 import argparse
+import io
 import math
+import struct
 from pathlib import Path
 
 from PIL import Image, ImageDraw, ImageFilter
@@ -146,6 +148,32 @@ def draw(size: int, detail: bool | None = None) -> Image.Image:
     return img.resize((size, size), Image.LANCZOS)
 
 
+def save_ico(path: Path, frames: list[Image.Image]) -> None:
+    """Write a multi-resolution .ico with one PNG entry per frame.
+
+    Pillow's own ICO writer downscales a *single* image for every size, which would
+    throw away the small-size art (rings and dot only, no glyphs). Writing the
+    container by hand keeps each size exactly as drawn; Windows Vista and later read
+    PNG-compressed entries at any size.
+    """
+    blobs: list[bytes] = []
+    for frame in frames:
+        buffer = io.BytesIO()
+        frame.save(buffer, format="PNG", optimize=True)
+        blobs.append(buffer.getvalue())
+
+    header = struct.pack("<HHH", 0, 1, len(frames))
+    offset = len(header) + 16 * len(frames)
+    entries = b""
+    for frame, blob in zip(frames, blobs):
+        side = frame.width
+        entries += struct.pack(
+            "<BBBBHHII", side % 256, side % 256, 0, 0, 1, 32, len(blob), offset
+        )
+        offset += len(blob)
+    path.write_bytes(header + entries + b"".join(blobs))
+
+
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--preview-only", action="store_true", help="skip the .ico")
@@ -159,8 +187,7 @@ def main(argv: list[str] | None = None) -> int:
         print(f"wrote {path} ({path.stat().st_size // 1024} KB)")
 
     if not args.preview_only:
-        frames = [draw(size) for size in ICO_SIZES]
-        frames[0].save(ICO, format="ICO", sizes=[(s, s) for s in ICO_SIZES])
+        save_ico(ICO, [draw(size) for size in ICO_SIZES])
         print(f"wrote {ICO} ({ICO.stat().st_size // 1024} KB, {len(ICO_SIZES)} sizes)")
     return 0
 

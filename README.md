@@ -1,3 +1,5 @@
+<p align="center"><img src="assets/waypoint-256.png" width="120" alt="Waypoint icon"></p>
+
 # Waypoint — COTW population & activity map
 
 A clean-room replacement for the "Animal Population Scanner", rebuilt from the save

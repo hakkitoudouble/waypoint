@@ -49,6 +49,4 @@ jobs:
           files: |
             dist/Waypoint-*-win64.zip
             dist/SHA256SUMS.txt
-          body: |
-            Portable Windows build — unzip anywhere and run `Waypoint.exe`.
-            No Python required; saves are read-only. See `INSTALL.txt` inside the zip.
+          body_path: .github/release-notes.md

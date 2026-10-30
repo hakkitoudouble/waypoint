@@ -1,0 +1,373 @@
+{
+ "_hashfn": null,
+ "1A5D1561": "Euro Rabbit",
+ "C5FA6C5D": "Canada Goose",
+ "7D804490": "Red Fox",
+ "8527AFD1": "Red Fox",
+ "7A5DC096": "Roe Deer",
+ "9BAE9443": "Roe Deer",
+ "2F9AC7B7": "Fallow Deer",
+ "08CBEB4A": "Wild Boar",
+ "5DA156C9": "Wild Boar",
+ "D8B6A893": "Red Deer",
+ "1998199C": "Red Deer",
+ "3EFC8F2B": "Euro Bison",
+ "7193A92E": "Mallard",
+ "49241CFB": "Jackrabbit",
+ "B54E5E8B": "Coyote",
+ "D78E5F19": "Blacktail Deer",
+ "E53D3987": "Whitetail Deer",
+ "9119DA8D": "Black Bear",
+ "94979CF9": "Roosevelt Elk",
+ "0941ABE8": "Moose",
+ "6C0365E2": "Moose",
+ "04705D5B": "Musk Deer",
+ "6A0D3A58": "Reindeer",
+ "6C1FAF80": "Eurasian Lynx",
+ "72A82AAB": "Brown Bear",
+ "74E5BC8E": "Scrub Hare",
+ "2FDCAF40": "S-Striped Jackal",
+ "F243B31E": "Springbok",
+ "7489DC93": "Lesser Kudu",
+ "B79E88B2": "Warthog",
+ "0AF54EC2": "Blue Wildebeest",
+ "4471AF29": "Gemsbok",
+ "82770585": "Lion",
+ "C55BB24F": "Cape Buffalo",
+ "68B2DEB2": "Cin Teal",
+ "671D4603": "Blackbuck",
+ "CB0DA701": "Axis Deer",
+ "2DD9214B": "Puma",
+ "B0113E10": "Mule Deer",
+ "2C52E985": "Water Buffalo",
+ "4AE050AB": "H Duck",
+ "D15DFA04": "Grey Wolf",
+ "A58D7467": "Caribou",
+ "D0B0397E": "Grizzly Bear",
+ "D9CA14CA": "Plains Bison",
+ "8800170D": "European Hare",
+ "3D39E423": "Iberian Mouflon",
+ "B24527CB": "Ronda Ibex",
+ "6E5A275A": "Beceite Ibex",
+ "F9D247A6": "Gredos Ibex",
+ "01C2CAB9": "SES Ibex",
+ "117DE092": "Iberian Wolf",
+ "2D30B3CE": "Pronghorn",
+ "42832763": "Mountain Goat",
+ "4AEF8190": "Desert Bighorn Sheep",
+ "B99FE58F": "RM Elk",
+ "81E18062": "Turkey",
+ "BA6F80F5": "Sika Deer",
+ "39A2566C": "Chamois",
+ "2D774864": "Feral Pig",
+ "C1784891": "Feral Goat",
+ "C5D0C033": "Pheasant",
+ "74CDE657": "Ant. Jackrabbit",
+ "6B20CB0D": "Coll. Peccary",
+ "16272898": "RG Turkey",
+ "C500A572": "Coll. Peccary",
+ "0AB96B2A": "Mexican Bobcat",
+ "6B7BBB47": "EW Turkey",
+ "47FBE619": "ECt Rabbit",
+ "641A2A22": "Bobwhite Quail",
+ "3C761CE6": "Raccoon",
+ "7E2215FB": "Gray Fox",
+ "BAF2D3A2": "Am. Alligator",
+ "02B03AA7": "Mallard",
+ "03130989": "Rock Ptarmigan",
+ "0520122F": "Eu.Wigeon",
+ "0F0E0C0D": "Goldeneye",
+ "1FC06069": "Mountain Hare",
+ "3C8F0FDF": "Tufted Duck",
+ "4D6A0968": "Black Grouse",
+ "52EF84DD": "T.Bean Goose",
+ "68A8F118": "Willow Ptarmigan",
+ "6CF26075": "Hazel Grouse",
+ "8B196622": "Eu.Teal",
+ "93119A6A": "W.Capercaillie",
+ "CD28471F": "Greylag Goose",
+ "F26ED19D": "Raccoon Dog",
+ "98898BC6": "Bobcat",
+ "CCA8FDF2": "Green-Winged Teal",
+ "739A4F18": "EG Kangaroo",
+ "BA302E00": "SW Crocodile",
+ "A46DF63D": "Banteng",
+ "D0BAD3B3": "Javan Rusa",
+ "0068A2CA": "Hog Deer",
+ "5A6BDC6E": "Magpie Goose",
+ "8FF3825F": "Sambar",
+ "C7863902": "Stubble Quail",
+ "08D561A7": "Fallow Deer",
+ "1BA02D21": "Blue Sheep",
+ "667FD673": "Snow Leopard",
+ "6AFEE60D": "Nilgai",
+ "70B57F22": "Tibetan Fox",
+ "7DB513D7": "Wild Yak",
+ "A422C7F7": "Barasingha",
+ "A6600B19": "Woolly Hare",
+ "BFA52415": "Bengal Tiger",
+ "FB4C7AD6": "Tahr",
+ "85AB7ECC": "Muntjac",
+ "B4FA5ACB": "Gadwall",
+ "DC04B632": "Ferruginous Duck",
+ "076BD575": "Manitoban Elk",
+ "258D2BF1": "Caribou",
+ "2E23A6BB": "Wood Bison",
+ "30B0FF0D": "Wood Duck",
+ "359ED173": "Pintail",
+ "BD743BAE": "Snow Goose",
+ "E083E2A0": "Dusky Grouse",
+ "E86A46B0": "Beaver",
+ "07309B0D": "Woodcock",
+ "9DCD15DA": "Euro Badger",
+ "833A5EC5": "Red Fox",
+ "8C64B1C1": "Pine Marten",
+ "9B24AD93": "American Mink",
+ "F15B4F5E": "Red Grouse",
+ "7EB7EDF9": "???",
+ "1EF56EFA": "Taruca",
+ "26285883": "WM Coati",
+ "4F3179A5": "Ocelot",
+ "9867B3EA": "Vicuña",
+ "9D77C6A9": "Spectacled Bear",
+ "ADF85A22": "Jaguar",
+ "B0D19036": "SA Tapir",
+ "D5BE8FC1": "Black Caiman",
+ "ED22CA6D": "Capybara",
+ "F156BC8F": "Greater Grison",
+ "_note": "Mapping extracted from the exe's own hash->species lookup table at VA 0x1400B0C80 (file offset 0xAEE80), 135 entries of {u32 nameHashId; u32 pad; u64 speciesRecord}, each compared with `cmp dword ptr [rcx], ebx` in the resolver at VA 0x140057055. The hash FUNCTION was not recovered; the table is the ground truth.",
+ "_hashfn_status": "NOT CRACKED. Tried CRC32/CRC32C/FNV-1a/FNV-1/XXH32/Murmur2/Murmur3/joaat/djb2/sdbm/java/ELF/PJW/Avalanche-style shift variants over ~120 spelling templates derived from icon stems and English names (case, snake, camel, space, hyphen, prefix/suffix, asset-path forms). Zero matches on all 135 pairs.",
+ "_verifiedInSaves": {
+  "1A5D1561": [
+   "animal_population_0"
+  ],
+  "C5FA6C5D": [
+   "animal_population_0",
+   "animal_population_6"
+  ],
+  "7D804490": [
+   "animal_population_0"
+  ],
+  "7A5DC096": [
+   "animal_population_0"
+  ],
+  "2F9AC7B7": [
+   "animal_population_0"
+  ],
+  "08CBEB4A": [
+   "animal_population_0"
+  ],
+  "D8B6A893": [
+   "animal_population_0"
+  ],
+  "3EFC8F2B": [
+   "animal_population_0"
+  ],
+  "C5D0C033": [
+   "animal_population_0",
+   "animal_population_14",
+   "animal_population_8"
+  ],
+  "8527AFD1": [
+   "animal_population_14",
+   "animal_population_16",
+   "animal_population_6"
+  ],
+  "B54E5E8B": [
+   "animal_population_14"
+  ],
+  "E53D3987": [
+   "animal_population_14"
+  ],
+  "9119DA8D": [
+   "animal_population_14",
+   "animal_population_9"
+  ],
+  "0941ABE8": [
+   "animal_population_14"
+  ],
+  "6B7BBB47": [
+   "animal_population_14"
+  ],
+  "47FBE619": [
+   "animal_population_14"
+  ],
+  "641A2A22": [
+   "animal_population_14"
+  ],
+  "3C761CE6": [
+   "animal_population_14"
+  ],
+  "7E2215FB": [
+   "animal_population_14"
+  ],
+  "02B03AA7": [
+   "animal_population_14"
+  ],
+  "0F0E0C0D": [
+   "animal_population_14"
+  ],
+  "98898BC6": [
+   "animal_population_14"
+  ],
+  "CCA8FDF2": [
+   "animal_population_14"
+  ],
+  "1998199C": [
+   "animal_population_16",
+   "animal_population_4",
+   "animal_population_8"
+  ],
+  "CB0DA701": [
+   "animal_population_16",
+   "animal_population_4"
+  ],
+  "2D774864": [
+   "animal_population_16"
+  ],
+  "C1784891": [
+   "animal_population_16"
+  ],
+  "739A4F18": [
+   "animal_population_16"
+  ],
+  "BA302E00": [
+   "animal_population_16"
+  ],
+  "A46DF63D": [
+   "animal_population_16"
+  ],
+  "D0BAD3B3": [
+   "animal_population_16"
+  ],
+  "0068A2CA": [
+   "animal_population_16"
+  ],
+  "5A6BDC6E": [
+   "animal_population_16"
+  ],
+  "8FF3825F": [
+   "animal_population_16"
+  ],
+  "C7863902": [
+   "animal_population_16"
+  ],
+  "08D561A7": [
+   "animal_population_16"
+  ],
+  "74E5BC8E": [
+   "animal_population_3"
+  ],
+  "2FDCAF40": [
+   "animal_population_3"
+  ],
+  "F243B31E": [
+   "animal_population_3"
+  ],
+  "7489DC93": [
+   "animal_population_3"
+  ],
+  "B79E88B2": [
+   "animal_population_3"
+  ],
+  "0AF54EC2": [
+   "animal_population_3"
+  ],
+  "4471AF29": [
+   "animal_population_3"
+  ],
+  "82770585": [
+   "animal_population_3"
+  ],
+  "C55BB24F": [
+   "animal_population_3"
+  ],
+  "0520122F": [
+   "animal_population_3"
+  ],
+  "68B2DEB2": [
+   "animal_population_4"
+  ],
+  "671D4603": [
+   "animal_population_4"
+  ],
+  "2DD9214B": [
+   "animal_population_4",
+   "animal_population_9"
+  ],
+  "B0113E10": [
+   "animal_population_4",
+   "animal_population_9"
+  ],
+  "2C52E985": [
+   "animal_population_4"
+  ],
+  "6B20CB0D": [
+   "animal_population_4"
+  ],
+  "6C0365E2": [
+   "animal_population_6"
+  ],
+  "4AE050AB": [
+   "animal_population_6"
+  ],
+  "D15DFA04": [
+   "animal_population_6"
+  ],
+  "A58D7467": [
+   "animal_population_6"
+  ],
+  "D0B0397E": [
+   "animal_population_6"
+  ],
+  "D9CA14CA": [
+   "animal_population_6",
+   "animal_population_9"
+  ],
+  "9BAE9443": [
+   "animal_population_8"
+  ],
+  "5DA156C9": [
+   "animal_population_8"
+  ],
+  "8800170D": [
+   "animal_population_8"
+  ],
+  "3D39E423": [
+   "animal_population_8"
+  ],
+  "B24527CB": [
+   "animal_population_8"
+  ],
+  "6E5A275A": [
+   "animal_population_8"
+  ],
+  "F9D247A6": [
+   "animal_population_8"
+  ],
+  "01C2CAB9": [
+   "animal_population_8"
+  ],
+  "117DE092": [
+   "animal_population_8"
+  ],
+  "D78E5F19": [
+   "animal_population_9"
+  ],
+  "2D30B3CE": [
+   "animal_population_9"
+  ],
+  "42832763": [
+   "animal_population_9"
+  ],
+  "4AEF8190": [
+   "animal_population_9"
+  ],
+  "B99FE58F": [
+   "animal_population_9"
+  ],
+  "81E18062": [
+   "animal_population_9"
+  ]
+ }
+}

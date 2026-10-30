@@ -1,0 +1,8199 @@
+{
+ "_meta": {
+  "note": "per-species, per-gender fur draw tables recovered from AnimalPopulationScanner.exe; the fur is a deterministic function of the save's VisualVariationSeed",
+  "source": "AnimalPopulationScanner.exe array at VA 0x1400CF170",
+  "draw": "state = (seed * 0x343FD + 0x269EC3) mod 2^32; u = ((state >> 16) & 0x7FFF) / 32768; roll = int(u * totalWeight); first entry whose cumulative weight exceeds roll wins",
+  "genders": {
+   "1": "male",
+   "2": "female"
+  },
+  "species": 127,
+  "entries": 1665
+ },
+ "species": {
+  "Pintail": {
+   "1": {
+    "total": 50150,
+    "entries": [
+     [
+      "Eclipse",
+      12500
+     ],
+     [
+      "Grey",
+      37350
+     ],
+     [
+      "Melanistic",
+      25
+     ],
+     [
+      "Erythristic",
+      25
+     ],
+     [
+      "Albino",
+      25
+     ],
+     [
+      "Piebald",
+      200
+     ],
+     [
+      "Leucistic",
+      25
+     ]
+    ]
+   },
+   "2": {
+    "total": 50150,
+    "entries": [
+     [
+      "Brown",
+      37350
+     ],
+     [
+      "Bright",
+      12500
+     ],
+     [
+      "Melanistic",
+      25
+     ],
+     [
+      "Erythristic",
+      25
+     ],
+     [
+      "Albino",
+      25
+     ],
+     [
+      "Piebald",
+      200
+     ],
+     [
+      "Leucistic",
+      25
+     ]
+    ]
+   }
+  },
+  "Reindeer": {
+   "1": {
+    "total": 74926,
+    "entries": [
+     [
+      "Piebald",
+      75
+     ],
+     [
+      "Dark Brown",
+      37350
+     ],
+     [
+      "Albino",
+      38
+     ],
+     [
+      "Light Brown",
+      37350
+     ],
+     [
+      "Leucistic",
+      75
+     ],
+     [
+      "Melanistic",
+      38
+     ]
+    ]
+   },
+   "2": {
+    "total": 74926,
+    "entries": [
+     [
+      "Piebald",
+      75
+     ],
+     [
+      "Tan",
+      37350
+     ],
+     [
+      "Albino",
+      38
+     ],
+     [
+      "Brown",
+      37350
+     ],
+     [
+      "Leucistic",
+      75
+     ],
+     [
+      "Melanistic",
+      38
+     ]
+    ]
+   }
+  },
+  "Capybara": {
+   "1": {
+    "total": 100000,
+    "entries": [
+     [
+      "Melanistic",
+      25
+     ],
+     [
+      "Albino",
+      25
+     ],
+     [
+      "Piebald",
+      25
+     ],
+     [
+      "Dark Brown",
+      49950
+     ],
+     [
+      "Leucistic",
+      25
+     ],
+     [
+      "Light Brown",
+      49950
+     ]
+    ]
+   },
+   "2": {
+    "total": 100000,
+    "entries": [
+     [
+      "Melanistic",
+      25
+     ],
+     [
+      "Albino",
+      25
+     ],
+     [
+      "Piebald",
+      25
+     ],
+     [
+      "Dark Brown",
+      49950
+     ],
+     [
+      "Leucistic",
+      25
+     ],
+     [
+      "Light Brown",
+      49950
+     ]
+    ]
+   }
+  },
+  "Euro Rabbit": {
+   "1": {
+    "total": 100000,
+    "entries": [
+     [
+      "Light Grey",
+      100
+     ],
+     [
+      "Dark Brown",
+      37350
+     ],
+     [
+      "Light Brown",
+      12500
+     ],
+     [
+      "Leucistic",
+      50
+     ],
+     [
+      "Albino",
+      50
+     ],
+     [
+      "Melanistic",
+      100
+     ],
+     [
+      "Brown",
+      12500
+     ],
+     [
+      "Tan",
+      37350
+     ]
+    ]
+   },
+   "2": {
+    "total": 100000,
+    "entries": [
+     [
+      "Light Grey",
+      100
+     ],
+     [
+      "Dark Brown",
+      37350
+     ],
+     [
+      "Light Brown",
+      12500
+     ],
+     [
+      "Leucistic",
+      50
+     ],
+     [
+      "Albino",
+      50
+     ],
+     [
+      "Melanistic",
+      100
+     ],
+     [
+      "Brown",
+      12500
+     ],
+     [
+      "Tan",
+      37350
+     ]
+    ]
+   }
+  },
+  "Greylag Goose": {
+   "1": {
+    "total": 100000,
+    "entries": [
+     [
+      "Brown",
+      74898
+     ],
+     [
+      "Leucistic",
+      17
+     ],
+     [
+      "Leucistic",
+      17
+     ],
+     [
+      "Hybrid",
+      17
+     ],
+     [
+      "Leucistic",
+      17
+     ],
+     [
+      "Leucistic",
+      17
+     ],
+     [
+      "Leucistic",
+      17
+     ],
+     [
+      "Grey",
+      25000
+     ]
+    ]
+   },
+   "2": {
+    "total": 100000,
+    "entries": [
+     [
+      "Brown",
+      74898
+     ],
+     [
+      "Leucistic",
+      17
+     ],
+     [
+      "Leucistic",
+      17
+     ],
+     [
+      "Hybrid",
+      17
+     ],
+     [
+      "Leucistic",
+      17
+     ],
+     [
+      "Leucistic",
+      17
+     ],
+     [
+      "Leucistic",
+      17
+     ],
+     [
+      "Grey",
+      25000
+     ]
+    ]
+   }
+  },
+  "Woodcock": {
+   "1": {
+    "total": 100000,
+    "entries": [
+     [
+      "Brown",
+      49800
+     ],
+     [
+      "Leucistic",
+      100
+     ],
+     [
+      "Dark Brown",
+      200
+     ],
+     [
+      "Albino",
+      50
+     ],
+     [
+      "Grey",
+      49800
+     ],
+     [
+      "Melanistic",
+      50
+     ]
+    ]
+   },
+   "2": {
+    "total": 100000,
+    "entries": [
+     [
+      "Brown",
+      49800
+     ],
+     [
+      "Leucistic",
+      100
+     ],
+     [
+      "Dark Brown",
+      200
+     ],
+     [
+      "Albino",
+      50
+     ],
+     [
+      "Grey",
+      49800
+     ],
+     [
+      "Melanistic",
+      50
+     ]
+    ]
+   }
+  },
+  "Euro Bison": {
+   "1": {
+    "total": 74926,
+    "entries": [
+     [
+      "Albino",
+      38
+     ],
+     [
+      "Brown",
+      24900
+     ],
+     [
+      "Dark Brown",
+      24900
+     ],
+     [
+      "Melanistic",
+      38
+     ],
+     [
+      "Piebald",
+      150
+     ],
+     [
+      "Light Brown",
+      24900
+     ]
+    ]
+   },
+   "2": {
+    "total": 74926,
+    "entries": [
+     [
+      "Albino",
+      38
+     ],
+     [
+      "Dark Brown",
+      24900
+     ],
+     [
+      "Light Brown",
+      24900
+     ],
+     [
+      "Melanistic",
+      38
+     ],
+     [
+      "Piebald",
+      150
+     ],
+     [
+      "Brown",
+      24900
+     ]
+    ]
+   }
+  },
+  "Jackrabbit": {
+   "1": {
+    "total": 74775,
+    "entries": [
+     [
+      "Albino",
+      75
+     ],
+     [
+      "Light Brown",
+      18675
+     ],
+     [
+      "Grey",
+      18675
+     ],
+     [
+      "Brown",
+      18675
+     ],
+     [
+      "Beige",
+      18675
+     ]
+    ]
+   },
+   "2": {
+    "total": 74775,
+    "entries": [
+     [
+      "Albino",
+      75
+     ],
+     [
+      "Light Brown",
+      18675
+     ],
+     [
+      "Grey",
+      18675
+     ],
+     [
+      "Brown",
+      18675
+     ],
+     [
+      "Beige",
+      18675
+     ]
+    ]
+   }
+  },
+  "Ronda Ibex": {
+   "1": {
+    "total": 74776,
+    "entries": [
+     [
+      "Albino",
+      38
+     ],
+     [
+      "Brown",
+      18675
+     ],
+     [
+      "Grey Brown",
+      18675
+     ],
+     [
+      "Brown Hybrid",
+      18675
+     ],
+     [
+      "Melanistic",
+      38
+     ],
+     [
+      "Grey",
+      18675
+     ]
+    ]
+   },
+   "2": {
+    "total": 56101,
+    "entries": [
+     [
+      "Albino",
+      38
+     ],
+     [
+      "Brown",
+      18675
+     ],
+     [
+      "Light Brown",
+      18675
+     ],
+     [
+      "Buff",
+      18675
+     ],
+     [
+      "Melanistic",
+      38
+     ]
+    ]
+   }
+  },
+  "Blue Sheep": {
+   "1": {
+    "total": 100000,
+    "entries": [
+     [
+      "Melanistic",
+      100
+     ],
+     [
+      "Brown",
+      37375
+     ],
+     [
+      "Blue Grey",
+      12500
+     ],
+     [
+      "Slate Grey",
+      37375
+     ],
+     [
+      "Leucistic",
+      100
+     ],
+     [
+      "Yellow",
+      12500
+     ],
+     [
+      "Albino",
+      50
+     ]
+    ]
+   },
+   "2": {
+    "total": 100000,
+    "entries": [
+     [
+      "Melanistic",
+      100
+     ],
+     [
+      "Brown",
+      37375
+     ],
+     [
+      "Blue Grey",
+      12500
+     ],
+     [
+      "Slate Grey",
+      37375
+     ],
+     [
+      "Leucistic",
+      100
+     ],
+     [
+      "Yellow",
+      12500
+     ],
+     [
+      "Albino",
+      50
+     ]
+    ]
+   }
+  },
+  "Beceite Ibex": {
+   "1": {
+    "total": 74776,
+    "entries": [
+     [
+      "Melanistic",
+      38
+     ],
+     [
+      "Grey",
+      18675
+     ],
+     [
+      "Brown Hybrid",
+      18675
+     ],
+     [
+      "Grey Brown",
+      18675
+     ],
+     [
+      "Orange",
+      18675
+     ],
+     [
+      "Albino",
+      38
+     ]
+    ]
+   },
+   "2": {
+    "total": 68551,
+    "entries": [
+     [
+      "Melanistic",
+      38
+     ],
+     [
+      "Light Brown",
+      24900
+     ],
+     [
+      "Buff",
+      24900
+     ],
+     [
+      "Grey Brown",
+      18675
+     ],
+     [
+      "Albino",
+      38
+     ]
+    ]
+   }
+  },
+  "Coll. Peccary": {
+   "1": {
+    "total": 100000,
+    "entries": [
+     [
+      "Albino",
+      50
+     ],
+     [
+      "Dark Grey",
+      12500
+     ],
+     [
+      "Brown",
+      37350
+     ],
+     [
+      "Grey",
+      37350
+     ],
+     [
+      "Leucistic",
+      100
+     ],
+     [
+      "Melanistic",
+      50
+     ],
+     [
+      "Ochre",
+      100
+     ],
+     [
+      "Dark Brown",
+      12500
+     ]
+    ]
+   },
+   "2": {
+    "total": 100000,
+    "entries": [
+     [
+      "Albino",
+      50
+     ],
+     [
+      "Dark Grey",
+      12500
+     ],
+     [
+      "Brown",
+      37350
+     ],
+     [
+      "Grey",
+      37350
+     ],
+     [
+      "Leucistic",
+      100
+     ],
+     [
+      "Melanistic",
+      50
+     ],
+     [
+      "Ochre",
+      100
+     ],
+     [
+      "Dark Brown",
+      12500
+     ]
+    ]
+   }
+  },
+  "Sika Deer": {
+   "1": {
+    "total": 100000,
+    "entries": [
+     [
+      "Black",
+      37350
+     ],
+     [
+      "Brown",
+      37350
+     ],
+     [
+      "Spotted",
+      12500
+     ],
+     [
+      "Albino",
+      100
+     ],
+     [
+      "Dark Spotted",
+      12500
+     ],
+     [
+      "Red Spotted",
+      200
+     ]
+    ]
+   },
+   "2": {
+    "total": 100000,
+    "entries": [
+     [
+      "Black",
+      37350
+     ],
+     [
+      "Brown",
+      37350
+     ],
+     [
+      "Spotted",
+      12500
+     ],
+     [
+      "Albino",
+      100
+     ],
+     [
+      "Dark Spotted",
+      12500
+     ],
+     [
+      "Red Spotted",
+      200
+     ]
+    ]
+   }
+  },
+  "Red Grouse": {
+   "1": {
+    "total": 49950,
+    "entries": [
+     [
+      "Red",
+      24925
+     ],
+     [
+      "Albino",
+      50
+     ],
+     [
+      "Dark Red",
+      24925
+     ],
+     [
+      "Melanistic",
+      50
+     ]
+    ]
+   },
+   "2": {
+    "total": 50050,
+    "entries": [
+     [
+      "Brown",
+      24925
+     ],
+     [
+      "Leucistic",
+      100
+     ],
+     [
+      "Piebald",
+      100
+     ],
+     [
+      "Light Brown",
+      24925
+     ]
+    ]
+   }
+  },
+  "Hazel Grouse": {
+   "1": {
+    "total": 137200,
+    "entries": [
+     [
+      "Grey",
+      37350
+     ],
+     [
+      "Hybrid",
+      50
+     ],
+     [
+      "Pale",
+      100
+     ],
+     [
+      "Brown",
+      74700
+     ],
+     [
+      "Dark",
+      25000
+     ]
+    ]
+   },
+   "2": {
+    "total": 100000,
+    "entries": [
+     [
+      "Dark",
+      200
+     ],
+     [
+      "Pale",
+      100
+     ],
+     [
+      "Ochre",
+      12500
+     ],
+     [
+      "Light Brown",
+      12500
+     ],
+     [
+      "Brown",
+      74700
+     ]
+    ]
+   }
+  },
+  "S-Striped Jackal": {
+   "1": {
+    "total": 99696,
+    "entries": [
+     [
+      "Grey",
+      24930
+     ],
+     [
+      "Grey Brown",
+      37350
+     ],
+     [
+      "Melanistic",
+      33
+     ],
+     [
+      "Albino",
+      33
+     ],
+     [
+      "Light Brown",
+      37350
+     ]
+    ]
+   },
+   "2": {
+    "total": 99696,
+    "entries": [
+     [
+      "Grey",
+      24930
+     ],
+     [
+      "Grey Brown",
+      37350
+     ],
+     [
+      "Melanistic",
+      33
+     ],
+     [
+      "Albino",
+      33
+     ],
+     [
+      "Light Brown",
+      37350
+     ]
+    ]
+   }
+  },
+  "Lesser Kudu": {
+   "1": {
+    "total": 74793,
+    "entries": [
+     [
+      "Albino",
+      55
+     ],
+     [
+      "Grey",
+      74700
+     ],
+     [
+      "Melanistic",
+      38
+     ]
+    ]
+   },
+   "2": {
+    "total": 74905,
+    "entries": [
+     [
+      "Albino",
+      55
+     ],
+     [
+      "Dusky",
+      75
+     ],
+     [
+      "Red Brown",
+      75
+     ],
+     [
+      "Dark Brown",
+      37350
+     ],
+     [
+      "Grey",
+      37350
+     ]
+    ]
+   }
+  },
+  "Snow Leopard": {
+   "1": {
+    "total": 100000,
+    "entries": [
+     [
+      "Caramel",
+      25000
+     ],
+     [
+      "Snow",
+      73800
+     ],
+     [
+      "Albino",
+      200
+     ],
+     [
+      "Leucistic",
+      500
+     ],
+     [
+      "Melanistic",
+      500
+     ]
+    ]
+   },
+   "2": {
+    "total": 100000,
+    "entries": [
+     [
+      "Caramel",
+      25000
+     ],
+     [
+      "Snow",
+      73800
+     ],
+     [
+      "Albino",
+      200
+     ],
+     [
+      "Leucistic",
+      500
+     ],
+     [
+      "Melanistic",
+      500
+     ]
+    ]
+   }
+  },
+  "Tufted Duck": {
+   "1": {
+    "total": 74899,
+    "entries": [
+     [
+      "Black",
+      74700
+     ],
+     [
+      "Albino",
+      33
+     ],
+     [
+      "Leucistic",
+      33
+     ],
+     [
+      "Eclipse",
+      100
+     ],
+     [
+      "Leucistic",
+      33
+     ]
+    ]
+   },
+   "2": {
+    "total": 74866,
+    "entries": [
+     [
+      "Brown",
+      74700
+     ],
+     [
+      "Cream",
+      100
+     ],
+     [
+      "Leucistic",
+      33
+     ],
+     [
+      "Leucistic",
+      33
+     ]
+    ]
+   }
+  },
+  "Bengal Tiger": {
+   "1": {
+    "total": 100000,
+    "entries": [
+     [
+      "Orange",
+      98799
+     ],
+     [
+      "Albino",
+      100
+     ],
+     [
+      "Gold",
+      143
+     ],
+     [
+      "White Stripeless",
+      143
+     ],
+     [
+      "Pseudo Melanistic White",
+      143
+     ],
+     [
+      "White",
+      143
+     ],
+     [
+      "Melanistic",
+      100
+     ],
+     [
+      "Pseudo Melanistic",
+      143
+     ],
+     [
+      "Pseudo Melanistic",
+      143
+     ],
+     [
+      "Pseudo Melanistic White",
+      143
+     ]
+    ]
+   },
+   "2": {
+    "total": 100000,
+    "entries": [
+     [
+      "Orange",
+      98799
+     ],
+     [
+      "Albino",
+      100
+     ],
+     [
+      "Gold",
+      143
+     ],
+     [
+      "White Stripeless",
+      143
+     ],
+     [
+      "Pseudo Melanistic White",
+      143
+     ],
+     [
+      "White",
+      143
+     ],
+     [
+      "Melanistic",
+      100
+     ],
+     [
+      "Pseudo Melanistic",
+      143
+     ],
+     [
+      "Pseudo Melanistic",
+      143
+     ],
+     [
+      "Pseudo Melanistic White",
+      143
+     ]
+    ]
+   }
+  },
+  "Jaguar": {
+   "1": {
+    "total": 100000,
+    "entries": [
+     [
+      "Pseudo Melanistic",
+      100
+     ],
+     [
+      "MelanistiCC",
+      5000
+     ],
+     [
+      "Melanistic",
+      5000
+     ],
+     [
+      "Piebald",
+      100
+     ],
+     [
+      "Leucistic",
+      100
+     ],
+     [
+      "Spotted",
+      44825
+     ],
+     [
+      "Rosetted",
+      44825
+     ],
+     [
+      "Albino",
+      50
+     ]
+    ]
+   },
+   "2": {
+    "total": 100000,
+    "entries": [
+     [
+      "Pseudo Melanistic",
+      100
+     ],
+     [
+      "MelanistiCC",
+      5000
+     ],
+     [
+      "Melanistic",
+      5000
+     ],
+     [
+      "Piebald",
+      100
+     ],
+     [
+      "Leucistic",
+      100
+     ],
+     [
+      "Spotted",
+      44825
+     ],
+     [
+      "Rosetted",
+      44825
+     ],
+     [
+      "Albino",
+      50
+     ]
+    ]
+   }
+  },
+  "Tibetan Fox": {
+   "1": {
+    "total": 99999,
+    "entries": [
+     [
+      "Leucistic",
+      33
+     ],
+     [
+      "Sand",
+      100
+     ],
+     [
+      "Albino",
+      33
+     ],
+     [
+      "Grey",
+      12500
+     ],
+     [
+      "Tawny",
+      12500
+     ],
+     [
+      "Red",
+      37350
+     ],
+     [
+      "Melanistic",
+      33
+     ],
+     [
+      "Smoke",
+      100
+     ],
+     [
+      "Orange",
+      37350
+     ]
+    ]
+   },
+   "2": {
+    "total": 99999,
+    "entries": [
+     [
+      "Leucistic",
+      33
+     ],
+     [
+      "Sand",
+      100
+     ],
+     [
+      "Albino",
+      33
+     ],
+     [
+      "Grey",
+      12500
+     ],
+     [
+      "Tawny",
+      12500
+     ],
+     [
+      "Red",
+      37350
+     ],
+     [
+      "Melanistic",
+      33
+     ],
+     [
+      "Smoke",
+      100
+     ],
+     [
+      "Orange",
+      37350
+     ]
+    ]
+   }
+  },
+  "Warthog": {
+   "1": {
+    "total": 99705,
+    "entries": [
+     [
+      "Albino",
+      75
+     ],
+     [
+      "Dark",
+      37350
+     ],
+     [
+      "Red Brown",
+      24930
+     ],
+     [
+      "Grey",
+      37350
+     ]
+    ]
+   },
+   "2": {
+    "total": 99755,
+    "entries": [
+     [
+      "Albino",
+      75
+     ],
+     [
+      "Dark",
+      37350
+     ],
+     [
+      "Red",
+      50
+     ],
+     [
+      "Red Brown",
+      24930
+     ],
+     [
+      "Grey",
+      37350
+     ]
+    ]
+   }
+  },
+  "Wild Boar": {
+   "1": {
+    "total": 62650,
+    "entries": [
+     [
+      "Dark Brown",
+      12450
+     ],
+     [
+      "Blackgold",
+      150
+     ],
+     [
+      "Purplegrey",
+      150
+     ],
+     [
+      "Brown",
+      12450
+     ],
+     [
+      "Melanistic",
+      50
+     ],
+     [
+      "Albino",
+      50
+     ],
+     [
+      "Light Brown",
+      12450
+     ],
+     [
+      "Brown",
+      24900
+     ]
+    ]
+   },
+   "2": {
+    "total": 62650,
+    "entries": [
+     [
+      "Blackgold",
+      150
+     ],
+     [
+      "Light Brown",
+      12450
+     ],
+     [
+      "Purplegrey",
+      150
+     ],
+     [
+      "Dark Brown",
+      12450
+     ],
+     [
+      "Brown",
+      12450
+     ],
+     [
+      "Melanistic",
+      50
+     ],
+     [
+      "Albino",
+      50
+     ],
+     [
+      "Brown",
+      24900
+     ]
+    ]
+   }
+  },
+  "Gadwall": {
+   "1": {
+    "total": 62549,
+    "entries": [
+     [
+      "Albino",
+      33
+     ],
+     [
+      "Eclipse",
+      25000
+     ],
+     [
+      "Grey",
+      37450
+     ],
+     [
+      "Leucistic",
+      33
+     ],
+     [
+      "Melanistic",
+      33
+     ]
+    ]
+   },
+   "2": {
+    "total": 37549,
+    "entries": [
+     [
+      "Albino",
+      33
+     ],
+     [
+      "Brown",
+      37450
+     ],
+     [
+      "Leucistic",
+      33
+     ],
+     [
+      "Melanistic",
+      33
+     ]
+    ]
+   }
+  },
+  "Water Buffalo": {
+   "1": {
+    "total": 77500,
+    "entries": [
+     [
+      "Albino",
+      100
+     ],
+     [
+      "Grey",
+      74700
+     ],
+     [
+      "Black",
+      2500
+     ],
+     [
+      "Orange",
+      200
+     ]
+    ]
+   },
+   "2": {
+    "total": 114850,
+    "entries": [
+     [
+      "Albino",
+      100
+     ],
+     [
+      "Brown",
+      37350
+     ],
+     [
+      "Grey",
+      74700
+     ],
+     [
+      "Black",
+      2500
+     ],
+     [
+      "Orange",
+      200
+     ]
+    ]
+   }
+  },
+  "Musk Deer": {
+   "1": {
+    "total": 74926,
+    "entries": [
+     [
+      "Melanistic",
+      38
+     ],
+     [
+      "Grey Brown",
+      37350
+     ],
+     [
+      "Dark Brown",
+      37350
+     ],
+     [
+      "Albino",
+      38
+     ],
+     [
+      "Piebald",
+      150
+     ]
+    ]
+   },
+   "2": {
+    "total": 74926,
+    "entries": [
+     [
+      "Melanistic",
+      38
+     ],
+     [
+      "Albino",
+      38
+     ],
+     [
+      "Orange",
+      37350
+     ],
+     [
+      "Piebald",
+      150
+     ],
+     [
+      "Grey Brown",
+      37350
+     ]
+    ]
+   }
+  },
+  "Moose": {
+   "1": {
+    "total": 50150,
+    "entries": [
+     [
+      "Albino",
+      33
+     ],
+     [
+      "Mosaic",
+      100
+     ],
+     [
+      "Tan",
+      16617
+     ],
+     [
+      "Light Brown",
+      16617
+     ],
+     [
+      "Brown",
+      16617
+     ],
+     [
+      "Acromelanistic",
+      33
+     ],
+     [
+      "Piebald",
+      100
+     ],
+     [
+      "Melanistic",
+      33
+     ]
+    ]
+   },
+   "2": {
+    "total": 50050,
+    "entries": [
+     [
+      "Brown",
+      16617
+     ],
+     [
+      "Albino",
+      33
+     ],
+     [
+      "Dark Brown",
+      16617
+     ],
+     [
+      "Tan",
+      16617
+     ],
+     [
+      "Acromelanistic",
+      33
+     ],
+     [
+      "Piebald",
+      100
+     ],
+     [
+      "Melanistic",
+      33
+     ]
+    ]
+   }
+  },
+  "Blackbuck": {
+   "1": {
+    "total": 66767,
+    "entries": [
+     [
+      "Brown",
+      23928
+     ],
+     [
+      "Albino",
+      33
+     ],
+     [
+      "Beige",
+      6647
+     ],
+     [
+      "Piebald",
+      200
+     ],
+     [
+      "Dark Brown",
+      35893
+     ],
+     [
+      "Melanistic",
+      33
+     ],
+     [
+      "Leucistic",
+      33
+     ]
+    ]
+   },
+   "2": {
+    "total": 57461,
+    "entries": [
+     [
+      "Brown",
+      23928
+     ],
+     [
+      "Albino",
+      33
+     ],
+     [
+      "Piebald",
+      200
+     ],
+     [
+      "Beige",
+      33234
+     ],
+     [
+      "Melanistic",
+      33
+     ],
+     [
+      "Leucistic",
+      33
+     ]
+    ]
+   }
+  },
+  "Manitoban Elk": {
+   "1": {
+    "total": 99900,
+    "entries": [
+     [
+      "Melanistic",
+      33
+     ],
+     [
+      "Dark",
+      25000
+     ],
+     [
+      "Brown Maned",
+      74701
+     ],
+     [
+      "Albino",
+      33
+     ],
+     [
+      "Leucistic",
+      33
+     ],
+     [
+      "Piebald",
+      100
+     ]
+    ]
+   },
+   "2": {
+    "total": 99900,
+    "entries": [
+     [
+      "Melanistic",
+      33
+     ],
+     [
+      "Dark",
+      25000
+     ],
+     [
+      "Brown Maned",
+      74701
+     ],
+     [
+      "Albino",
+      33
+     ],
+     [
+      "Leucistic",
+      33
+     ],
+     [
+      "Piebald",
+      100
+     ]
+    ]
+   }
+  },
+  "Spectacled Bear": {
+   "1": {
+    "total": 100000,
+    "entries": [
+     [
+      "Nomarkings",
+      150
+     ],
+     [
+      "Piebald",
+      25
+     ],
+     [
+      "Blondfaced",
+      150
+     ],
+     [
+      "Albino",
+      25
+     ],
+     [
+      "Erythristic_Isabelline",
+      25
+     ],
+     [
+      "Leucistic",
+      25
+     ],
+     [
+      "Melanistic",
+      25
+     ],
+     [
+      "Messymarkings",
+      24850
+     ],
+     [
+      "Abundantmarkings",
+      12500
+     ],
+     [
+      "Xmarkings",
+      24850
+     ],
+     [
+      "Glassesmarkings",
+      24850
+     ],
+     [
+      "Minimalisticmarkings",
+      12500
+     ],
+     [
+      "Erythristic_Red",
+      25
+     ]
+    ]
+   },
+   "2": {
+    "total": 100000,
+    "entries": [
+     [
+      "Nomarkings",
+      150
+     ],
+     [
+      "Piebald",
+      25
+     ],
+     [
+      "Blondfaced",
+      150
+     ],
+     [
+      "Albino",
+      25
+     ],
+     [
+      "Erythristic_Isabelline",
+      25
+     ],
+     [
+      "Leucistic",
+      25
+     ],
+     [
+      "Melanistic",
+      25
+     ],
+     [
+      "Messymarkings",
+      24850
+     ],
+     [
+      "Abundantmarkings",
+      12500
+     ],
+     [
+      "Xmarkings",
+      24850
+     ],
+     [
+      "Glassesmarkings",
+      24850
+     ],
+     [
+      "Minimalisticmarkings",
+      12500
+     ],
+     [
+      "Erythristic_Red",
+      25
+     ]
+    ]
+   }
+  },
+  "Ant. Jackrabbit": {
+   "1": {
+    "total": 99730,
+    "entries": [
+     [
+      "Melanistic",
+      50
+     ],
+     [
+      "Dark Brown",
+      12465
+     ],
+     [
+      "Grey",
+      37350
+     ],
+     [
+      "Brown",
+      37350
+     ],
+     [
+      "Mottled",
+      12465
+     ],
+     [
+      "Albino",
+      50
+     ]
+    ]
+   },
+   "2": {
+    "total": 99730,
+    "entries": [
+     [
+      "Melanistic",
+      50
+     ],
+     [
+      "Dark Brown",
+      12465
+     ],
+     [
+      "Grey",
+      37350
+     ],
+     [
+      "Brown",
+      37350
+     ],
+     [
+      "Mottled",
+      12465
+     ],
+     [
+      "Albino",
+      50
+     ]
+    ]
+   }
+  },
+  "RM Bighorn Sheep": {
+   "1": {
+    "total": 100000,
+    "entries": [
+     [
+      "Black",
+      12500
+     ],
+     [
+      "Brown",
+      37300
+     ],
+     [
+      "Piebald",
+      100
+     ],
+     [
+      "Albino",
+      50
+     ],
+     [
+      "Melanistic",
+      50
+     ],
+     [
+      "Grey",
+      37300
+     ],
+     [
+      "Bronze",
+      12500
+     ],
+     [
+      "Leucistic",
+      100
+     ],
+     [
+      "Piebald",
+      100
+     ]
+    ]
+   },
+   "2": {
+    "total": 100000,
+    "entries": [
+     [
+      "Black",
+      12500
+     ],
+     [
+      "Brown",
+      37300
+     ],
+     [
+      "Piebald",
+      100
+     ],
+     [
+      "Albino",
+      50
+     ],
+     [
+      "Melanistic",
+      50
+     ],
+     [
+      "Grey",
+      37300
+     ],
+     [
+      "Bronze",
+      12500
+     ],
+     [
+      "Leucistic",
+      100
+     ],
+     [
+      "Piebald",
+      100
+     ]
+    ]
+   }
+  },
+  "Cape Buffalo": {
+   "1": {
+    "total": 99730,
+    "entries": [
+     [
+      "Black",
+      37350
+     ],
+     [
+      "Grey",
+      37350
+     ],
+     [
+      "Brown",
+      24930
+     ],
+     [
+      "Albino",
+      50
+     ],
+     [
+      "Leucistic",
+      50
+     ]
+    ]
+   },
+   "2": {
+    "total": 99730,
+    "entries": [
+     [
+      "Black",
+      37350
+     ],
+     [
+      "Grey",
+      37350
+     ],
+     [
+      "Brown",
+      24930
+     ],
+     [
+      "Albino",
+      50
+     ],
+     [
+      "Leucistic",
+      50
+     ]
+    ]
+   }
+  },
+  "Fallow Deer": {
+   "1": {
+    "total": 58576,
+    "entries": [
+     [
+      "Piebald",
+      100
+     ],
+     [
+      "Dark",
+      6900
+     ],
+     [
+      "Albino",
+      12
+     ],
+     [
+      "Acromelanistic",
+      24
+     ],
+     [
+      "Melanistic",
+      12
+     ],
+     [
+      "Dark",
+      6900
+     ],
+     [
+      "Piebald",
+      50
+     ],
+     [
+      "Leucistic",
+      100
+     ],
+     [
+      "Yellow",
+      8427
+     ],
+     [
+      "Spotted",
+      6900
+     ],
+     [
+      "Dark Spotted",
+      13800
+     ],
+     [
+      "White",
+      8427
+     ],
+     [
+      "Spotted",
+      6900
+     ],
+     [
+      "Erythristic",
+      24
+     ]
+    ]
+   },
+   "2": {
+    "total": 41672,
+    "entries": [
+     [
+      "Piebald",
+      100
+     ],
+     [
+      "Dark Spotted",
+      13800
+     ],
+     [
+      "Red Spotted",
+      13800
+     ],
+     [
+      "Acromelanistic",
+      24
+     ],
+     [
+      "Leucistic",
+      100
+     ],
+     [
+      "Melanistic",
+      12
+     ],
+     [
+      "Spotted",
+      13800
+     ],
+     [
+      "Albino",
+      12
+     ],
+     [
+      "Erythristic",
+      24
+     ]
+    ]
+   }
+  },
+  "T.Bean Goose": {
+   "1": {
+    "total": 49949,
+    "entries": [
+     [
+      "Dark Grey",
+      6250
+     ],
+     [
+      "Leucistic",
+      33
+     ],
+     [
+      "Brown",
+      37350
+     ],
+     [
+      "Leucistic",
+      33
+     ],
+     [
+      "Light Grey",
+      6250
+     ],
+     [
+      "Leucistic",
+      33
+     ]
+    ]
+   },
+   "2": {
+    "total": 49949,
+    "entries": [
+     [
+      "Dark Grey",
+      6250
+     ],
+     [
+      "Leucistic",
+      33
+     ],
+     [
+      "Brown",
+      37350
+     ],
+     [
+      "Leucistic",
+      33
+     ],
+     [
+      "Light Grey",
+      6250
+     ],
+     [
+      "Leucistic",
+      33
+     ]
+    ]
+   }
+  },
+  "Whitetail Deer": {
+   "1": {
+    "total": 75226,
+    "entries": [
+     [
+      "Piebald",
+      150
+     ],
+     [
+      "Tan",
+      25000
+     ],
+     [
+      "Brown",
+      25000
+     ],
+     [
+      "Melanistic",
+      38
+     ],
+     [
+      "Albino",
+      38
+     ],
+     [
+      "Dark Brown",
+      25000
+     ]
+    ]
+   },
+   "2": {
+    "total": 75226,
+    "entries": [
+     [
+      "Piebald",
+      150
+     ],
+     [
+      "Brown",
+      25000
+     ],
+     [
+      "Melanistic",
+      38
+     ],
+     [
+      "Dark Brown",
+      25000
+     ],
+     [
+      "Albino",
+      38
+     ],
+     [
+      "Red Brown",
+      25000
+     ]
+    ]
+   }
+  },
+  "Brown Bear": {
+   "1": {
+    "total": 100000,
+    "entries": [
+     [
+      "Grey",
+      5000
+     ],
+     [
+      "Dark Brown",
+      5000
+     ],
+     [
+      "Cinnamon",
+      24900
+     ],
+     [
+      "Spirit",
+      5000
+     ],
+     [
+      "Melanistic",
+      200
+     ],
+     [
+      "Albino",
+      100
+     ],
+     [
+      "Gold",
+      5000
+     ],
+     [
+      "Blonde",
+      5000
+     ],
+     [
+      "Red Brown",
+      24900
+     ],
+     [
+      "Light Brown",
+      24900
+     ]
+    ]
+   },
+   "2": {
+    "total": 100000,
+    "entries": [
+     [
+      "Grey",
+      5000
+     ],
+     [
+      "Cinnamon",
+      24900
+     ],
+     [
+      "Dark Brown",
+      5000
+     ],
+     [
+      "Spirit",
+      5000
+     ],
+     [
+      "Melanistic",
+      200
+     ],
+     [
+      "Albino",
+      100
+     ],
+     [
+      "Gold",
+      5000
+     ],
+     [
+      "Blonde",
+      5000
+     ],
+     [
+      "Red Brown",
+      24900
+     ],
+     [
+      "Light Brown",
+      24900
+     ]
+    ]
+   }
+  },
+  "Am. Alligator": {
+   "1": {
+    "total": 100900,
+    "entries": [
+     [
+      "Melanistic",
+      100
+     ],
+     [
+      "Piebald",
+      200
+     ],
+     [
+      "Olive",
+      74700
+     ],
+     [
+      "Piebald",
+      200
+     ],
+     [
+      "Dark Brown",
+      25000
+     ],
+     [
+      "Piebald",
+      200
+     ],
+     [
+      "Piebald",
+      200
+     ],
+     [
+      "Piebald",
+      200
+     ],
+     [
+      "Albino",
+      100
+     ]
+    ]
+   },
+   "2": {
+    "total": 100900,
+    "entries": [
+     [
+      "Melanistic",
+      100
+     ],
+     [
+      "Piebald",
+      200
+     ],
+     [
+      "Olive",
+      74700
+     ],
+     [
+      "Piebald",
+      200
+     ],
+     [
+      "Dark Brown",
+      25000
+     ],
+     [
+      "Piebald",
+      200
+     ],
+     [
+      "Piebald",
+      200
+     ],
+     [
+      "Piebald",
+      200
+     ],
+     [
+      "Albino",
+      100
+     ]
+    ]
+   }
+  },
+  "Blue Wildebeest": {
+   "1": {
+    "total": 99800,
+    "entries": [
+     [
+      "Grey",
+      37350
+     ],
+     [
+      "Gold",
+      25000
+     ],
+     [
+      "Dark Grey",
+      37350
+     ],
+     [
+      "Albino",
+      100
+     ]
+    ]
+   },
+   "2": {
+    "total": 75000,
+    "entries": [
+     [
+      "Grey",
+      37350
+     ],
+     [
+      "Crowned",
+      200
+     ],
+     [
+      "Dark Grey",
+      37350
+     ],
+     [
+      "Albino",
+      100
+     ]
+    ]
+   }
+  },
+  "Feral Goat": {
+   "1": {
+    "total": 99999,
+    "entries": [
+     [
+      "Mixed",
+      100
+     ],
+     [
+      "White Brown",
+      18675
+     ],
+     [
+      "Albino",
+      50
+     ],
+     [
+      "Blonde",
+      18675
+     ],
+     [
+      "White Brown",
+      8333
+     ],
+     [
+      "Black Brown",
+      8333
+     ],
+     [
+      "Black White",
+      8333
+     ],
+     [
+      "Black",
+      50
+     ],
+     [
+      "Brown",
+      18675
+     ],
+     [
+      "White",
+      18675
+     ],
+     [
+      "Mixed",
+      100
+     ]
+    ]
+   },
+   "2": {
+    "total": 45783,
+    "entries": [
+     [
+      "Albino",
+      50
+     ],
+     [
+      "Black White",
+      8333
+     ],
+     [
+      "Black",
+      50
+     ],
+     [
+      "Brown",
+      18675
+     ],
+     [
+      "White",
+      18675
+     ]
+    ]
+   }
+  },
+  "SES Ibex": {
+   "1": {
+    "total": 74776,
+    "entries": [
+     [
+      "Brown Hybrid",
+      18675
+     ],
+     [
+      "Orange",
+      18675
+     ],
+     [
+      "Melanistic",
+      38
+     ],
+     [
+      "Albino",
+      38
+     ],
+     [
+      "Light Grey",
+      18675
+     ],
+     [
+      "Grey Brown",
+      18675
+     ]
+    ]
+   },
+   "2": {
+    "total": 56101,
+    "entries": [
+     [
+      "Brown Hybrid",
+      18675
+     ],
+     [
+      "Melanistic",
+      38
+     ],
+     [
+      "Albino",
+      38
+     ],
+     [
+      "Buff",
+      18675
+     ],
+     [
+      "Light Brown",
+      18675
+     ]
+    ]
+   }
+  },
+  "Gemsbok": {
+   "1": {
+    "total": 74925,
+    "entries": [
+     [
+      "Light Grey",
+      37350
+     ],
+     [
+      "Grey",
+      37350
+     ],
+     [
+      "Dark",
+      75
+     ],
+     [
+      "Gold",
+      75
+     ],
+     [
+      "Beige",
+      75
+     ]
+    ]
+   },
+   "2": {
+    "total": 74925,
+    "entries": [
+     [
+      "Light Grey",
+      37350
+     ],
+     [
+      "Grey",
+      37350
+     ],
+     [
+      "Dark",
+      75
+     ],
+     [
+      "Gold",
+      75
+     ],
+     [
+      "Beige",
+      75
+     ]
+    ]
+   }
+  },
+  "Wild Yak": {
+   "1": {
+    "total": 100000,
+    "entries": [
+     [
+      "Gold",
+      50
+     ],
+     [
+      "Albino",
+      25
+     ],
+     [
+      "Jet Black",
+      12500
+     ],
+     [
+      "Dark Brown",
+      24950
+     ],
+     [
+      "Dark Red",
+      24950
+     ],
+     [
+      "Albino",
+      25
+     ],
+     [
+      "Leucistic",
+      50
+     ],
+     [
+      "Dark Red Brown",
+      24950
+     ],
+     [
+      "Jet Brown",
+      12500
+     ]
+    ]
+   },
+   "2": {
+    "total": 100000,
+    "entries": [
+     [
+      "Gold",
+      50
+     ],
+     [
+      "Albino",
+      25
+     ],
+     [
+      "Jet Black",
+      12500
+     ],
+     [
+      "Dark Brown",
+      24950
+     ],
+     [
+      "Dark Red",
+      24950
+     ],
+     [
+      "Albino",
+      25
+     ],
+     [
+      "Leucistic",
+      50
+     ],
+     [
+      "Dark Red Brown",
+      24950
+     ],
+     [
+      "Jet Brown",
+      12500
+     ]
+    ]
+   }
+  },
+  "Muntjac": {
+   "1": {
+    "total": 100001,
+    "entries": [
+     [
+      "Melanistic",
+      67
+     ],
+     [
+      "Albino",
+      50
+     ],
+     [
+      "Red",
+      49875
+     ],
+     [
+      "Leucistic",
+      67
+     ],
+     [
+      "Leucistic",
+      67
+     ],
+     [
+      "Red",
+      49875
+     ]
+    ]
+   },
+   "2": {
+    "total": 100001,
+    "entries": [
+     [
+      "Melanistic",
+      67
+     ],
+     [
+      "Albino",
+      50
+     ],
+     [
+      "Red",
+      49875
+     ],
+     [
+      "Leucistic",
+      67
+     ],
+     [
+      "Leucistic",
+      67
+     ],
+     [
+      "Red",
+      49875
+     ]
+    ]
+   }
+  },
+  "Red Deer": {
+   "1": {
+    "total": 50151,
+    "entries": [
+     [
+      "Piebald",
+      100
+     ],
+     [
+      "Albino",
+      25
+     ],
+     [
+      "Piebald",
+      100
+     ],
+     [
+      "Light Brown",
+      16617
+     ],
+     [
+      "Leucistic",
+      25
+     ],
+     [
+      "Erythristic",
+      25
+     ],
+     [
+      "Dark Brown",
+      16617
+     ],
+     [
+      "Melanistic",
+      25
+     ],
+     [
+      "Brown",
+      16617
+     ]
+    ]
+   },
+   "2": {
+    "total": 50151,
+    "entries": [
+     [
+      "Piebald",
+      100
+     ],
+     [
+      "Dark Brown",
+      16617
+     ],
+     [
+      "Albino",
+      25
+     ],
+     [
+      "Piebald",
+      100
+     ],
+     [
+      "Leucistic",
+      25
+     ],
+     [
+      "Erythristic",
+      25
+     ],
+     [
+      "Melanistic",
+      25
+     ],
+     [
+      "Brown",
+      16617
+     ],
+     [
+      "Light Brown",
+      16617
+     ]
+    ]
+   }
+  },
+  "Raccoon": {
+   "1": {
+    "total": 100000,
+    "entries": [
+     [
+      "Blonde",
+      25000
+     ],
+     [
+      "Piebald Grey",
+      100
+     ],
+     [
+      "Albino",
+      50
+     ],
+     [
+      "Melanistic",
+      50
+     ],
+     [
+      "Grey",
+      37350
+     ],
+     [
+      "Piebald Blonde",
+      100
+     ],
+     [
+      "Brown",
+      37350
+     ]
+    ]
+   },
+   "2": {
+    "total": 62650,
+    "entries": [
+     [
+      "Blonde",
+      25000
+     ],
+     [
+      "Piebald Grey",
+      100
+     ],
+     [
+      "Albino",
+      50
+     ],
+     [
+      "Melanistic",
+      50
+     ],
+     [
+      "Piebald Blonde",
+      100
+     ],
+     [
+      "Brown",
+      37350
+     ]
+    ]
+   }
+  },
+  "Javan Rusa": {
+   "1": {
+    "total": 100100,
+    "entries": [
+     [
+      "Leucistic",
+      100
+     ],
+     [
+      "White Brown",
+      25000
+     ],
+     [
+      "Brown",
+      24900
+     ],
+     [
+      "Albino",
+      100
+     ],
+     [
+      "Light Brown",
+      24900
+     ],
+     [
+      "Piebald",
+      100
+     ],
+     [
+      "Piebald",
+      100
+     ],
+     [
+      "Two Tones",
+      24900
+     ]
+    ]
+   },
+   "2": {
+    "total": 99900,
+    "entries": [
+     [
+      "Leucistic",
+      100
+     ],
+     [
+      "White Brown",
+      25000
+     ],
+     [
+      "Brown",
+      24900
+     ],
+     [
+      "Light Brown",
+      24900
+     ],
+     [
+      "Piebald",
+      100
+     ],
+     [
+      "Two Tones",
+      24900
+     ]
+    ]
+   }
+  },
+  "Black Grouse": {
+   "1": {
+    "total": 74800,
+    "entries": [
+     [
+      "Melanistic",
+      20
+     ],
+     [
+      "Dark",
+      74700
+     ],
+     [
+      "Melanistic",
+      20
+     ],
+     [
+      "Leucistic",
+      20
+     ],
+     [
+      "Leucistic",
+      20
+     ],
+     [
+      "Leucistic",
+      20
+     ]
+    ]
+   },
+   "2": {
+    "total": 99900,
+    "entries": [
+     [
+      "Orange",
+      100
+     ],
+     [
+      "Dark",
+      25000
+     ],
+     [
+      "Brown",
+      74700
+     ],
+     [
+      "Gold",
+      100
+     ]
+    ]
+   }
+  },
+  "H Duck": {
+   "1": {
+    "total": 99800,
+    "entries": [
+     [
+      "Dark Grey",
+      74700
+     ],
+     [
+      "Albino",
+      50
+     ],
+     [
+      "Piebald",
+      25000
+     ],
+     [
+      "Melanistic",
+      50
+     ]
+    ]
+   },
+   "2": {
+    "total": 112288,
+    "entries": [
+     [
+      "Grey",
+      38
+     ],
+     [
+      "Dark Grey",
+      74700
+     ],
+     [
+      "Dark",
+      150
+     ],
+     [
+      "Dark Brown",
+      37350
+     ],
+     [
+      "Albino",
+      50
+     ]
+    ]
+   }
+  },
+  "European Hare": {
+   "1": {
+    "total": 74776,
+    "entries": [
+     [
+      "Light Brown",
+      18675
+     ],
+     [
+      "Dark Brown",
+      18675
+     ],
+     [
+      "Albino",
+      38
+     ],
+     [
+      "Melanistic",
+      38
+     ],
+     [
+      "Grey",
+      18675
+     ],
+     [
+      "Brown",
+      18675
+     ]
+    ]
+   },
+   "2": {
+    "total": 74776,
+    "entries": [
+     [
+      "Light Brown",
+      18675
+     ],
+     [
+      "Dark Brown",
+      18675
+     ],
+     [
+      "Albino",
+      38
+     ],
+     [
+      "Melanistic",
+      38
+     ],
+     [
+      "Grey",
+      18675
+     ],
+     [
+      "Brown",
+      18675
+     ]
+    ]
+   }
+  },
+  "Pheasant": {
+   "1": {
+    "total": 99742,
+    "entries": [
+     [
+      "White Brown",
+      37350
+     ],
+     [
+      "Molting",
+      12470
+     ],
+     [
+      "Albino",
+      34
+     ],
+     [
+      "Brown",
+      37350
+     ],
+     [
+      "Grey",
+      12470
+     ],
+     [
+      "Leucistic",
+      34
+     ],
+     [
+      "Melanistic",
+      34
+     ]
+    ]
+   },
+   "2": {
+    "total": 42452,
+    "entries": [
+     [
+      "Albino",
+      34
+     ],
+     [
+      "Grey",
+      5000
+     ],
+     [
+      "Brown",
+      37350
+     ],
+     [
+      "Leucistic",
+      34
+     ],
+     [
+      "Melanistic",
+      34
+     ]
+    ]
+   }
+  },
+  "Lion": {
+   "1": {
+    "total": 100000,
+    "entries": [
+     [
+      "Light Brown",
+      25000
+     ],
+     [
+      "Dark Brown",
+      100
+     ],
+     [
+      "Tan",
+      74700
+     ],
+     [
+      "Albino",
+      100
+     ],
+     [
+      "Blonde",
+      100
+     ]
+    ]
+   },
+   "2": {
+    "total": 100000,
+    "entries": [
+     [
+      "Light Brown",
+      25000
+     ],
+     [
+      "Dark Brown",
+      100
+     ],
+     [
+      "Tan",
+      74700
+     ],
+     [
+      "Albino",
+      100
+     ],
+     [
+      "Blonde",
+      100
+     ]
+    ]
+   }
+  },
+  "Willow Ptarmigan": {
+   "1": {
+    "total": 37650,
+    "entries": [
+     [
+      "White",
+      200
+     ],
+     [
+      "Erythristic",
+      100
+     ],
+     [
+      "Bicolor",
+      12450
+     ],
+     [
+      "Molting",
+      24900
+     ]
+    ]
+   },
+   "2": {
+    "total": 62450,
+    "entries": [
+     [
+      "Molting",
+      12450
+     ],
+     [
+      "White",
+      200
+     ],
+     [
+      "Brown",
+      12450
+     ],
+     [
+      "Molting",
+      24900
+     ],
+     [
+      "Bicolor",
+      12450
+     ]
+    ]
+   }
+  },
+  "Red Fox": {
+   "1": {
+    "total": 74926,
+    "entries": [
+     [
+      "Melanistic",
+      38
+     ],
+     [
+      "Dark Red",
+      24900
+     ],
+     [
+      "Albino",
+      38
+     ],
+     [
+      "Red",
+      24900
+     ],
+     [
+      "Piebald",
+      150
+     ],
+     [
+      "Orange",
+      24900
+     ]
+    ]
+   },
+   "2": {
+    "total": 74926,
+    "entries": [
+     [
+      "Melanistic",
+      38
+     ],
+     [
+      "Red",
+      24900
+     ],
+     [
+      "Albino",
+      38
+     ],
+     [
+      "Orange",
+      24900
+     ],
+     [
+      "Dark Red",
+      24900
+     ],
+     [
+      "Piebald",
+      150
+     ]
+    ]
+   }
+  },
+  "Eurasian Lynx": {
+   "1": {
+    "total": 74926,
+    "entries": [
+     [
+      "Melanistic",
+      38
+     ],
+     [
+      "Piebald",
+      150
+     ],
+     [
+      "Light Brown",
+      37350
+     ],
+     [
+      "Grey",
+      37350
+     ],
+     [
+      "Albino",
+      38
+     ]
+    ]
+   },
+   "2": {
+    "total": 74926,
+    "entries": [
+     [
+      "Melanistic",
+      38
+     ],
+     [
+      "Light Brown",
+      37350
+     ],
+     [
+      "Piebald",
+      150
+     ],
+     [
+      "Albino",
+      38
+     ],
+     [
+      "Grey",
+      37350
+     ]
+    ]
+   }
+  },
+  "Raccoon Dog": {
+   "1": {
+    "total": 87678,
+    "entries": [
+     [
+      "Albino",
+      26
+     ],
+     [
+      "Orange",
+      200
+     ],
+     [
+      "Grey",
+      37350
+     ],
+     [
+      "Light Brown",
+      37350
+     ],
+     [
+      "Piebald",
+      26
+     ],
+     [
+      "Dark Brown",
+      200
+     ],
+     [
+      "Piebald",
+      26
+     ],
+     [
+      "Black White",
+      12500
+     ]
+    ]
+   },
+   "2": {
+    "total": 87678,
+    "entries": [
+     [
+      "Albino",
+      26
+     ],
+     [
+      "Orange",
+      200
+     ],
+     [
+      "Grey",
+      37350
+     ],
+     [
+      "Light Brown",
+      37350
+     ],
+     [
+      "Piebald",
+      26
+     ],
+     [
+      "Dark Brown",
+      200
+     ],
+     [
+      "Piebald",
+      26
+     ],
+     [
+      "Black White",
+      12500
+     ]
+    ]
+   }
+  },
+  "Puma": {
+   "1": {
+    "total": 99730,
+    "entries": [
+     [
+      "Albino",
+      50
+     ],
+     [
+      "Melanistic",
+      50
+     ],
+     [
+      "Light Brown",
+      74700
+     ],
+     [
+      "Dark Red",
+      12465
+     ],
+     [
+      "Grey",
+      12465
+     ]
+    ]
+   },
+   "2": {
+    "total": 99730,
+    "entries": [
+     [
+      "Albino",
+      50
+     ],
+     [
+      "Melanistic",
+      50
+     ],
+     [
+      "Light Brown",
+      74700
+     ],
+     [
+      "Dark Red",
+      12465
+     ],
+     [
+      "Grey",
+      12465
+     ]
+    ]
+   }
+  },
+  "RM Elk": {
+   "1": {
+    "total": 100000,
+    "entries": [
+     [
+      "Albino",
+      100
+     ],
+     [
+      "Light Grey",
+      25000
+     ],
+     [
+      "Brown",
+      37350
+     ],
+     [
+      "Light Brown",
+      37350
+     ],
+     [
+      "Piebald",
+      100
+     ],
+     [
+      "Piebald",
+      100
+     ]
+    ]
+   },
+   "2": {
+    "total": 100000,
+    "entries": [
+     [
+      "Albino",
+      100
+     ],
+     [
+      "Light Grey",
+      25000
+     ],
+     [
+      "Brown",
+      37350
+     ],
+     [
+      "Light Brown",
+      37350
+     ],
+     [
+      "Piebald",
+      100
+     ],
+     [
+      "Piebald",
+      100
+     ]
+    ]
+   }
+  },
+  "RG Turkey": {
+   "1": {
+    "total": 100000,
+    "entries": [
+     [
+      "Buff",
+      37350
+     ],
+     [
+      "Melanistic",
+      50
+     ],
+     [
+      "Albino",
+      50
+     ],
+     [
+      "Brown",
+      37350
+     ],
+     [
+      "Leucistic",
+      200
+     ],
+     [
+      "Lightbuff",
+      12500
+     ],
+     [
+      "Light Brown",
+      12500
+     ]
+    ]
+   },
+   "2": {
+    "total": 100000,
+    "entries": [
+     [
+      "Buff",
+      37350
+     ],
+     [
+      "Melanistic",
+      50
+     ],
+     [
+      "Albino",
+      50
+     ],
+     [
+      "Brown",
+      37350
+     ],
+     [
+      "Leucistic",
+      200
+     ],
+     [
+      "Lightbuff",
+      12500
+     ],
+     [
+      "Light Brown",
+      12500
+     ]
+    ]
+   }
+  },
+  "Axis Deer": {
+   "1": {
+    "total": 87500,
+    "entries": [
+     [
+      "Melanistic",
+      50
+     ],
+     [
+      "Spotted",
+      74700
+     ],
+     [
+      "Albino",
+      50
+     ],
+     [
+      "Piebald",
+      200
+     ],
+     [
+      "Dark",
+      12500
+     ]
+    ]
+   },
+   "2": {
+    "total": 87500,
+    "entries": [
+     [
+      "Melanistic",
+      50
+     ],
+     [
+      "Orange",
+      12500
+     ],
+     [
+      "Spotted",
+      74700
+     ],
+     [
+      "Albino",
+      50
+     ],
+     [
+      "Piebald",
+      200
+     ]
+    ]
+   }
+  },
+  "Canada Goose": {
+   "1": {
+    "total": 100000,
+    "entries": [
+     [
+      "Grey Brown",
+      74900
+     ],
+     [
+      "Lightgreyleucistic",
+      20
+     ],
+     [
+      "White Hybrid",
+      20
+     ],
+     [
+      "Brown Hybrid",
+      20
+     ],
+     [
+      "Albino",
+      20
+     ],
+     [
+      "Melanistic",
+      20
+     ],
+     [
+      "Grey",
+      25000
+     ]
+    ]
+   },
+   "2": {
+    "total": 100000,
+    "entries": [
+     [
+      "Grey Brown",
+      74900
+     ],
+     [
+      "Lightgreyleucistic",
+      20
+     ],
+     [
+      "White Hybrid",
+      20
+     ],
+     [
+      "Brown Hybrid",
+      20
+     ],
+     [
+      "Albino",
+      20
+     ],
+     [
+      "Melanistic",
+      20
+     ],
+     [
+      "Grey",
+      25000
+     ]
+    ]
+   }
+  },
+  "Iberian Wolf": {
+   "1": {
+    "total": 100001,
+    "entries": [
+     [
+      "Melanistic",
+      50
+     ],
+     [
+      "Grey Brown",
+      74700
+     ],
+     [
+      "Albino",
+      50
+     ],
+     [
+      "Pristine",
+      67
+     ],
+     [
+      "Winter",
+      67
+     ],
+     [
+      "Grey",
+      25000
+     ],
+     [
+      "Olive",
+      67
+     ]
+    ]
+   },
+   "2": {
+    "total": 100001,
+    "entries": [
+     [
+      "Melanistic",
+      50
+     ],
+     [
+      "Grey Brown",
+      74700
+     ],
+     [
+      "Albino",
+      50
+     ],
+     [
+      "Pristine",
+      67
+     ],
+     [
+      "Winter",
+      67
+     ],
+     [
+      "Grey",
+      25000
+     ],
+     [
+      "Olive",
+      67
+     ]
+    ]
+   }
+  },
+  "Green-Winged Teal": {
+   "1": {
+    "total": 37683,
+    "entries": [
+     [
+      "Albino",
+      33
+     ],
+     [
+      "Piebald",
+      100
+     ],
+     [
+      "Piebald",
+      100
+     ],
+     [
+      "Piebald",
+      100
+     ],
+     [
+      "Light Green",
+      37350
+     ]
+    ]
+   },
+   "2": {
+    "total": 74900,
+    "entries": [
+     [
+      "Piebald",
+      100
+     ],
+     [
+      "Light Green",
+      74700
+     ],
+     [
+      "Piebald",
+      100
+     ]
+    ]
+   }
+  },
+  "Rock Ptarmigan": {
+   "1": {
+    "total": 53555,
+    "entries": [
+     [
+      "White",
+      200
+     ],
+     [
+      "Molting",
+      21342
+     ],
+     [
+      "Molting",
+      21342
+     ],
+     [
+      "Bicolor",
+      10671
+     ]
+    ]
+   },
+   "2": {
+    "total": 64226,
+    "entries": [
+     [
+      "White",
+      200
+     ],
+     [
+      "Molting",
+      21342
+     ],
+     [
+      "Mottled",
+      10671
+     ],
+     [
+      "Molting",
+      21342
+     ],
+     [
+      "Mottled",
+      10671
+     ]
+    ]
+   }
+  },
+  "Coyote": {
+   "1": {
+    "total": 74926,
+    "entries": [
+     [
+      "Piebald",
+      150
+     ],
+     [
+      "Dark Grey",
+      24900
+     ],
+     [
+      "Orange",
+      24900
+     ],
+     [
+      "Albino",
+      38
+     ],
+     [
+      "Grey Brown",
+      24900
+     ],
+     [
+      "Melanistic",
+      38
+     ]
+    ]
+   },
+   "2": {
+    "total": 74926,
+    "entries": [
+     [
+      "Piebald",
+      150
+     ],
+     [
+      "Grey Brown",
+      24900
+     ],
+     [
+      "Orange",
+      24900
+     ],
+     [
+      "Albino",
+      38
+     ],
+     [
+      "Light Grey",
+      24900
+     ],
+     [
+      "Melanistic",
+      38
+     ]
+    ]
+   }
+  },
+  "Wood Bison": {
+   "1": {
+    "total": 100000,
+    "entries": [
+     [
+      "Leucistic",
+      33
+     ],
+     [
+      "Piebald",
+      100
+     ],
+     [
+      "Albino",
+      33
+     ],
+     [
+      "Melanistic",
+      33
+     ],
+     [
+      "Dark Brown",
+      100
+     ],
+     [
+      "Gingersplit",
+      12500
+     ],
+     [
+      "Light Brown",
+      74701
+     ],
+     [
+      "Ginger",
+      12500
+     ]
+    ]
+   },
+   "2": {
+    "total": 100000,
+    "entries": [
+     [
+      "Leucistic",
+      33
+     ],
+     [
+      "Piebald",
+      100
+     ],
+     [
+      "Albino",
+      33
+     ],
+     [
+      "Melanistic",
+      33
+     ],
+     [
+      "Dark Brown",
+      100
+     ],
+     [
+      "Gingersplit",
+      12500
+     ],
+     [
+      "Light Brown",
+      74701
+     ],
+     [
+      "Ginger",
+      12500
+     ]
+    ]
+   }
+  },
+  "Cin Teal": {
+   "1": {
+    "total": 99800,
+    "entries": [
+     [
+      "Piebald",
+      12500
+     ],
+     [
+      "Melanistic",
+      100
+     ],
+     [
+      "Red",
+      12500
+     ],
+     [
+      "Cinnamon",
+      74700
+     ]
+    ]
+   },
+   "2": {
+    "total": 87375,
+    "entries": [
+     [
+      "Beige",
+      175
+     ],
+     [
+      "Red",
+      12500
+     ],
+     [
+      "Cinnamon",
+      74700
+     ]
+    ]
+   }
+  },
+  "Black Bear": {
+   "1": {
+    "total": 74926,
+    "entries": [
+     [
+      "Blonde",
+      38
+     ],
+     [
+      "Black",
+      24900
+     ],
+     [
+      "Brown",
+      38
+     ],
+     [
+      "Dusky",
+      24900
+     ],
+     [
+      "Dark",
+      24900
+     ],
+     [
+      "Cinnamon",
+      150
+     ]
+    ]
+   },
+   "2": {
+    "total": 74926,
+    "entries": [
+     [
+      "Blonde",
+      38
+     ],
+     [
+      "Brown",
+      38
+     ],
+     [
+      "Dusky",
+      24900
+     ],
+     [
+      "Black",
+      24900
+     ],
+     [
+      "Dark",
+      24900
+     ],
+     [
+      "Cinnamon",
+      150
+     ]
+    ]
+   }
+  },
+  "Feral Pig": {
+   "1": {
+    "total": 100000,
+    "entries": [
+     [
+      "Black Spots",
+      12500
+     ],
+     [
+      "Brown Hybrid",
+      12450
+     ],
+     [
+      "Black Spots",
+      12500
+     ],
+     [
+      "Albino",
+      100
+     ],
+     [
+      "Blackgold",
+      12450
+     ],
+     [
+      "Dark Brown",
+      12450
+     ],
+     [
+      "Dark Brown",
+      12450
+     ],
+     [
+      "Brown Hybrid",
+      12450
+     ],
+     [
+      "Black",
+      12450
+     ],
+     [
+      "Pink",
+      200
+     ]
+    ]
+   },
+   "2": {
+    "total": 25200,
+    "entries": [
+     [
+      "Black Spots",
+      12500
+     ],
+     [
+      "Black Spots",
+      12500
+     ],
+     [
+      "Pink",
+      200
+     ]
+    ]
+   }
+  },
+  "Ferruginous Duck": {
+   "1": {
+    "total": 99999,
+    "entries": [
+     [
+      "Dark Brown",
+      49950
+     ],
+     [
+      "Red Brown",
+      49950
+     ],
+     [
+      "Albino",
+      33
+     ],
+     [
+      "Melanistic",
+      33
+     ],
+     [
+      "Leucistic",
+      33
+     ]
+    ]
+   },
+   "2": {
+    "total": 99999,
+    "entries": [
+     [
+      "Dark Brown",
+      49950
+     ],
+     [
+      "Red Brown",
+      49950
+     ],
+     [
+      "Albino",
+      33
+     ],
+     [
+      "Melanistic",
+      33
+     ],
+     [
+      "Leucistic",
+      33
+     ]
+    ]
+   }
+  },
+  "Blacktail Deer": {
+   "1": {
+    "total": 74926,
+    "entries": [
+     [
+      "Albino",
+      38
+     ],
+     [
+      "Grey Brown",
+      24900
+     ],
+     [
+      "Dark Grey",
+      24900
+     ],
+     [
+      "Piebald",
+      150
+     ],
+     [
+      "Melanistic",
+      38
+     ],
+     [
+      "Grey",
+      24900
+     ]
+    ]
+   },
+   "2": {
+    "total": 74926,
+    "entries": [
+     [
+      "Albino",
+      38
+     ],
+     [
+      "Grey Brown",
+      24900
+     ],
+     [
+      "Tan",
+      24900
+     ],
+     [
+      "Grey",
+      24900
+     ],
+     [
+      "Piebald",
+      150
+     ],
+     [
+      "Melanistic",
+      38
+     ]
+    ]
+   }
+  },
+  "Turkey": {
+   "1": {
+    "total": 100000,
+    "entries": [
+     [
+      "Leucistic",
+      200
+     ],
+     [
+      "Melanistic",
+      50
+     ],
+     [
+      "Brown",
+      74700
+     ],
+     [
+      "Dark Brown",
+      12500
+     ],
+     [
+      "Light Brown",
+      12500
+     ],
+     [
+      "Albino",
+      50
+     ]
+    ]
+   },
+   "2": {
+    "total": 100000,
+    "entries": [
+     [
+      "Leucistic",
+      200
+     ],
+     [
+      "Melanistic",
+      50
+     ],
+     [
+      "Brown",
+      74700
+     ],
+     [
+      "Dark Brown",
+      12500
+     ],
+     [
+      "Light Brown",
+      12500
+     ],
+     [
+      "Albino",
+      50
+     ]
+    ]
+   }
+  },
+  "Roe Deer": {
+   "1": {
+    "total": 75114,
+    "entries": [
+     [
+      "Piebald",
+      150
+     ],
+     [
+      "Albino",
+      38
+     ],
+     [
+      "Melanistic",
+      38
+     ],
+     [
+      "Dark Brown",
+      24900
+     ],
+     [
+      "Dark Grey",
+      24900
+     ],
+     [
+      "Brown",
+      24900
+     ],
+     [
+      "Piebald",
+      150
+     ],
+     [
+      "Leucistic",
+      38
+     ]
+    ]
+   },
+   "2": {
+    "total": 74964,
+    "entries": [
+     [
+      "Orange",
+      24900
+     ],
+     [
+      "Albino",
+      38
+     ],
+     [
+      "Melanistic",
+      38
+     ],
+     [
+      "Brown",
+      24900
+     ],
+     [
+      "Tan",
+      24900
+     ],
+     [
+      "Piebald",
+      150
+     ],
+     [
+      "Leucistic",
+      38
+     ]
+    ]
+   }
+  },
+  "Hog Deer": {
+   "1": {
+    "total": 93750,
+    "entries": [
+     [
+      "Spotted",
+      6250
+     ],
+     [
+      "Dark Spotted",
+      6250
+     ],
+     [
+      "Dark Brown",
+      6250
+     ],
+     [
+      "Leucistic",
+      100
+     ],
+     [
+      "Piebald",
+      200
+     ],
+     [
+      "Brown",
+      74700
+     ]
+    ]
+   },
+   "2": {
+    "total": 87500,
+    "entries": [
+     [
+      "Spotted",
+      6250
+     ],
+     [
+      "Dark Spotted",
+      6250
+     ],
+     [
+      "Leucistic",
+      100
+     ],
+     [
+      "Piebald",
+      200
+     ],
+     [
+      "Brown",
+      74700
+     ]
+    ]
+   }
+  },
+  "EG Kangaroo": {
+   "1": {
+    "total": 100001,
+    "entries": [
+     [
+      "Melanistic",
+      50
+     ],
+     [
+      "Grey",
+      24900
+     ],
+     [
+      "Leucistic",
+      67
+     ],
+     [
+      "Brown",
+      12500
+     ],
+     [
+      "Brown",
+      12500
+     ],
+     [
+      "Grey Brown",
+      24900
+     ],
+     [
+      "Leucistic",
+      67
+     ],
+     [
+      "Grey",
+      24900
+     ],
+     [
+      "Albino",
+      50
+     ],
+     [
+      "Leucistic",
+      67
+     ]
+    ]
+   },
+   "2": {
+    "total": 100001,
+    "entries": [
+     [
+      "Melanistic",
+      50
+     ],
+     [
+      "Grey",
+      24900
+     ],
+     [
+      "Leucistic",
+      67
+     ],
+     [
+      "Brown",
+      12500
+     ],
+     [
+      "Brown",
+      12500
+     ],
+     [
+      "Grey Brown",
+      24900
+     ],
+     [
+      "Leucistic",
+      67
+     ],
+     [
+      "Grey",
+      24900
+     ],
+     [
+      "Albino",
+      50
+     ],
+     [
+      "Leucistic",
+      67
+     ]
+    ]
+   }
+  },
+  "Caribou": {
+   "1": {
+    "total": 74925,
+    "entries": [
+     [
+      "Light Brown",
+      37350
+     ],
+     [
+      "Melanistic",
+      25
+     ],
+     [
+      "Dark Brown",
+      37350
+     ],
+     [
+      "Albino",
+      25
+     ],
+     [
+      "Piebald",
+      150
+     ],
+     [
+      "Leucistic",
+      25
+     ]
+    ]
+   },
+   "2": {
+    "total": 74775,
+    "entries": [
+     [
+      "Light Brown",
+      37350
+     ],
+     [
+      "Melanistic",
+      25
+     ],
+     [
+      "Dark Brown",
+      37350
+     ],
+     [
+      "Albino",
+      25
+     ],
+     [
+      "Leucistic",
+      25
+     ]
+    ]
+   }
+  },
+  "WM Coati": {
+   "1": {
+    "total": 100001,
+    "entries": [
+     [
+      "Albino",
+      33
+     ],
+     [
+      "Dark Brown",
+      37351
+     ],
+     [
+      "Leucistic",
+      33
+     ],
+     [
+      "Orange",
+      25000
+     ],
+     [
+      "Piebald",
+      100
+     ],
+     [
+      "Piebald",
+      100
+     ],
+     [
+      "Brown",
+      37351
+     ],
+     [
+      "Melanistic",
+      33
+     ]
+    ]
+   },
+   "2": {
+    "total": 100001,
+    "entries": [
+     [
+      "Albino",
+      33
+     ],
+     [
+      "Dark Brown",
+      37351
+     ],
+     [
+      "Leucistic",
+      33
+     ],
+     [
+      "Orange",
+      25000
+     ],
+     [
+      "Piebald",
+      100
+     ],
+     [
+      "Piebald",
+      100
+     ],
+     [
+      "Brown",
+      37351
+     ],
+     [
+      "Melanistic",
+      33
+     ]
+    ]
+   }
+  },
+  "Desert Bighorn Sheep": {
+   "1": {
+    "total": 99950,
+    "entries": [
+     [
+      "Light Brown",
+      12500
+     ],
+     [
+      "Erythristic",
+      50
+     ],
+     [
+      "Leucistic",
+      100
+     ],
+     [
+      "Light Grey",
+      29000
+     ],
+     [
+      "Piebald",
+      100
+     ],
+     [
+      "Brown",
+      29000
+     ],
+     [
+      "Piebald",
+      100
+     ],
+     [
+      "Melanistic",
+      50
+     ],
+     [
+      "Albino",
+      50
+     ],
+     [
+      "Grey",
+      29000
+     ]
+    ]
+   },
+   "2": {
+    "total": 70850,
+    "entries": [
+     [
+      "Light Brown",
+      12500
+     ],
+     [
+      "Leucistic",
+      100
+     ],
+     [
+      "Piebald",
+      100
+     ],
+     [
+      "Brown",
+      29000
+     ],
+     [
+      "Melanistic",
+      50
+     ],
+     [
+      "Albino",
+      50
+     ],
+     [
+      "Mosaic",
+      50
+     ],
+     [
+      "Grey",
+      29000
+     ]
+    ]
+   }
+  },
+  "Magpie Goose": {
+   "1": {
+    "total": 74999,
+    "entries": [
+     [
+      "Orange",
+      24900
+     ],
+     [
+      "Leucistic",
+      33
+     ],
+     [
+      "Leucistic",
+      33
+     ],
+     [
+      "Maroon",
+      24900
+     ],
+     [
+      "Piebald",
+      100
+     ],
+     [
+      "Melanistic",
+      33
+     ],
+     [
+      "Piebald",
+      100
+     ],
+     [
+      "Yellow",
+      24900
+     ]
+    ]
+   },
+   "2": {
+    "total": 74999,
+    "entries": [
+     [
+      "Orange",
+      24900
+     ],
+     [
+      "Leucistic",
+      33
+     ],
+     [
+      "Leucistic",
+      33
+     ],
+     [
+      "Maroon",
+      24900
+     ],
+     [
+      "Piebald",
+      100
+     ],
+     [
+      "Melanistic",
+      33
+     ],
+     [
+      "Piebald",
+      100
+     ],
+     [
+      "Yellow",
+      24900
+     ]
+    ]
+   }
+  },
+  "Mexican Bobcat": {
+   "1": {
+    "total": 100000,
+    "entries": [
+     [
+      "Melanistic",
+      50
+     ],
+     [
+      "Grey",
+      37350
+     ],
+     [
+      "Albino",
+      50
+     ],
+     [
+      "Tan",
+      37350
+     ],
+     [
+      "Brown",
+      12500
+     ],
+     [
+      "Blue",
+      200
+     ],
+     [
+      "Red",
+      12500
+     ]
+    ]
+   },
+   "2": {
+    "total": 100000,
+    "entries": [
+     [
+      "Melanistic",
+      50
+     ],
+     [
+      "Grey",
+      37350
+     ],
+     [
+      "Albino",
+      50
+     ],
+     [
+      "Tan",
+      37350
+     ],
+     [
+      "Brown",
+      12500
+     ],
+     [
+      "Blue",
+      200
+     ],
+     [
+      "Red",
+      12500
+     ]
+    ]
+   }
+  },
+  "Greater Grison": {
+   "1": {
+    "total": 99999,
+    "entries": [
+     [
+      "Pale",
+      25000
+     ],
+     [
+      "Piebald",
+      100
+     ],
+     [
+      "Leucistic",
+      33
+     ],
+     [
+      "Erythristic_Chocolate",
+      33
+     ],
+     [
+      "Dark",
+      37350
+     ],
+     [
+      "Melanistic",
+      100
+     ],
+     [
+      "Albino",
+      33
+     ],
+     [
+      "Grey",
+      37350
+     ]
+    ]
+   },
+   "2": {
+    "total": 99999,
+    "entries": [
+     [
+      "Pale",
+      25000
+     ],
+     [
+      "Piebald",
+      100
+     ],
+     [
+      "Leucistic",
+      33
+     ],
+     [
+      "Erythristic_Chocolate",
+      33
+     ],
+     [
+      "Dark",
+      37350
+     ],
+     [
+      "Melanistic",
+      100
+     ],
+     [
+      "Albino",
+      33
+     ],
+     [
+      "Grey",
+      37350
+     ]
+    ]
+   }
+  },
+  "Eu.Teal": {
+   "1": {
+    "total": 74800,
+    "entries": [
+     [
+      "Hybrid Green",
+      25
+     ],
+     [
+      "Leucistic",
+      25
+     ],
+     [
+      "Dark Green",
+      37350
+     ],
+     [
+      "Light Green",
+      37350
+     ],
+     [
+      "Leucistic",
+      25
+     ],
+     [
+      "Hybrid Blue",
+      25
+     ]
+    ]
+   },
+   "2": {
+    "total": 74800,
+    "entries": [
+     [
+      "Leucistic",
+      100
+     ],
+     [
+      "Brown",
+      74700
+     ]
+    ]
+   }
+  },
+  "Pine Marten": {
+   "1": {
+    "total": 100000,
+    "entries": [
+     [
+      "Black",
+      12500
+     ],
+     [
+      "Leucistic",
+      25
+     ],
+     [
+      "Piebald",
+      25
+     ],
+     [
+      "Melanistic",
+      100
+     ],
+     [
+      "Tawny",
+      100
+     ],
+     [
+      "Albino",
+      25
+     ],
+     [
+      "Light Brown",
+      12500
+     ],
+     [
+      "Piebald",
+      25
+     ],
+     [
+      "Brown",
+      74700
+     ]
+    ]
+   },
+   "2": {
+    "total": 100000,
+    "entries": [
+     [
+      "Black",
+      12500
+     ],
+     [
+      "Leucistic",
+      25
+     ],
+     [
+      "Piebald",
+      25
+     ],
+     [
+      "Melanistic",
+      100
+     ],
+     [
+      "Tawny",
+      100
+     ],
+     [
+      "Albino",
+      25
+     ],
+     [
+      "Light Brown",
+      12500
+     ],
+     [
+      "Piebald",
+      25
+     ],
+     [
+      "Brown",
+      74700
+     ]
+    ]
+   }
+  },
+  "Eu.Wigeon": {
+   "1": {
+    "total": 74999,
+    "entries": [
+     [
+      "Leucistic",
+      33
+     ],
+     [
+      "Eclipse",
+      200
+     ],
+     [
+      "Brown",
+      37350
+     ],
+     [
+      "Leucistic",
+      33
+     ],
+     [
+      "Grey",
+      37350
+     ],
+     [
+      "Hybrid",
+      33
+     ]
+    ]
+   },
+   "2": {
+    "total": 74966,
+    "entries": [
+     [
+      "Leucistic",
+      33
+     ],
+     [
+      "Leucistic",
+      33
+     ],
+     [
+      "Grey",
+      37350
+     ],
+     [
+      "Brown",
+      37350
+     ],
+     [
+      "Dark",
+      200
+     ]
+    ]
+   }
+  },
+  "Black Caiman": {
+   "1": {
+    "total": 100000,
+    "entries": [
+     [
+      "Piebald",
+      100
+     ],
+     [
+      "Leucistic",
+      100
+     ],
+     [
+      "Piebald",
+      100
+     ],
+     [
+      "Melanistic",
+      50
+     ],
+     [
+      "Dark Green",
+      49800
+     ],
+     [
+      "Albino",
+      50
+     ],
+     [
+      "Dark Green",
+      49800
+     ]
+    ]
+   },
+   "2": {
+    "total": 100000,
+    "entries": [
+     [
+      "Piebald",
+      100
+     ],
+     [
+      "Leucistic",
+      100
+     ],
+     [
+      "Piebald",
+      100
+     ],
+     [
+      "Melanistic",
+      50
+     ],
+     [
+      "Dark Green",
+      49800
+     ],
+     [
+      "Albino",
+      50
+     ],
+     [
+      "Dark Green",
+      49800
+     ]
+    ]
+   }
+  },
+  "Goldeneye": {
+   "1": {
+    "total": 75050,
+    "entries": [
+     [
+      "Leucistic",
+      50
+     ],
+     [
+      "Hybrid",
+      25
+     ],
+     [
+      "Eclipse",
+      200
+     ],
+     [
+      "Black",
+      74700
+     ],
+     [
+      "Leucistic",
+      50
+     ],
+     [
+      "Hybrid",
+      25
+     ]
+    ]
+   },
+   "2": {
+    "total": 75000,
+    "entries": [
+     [
+      "Leucistic",
+      50
+     ],
+     [
+      "Grey",
+      74700
+     ],
+     [
+      "Dark",
+      200
+     ],
+     [
+      "Leucistic",
+      50
+     ]
+    ]
+   }
+  },
+  "EW Turkey": {
+   "1": {
+    "total": 100000,
+    "entries": [
+     [
+      "Melanistic",
+      50
+     ],
+     [
+      "Brown",
+      37350
+     ],
+     [
+      "Light Bronze",
+      12500
+     ],
+     [
+      "Leucistic",
+      200
+     ],
+     [
+      "Bronze",
+      37350
+     ],
+     [
+      "Light Brown",
+      12500
+     ],
+     [
+      "Albino",
+      50
+     ]
+    ]
+   },
+   "2": {
+    "total": 100000,
+    "entries": [
+     [
+      "Melanistic",
+      50
+     ],
+     [
+      "Brown",
+      37350
+     ],
+     [
+      "Light Bronze",
+      12500
+     ],
+     [
+      "Leucistic",
+      200
+     ],
+     [
+      "Bronze",
+      37350
+     ],
+     [
+      "Light Brown",
+      12500
+     ],
+     [
+      "Albino",
+      50
+     ]
+    ]
+   }
+  },
+  "Tahr": {
+   "1": {
+    "total": 100000,
+    "entries": [
+     [
+      "Dark Red",
+      100
+     ],
+     [
+      "Albino",
+      50
+     ],
+     [
+      "Black",
+      100
+     ],
+     [
+      "Dark Brown",
+      100
+     ],
+     [
+      "White",
+      100
+     ],
+     [
+      "Red Brown",
+      74450
+     ],
+     [
+      "Light Brown",
+      12500
+     ],
+     [
+      "Straw",
+      12500
+     ],
+     [
+      "Red",
+      100
+     ]
+    ]
+   },
+   "2": {
+    "total": 99700,
+    "entries": [
+     [
+      "Albino",
+      50
+     ],
+     [
+      "White",
+      100
+     ],
+     [
+      "Red Brown",
+      74450
+     ],
+     [
+      "Light Brown",
+      12500
+     ],
+     [
+      "Straw",
+      12500
+     ],
+     [
+      "Red",
+      100
+     ]
+    ]
+   }
+  },
+  "Wood Duck": {
+   "1": {
+    "total": 50075,
+    "entries": [
+     [
+      "Standard",
+      37425
+     ],
+     [
+      "Melanistic",
+      25
+     ],
+     [
+      "Erythristic Golden",
+      25
+     ],
+     [
+      "Dilute Silver",
+      25
+     ],
+     [
+      "Dark",
+      12500
+     ],
+     [
+      "Piebald",
+      25
+     ],
+     [
+      "Leucistic",
+      25
+     ],
+     [
+      "Albino",
+      25
+     ]
+    ]
+   },
+   "2": {
+    "total": 50075,
+    "entries": [
+     [
+      "Dark",
+      12500
+     ],
+     [
+      "Melanistic",
+      25
+     ],
+     [
+      "Erythristic Golden",
+      25
+     ],
+     [
+      "Dilute Silver",
+      25
+     ],
+     [
+      "Piebald",
+      25
+     ],
+     [
+      "Standard",
+      37425
+     ],
+     [
+      "Leucistic",
+      25
+     ],
+     [
+      "Albino",
+      25
+     ]
+    ]
+   }
+  },
+  "Mallard": {
+   "1": {
+    "total": 99900,
+    "entries": [
+     [
+      "Leucistic",
+      100
+     ],
+     [
+      "Melanistic",
+      100
+     ],
+     [
+      "Brown Hybrid",
+      12500
+     ],
+     [
+      "Black Brown",
+      74700
+     ],
+     [
+      "Piebald",
+      12500
+     ]
+    ]
+   },
+   "2": {
+    "total": 99900,
+    "entries": [
+     [
+      "Melanistic",
+      100
+     ],
+     [
+      "Brown Hybrid",
+      12500
+     ],
+     [
+      "Blonde",
+      100
+     ],
+     [
+      "Black Brown",
+      74700
+     ],
+     [
+      "Piebald",
+      12500
+     ]
+    ]
+   }
+  },
+  "Grizzly Bear": {
+   "1": {
+    "total": 74926,
+    "entries": [
+     [
+      "Brown",
+      150
+     ],
+     [
+      "Grey Brown",
+      74700
+     ],
+     [
+      "Albino",
+      38
+     ],
+     [
+      "Melanistic",
+      38
+     ]
+    ]
+   },
+   "2": {
+    "total": 74926,
+    "entries": [
+     [
+      "Grey Brown",
+      74700
+     ],
+     [
+      "Albino",
+      38
+     ],
+     [
+      "Brown",
+      150
+     ],
+     [
+      "Melanistic",
+      38
+     ]
+    ]
+   }
+  },
+  "Snow Goose": {
+   "1": {
+    "total": 100000,
+    "entries": [
+     [
+      "White Morph",
+      99600
+     ],
+     [
+      "Hybrid",
+      100
+     ],
+     [
+      "Intermediate Morph",
+      100
+     ],
+     [
+      "Albino",
+      50
+     ],
+     [
+      "Melanistic",
+      50
+     ],
+     [
+      "Blue Morph",
+      100
+     ]
+    ]
+   },
+   "2": {
+    "total": 100000,
+    "entries": [
+     [
+      "White Morph",
+      99600
+     ],
+     [
+      "Hybrid",
+      100
+     ],
+     [
+      "Intermediate Morph",
+      100
+     ],
+     [
+      "Albino",
+      50
+     ],
+     [
+      "Melanistic",
+      50
+     ],
+     [
+      "Blue Morph",
+      100
+     ]
+    ]
+   }
+  },
+  "???": {
+   "1": {
+    "total": 150,
+    "entries": [
+     [
+      "Crested_Blond",
+      25
+     ],
+     [
+      "Furry_Charred_Cinnamon",
+      25
+     ],
+     [
+      "Crested_Brown",
+      25
+     ],
+     [
+      "Furry_Tawny",
+      25
+     ],
+     [
+      "Bald_Calico",
+      25
+     ],
+     [
+      "Bald_Spotted",
+      25
+     ]
+    ]
+   },
+   "2": {
+    "total": 150,
+    "entries": [
+     [
+      "Crested_Blond",
+      25
+     ],
+     [
+      "Furry_Charred_Cinnamon",
+      25
+     ],
+     [
+      "Crested_Brown",
+      25
+     ],
+     [
+      "Furry_Tawny",
+      25
+     ],
+     [
+      "Bald_Calico",
+      25
+     ],
+     [
+      "Bald_Spotted",
+      25
+     ]
+    ]
+   }
+  },
+  "Vicu\u00f1a": {
+   "1": {
+    "total": 100000,
+    "entries": [
+     [
+      "Beige",
+      74700
+     ],
+     [
+      "Melanistic",
+      50
+     ],
+     [
+      "Leucistic",
+      50
+     ],
+     [
+      "Dark",
+      25000
+     ],
+     [
+      "Dilute Silver",
+      50
+     ],
+     [
+      "Piebald",
+      50
+     ],
+     [
+      "Erythristic_Isabelline",
+      50
+     ],
+     [
+      "Albino",
+      50
+     ]
+    ]
+   },
+   "2": {
+    "total": 100000,
+    "entries": [
+     [
+      "Beige",
+      74700
+     ],
+     [
+      "Melanistic",
+      50
+     ],
+     [
+      "Leucistic",
+      50
+     ],
+     [
+      "Dark",
+      25000
+     ],
+     [
+      "Dilute Silver",
+      50
+     ],
+     [
+      "Piebald",
+      50
+     ],
+     [
+      "Erythristic_Isabelline",
+      50
+     ],
+     [
+      "Albino",
+      50
+     ]
+    ]
+   }
+  },
+  "Sambar": {
+   "1": {
+    "total": 99950,
+    "entries": [
+     [
+      "Leucistic",
+      50
+     ],
+     [
+      "Light Brown",
+      24900
+     ],
+     [
+      "Albino",
+      50
+     ],
+     [
+      "Piebald",
+      50
+     ],
+     [
+      "Dark Brown",
+      24900
+     ],
+     [
+      "Dusky Grad.",
+      25000
+     ],
+     [
+      "Brown",
+      24900
+     ],
+     [
+      "Leucistic",
+      50
+     ],
+     [
+      "Piebald",
+      50
+     ]
+    ]
+   },
+   "2": {
+    "total": 99850,
+    "entries": [
+     [
+      "Light Brown",
+      24900
+     ],
+     [
+      "Albino",
+      50
+     ],
+     [
+      "Dark Brown",
+      24900
+     ],
+     [
+      "Dusky Grad.",
+      25000
+     ],
+     [
+      "Brown",
+      24900
+     ],
+     [
+      "Leucistic",
+      50
+     ],
+     [
+      "Piebald",
+      50
+     ]
+    ]
+   }
+  },
+  "Bobwhite Quail": {
+   "1": {
+    "total": 297008,
+    "entries": [
+     [
+      "Grey",
+      99000
+     ],
+     [
+      "Albino",
+      8
+     ],
+     [
+      "Red Brown",
+      99000
+     ],
+     [
+      "Brown",
+      99000
+     ]
+    ]
+   },
+   "2": {
+    "total": 99008,
+    "entries": [
+     [
+      "Albino",
+      8
+     ],
+     [
+      "Brown",
+      99000
+     ]
+    ]
+   }
+  },
+  "Beaver": {
+   "1": {
+    "total": 100000,
+    "entries": [
+     [
+      "Piebald",
+      200
+     ],
+     [
+      "Melanistic",
+      33
+     ],
+     [
+      "Reddish Brown",
+      12500
+     ],
+     [
+      "Albino",
+      33
+     ],
+     [
+      "Dark Brown",
+      12500
+     ],
+     [
+      "Leucistic",
+      33
+     ],
+     [
+      "Light Brown",
+      74701
+     ]
+    ]
+   },
+   "2": {
+    "total": 100000,
+    "entries": [
+     [
+      "Piebald",
+      200
+     ],
+     [
+      "Melanistic",
+      33
+     ],
+     [
+      "Reddish Brown",
+      12500
+     ],
+     [
+      "Albino",
+      33
+     ],
+     [
+      "Dark Brown",
+      12500
+     ],
+     [
+      "Leucistic",
+      33
+     ],
+     [
+      "Light Brown",
+      74701
+     ]
+    ]
+   }
+  },
+  "W.Capercaillie": {
+   "1": {
+    "total": 74832,
+    "entries": [
+     [
+      "Leucistic",
+      66
+     ],
+     [
+      "Leucistic",
+      33
+     ],
+     [
+      "Dark",
+      74700
+     ],
+     [
+      "Pale",
+      33
+     ]
+    ]
+   },
+   "2": {
+    "total": 99766,
+    "entries": [
+     [
+      "Bright",
+      12500
+     ],
+     [
+      "Leucistic",
+      66
+     ],
+     [
+      "Brown",
+      74700
+     ],
+     [
+      "Ochre",
+      12500
+     ]
+    ]
+   }
+  },
+  "Chamois": {
+   "1": {
+    "total": 100000,
+    "entries": [
+     [
+      "Brown",
+      12500
+     ],
+     [
+      "Honeytones",
+      12500
+     ],
+     [
+      "Melanistic",
+      50
+     ],
+     [
+      "Leucistic",
+      200
+     ],
+     [
+      "Dark Brown",
+      37350
+     ],
+     [
+      "Albino",
+      50
+     ],
+     [
+      "Grey Brown",
+      37350
+     ]
+    ]
+   },
+   "2": {
+    "total": 100000,
+    "entries": [
+     [
+      "Brown",
+      12500
+     ],
+     [
+      "Honeytones",
+      12500
+     ],
+     [
+      "Melanistic",
+      50
+     ],
+     [
+      "Leucistic",
+      200
+     ],
+     [
+      "Dark Brown",
+      37350
+     ],
+     [
+      "Albino",
+      50
+     ],
+     [
+      "Grey Brown",
+      37350
+     ]
+    ]
+   }
+  },
+  "Taruca": {
+   "1": {
+    "total": 100000,
+    "entries": [
+     [
+      "Dark",
+      25000
+     ],
+     [
+      "Erythristic",
+      25
+     ],
+     [
+      "Brown",
+      37350
+     ],
+     [
+      "Melanistic",
+      200
+     ],
+     [
+      "Albino",
+      25
+     ],
+     [
+      "Leucistic",
+      25
+     ],
+     [
+      "Piebald",
+      25
+     ],
+     [
+      "Grey",
+      37350
+     ]
+    ]
+   },
+   "2": {
+    "total": 100000,
+    "entries": [
+     [
+      "Dark",
+      25000
+     ],
+     [
+      "Erythristic",
+      25
+     ],
+     [
+      "Brown",
+      37350
+     ],
+     [
+      "Melanistic",
+      200
+     ],
+     [
+      "Albino",
+      25
+     ],
+     [
+      "Leucistic",
+      25
+     ],
+     [
+      "Piebald",
+      25
+     ],
+     [
+      "Grey",
+      37350
+     ]
+    ]
+   }
+  },
+  "Roosevelt Elk": {
+   "1": {
+    "total": 74926,
+    "entries": [
+     [
+      "Brown",
+      24900
+     ],
+     [
+      "Piebald",
+      150
+     ],
+     [
+      "Orange",
+      24900
+     ],
+     [
+      "Albino",
+      38
+     ],
+     [
+      "Melanistic",
+      38
+     ],
+     [
+      "Tan",
+      24900
+     ]
+    ]
+   },
+   "2": {
+    "total": 74926,
+    "entries": [
+     [
+      "Orange",
+      24900
+     ],
+     [
+      "Brown",
+      24900
+     ],
+     [
+      "Piebald",
+      150
+     ],
+     [
+      "Tan",
+      24900
+     ],
+     [
+      "Albino",
+      38
+     ],
+     [
+      "Melanistic",
+      38
+     ]
+    ]
+   }
+  },
+  "Plains Bison": {
+   "1": {
+    "total": 87225,
+    "entries": [
+     [
+      "Albino",
+      25
+     ],
+     [
+      "Brown",
+      18675
+     ],
+     [
+      "Dark",
+      18675
+     ],
+     [
+      "Light Grey",
+      24900
+     ],
+     [
+      "Leucistic",
+      25
+     ],
+     [
+      "Light Brown",
+      24900
+     ],
+     [
+      "Melanistic",
+      25
+     ]
+    ]
+   },
+   "2": {
+    "total": 87225,
+    "entries": [
+     [
+      "Albino",
+      25
+     ],
+     [
+      "Brown",
+      18675
+     ],
+     [
+      "Dark",
+      18675
+     ],
+     [
+      "Light Grey",
+      24900
+     ],
+     [
+      "Leucistic",
+      25
+     ],
+     [
+      "Light Brown",
+      24900
+     ],
+     [
+      "Melanistic",
+      25
+     ]
+    ]
+   }
+  },
+  "Barasingha": {
+   "1": {
+    "total": 100000,
+    "entries": [
+     [
+      "Brown",
+      24900
+     ],
+     [
+      "Melanistic",
+      50
+     ],
+     [
+      "Dark Red",
+      12500
+     ],
+     [
+      "Red",
+      24900
+     ],
+     [
+      "Piebald",
+      100
+     ],
+     [
+      "Dark Brown",
+      12500
+     ],
+     [
+      "Albino",
+      50
+     ],
+     [
+      "Leucistic",
+      100
+     ],
+     [
+      "Light Brown",
+      24900
+     ]
+    ]
+   },
+   "2": {
+    "total": 100000,
+    "entries": [
+     [
+      "Brown",
+      24900
+     ],
+     [
+      "Melanistic",
+      50
+     ],
+     [
+      "Dark Red",
+      12500
+     ],
+     [
+      "Red",
+      24900
+     ],
+     [
+      "Piebald",
+      100
+     ],
+     [
+      "Dark Brown",
+      12500
+     ],
+     [
+      "Albino",
+      50
+     ],
+     [
+      "Leucistic",
+      100
+     ],
+     [
+      "Light Brown",
+      24900
+     ]
+    ]
+   }
+  },
+  "Ocelot": {
+   "1": {
+    "total": 99976,
+    "entries": [
+     [
+      "Bold",
+      33267
+     ],
+     [
+      "Fine",
+      33267
+     ],
+     [
+      "Albino",
+      25
+     ],
+     [
+      "Leucistic",
+      25
+     ],
+     [
+      "Melanistic",
+      25
+     ],
+     [
+      "Rosetted",
+      33267
+     ],
+     [
+      "Pseudo Melanistic",
+      25
+     ],
+     [
+      "MelanistiCC",
+      25
+     ],
+     [
+      "Erythristic_Red",
+      25
+     ],
+     [
+      "Piebald",
+      25
+     ]
+    ]
+   },
+   "2": {
+    "total": 99976,
+    "entries": [
+     [
+      "Bold",
+      33267
+     ],
+     [
+      "Fine",
+      33267
+     ],
+     [
+      "Albino",
+      25
+     ],
+     [
+      "Leucistic",
+      25
+     ],
+     [
+      "Melanistic",
+      25
+     ],
+     [
+      "Rosetted",
+      33267
+     ],
+     [
+      "Pseudo Melanistic",
+      25
+     ],
+     [
+      "MelanistiCC",
+      25
+     ],
+     [
+      "Erythristic_Isabelline",
+      25
+     ],
+     [
+      "Piebald",
+      25
+     ]
+    ]
+   }
+  },
+  "Caribou #2": {
+   "1": {
+    "total": 99999,
+    "entries": [
+     [
+      "Light Brown",
+      49850
+     ],
+     [
+      "Piebald",
+      100
+     ],
+     [
+      "Melanistic",
+      33
+     ],
+     [
+      "Dark Brown",
+      49850
+     ],
+     [
+      "Albino",
+      33
+     ],
+     [
+      "Piebald",
+      100
+     ],
+     [
+      "Leucistic",
+      33
+     ]
+    ]
+   },
+   "2": {
+    "total": 99999,
+    "entries": [
+     [
+      "Light Brown",
+      49850
+     ],
+     [
+      "Piebald",
+      100
+     ],
+     [
+      "Melanistic",
+      33
+     ],
+     [
+      "Dark Brown",
+      49850
+     ],
+     [
+      "Albino",
+      33
+     ],
+     [
+      "Piebald",
+      100
+     ],
+     [
+      "Leucistic",
+      33
+     ]
+    ]
+   }
+  },
+  "Iberian Mouflon": {
+   "1": {
+    "total": 74926,
+    "entries": [
+     [
+      "Light Brown",
+      24900
+     ],
+     [
+      "Melanistic",
+      38
+     ],
+     [
+      "Brown",
+      24900
+     ],
+     [
+      "Albino",
+      38
+     ],
+     [
+      "Grey",
+      150
+     ],
+     [
+      "Brown",
+      24900
+     ]
+    ]
+   },
+   "2": {
+    "total": 50026,
+    "entries": [
+     [
+      "Melanistic",
+      38
+     ],
+     [
+      "Brown",
+      24900
+     ],
+     [
+      "Albino",
+      38
+     ],
+     [
+      "Grey",
+      150
+     ],
+     [
+      "Brown",
+      24900
+     ]
+    ]
+   }
+  },
+  "SA Tapir": {
+   "1": {
+    "total": 100000,
+    "entries": [
+     [
+      "Piebald",
+      101
+     ],
+     [
+      "Brown_Grey",
+      33233
+     ],
+     [
+      "Albino",
+      33
+     ],
+     [
+      "Brown",
+      33233
+     ],
+     [
+      "Erythristic",
+      33
+     ],
+     [
+      "Melanistic",
+      33
+     ],
+     [
+      "Leucistic",
+      101
+     ],
+     [
+      "Brown",
+      33233
+     ]
+    ]
+   },
+   "2": {
+    "total": 100000,
+    "entries": [
+     [
+      "Piebald",
+      101
+     ],
+     [
+      "Brown_Grey",
+      33233
+     ],
+     [
+      "Albino",
+      33
+     ],
+     [
+      "Brown",
+      33233
+     ],
+     [
+      "Erythristic",
+      33
+     ],
+     [
+      "Melanistic",
+      33
+     ],
+     [
+      "Leucistic",
+      101
+     ],
+     [
+      "Brown",
+      33233
+     ]
+    ]
+   }
+  },
+  "Stubble Quail": {
+   "1": {
+    "total": 37650,
+    "entries": [
+     [
+      "Grey Brown",
+      18675
+     ],
+     [
+      "Dark Brown",
+      200
+     ],
+     [
+      "Brown",
+      18675
+     ],
+     [
+      "Albino",
+      100
+     ]
+    ]
+   },
+   "2": {
+    "total": 37450,
+    "entries": [
+     [
+      "Grey",
+      18675
+     ],
+     [
+      "Grey Brown",
+      18675
+     ],
+     [
+      "Albino",
+      100
+     ]
+    ]
+   }
+  },
+  "Grey Wolf": {
+   "1": {
+    "total": 100001,
+    "entries": [
+     [
+      "Grey",
+      49850
+     ],
+     [
+      "Red Brown",
+      67
+     ],
+     [
+      "Melanistic",
+      25
+     ],
+     [
+      "MelanistiCC",
+      25
+     ],
+     [
+      "Albino",
+      25
+     ],
+     [
+      "Eggwhite",
+      67
+     ],
+     [
+      "Dark Grey",
+      67
+     ],
+     [
+      "Brown",
+      49850
+     ],
+     [
+      "Acromelanistic",
+      25
+     ]
+    ]
+   },
+   "2": {
+    "total": 100001,
+    "entries": [
+     [
+      "Grey",
+      49850
+     ],
+     [
+      "Red Brown",
+      67
+     ],
+     [
+      "Melanistic",
+      25
+     ],
+     [
+      "MelanistiCC",
+      25
+     ],
+     [
+      "Albino",
+      25
+     ],
+     [
+      "Eggwhite",
+      67
+     ],
+     [
+      "Dark Grey",
+      67
+     ],
+     [
+      "Brown",
+      49850
+     ],
+     [
+      "Acromelanistic",
+      25
+     ]
+    ]
+   }
+  },
+  "Mountain Hare": {
+   "1": {
+    "total": 99998,
+    "entries": [
+     [
+      "Dark Brown",
+      24900
+     ],
+     [
+      "Light Grey",
+      24900
+     ],
+     [
+      "Albino",
+      100
+     ],
+     [
+      "Molting",
+      66
+     ],
+     [
+      "White",
+      66
+     ],
+     [
+      "Light Brown",
+      25000
+     ],
+     [
+      "Dark Grey",
+      24900
+     ],
+     [
+      "Molting",
+      66
+     ]
+    ]
+   },
+   "2": {
+    "total": 99998,
+    "entries": [
+     [
+      "Dark Brown",
+      24900
+     ],
+     [
+      "Light Grey",
+      24900
+     ],
+     [
+      "Albino",
+      100
+     ],
+     [
+      "Molting",
+      66
+     ],
+     [
+      "White",
+      66
+     ],
+     [
+      "Light Brown",
+      25000
+     ],
+     [
+      "Dark Grey",
+      24900
+     ],
+     [
+      "Molting",
+      66
+     ]
+    ]
+   }
+  },
+  "SW Crocodile": {
+   "1": {
+    "total": 100000,
+    "entries": [
+     [
+      "Melanistic",
+      50
+     ],
+     [
+      "Leucistic",
+      50
+     ],
+     [
+      "Olive",
+      37350
+     ],
+     [
+      "Piebald",
+      50
+     ],
+     [
+      "Dark Brown",
+      25000
+     ],
+     [
+      "Grey",
+      37350
+     ],
+     [
+      "Piebald",
+      50
+     ],
+     [
+      "Light Brown",
+      50
+     ],
+     [
+      "Albino",
+      50
+     ]
+    ]
+   },
+   "2": {
+    "total": 100000,
+    "entries": [
+     [
+      "Melanistic",
+      50
+     ],
+     [
+      "Leucistic",
+      50
+     ],
+     [
+      "Olive",
+      37350
+     ],
+     [
+      "Piebald",
+      50
+     ],
+     [
+      "Dark Brown",
+      25000
+     ],
+     [
+      "Grey",
+      37350
+     ],
+     [
+      "Piebald",
+      50
+     ],
+     [
+      "Light Brown",
+      50
+     ],
+     [
+      "Albino",
+      50
+     ]
+    ]
+   }
+  },
+  "Nilgai": {
+   "1": {
+    "total": 50000,
+    "entries": [
+     [
+      "Piebald",
+      50
+     ],
+     [
+      "Piebald",
+      50
+     ],
+     [
+      "Blue",
+      37400
+     ],
+     [
+      "Dark Brown",
+      12500
+     ]
+    ]
+   },
+   "2": {
+    "total": 50000,
+    "entries": [
+     [
+      "Brown",
+      37400
+     ],
+     [
+      "Light Brown",
+      12500
+     ],
+     [
+      "Piebald",
+      50
+     ],
+     [
+      "Piebald",
+      50
+     ]
+    ]
+   }
+  },
+  "ECt Rabbit": {
+   "1": {
+    "total": 100000,
+    "entries": [
+     [
+      "Melanistic",
+      50
+     ],
+     [
+      "Albino",
+      50
+     ],
+     [
+      "Light Brown",
+      12500
+     ],
+     [
+      "Grey",
+      37350
+     ],
+     [
+      "Leucistic",
+      100
+     ],
+     [
+      "Light Grey",
+      12500
+     ],
+     [
+      "Brown",
+      37350
+     ],
+     [
+      "Leucistic",
+      100
+     ]
+    ]
+   },
+   "2": {
+    "total": 100000,
+    "entries": [
+     [
+      "Melanistic",
+      50
+     ],
+     [
+      "Albino",
+      50
+     ],
+     [
+      "Light Brown",
+      12500
+     ],
+     [
+      "Grey",
+      37350
+     ],
+     [
+      "Leucistic",
+      100
+     ],
+     [
+      "Light Grey",
+      12500
+     ],
+     [
+      "Brown",
+      37350
+     ],
+     [
+      "Leucistic",
+      100
+     ]
+    ]
+   }
+  },
+  "Banteng": {
+   "1": {
+    "total": 99799,
+    "entries": [
+     [
+      "Albino",
+      50
+     ],
+     [
+      "Brown",
+      8333
+     ],
+     [
+      "Black",
+      74700
+     ],
+     [
+      "Dark Brown",
+      8333
+     ],
+     [
+      "Mocha",
+      8333
+     ],
+     [
+      "Melanistic",
+      50
+     ]
+    ]
+   },
+   "2": {
+    "total": 83133,
+    "entries": [
+     [
+      "Albino",
+      50
+     ],
+     [
+      "Mocha",
+      8333
+     ],
+     [
+      "Melanistic",
+      50
+     ],
+     [
+      "Orange",
+      74700
+     ]
+    ]
+   }
+  },
+  "Springbok": {
+   "1": {
+    "total": 74775,
+    "entries": [
+     [
+      "Orange",
+      37350
+     ],
+     [
+      "Albino",
+      75
+     ],
+     [
+      "Tan",
+      37350
+     ]
+    ]
+   },
+   "2": {
+    "total": 124675,
+    "entries": [
+     [
+      "Black Brown",
+      25000
+     ],
+     [
+      "Orange",
+      37350
+     ],
+     [
+      "Albino",
+      75
+     ],
+     [
+      "Black Brown",
+      24900
+     ],
+     [
+      "Tan",
+      37350
+     ]
+    ]
+   }
+  },
+  "Gredos Ibex": {
+   "1": {
+    "total": 74776,
+    "entries": [
+     [
+      "Grey",
+      18675
+     ],
+     [
+      "Grey Brown",
+      18675
+     ],
+     [
+      "Light Grey",
+      18675
+     ],
+     [
+      "Brown Hybrid",
+      18675
+     ],
+     [
+      "Albino",
+      38
+     ],
+     [
+      "Melanistic",
+      38
+     ]
+    ]
+   },
+   "2": {
+    "total": 56101,
+    "entries": [
+     [
+      "Light Brown",
+      18675
+     ],
+     [
+      "Light Grey",
+      18675
+     ],
+     [
+      "Buff",
+      18675
+     ],
+     [
+      "Albino",
+      38
+     ],
+     [
+      "Melanistic",
+      38
+     ]
+    ]
+   }
+  },
+  "Woolly Hare": {
+   "1": {
+    "total": 100000,
+    "entries": [
+     [
+      "Albino",
+      100
+     ],
+     [
+      "Light Brown",
+      27900
+     ],
+     [
+      "Molting",
+      16000
+     ],
+     [
+      "Dark Brown",
+      27900
+     ],
+     [
+      "White",
+      200
+     ],
+     [
+      "Light Grey",
+      27900
+     ]
+    ]
+   },
+   "2": {
+    "total": 100000,
+    "entries": [
+     [
+      "Albino",
+      100
+     ],
+     [
+      "Light Brown",
+      27900
+     ],
+     [
+      "Molting",
+      16000
+     ],
+     [
+      "Dark Brown",
+      27900
+     ],
+     [
+      "White",
+      200
+     ],
+     [
+      "Light Grey",
+      27900
+     ]
+    ]
+   }
+  },
+  "Mountain Goat": {
+   "1": {
+    "total": 299100,
+    "entries": [
+     [
+      "Light Brown",
+      74700
+     ],
+     [
+      "Light Grey",
+      74700
+     ],
+     [
+      "White",
+      74700
+     ],
+     [
+      "Albino",
+      150
+     ],
+     [
+      "Beige",
+      74700
+     ],
+     [
+      "Melanistic",
+      150
+     ]
+    ]
+   },
+   "2": {
+    "total": 299100,
+    "entries": [
+     [
+      "Light Brown",
+      74700
+     ],
+     [
+      "Light Grey",
+      74700
+     ],
+     [
+      "White",
+      74700
+     ],
+     [
+      "Albino",
+      150
+     ],
+     [
+      "Beige",
+      74700
+     ],
+     [
+      "Melanistic",
+      150
+     ]
+    ]
+   }
+  },
+  "Gray Fox": {
+   "1": {
+    "total": 100001,
+    "entries": [
+     [
+      "Melanistic",
+      50
+     ],
+     [
+      "Two Tones",
+      12500
+     ],
+     [
+      "Piebald",
+      67
+     ],
+     [
+      "Red",
+      12500
+     ],
+     [
+      "Albino",
+      50
+     ],
+     [
+      "Grey",
+      74700
+     ],
+     [
+      "Piebald",
+      67
+     ],
+     [
+      "Leucistic",
+      67
+     ]
+    ]
+   },
+   "2": {
+    "total": 100001,
+    "entries": [
+     [
+      "Melanistic",
+      50
+     ],
+     [
+      "Two Tones",
+      12500
+     ],
+     [
+      "Piebald",
+      67
+     ],
+     [
+      "Red",
+      12500
+     ],
+     [
+      "Albino",
+      50
+     ],
+     [
+      "Grey",
+      74700
+     ],
+     [
+      "Piebald",
+      67
+     ],
+     [
+      "Leucistic",
+      67
+     ]
+    ]
+   }
+  },
+  "Bobcat": {
+   "1": {
+    "total": 100000,
+    "entries": [
+     [
+      "Tan",
+      37350
+     ],
+     [
+      "Brown",
+      12500
+     ],
+     [
+      "Melanistic",
+      50
+     ],
+     [
+      "Blue",
+      200
+     ],
+     [
+      "Red",
+      12500
+     ],
+     [
+      "Grey",
+      37350
+     ],
+     [
+      "Albino",
+      50
+     ]
+    ]
+   },
+   "2": {
+    "total": 100000,
+    "entries": [
+     [
+      "Tan",
+      37350
+     ],
+     [
+      "Brown",
+      12500
+     ],
+     [
+      "Melanistic",
+      50
+     ],
+     [
+      "Blue",
+      200
+     ],
+     [
+      "Red",
+      12500
+     ],
+     [
+      "Grey",
+      37350
+     ],
+     [
+      "Albino",
+      50
+     ]
+    ]
+   }
+  },
+  "Scrub Hare": {
+   "1": {
+    "total": 77400,
+    "entries": [
+     [
+      "Grey",
+      2500
+     ],
+     [
+      "Chestnut",
+      37350
+     ],
+     [
+      "Brown",
+      37350
+     ],
+     [
+      "Light Grey",
+      200
+     ]
+    ]
+   },
+   "2": {
+    "total": 77400,
+    "entries": [
+     [
+      "Grey",
+      2500
+     ],
+     [
+      "Chestnut",
+      37350
+     ],
+     [
+      "Brown",
+      37350
+     ],
+     [
+      "Light Grey",
+      200
+     ]
+    ]
+   }
+  },
+  "Mule Deer": {
+   "1": {
+    "total": 100150,
+    "entries": [
+     [
+      "Melanistic",
+      25
+     ],
+     [
+      "Mosaic",
+      25
+     ],
+     [
+      "Grey",
+      25000
+     ],
+     [
+      "Leucistic",
+      25
+     ],
+     [
+      "Albino",
+      25
+     ],
+     [
+      "Brown",
+      37350
+     ],
+     [
+      "Dilute",
+      200
+     ],
+     [
+      "Piebald",
+      50
+     ],
+     [
+      "Blonde",
+      37350
+     ],
+     [
+      "Erythristic_Isabelline",
+      25
+     ],
+     [
+      "Erythristic_Red",
+      25
+     ],
+     [
+      "Piebald",
+      50
+     ]
+    ]
+   },
+   "2": {
+    "total": 100150,
+    "entries": [
+     [
+      "Melanistic",
+      25
+     ],
+     [
+      "Mosaic",
+      25
+     ],
+     [
+      "Grey",
+      25000
+     ],
+     [
+      "Leucistic",
+      25
+     ],
+     [
+      "Albino",
+      25
+     ],
+     [
+      "Brown",
+      37350
+     ],
+     [
+      "Dilute",
+      200
+     ],
+     [
+      "Piebald",
+      50
+     ],
+     [
+      "Blonde",
+      37350
+     ],
+     [
+      "Erythristic_Isabelline",
+      25
+     ],
+     [
+      "Erythristic_Red",
+      25
+     ],
+     [
+      "Piebald",
+      50
+     ]
+    ]
+   }
+  },
+  "Euro Badger": {
+   "1": {
+    "total": 100000,
+    "entries": [
+     [
+      "Melanistic",
+      25
+     ],
+     [
+      "Brown",
+      25000
+     ],
+     [
+      "Piebald",
+      25
+     ],
+     [
+      "Leucistic",
+      25
+     ],
+     [
+      "Dark Grey",
+      37350
+     ],
+     [
+      "Erythristic_Red",
+      100
+     ],
+     [
+      "Albino",
+      25
+     ],
+     [
+      "Dilute",
+      100
+     ],
+     [
+      "Grey",
+      37350
+     ]
+    ]
+   },
+   "2": {
+    "total": 100000,
+    "entries": [
+     [
+      "Melanistic",
+      25
+     ],
+     [
+      "Brown",
+      25000
+     ],
+     [
+      "Piebald",
+      25
+     ],
+     [
+      "Leucistic",
+      25
+     ],
+     [
+      "Dark Grey",
+      37350
+     ],
+     [
+      "Erythristic_Red",
+      100
+     ],
+     [
+      "Albino",
+      25
+     ],
+     [
+      "Dilute",
+      100
+     ],
+     [
+      "Grey",
+      37350
+     ]
+    ]
+   }
+  },
+  "Pronghorn": {
+   "1": {
+    "total": 100000,
+    "entries": [
+     [
+      "Dark",
+      25001
+     ],
+     [
+      "Albino",
+      33
+     ],
+     [
+      "Piebald",
+      100
+     ],
+     [
+      "Piebald",
+      200
+     ],
+     [
+      "Brown",
+      37300
+     ],
+     [
+      "Melanistic",
+      33
+     ],
+     [
+      "Leucistic",
+      33
+     ],
+     [
+      "Tan",
+      37300
+     ]
+    ]
+   },
+   "2": {
+    "total": 99900,
+    "entries": [
+     [
+      "Dark",
+      25001
+     ],
+     [
+      "Albino",
+      33
+     ],
+     [
+      "Piebald",
+      200
+     ],
+     [
+      "Brown",
+      37300
+     ],
+     [
+      "Melanistic",
+      33
+     ],
+     [
+      "Leucistic",
+      33
+     ],
+     [
+      "Tan",
+      37300
+     ]
+    ]
+   }
+  },
+  "American Mink": {
+   "1": {
+    "total": 100000,
+    "entries": [
+     [
+      "Piebald",
+      25
+     ],
+     [
+      "Black",
+      200
+     ],
+     [
+      "Melanistic",
+      25
+     ],
+     [
+      "Albino",
+      25
+     ],
+     [
+      "Leucistic",
+      25
+     ],
+     [
+      "Chestnut",
+      25000
+     ],
+     [
+      "Piebald",
+      25
+     ],
+     [
+      "Silver",
+      25
+     ],
+     [
+      "Dark Brown",
+      74650
+     ]
+    ]
+   },
+   "2": {
+    "total": 100000,
+    "entries": [
+     [
+      "Piebald",
+      25
+     ],
+     [
+      "Black",
+      200
+     ],
+     [
+      "Melanistic",
+      25
+     ],
+     [
+      "Albino",
+      25
+     ],
+     [
+      "Leucistic",
+      25
+     ],
+     [
+      "Chestnut",
+      25000
+     ],
+     [
+      "Piebald",
+      25
+     ],
+     [
+      "Silver",
+      25
+     ],
+     [
+      "Dark Brown",
+      74650
+     ]
+    ]
+   }
+  },
+  "Dusky Grouse": {
+   "1": {
+    "total": 62549,
+    "entries": [
+     [
+      "Molting",
+      12500
+     ],
+     [
+      "Melanistic",
+      33
+     ],
+     [
+      "Slate Grey",
+      37450
+     ],
+     [
+      "Leucistic",
+      33
+     ],
+     [
+      "Brown",
+      12500
+     ],
+     [
+      "Albino",
+      33
+     ]
+    ]
+   },
+   "2": {
+    "total": 37549,
+    "entries": [
+     [
+      "Melanistic",
+      33
+     ],
+     [
+      "Leucistic",
+      33
+     ],
+     [
+      "Grey Brown",
+      37450
+     ],
+     [
+      "Albino",
+      33
+     ]
+    ]
+   }
+  }
+ }
+}

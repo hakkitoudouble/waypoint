@@ -1,0 +1,520 @@
+<!doctype html>
+<html lang="fr" data-theme="dark">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="color-scheme" content="dark light" />
+<meta name="description"
+      content="Waypoint — an offline companion for theHunter: Call of the Wild: the scanned population on one side, discovered need zones and their active hours on the map."
+      data-i18n-content="Waypoint — an offline companion for theHunter: Call of the Wild: the scanned population on one side, discovered need zones and their active hours on the map." />
+<title data-i18n="Waypoint · theHunter: Call of the Wild companion">Waypoint · theHunter: Call of the Wild companion</title>
+<link rel="stylesheet" href="style.css" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230e1a15'/%3E%3Ccircle cx='16' cy='16' r='9' fill='none' stroke='%23f0b45a' stroke-width='1.6'/%3E%3Ccircle cx='16' cy='16' r='3' fill='%2379d06f'/%3E%3C/svg%3E" />
+<script>
+  /* Apply the persisted theme and language before the first paint so there is no
+     flash of the wrong theme or of the source-language (English) markup. Both are
+     cosmetic: if storage is blocked the dark theme and the French default are fine,
+     and the fallback timer below makes sure the page can never stay hidden. */
+  (function () {
+    var root = document.documentElement;
+    try {
+      var theme = localStorage.getItem("cotw.theme");
+      if (theme === "light" || theme === "dark") root.setAttribute("data-theme", theme);
+      var locale = localStorage.getItem("cotw.locale");
+      if (locale === "fr" || locale === "en") root.setAttribute("data-locale", locale);
+      if (root.getAttribute("data-locale") !== "en") root.className += " i18n-pending";
+    } catch (err) { /* storage blocked (file://, private mode) — the defaults are fine */ }
+    setTimeout(function () { root.className = root.className.replace(/\s*i18n-pending/g, ""); }, 900);
+  })();
+</script>
+</head>
+<body>
+
+<!-- Inline icon sprite: <use href="#i-name"> keeps the app offline and dependency-free. -->
+<svg class="sprite" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+  <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="2"/><path d="M16.5 16.5 21 21" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+  <symbol id="i-close" viewBox="0 0 24 24"><path d="M5 5l14 14M19 5L5 19" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+  <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M19.1 4.9l-1.8 1.8M6.7 17.3l-1.8 1.8" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+  <symbol id="i-moon" viewBox="0 0 24 24"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></symbol>
+  <symbol id="i-sliders" viewBox="0 0 24 24"><path d="M4 7h9M17 7h3M4 17h3M11 17h9" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><circle cx="15" cy="7" r="2.2" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="9" cy="17" r="2.2" fill="none" stroke="currentColor" stroke-width="1.8"/></symbol>
+  <symbol id="i-list" viewBox="0 0 24 24"><path d="M8 6h12M8 12h12M8 18h12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><circle cx="4" cy="6" r="1.4" fill="currentColor"/><circle cx="4" cy="12" r="1.4" fill="currentColor"/><circle cx="4" cy="18" r="1.4" fill="currentColor"/></symbol>
+  <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+  <symbol id="i-minus" viewBox="0 0 24 24"><path d="M5 12h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+  <symbol id="i-fit" viewBox="0 0 24 24"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="7.5" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="2.5" fill="currentColor"/><path d="M12 1.5v4M12 18.5v4M1.5 12h4M18.5 12h4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+  <symbol id="i-reset" viewBox="0 0 24 24"><path d="M4 12a8 8 0 1 1 2.6 5.9" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/><path d="M3.4 6.2v5.2h5.2" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="M4.5 12.5 9.5 17.5 19.5 6.5" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-alert" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M12 7.5v5.5" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/><circle cx="12" cy="16.6" r="1.1" fill="currentColor"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M12 7v5.4l3.4 2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-zone" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3" fill="currentColor"/><circle cx="12" cy="12" r="8" fill="none" stroke="currentColor" stroke-width="1.6"/></symbol>
+</svg>
+
+<div class="app" id="app">
+
+  <header class="topbar">
+    <div class="brand">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 40 40" class="brand-svg">
+          <circle cx="20" cy="20" r="17" fill="none" stroke="currentColor" stroke-width="1.4" opacity=".28"/>
+          <circle cx="20" cy="20" r="10.5" fill="none" stroke="currentColor" stroke-width="1.4" opacity=".55"/>
+          <path d="M20 1.5v6M20 32.5v6M1.5 20h6M32.5 20h6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" opacity=".8"/>
+          <circle cx="20" cy="20" r="4.6" fill="var(--zone-feed)"/>
+        </svg>
+      </span>
+      <span class="brand-copy">
+        <span class="brand-name">Waypoint</span>
+        <span class="brand-tag" data-i18n="population scanner">population scanner</span>
+      </span>
+    </div>
+
+    <div class="reserve-meta">
+      <span class="reserve-label" data-i18n="Reserve">Reserve</span>
+      <button class="reserve-name" id="reserveName" type="button"
+              aria-haspopup="listbox" aria-expanded="false"
+              title="Change reserve" data-i18n-title="Change reserve"
+              data-i18n="Loading…">Loading…</button>
+      <div class="reserve-menu" id="reserveMenu" role="listbox"
+           aria-label="Choose a reserve" data-i18n-aria-label="Choose a reserve" hidden></div>
+      <span class="reserve-sub">
+        <span class="badge" id="dataBadge" data-mode="live"><span class="badge-dot" aria-hidden="true"></span><span id="dataBadgeText" data-i18n="Live save">Live save</span></span>
+        <span class="stamp" id="generatedAt"></span>
+      </span>
+    </div>
+
+    <div class="topbar-spacer"></div>
+
+    <div class="topbar-actions">
+      <button class="btn btn-quiet compact-only" id="btnOpenFilters" type="button" aria-controls="sidebar" aria-expanded="false">
+        <svg class="ico" aria-hidden="true"><use href="#i-sliders"/></svg>
+        <span data-i18n="Filters">Filters</span>
+        <span class="pill" id="filterBadge" hidden>0</span>
+      </button>
+      <button class="btn btn-icon btn-lang" id="btnLang" type="button"
+              aria-label="Switch language" data-i18n-aria-label="Switch language"
+              title="Switch language" data-i18n-title="Switch language">
+        <span class="lang-code" id="langCode">FR</span>
+      </button>
+      <button class="btn btn-icon" id="btnTheme" type="button"
+              aria-label="Switch to light theme" data-i18n-aria-label="Switch to light theme"
+              title="Switch to light theme" data-i18n-title="Switch to light theme">
+        <svg class="ico theme-ico-sun" aria-hidden="true"><use href="#i-sun"/></svg>
+        <svg class="ico theme-ico-moon" aria-hidden="true"><use href="#i-moon"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <main class="workspace">
+
+    <!-- ── Filters: need zones first (the map layer), then the population ── -->
+    <aside class="panel sidebar" id="sidebar" aria-label="Filters" data-i18n-aria-label="Filters" tabindex="-1">
+      <div class="sheet-head compact-only">
+        <span class="sheet-grab" aria-hidden="true"></span>
+        <h2 class="sheet-title" data-i18n="Filters">Filters</h2>
+        <button class="btn btn-icon" id="btnCloseFilters" type="button"
+                aria-label="Close filters" data-i18n-aria-label="Close filters">
+          <svg class="ico" aria-hidden="true"><use href="#i-close"/></svg>
+        </button>
+      </div>
+
+      <div class="sidebar-scroll">
+        <section class="fsection" aria-labelledby="fs-zones">
+          <div class="fsection-head">
+            <h2 id="fs-zones" data-i18n="Need zones">Need zones</h2>
+            <span class="fcount" id="zoneTotal">0</span>
+          </div>
+          <div class="checklist" id="zoneTypeList" role="group"
+               aria-label="Need zone types" data-i18n-aria-label="Need zone types"></div>
+          <p class="fhint" data-i18n="Zones outside the selected hour stay on the map, dimmed. The species filter below applies to zones as well.">Zones outside the selected hour stay on the map, dimmed. The species filter below applies to zones as well.</p>
+        </section>
+
+        <section class="fsection" aria-labelledby="fs-species">
+          <div class="fsection-head">
+            <h2 id="fs-species" data-i18n="Species">Species</h2>
+            <span class="fcount" id="speciesTotal">0/0</span>
+            <div class="fgroup-actions">
+              <button class="mini" type="button" data-species-action="all" data-i18n="All">All</button>
+              <button class="mini" type="button" data-species-action="none" data-i18n="None">None</button>
+            </div>
+          </div>
+
+          <div class="field search-field">
+            <svg class="ico field-ico" aria-hidden="true"><use href="#i-search"/></svg>
+            <input id="speciesSearch" type="search" autocomplete="off" spellcheck="false"
+                   placeholder="Search species…" data-i18n-placeholder="Search species…"
+                   aria-label="Search species" data-i18n-aria-label="Search species" />
+            <button class="field-clear" id="btnClearSearch" type="button" hidden
+                    aria-label="Clear species search" data-i18n-aria-label="Clear species search">
+              <svg class="ico" aria-hidden="true"><use href="#i-close"/></svg>
+            </button>
+          </div>
+
+          <div class="checklist species-list" id="speciesList" role="group"
+               aria-label="Species" data-i18n-aria-label="Species"></div>
+          <p class="fgroup-empty" id="speciesEmpty" hidden><span id="speciesEmptyLead"></span> <b id="speciesEmptyTerm"></b><span id="speciesEmptyTail"></span></p>
+        </section>
+
+        <section class="fsection fsection-live" id="liveCard" aria-labelledby="fs-live">
+          <div class="fsection-head">
+            <h2 id="fs-live" data-i18n="Live animals">Live animals</h2>
+            <span class="live-pulse" aria-hidden="true"></span>
+            <span class="fcount" id="liveCount">0</span>
+          </div>
+          <p class="live-meta" id="liveMeta" data-i18n="waiting for the game…">waiting for the game…</p>
+          <p class="live-hint" id="liveHint" hidden>
+            <span id="liveHintText"></span>
+            <a id="liveHintLink" href="#"></a>
+          </p>
+          <ul class="live-list" id="liveList"></ul>
+        </section>
+
+        <section class="fsection" aria-labelledby="fs-pop">
+          <div class="fsection-head">
+            <h2 id="fs-pop" data-i18n="Population">Population</h2>
+            <span class="fcount" id="popTotal">0</span>
+          </div>
+          <p class="notice" id="posNotice">
+            <svg class="ico" aria-hidden="true"><use href="#i-alert"/></svg>
+            <span data-i18n="Individual positions are not saved — the Live layer reads them from the running game">Individual positions are not saved — the Live layer reads them from the running game</span>
+          </p>
+
+          <div class="fgroup" aria-labelledby="fg-sex">
+            <h3 id="fg-sex" data-i18n="Sex">Sex</h3>
+            <div class="segmented" id="genderSegment" role="radiogroup"
+                 aria-label="Sex" data-i18n-aria-label="Sex">
+              <button type="button" role="radio" aria-checked="true" data-gender="all" class="seg is-active" data-i18n="Any">Any</button>
+              <button type="button" role="radio" aria-checked="false" data-gender="male" class="seg"><span class="seg-glyph" aria-hidden="true">♂</span><span data-i18n="Male">Male</span></button>
+              <button type="button" role="radio" aria-checked="false" data-gender="female" class="seg"><span class="seg-glyph" aria-hidden="true">♀</span><span data-i18n="Female">Female</span></button>
+            </div>
+          </div>
+
+          <div class="fgroup" aria-labelledby="fg-medal">
+            <div class="fgroup-head">
+              <h3 id="fg-medal" data-i18n="Medal">Medal</h3>
+              <div class="fgroup-actions">
+                <button class="mini" type="button" data-medal-action="all" data-i18n="All">All</button>
+                <button class="mini" type="button" data-medal-action="none" data-i18n="None">None</button>
+              </div>
+            </div>
+            <div class="checklist medal-list" id="medalList" role="group"
+                 aria-label="Medal tier" data-i18n-aria-label="Medal tier"></div>
+          </div>
+
+          <div class="fgroup" aria-labelledby="fg-fur">
+            <div class="fgroup-head">
+              <h3 id="fg-fur" data-i18n="Fur rarity">Fur rarity</h3>
+              <div class="fgroup-actions">
+                <button class="mini" type="button" data-fur-action="all" data-i18n="All">All</button>
+                <button class="mini" type="button" data-fur-action="none" data-i18n="None">None</button>
+              </div>
+            </div>
+            <div class="checklist fur-list" id="furList" role="group"
+                 aria-label="Fur rarity" data-i18n-aria-label="Fur rarity"></div>
+          </div>
+
+          <div class="fgroup fgroup-toggles" aria-label="Visibility" data-i18n-aria-label="Visibility">
+            <label class="toggle" for="hideScripted">
+              <input type="checkbox" id="hideScripted" />
+              <span class="track" aria-hidden="true"><span class="knob"></span></span>
+              <span class="toggle-label" data-i18n="Hide scripted animals">Hide scripted animals</span>
+            </label>
+            <label class="toggle" for="hideGreatOnes">
+              <input type="checkbox" id="hideGreatOnes" />
+              <span class="track" aria-hidden="true"><span class="knob"></span></span>
+              <span class="toggle-label" data-i18n="Hide great ones">Hide great ones</span>
+            </label>
+          </div>
+
+          <button class="btn btn-wide btn-quiet" id="btnResetFilters" type="button">
+            <svg class="ico" aria-hidden="true"><use href="#i-reset"/></svg>
+            <span data-i18n="Reset all filters">Reset all filters</span>
+          </button>
+        </section>
+
+        <section class="fsection" id="hoursPanel" aria-labelledby="fs-hours">
+          <div class="fsection-head">
+            <h2 id="fs-hours" data-i18n="Active hours">Active hours</h2>
+            <span class="fcount" id="hoursSpecies">&mdash;</span>
+          </div>
+          <ul class="hours-list" id="hoursList"></ul>
+          <p class="fgroup-empty" id="hoursHint" data-i18n="Tick a single species to see when its zones are active.">Tick a single species to see when its zones are active.</p>
+        </section>
+
+        <section class="fsection" id="comparePanel" aria-labelledby="fs-compare">
+          <div class="fsection-head">
+            <h2 id="fs-compare" data-i18n="Where to hunt">Where to hunt</h2>
+          </div>
+          <ul class="compare-list" id="compareList"></ul>
+          <p class="fgroup-empty" id="compareHint" data-i18n="Tick a single species to compare reserves.">Tick a single species to compare reserves.</p>
+        </section>
+
+        <section class="fsection" id="alertsPanel" aria-labelledby="fs-alerts">
+          <div class="fsection-head">
+            <h2 id="fs-alerts" data-i18n="Alerts">Alerts</h2>
+            <button class="mini" id="btnNearby" type="button" aria-pressed="false"
+                    title="Warn when a live animal comes within 120 m"
+                    data-i18n-title="Warn when a live animal comes within 120 m"
+                    data-i18n="Nearby">Nearby</button>
+            <span class="fcount" id="alertsCount">0</span>
+          </div>
+          <p class="live-meta" id="alertsMeta" data-i18n="Watching for new diamonds and great ones.">Watching for new diamonds and great ones.</p>
+          <ul class="alerts-list" id="alertsList"></ul>
+          <p class="fgroup-empty" id="changesHint" hidden data-i18n="No change since the last scan.">No change since the last scan.</p>
+          <ul class="alerts-list" id="changesList"></ul>
+        </section>
+
+        <section class="fsection" id="historyPanel" aria-labelledby="fs-history">
+          <div class="fsection-head">
+            <h2 id="fs-history" data-i18n="History">History</h2>
+            <span class="fcount" id="historyCount">0</span>
+          </div>
+          <ul class="history-list" id="historyList"></ul>
+          <p class="fgroup-empty" id="historyHint" data-i18n="No daily snapshot recorded yet.">No daily snapshot recorded yet.</p>
+        </section>
+
+        <section class="fsection" id="harvestPanel" aria-labelledby="fs-harvests">
+          <div class="fsection-head">
+            <h2 id="fs-harvests" data-i18n="Harvests">Harvests</h2>
+            <span class="fcount" id="harvestCount">0</span>
+          </div>
+          <ul class="harvest-list" id="harvestList"></ul>
+          <p class="fgroup-empty" id="harvestHint" data-i18n="No harvest recorded yet.">No harvest recorded yet.</p>
+        </section>
+      </div>
+    </aside>
+
+    <!-- ── Map ─────────────────────────────────────────────────── -->
+    <section class="mapcol" aria-label="Reserve map" data-i18n-aria-label="Reserve map">
+
+      <div class="timebar" role="group" aria-label="In-game time" data-i18n-aria-label="In-game time">
+        <span class="timebar-icon" aria-hidden="true"><svg class="ico"><use href="#i-clock"/></svg></span>
+        <div class="timebar-slider">
+          <input id="hourSlider" type="range" min="0" max="24" step="0.25" value="9.5"
+                 aria-label="In-game hour" data-i18n-aria-label="In-game hour" />
+          <div class="timebar-ticks" aria-hidden="true">
+            <span>00</span><span>06</span><span>12</span><span>18</span><span>24</span>
+          </div>
+        </div>
+        <output class="timebar-value" id="hourReadout" for="hourSlider">09:30</output>
+        <button class="timebar-clock" id="btnClock" type="button" aria-pressed="true"
+                title="Follow the in-game clock" data-i18n-title="Follow the in-game clock"
+                data-i18n="Auto">Auto</button>
+        <span class="timebar-count" id="timebarCount"
+              title="Need zones active at this hour" data-i18n-title="Need zones active at this hour">
+          <b id="activeCount">0</b><span class="tc-sep">/</span><span id="zoneCount">0</span>
+          <span class="tc-word" data-i18n="active">active</span>
+        </span>
+      </div>
+
+      <div class="mapwrap" id="mapWrap" tabindex="0" role="group"
+           aria-label="Need zone map. Drag to pan, scroll to zoom, double-click to reset."
+           data-i18n-aria-label="Need zone map. Drag to pan, scroll to zoom, double-click to reset.">
+        <div class="map-grid" id="mapPlaceholder" aria-hidden="true" hidden></div>
+        <img class="map-img" id="mapImg" alt="" draggable="false" />
+        <div class="map-tint" aria-hidden="true"></div>
+        <canvas class="map-canvas" id="zoneCanvas" aria-hidden="true"></canvas>
+        <div class="map-vignette" aria-hidden="true"></div>
+
+        <div class="alert-toast" id="alertToast" role="status" aria-live="polite" hidden>
+          <span class="alert-spark" aria-hidden="true"></span>
+          <div class="alert-body">
+            <span class="alert-title" id="alertTitle" data-i18n="Diamond detected">Diamond detected</span>
+            <span class="alert-detail" id="alertDetail"></span>
+          </div>
+          <button class="alert-close" id="alertClose" type="button"
+                  aria-label="Dismiss" data-i18n-aria-label="Dismiss">&times;</button>
+        </div>
+
+        <div class="map-toolbar" role="toolbar" aria-label="Map controls" data-i18n-aria-label="Map controls">
+          <button class="tool" id="btnZoomIn" type="button"
+                  aria-label="Zoom in" data-i18n-aria-label="Zoom in"
+                  title="Zoom in (+)" data-i18n-title="Zoom in (+)">
+            <svg class="ico" aria-hidden="true"><use href="#i-plus"/></svg>
+          </button>
+          <button class="tool" id="btnZoomOut" type="button"
+                  aria-label="Zoom out" data-i18n-aria-label="Zoom out"
+                  title="Zoom out (−)" data-i18n-title="Zoom out (−)">
+            <svg class="ico" aria-hidden="true"><use href="#i-minus"/></svg>
+          </button>
+          <span class="tool-sep" aria-hidden="true"></span>
+          <button class="tool tool-wide" id="btnFitMap" type="button"
+                  title="Fit the whole reserve map in the view"
+                  data-i18n-title="Fit the whole reserve map in the view"
+                  data-i18n="Fit map">Fit map</button>
+          <button class="tool tool-wide" id="btnFitZones" type="button"
+                  title="Zoom to the zones currently shown"
+                  data-i18n-title="Zoom to the zones currently shown"
+                  data-i18n="Fit zones">Fit zones</button>
+          <span class="tool-sep" aria-hidden="true"></span>
+          <button class="tool" id="btnResetMap" type="button"
+                  aria-label="Reset view" data-i18n-aria-label="Reset view"
+                  title="Reset view (0)" data-i18n-title="Reset view (0)">
+            <svg class="ico" aria-hidden="true"><use href="#i-reset"/></svg>
+          </button>
+          <span class="tool-sep" aria-hidden="true"></span>
+          <button class="tool tool-live" id="btnLive" type="button"
+                  aria-pressed="true"
+                  title="Toggle live animals read from the running game"
+                  data-i18n-title="Toggle live animals read from the running game"
+                  data-i18n="Live">Live</button>
+          <button class="tool tool-layer" id="btnPressure" type="button" aria-pressed="false"
+                  title="Hunting pressure. Placement is measured on Silver Ridge Peaks from two in-game alert zones; other reserves are still a rough guess."
+                  data-i18n-title="Hunting pressure. Placement is measured on Silver Ridge Peaks from two in-game alert zones; other reserves are still a rough guess."
+                  data-i18n="Pressure">Pressure</button>
+          <button class="tool tool-layer" id="btnTrails" type="button" aria-pressed="false"
+                  title="Show where animals have been observed during this session"
+                  data-i18n-title="Show where animals have been observed during this session"
+                  data-i18n="Trails">Trails</button>
+          <button class="tool tool-layer" id="btnRoute" type="button" aria-pressed="false"
+                  title="Order the active zones into a short tour from your position"
+                  data-i18n-title="Order the active zones into a short tour from your position"
+                  data-i18n="Route">Route</button>
+          <button class="tool tool-layer" id="btnMeasure" type="button" aria-pressed="false"
+                  title="Click two points on the map to measure distance and bearing"
+                  data-i18n-title="Click two points on the map to measure distance and bearing"
+                  data-i18n="Measure">Measure</button>
+          <span class="zoom-readout" id="zoomReadout">100%</span>
+        </div>
+
+        <div class="coords" id="coords" aria-hidden="true">—</div>
+
+        <div class="legend" id="legend" aria-label="Legend" data-i18n-aria-label="Legend">
+          <div class="legend-group">
+            <div class="legend-title" data-i18n="Need zones">Need zones</div>
+            <ul class="legend-row legend-zones">
+              <li><i class="zglyph" data-zone="feed" aria-hidden="true"></i><span data-i18n="feed">feed</span></li>
+              <li><i class="zglyph" data-zone="drink" aria-hidden="true"></i><span data-i18n="drink">drink</span></li>
+              <li><i class="zglyph" data-zone="rest" aria-hidden="true"></i><span data-i18n="rest">rest</span></li>
+              <li><i class="zglyph is-dim" data-zone="feed" aria-hidden="true"></i><span data-i18n="inactive now">inactive now</span></li>
+            </ul>
+          </div>
+          <div class="legend-group legend-animals">
+            <div class="legend-title"><span data-i18n="Animals">Animals</span> <span class="legend-sub" data-i18n="in the list">in the list</span></div>
+            <ul class="legend-row legend-medals">
+              <li><i class="glyph" data-medal="great_one" aria-hidden="true"></i><span data-i18n="Great One">Great One</span></li>
+              <li><i class="glyph" data-medal="diamond" aria-hidden="true"></i><span data-i18n="Diamond">Diamond</span></li>
+              <li><i class="glyph" data-medal="gold" aria-hidden="true"></i><span data-i18n="Gold">Gold</span></li>
+              <li><i class="glyph" data-medal="silver" aria-hidden="true"></i><span data-i18n="Silver">Silver</span></li>
+              <li><i class="glyph" data-medal="bronze" aria-hidden="true"></i><span data-i18n="Bronze">Bronze</span></li>
+              <li><i class="glyph" data-medal="none" aria-hidden="true"></i><span data-i18n="None">None</span></li>
+            </ul>
+            <ul class="legend-row legend-extra">
+              <li><i class="swatch-ring" aria-hidden="true"></i><span data-i18n="ring = female">ring = female</span></li>
+              <li><i class="swatch-stem" aria-hidden="true"></i><span data-i18n="stem = male">stem = male</span></li>
+              <li><i class="swatch-halo" aria-hidden="true"></i><span data-i18n="halo = rare fur">halo = rare fur</span></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="map-hint" id="mapHint" data-i18n="Drag to pan · scroll to zoom · double-click to reset">Drag to pan · scroll to zoom · double-click to reset</div>
+
+        <div class="map-note" id="mapNote" hidden>
+          <svg class="ico" aria-hidden="true"><use href="#i-alert"/></svg>
+          <span id="mapNoteText"></span>
+        </div>
+
+        <div class="tooltip" id="tooltip" role="tooltip" hidden>
+          <div class="tt-top">
+            <i class="zglyph" id="ttGlyph" aria-hidden="true"></i>
+            <img class="tt-ico" id="ttIcon" alt="" hidden />
+            <span class="tt-type" id="ttType" data-i18n="Zone">Zone</span>
+            <span class="tt-state" id="ttState" data-i18n="active">active</span>
+          </div>
+          <div class="tt-window" id="ttWindow">—</div>
+          <div class="tt-stats">
+            <div><span class="tt-k" data-i18n="Altitude">Altitude</span><span class="tt-v" id="ttAlt">—</span></div>
+          </div>
+          <div class="tt-animal" id="ttAnimal" hidden></div>
+        </div>
+
+        <div class="map-empty" id="mapEmpty" hidden>
+          <div class="empty-card">
+            <span class="empty-glyph" aria-hidden="true">
+              <svg class="ico" aria-hidden="true"><use href="#i-zone"/></svg>
+            </span>
+            <h3 id="emptyTitle" data-i18n="No need zones found">No need zones found</h3>
+            <p id="emptyText" data-i18n="Discover food, water and rest spots in game, then scan again.">Discover food, water and rest spots in game, then scan again.</p>
+            <button class="btn btn-accent" id="btnEmptyClear" type="button" hidden
+                    data-i18n="Show all zone types">Show all zone types</button>
+          </div>
+        </div>
+
+        <div class="map-loading" id="mapLoading">
+          <span class="spinner" aria-hidden="true"></span>
+          <span data-i18n="Reading population and zones…">Reading population and zones…</span>
+        </div>
+      </div>
+
+      <div class="summarybar" aria-live="polite">
+        <span class="sum-clock" aria-hidden="true"><svg class="ico"><use href="#i-target"/></svg></span>
+        <div class="sum-line" id="summaryLine">
+          <span class="sum-main"><b>0</b> <span data-i18n="animals">animals</span></span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Population list ─────────────────────────────────────── -->
+    <section class="panel listpanel" id="listPanel" aria-label="Animal list"
+             data-i18n-aria-label="Animal list" tabindex="-1">
+      <div class="sheet-head compact-only">
+        <span class="sheet-grab" aria-hidden="true"></span>
+        <button class="btn btn-icon" id="btnCloseList" type="button"
+                aria-label="Close animal list" data-i18n-aria-label="Close animal list">
+          <svg class="ico" aria-hidden="true"><use href="#i-close"/></svg>
+        </button>
+      </div>
+
+      <div class="list-head">
+        <h2 class="list-title"><span data-i18n="Animals">Animals</span> <span class="pill" id="listCount">0</span> <span class="list-new" id="listNew" hidden><i class="dot" aria-hidden="true"></i><span id="listNewText"></span></span></h2>
+        <span class="list-hint" data-i18n="scanned population">scanned population</span>
+      </div>
+
+      <div class="sortbar" id="sortbar" role="group" aria-label="Sort animals" data-i18n-aria-label="Sort animals">
+        <button class="sort is-active" type="button" data-sort="species" aria-label="Sort by species" data-i18n-aria-label="Sort by species" data-i18n="Species">Species</button>
+        <button class="sort" type="button" data-sort="weight" aria-label="Sort by weight" data-i18n-aria-label="Sort by weight" data-i18n="Weight">Weight</button>
+        <button class="sort" type="button" data-sort="score" aria-label="Sort by score" data-i18n-aria-label="Sort by score" data-i18n="Score">Score</button>
+        <button class="sort" type="button" data-sort="trophy" aria-label="Sort by trophy rating" data-i18n-aria-label="Sort by trophy rating" data-i18n="Rating">Rating</button>
+        <button class="sort" type="button" data-sort="medal" aria-label="Sort by medal tier" data-i18n-aria-label="Sort by medal tier" data-i18n="Medal">Medal</button>
+        <button class="sort sort-action" id="btnCsv" type="button"
+                title="Download the filtered list as CSV"
+                data-i18n-title="Download the filtered list as CSV">CSV</button>
+      </div>
+
+      <div class="list-scroll" id="listScroll">
+        <ol class="animal-list" id="animalList"></ol>
+        <div class="list-empty" id="listEmpty" hidden>
+          <svg class="ico" aria-hidden="true"><use href="#i-list"/></svg>
+          <p id="listEmptyText" data-i18n="No animals match the current filters.">No animals match the current filters.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <nav class="tabbar compact-only" aria-label="Panels" data-i18n-aria-label="Panels">
+    <button class="tab" id="tabAnimals" type="button" aria-controls="listPanel" aria-expanded="false">
+      <svg class="ico" aria-hidden="true"><use href="#i-list"/></svg>
+      <span data-i18n="Animals">Animals</span>
+      <span class="pill" id="tabAnimalsCount">0</span>
+    </button>
+    <button class="tab" id="tabFilters" type="button" aria-controls="sidebar" aria-expanded="false">
+      <svg class="ico" aria-hidden="true"><use href="#i-sliders"/></svg>
+      <span data-i18n="Filters">Filters</span>
+      <span class="pill" id="tabFiltersCount" hidden>0</span>
+    </button>
+  </nav>
+</div>
+
+<div class="scrim" id="scrim" hidden></div>
+
+<noscript>
+  <div class="noscript" data-i18n="Waypoint needs JavaScript to read the scan and draw the map.">Waypoint needs JavaScript to read the scan and draw the map.</div>
+</noscript>
+
+<!-- i18n.js MUST load before app.js and after the markup: it rewrites every
+     data-i18n node in place, so the first paint is already in the right language.
+     fixture.js MUST load before app.js: it defines window.FIXTURE_DATA and
+     window.FIXTURE_ZONES, used when the local API is unreachable (e.g. file://). -->
+<script src="i18n.js"></script>
+<script src="fixture.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,671 @@
+{
+  "0": {
+    "internal": "hirschfelden_hunting_reserve",
+    "display": "Hirschfelden Hunting Reserve",
+    "map": "MapHirsch_bw.png",
+    "icon": "Hirschfelden_hunting_reserve.png",
+    "dlc": "Base game",
+    "released": true,
+    "release_year": 2017,
+    "release_date": "2017-02-16",
+    "game_reserve_id": 0,
+    "confidence": "VERIFIED",
+    "evidence": "pop_0 written right after an all-European-Bison session (bison are Hirschfelden-only) on 2024-05-29; id 0 in both external tables",
+    "map_meta": {
+      "pixel_size": [
+        1023,
+        1152
+      ],
+      "aspect": 0.888,
+      "world_extent_guess": {
+        "width_m": 12000,
+        "height_m": 12000,
+        "centred_at_origin": true,
+        "vertical_axis": "Y = altitude in metres (not a map axis); the 2D map uses X and Z",
+        "basis": "need-zone Position values in found_need_zones_adf: x -12136..11465, z -13192..13184, y 1022..2232 (pooled over the 8 visited reserves)",
+        "confidence": "ROUGH",
+        "fit_advice": "fit per reserve: track (X,Z) min/max over many animals/zones, or fit affine from known landmarks; do not reuse one extent for all reserves"
+      },
+      "north_up": true,
+      "image_y_axis": "down",
+      "map_coord_space": "unknown between metres (centred at origin) and normalized 0..1; test both",
+      "confidence": "SPECULATIVE"
+    }
+  },
+  "1": {
+    "internal": "layton_lake_district",
+    "display": "Layton Lake District",
+    "map": "MapLayton_bw.png",
+    "icon": "Layton_lake_district.png",
+    "dlc": "Base game",
+    "released": true,
+    "release_year": 2017,
+    "release_date": "2017-02-16",
+    "game_reserve_id": 1,
+    "confidence": "VERIFIED",
+    "evidence": "remaining base-game reserve; slot 0 independently verified as Hirschfelden; scanner table and companion reserve-id table agree",
+    "map_meta": {
+      "pixel_size": [
+        1155,
+        1136
+      ],
+      "aspect": 1.0167,
+      "world_extent_guess": {
+        "width_m": 12000,
+        "height_m": 12000,
+        "centred_at_origin": true,
+        "vertical_axis": "Y = altitude in metres (not a map axis); the 2D map uses X and Z",
+        "basis": "need-zone Position values in found_need_zones_adf: x -12136..11465, z -13192..13184, y 1022..2232 (pooled over the 8 visited reserves)",
+        "confidence": "ROUGH",
+        "fit_advice": "fit per reserve: track (X,Z) min/max over many animals/zones, or fit affine from known landmarks; do not reuse one extent for all reserves"
+      },
+      "north_up": true,
+      "image_y_axis": "down",
+      "map_coord_space": "unknown between metres (centred at origin) and normalized 0..1; test both",
+      "confidence": "SPECULATIVE"
+    }
+  },
+  "2": {
+    "internal": "medved_taiga_national_park",
+    "display": "Medved-Taiga National Park",
+    "map": "MapMedved_bw.png",
+    "icon": "Medved_taiga_national_park.png",
+    "dlc": "Medved-Taiga DLC",
+    "released": true,
+    "release_year": 2017,
+    "release_date": null,
+    "game_reserve_id": 2,
+    "confidence": "LIKELY",
+    "evidence": "both external tables agree (id 2 / label 2); no local play activity to correlate (stub files only)",
+    "map_meta": {
+      "pixel_size": [
+        1170,
+        1125
+      ],
+      "aspect": 1.04,
+      "world_extent_guess": {
+        "width_m": 12000,
+        "height_m": 12000,
+        "centred_at_origin": true,
+        "vertical_axis": "Y = altitude in metres (not a map axis); the 2D map uses X and Z",
+        "basis": "need-zone Position values in found_need_zones_adf: x -12136..11465, z -13192..13184, y 1022..2232 (pooled over the 8 visited reserves)",
+        "confidence": "ROUGH",
+        "fit_advice": "fit per reserve: track (X,Z) min/max over many animals/zones, or fit affine from known landmarks; do not reuse one extent for all reserves"
+      },
+      "north_up": true,
+      "image_y_axis": "down",
+      "map_coord_space": "unknown between metres (centred at origin) and normalized 0..1; test both",
+      "confidence": "SPECULATIVE"
+    }
+  },
+  "3": {
+    "internal": "vurhonga_savanna",
+    "display": "Vurhonga Savanna",
+    "map": "MapVurhonga_bw.png",
+    "icon": "Vurhonga_savanna_reserve_icon.png",
+    "dlc": "Vurhonga Savanna DLC",
+    "released": true,
+    "release_year": 2018,
+    "release_date": null,
+    "game_reserve_id": 3,
+    "confidence": "VERIFIED",
+    "evidence": "pop_3 written right after a Lion / Blue Wildebeest / Gemsbok session on 2023-11-05 (Vurhonga-unique species)",
+    "map_meta": {
+      "pixel_size": [
+        1115,
+        1053
+      ],
+      "aspect": 1.0589,
+      "world_extent_guess": {
+        "width_m": 12000,
+        "height_m": 12000,
+        "centred_at_origin": true,
+        "vertical_axis": "Y = altitude in metres (not a map axis); the 2D map uses X and Z",
+        "basis": "need-zone Position values in found_need_zones_adf: x -12136..11465, z -13192..13184, y 1022..2232 (pooled over the 8 visited reserves)",
+        "confidence": "ROUGH",
+        "fit_advice": "fit per reserve: track (X,Z) min/max over many animals/zones, or fit affine from known landmarks; do not reuse one extent for all reserves"
+      },
+      "north_up": true,
+      "image_y_axis": "down",
+      "map_coord_space": "unknown between metres (centred at origin) and normalized 0..1; test both",
+      "confidence": "SPECULATIVE"
+    }
+  },
+  "4": {
+    "internal": "parque_fernando",
+    "display": "Parque Fernando",
+    "map": "MapParque_bw.png",
+    "icon": "Fernando.png",
+    "dlc": "Parque Fernando DLC",
+    "released": true,
+    "release_year": 2018,
+    "release_date": null,
+    "game_reserve_id": 4,
+    "confidence": "VERIFIED",
+    "evidence": "pop_4 written after the 2024-05-26 session with Axis Deer / Puma / Collared Peccary; both tables also give 4",
+    "map_meta": {
+      "pixel_size": [
+        1226,
+        1202
+      ],
+      "aspect": 1.02,
+      "world_extent_guess": {
+        "width_m": 12000,
+        "height_m": 12000,
+        "centred_at_origin": true,
+        "vertical_axis": "Y = altitude in metres (not a map axis); the 2D map uses X and Z",
+        "basis": "need-zone Position values in found_need_zones_adf: x -12136..11465, z -13192..13184, y 1022..2232 (pooled over the 8 visited reserves)",
+        "confidence": "ROUGH",
+        "fit_advice": "fit per reserve: track (X,Z) min/max over many animals/zones, or fit affine from known landmarks; do not reuse one extent for all reserves"
+      },
+      "north_up": true,
+      "image_y_axis": "down",
+      "map_coord_space": "unknown between metres (centred at origin) and normalized 0..1; test both",
+      "confidence": "SPECULATIVE"
+    }
+  },
+  "5": {
+    "internal": null,
+    "display": null,
+    "map": null,
+    "icon": null,
+    "dlc": null,
+    "released": false,
+    "release_year": null,
+    "release_date": null,
+    "game_reserve_id": 5,
+    "confidence": "SPECULATIVE",
+    "evidence": "reserve-table slot with NO reserve identity in either the scanner table or the companion reserve-id table; save files exist (pop 1.4 KB, fog 14 KB, written 2026-10-25) but the decompressed population is only ~68 KB vs 250-360 KB for real reserves",
+    "map_meta": null
+  },
+  "6": {
+    "internal": "yukon_valley",
+    "display": "Yukon Valley",
+    "map": "MapYukon_bw.png",
+    "icon": "Yukon.png",
+    "dlc": "Yukon Valley DLC",
+    "released": true,
+    "release_year": 2019,
+    "release_date": null,
+    "game_reserve_id": 6,
+    "confidence": "VERIFIED",
+    "evidence": "pop_6 written right after the 2023-07-27 Caribou kill (Caribou are Yukon-unique); companion id 6 = Yukon",
+    "map_meta": {
+      "pixel_size": [
+        1215,
+        1070
+      ],
+      "aspect": 1.1355,
+      "world_extent_guess": {
+        "width_m": 12000,
+        "height_m": 12000,
+        "centred_at_origin": true,
+        "vertical_axis": "Y = altitude in metres (not a map axis); the 2D map uses X and Z",
+        "basis": "need-zone Position values in found_need_zones_adf: x -12136..11465, z -13192..13184, y 1022..2232 (pooled over the 8 visited reserves)",
+        "confidence": "ROUGH",
+        "fit_advice": "fit per reserve: track (X,Z) min/max over many animals/zones, or fit affine from known landmarks; do not reuse one extent for all reserves"
+      },
+      "north_up": true,
+      "image_y_axis": "down",
+      "map_coord_space": "unknown between metres (centred at origin) and normalized 0..1; test both",
+      "confidence": "SPECULATIVE"
+    }
+  },
+  "7": {
+    "internal": null,
+    "display": null,
+    "map": null,
+    "icon": null,
+    "dlc": null,
+    "released": false,
+    "release_year": null,
+    "release_date": null,
+    "game_reserve_id": 7,
+    "confidence": "SPECULATIVE",
+    "evidence": "reserve-table slot with no reserve identity in either table; 881 B / 569 B / 313 B stub files = never visited",
+    "map_meta": null
+  },
+  "8": {
+    "internal": "cuatro_colinas_game_reserve",
+    "display": "Cuatro Colinas Game Reserve",
+    "map": "MapCuatro_bw.png",
+    "icon": "Cuatrocolinas.png",
+    "dlc": "Cuatro Colinas DLC",
+    "released": true,
+    "release_year": 2019,
+    "release_date": null,
+    "game_reserve_id": 8,
+    "confidence": "VERIFIED",
+    "evidence": "pop_8 written right after the 2023-07-28 Iberian Wolf / Beceite Ibex / Ronda Ibex / European Hare session (all Cuatro-only)",
+    "map_meta": {
+      "pixel_size": [
+        1212,
+        1249
+      ],
+      "aspect": 0.9704,
+      "world_extent_guess": {
+        "width_m": 12000,
+        "height_m": 12000,
+        "centred_at_origin": true,
+        "vertical_axis": "Y = altitude in metres (not a map axis); the 2D map uses X and Z",
+        "basis": "need-zone Position values in found_need_zones_adf: x -12136..11465, z -13192..13184, y 1022..2232 (pooled over the 8 visited reserves)",
+        "confidence": "ROUGH",
+        "fit_advice": "fit per reserve: track (X,Z) min/max over many animals/zones, or fit affine from known landmarks; do not reuse one extent for all reserves"
+      },
+      "north_up": true,
+      "image_y_axis": "down",
+      "map_coord_space": "unknown between metres (centred at origin) and normalized 0..1; test both",
+      "confidence": "SPECULATIVE"
+    }
+  },
+  "9": {
+    "internal": "silver_ridge_peaks",
+    "display": "Silver Ridge Peaks",
+    "map": "MapSRP_bw.png",
+    "icon": "SilverRidgeLogo.png",
+    "dlc": "Silver Ridge Peaks DLC",
+    "released": true,
+    "release_year": 2020,
+    "release_date": null,
+    "game_reserve_id": 9,
+    "confidence": "VERIFIED",
+    "evidence": "pop_9 written after the 2026-10-27 Rocky Mountain Elk / Pronghorn / Black Bear session (Rocky Mountain Elk are SRP-only)",
+    "map_meta": {
+      "pixel_size": [
+        1343,
+        1020
+      ],
+      "aspect": 1.3167,
+      "world_extent_guess": {
+        "width_m": 12000,
+        "height_m": 12000,
+        "centred_at_origin": true,
+        "vertical_axis": "Y = altitude in metres (not a map axis); the 2D map uses X and Z",
+        "basis": "need-zone Position values in found_need_zones_adf: x -12136..11465, z -13192..13184, y 1022..2232 (pooled over the 8 visited reserves)",
+        "confidence": "ROUGH",
+        "fit_advice": "fit per reserve: track (X,Z) min/max over many animals/zones, or fit affine from known landmarks; do not reuse one extent for all reserves"
+      },
+      "north_up": true,
+      "image_y_axis": "down",
+      "map_coord_space": "unknown between metres (centred at origin) and normalized 0..1; test both",
+      "confidence": "SPECULATIVE"
+    }
+  },
+  "10": {
+    "internal": "te_awaroa_national_park",
+    "display": "Te Awaroa National Park",
+    "map": "MapNZ_bw.png",
+    "icon": "TeAwaroa.png",
+    "dlc": "Te Awaroa DLC",
+    "released": true,
+    "release_year": 2020,
+    "release_date": null,
+    "game_reserve_id": 10,
+    "confidence": "LIKELY",
+    "evidence": "bracketed between verified slots 9 (SRP) and 14 (New England); both external tables agree on id 10",
+    "map_meta": {
+      "pixel_size": [
+        1143,
+        968
+      ],
+      "aspect": 1.1808,
+      "world_extent_guess": {
+        "width_m": 12000,
+        "height_m": 12000,
+        "centred_at_origin": true,
+        "vertical_axis": "Y = altitude in metres (not a map axis); the 2D map uses X and Z",
+        "basis": "need-zone Position values in found_need_zones_adf: x -12136..11465, z -13192..13184, y 1022..2232 (pooled over the 8 visited reserves)",
+        "confidence": "ROUGH",
+        "fit_advice": "fit per reserve: track (X,Z) min/max over many animals/zones, or fit affine from known landmarks; do not reuse one extent for all reserves"
+      },
+      "north_up": true,
+      "image_y_axis": "down",
+      "map_coord_space": "unknown between metres (centred at origin) and normalized 0..1; test both",
+      "confidence": "SPECULATIVE"
+    }
+  },
+  "11": {
+    "internal": "rancho_del_arroyo",
+    "display": "Rancho del Arroyo",
+    "map": "MapRancho_bw.png",
+    "icon": "Rancho.png",
+    "dlc": "Rancho del Arroyo DLC",
+    "released": true,
+    "release_year": 2021,
+    "release_date": null,
+    "game_reserve_id": 11,
+    "confidence": "LIKELY",
+    "evidence": "bracketed between verified slots 9 and 14; companion id 11 = Rancho",
+    "map_meta": {
+      "pixel_size": [
+        1130,
+        1097
+      ],
+      "aspect": 1.0301,
+      "world_extent_guess": {
+        "width_m": 12000,
+        "height_m": 12000,
+        "centred_at_origin": true,
+        "vertical_axis": "Y = altitude in metres (not a map axis); the 2D map uses X and Z",
+        "basis": "need-zone Position values in found_need_zones_adf: x -12136..11465, z -13192..13184, y 1022..2232 (pooled over the 8 visited reserves)",
+        "confidence": "ROUGH",
+        "fit_advice": "fit per reserve: track (X,Z) min/max over many animals/zones, or fit affine from known landmarks; do not reuse one extent for all reserves"
+      },
+      "north_up": true,
+      "image_y_axis": "down",
+      "map_coord_space": "unknown between metres (centred at origin) and normalized 0..1; test both",
+      "confidence": "SPECULATIVE"
+    }
+  },
+  "12": {
+    "internal": "mississippi_acres_preserve",
+    "display": "Mississippi Acres Preserve",
+    "map": "MapMississippi_bw.png",
+    "icon": "Mississippi.png",
+    "dlc": "Mississippi Acres DLC",
+    "released": true,
+    "release_year": 2021,
+    "release_date": null,
+    "game_reserve_id": 12,
+    "confidence": "LIKELY",
+    "evidence": "bracketed between verified slots 9 and 14; companion id 12 = Mississippi Acres",
+    "map_meta": {
+      "pixel_size": [
+        1007,
+        1098
+      ],
+      "aspect": 0.9171,
+      "world_extent_guess": {
+        "width_m": 12000,
+        "height_m": 12000,
+        "centred_at_origin": true,
+        "vertical_axis": "Y = altitude in metres (not a map axis); the 2D map uses X and Z",
+        "basis": "need-zone Position values in found_need_zones_adf: x -12136..11465, z -13192..13184, y 1022..2232 (pooled over the 8 visited reserves)",
+        "confidence": "ROUGH",
+        "fit_advice": "fit per reserve: track (X,Z) min/max over many animals/zones, or fit affine from known landmarks; do not reuse one extent for all reserves"
+      },
+      "north_up": true,
+      "image_y_axis": "down",
+      "map_coord_space": "unknown between metres (centred at origin) and normalized 0..1; test both",
+      "confidence": "SPECULATIVE"
+    }
+  },
+  "13": {
+    "internal": "revontuli_coast",
+    "display": "Revontuli Coast",
+    "map": "MapRevontuli_bw.png",
+    "icon": "Revontuli.png",
+    "dlc": "Revontuli Coast DLC",
+    "released": true,
+    "release_year": 2022,
+    "release_date": "2022-06-28",
+    "game_reserve_id": 13,
+    "confidence": "LIKELY",
+    "evidence": "bracketed between verified slots 9 and 14; companion id 13 = Revontuli (its trophy log shows Brown Bear + Raccoon Dog, both Revontuli species)",
+    "map_meta": {
+      "pixel_size": [
+        1159,
+        1107
+      ],
+      "aspect": 1.047,
+      "world_extent_guess": {
+        "width_m": 12000,
+        "height_m": 12000,
+        "centred_at_origin": true,
+        "vertical_axis": "Y = altitude in metres (not a map axis); the 2D map uses X and Z",
+        "basis": "need-zone Position values in found_need_zones_adf: x -12136..11465, z -13192..13184, y 1022..2232 (pooled over the 8 visited reserves)",
+        "confidence": "ROUGH",
+        "fit_advice": "fit per reserve: track (X,Z) min/max over many animals/zones, or fit affine from known landmarks; do not reuse one extent for all reserves"
+      },
+      "north_up": true,
+      "image_y_axis": "down",
+      "map_coord_space": "unknown between metres (centred at origin) and normalized 0..1; test both",
+      "confidence": "SPECULATIVE"
+    }
+  },
+  "14": {
+    "internal": "new_england_mountains",
+    "display": "New England Mountains",
+    "map": "MapNewEngland_bw.png",
+    "icon": "NewEngland.png",
+    "dlc": "New England Mountains DLC",
+    "released": true,
+    "release_year": 2022,
+    "release_date": null,
+    "game_reserve_id": 14,
+    "confidence": "VERIFIED",
+    "evidence": "pop_14 written 2024-05-18/19 and 2024-05-25, during Whitetail Deer + Moose sessions, i.e. BEFORE Sundarpatan existed (June 2024) - rules out Sundarpatan",
+    "map_meta": {
+      "pixel_size": [
+        954,
+        1052
+      ],
+      "aspect": 0.9068,
+      "world_extent_guess": {
+        "width_m": 12000,
+        "height_m": 12000,
+        "centred_at_origin": true,
+        "vertical_axis": "Y = altitude in metres (not a map axis); the 2D map uses X and Z",
+        "basis": "need-zone Position values in found_need_zones_adf: x -12136..11465, z -13192..13184, y 1022..2232 (pooled over the 8 visited reserves)",
+        "confidence": "ROUGH",
+        "fit_advice": "fit per reserve: track (X,Z) min/max over many animals/zones, or fit affine from known landmarks; do not reuse one extent for all reserves"
+      },
+      "north_up": true,
+      "image_y_axis": "down",
+      "map_coord_space": "unknown between metres (centred at origin) and normalized 0..1; test both",
+      "confidence": "SPECULATIVE"
+    }
+  },
+  "15": {
+    "internal": null,
+    "display": null,
+    "map": null,
+    "icon": null,
+    "dlc": null,
+    "released": false,
+    "release_year": null,
+    "release_date": null,
+    "game_reserve_id": 15,
+    "confidence": "SPECULATIVE",
+    "evidence": "no save files at all for this index and no entry in the companion reserve-id table: the slot does not exist in this game build",
+    "map_meta": null
+  },
+  "16": {
+    "internal": "emerald_coast_australia",
+    "display": "Emerald Coast Australia",
+    "map": "EmeraldCoast_bw.png",
+    "icon": "Emerald_Coast.png",
+    "dlc": "Emerald Coast DLC",
+    "released": true,
+    "release_year": 2023,
+    "release_date": null,
+    "game_reserve_id": 16,
+    "confidence": "VERIFIED",
+    "evidence": "pop_16 written 2026-10-29 right after Kangaroo / Sambar / Banteng / Saltwater Crocodile / Hog Deer / Magpie Goose session (all Emerald-only)",
+    "map_meta": {
+      "pixel_size": [
+        1150,
+        1110
+      ],
+      "aspect": 1.036,
+      "world_extent_guess": {
+        "width_m": 12000,
+        "height_m": 12000,
+        "centred_at_origin": true,
+        "vertical_axis": "Y = altitude in metres (not a map axis); the 2D map uses X and Z",
+        "basis": "need-zone Position values in found_need_zones_adf: x -12136..11465, z -13192..13184, y 1022..2232 (pooled over the 8 visited reserves)",
+        "confidence": "ROUGH",
+        "fit_advice": "fit per reserve: track (X,Z) min/max over many animals/zones, or fit affine from known landmarks; do not reuse one extent for all reserves"
+      },
+      "north_up": true,
+      "image_y_axis": "down",
+      "map_coord_space": "unknown between metres (centred at origin) and normalized 0..1; test both",
+      "confidence": "SPECULATIVE"
+    }
+  },
+  "17": {
+    "internal": "sundarpatan_nepal_hunting_reserve",
+    "display": "Sundarpatan Nepal Hunting Reserve",
+    "map": "MapSundarpatan_bw.png",
+    "icon": "Sundarpatan.png",
+    "dlc": "Sundarpatan Nepal DLC",
+    "released": true,
+    "release_year": 2024,
+    "release_date": null,
+    "game_reserve_id": 17,
+    "confidence": "LIKELY",
+    "evidence": "companion reserve-id table (id 17); no local save file (DLC not installed on this profile)",
+    "map_meta": {
+      "pixel_size": [
+        1339,
+        1134
+      ],
+      "aspect": 1.1808,
+      "world_extent_guess": {
+        "width_m": 12000,
+        "height_m": 12000,
+        "centred_at_origin": true,
+        "vertical_axis": "Y = altitude in metres (not a map axis); the 2D map uses X and Z",
+        "basis": "need-zone Position values in found_need_zones_adf: x -12136..11465, z -13192..13184, y 1022..2232 (pooled over the 8 visited reserves)",
+        "confidence": "ROUGH",
+        "fit_advice": "fit per reserve: track (X,Z) min/max over many animals/zones, or fit affine from known landmarks; do not reuse one extent for all reserves"
+      },
+      "north_up": true,
+      "image_y_axis": "down",
+      "map_coord_space": "unknown between metres (centred at origin) and normalized 0..1; test both",
+      "confidence": "SPECULATIVE"
+    }
+  },
+  "18": {
+    "internal": "salzwiesen_park",
+    "display": "Salzwiesen Park",
+    "map": "Salzwiesen_Park_bw.png",
+    "icon": "SalzwiesenPark.png",
+    "dlc": "Salzwiesen Park DLC",
+    "released": true,
+    "release_year": 2024,
+    "release_date": null,
+    "game_reserve_id": 18,
+    "confidence": "LIKELY",
+    "evidence": "companion reserve-id table (id 18); no local save file (DLC not installed)",
+    "map_meta": {
+      "pixel_size": [
+        1184,
+        1113
+      ],
+      "aspect": 1.0638,
+      "world_extent_guess": {
+        "width_m": 12000,
+        "height_m": 12000,
+        "centred_at_origin": true,
+        "vertical_axis": "Y = altitude in metres (not a map axis); the 2D map uses X and Z",
+        "basis": "need-zone Position values in found_need_zones_adf: x -12136..11465, z -13192..13184, y 1022..2232 (pooled over the 8 visited reserves)",
+        "confidence": "ROUGH",
+        "fit_advice": "fit per reserve: track (X,Z) min/max over many animals/zones, or fit affine from known landmarks; do not reuse one extent for all reserves"
+      },
+      "north_up": true,
+      "image_y_axis": "down",
+      "map_coord_space": "unknown between metres (centred at origin) and normalized 0..1; test both",
+      "confidence": "SPECULATIVE"
+    }
+  },
+  "19": {
+    "internal": "askiy_ridge_hunting_reserve",
+    "display": "Askiy Ridge Hunting Reserve",
+    "map": "MapAskiyRidge_bw.png",
+    "icon": "AskiyRidge.png",
+    "dlc": "Askiy Ridge DLC",
+    "released": true,
+    "release_year": 2025,
+    "release_date": null,
+    "game_reserve_id": 19,
+    "confidence": "LIKELY",
+    "evidence": "companion reserve-id table (id 19); no local save file (DLC not installed)",
+    "map_meta": {
+      "pixel_size": [
+        1446,
+        1467
+      ],
+      "aspect": 0.9857,
+      "world_extent_guess": {
+        "width_m": 12000,
+        "height_m": 12000,
+        "centred_at_origin": true,
+        "vertical_axis": "Y = altitude in metres (not a map axis); the 2D map uses X and Z",
+        "basis": "need-zone Position values in found_need_zones_adf: x -12136..11465, z -13192..13184, y 1022..2232 (pooled over the 8 visited reserves)",
+        "confidence": "ROUGH",
+        "fit_advice": "fit per reserve: track (X,Z) min/max over many animals/zones, or fit affine from known landmarks; do not reuse one extent for all reserves"
+      },
+      "north_up": true,
+      "image_y_axis": "down",
+      "map_coord_space": "unknown between metres (centred at origin) and normalized 0..1; test both",
+      "confidence": "SPECULATIVE"
+    }
+  },
+  "20": {
+    "internal": "torr_nan_sithean_scotland",
+    "display": "Torr nan Sithean (Scotland)",
+    "map": "MapScotland_bw.png",
+    "icon": "Scotland.png",
+    "dlc": "Scotland DLC",
+    "released": true,
+    "release_year": 2025,
+    "release_date": "2025-12-09",
+    "game_reserve_id": 20,
+    "confidence": "LIKELY",
+    "evidence": "companion reserve-id table (id 20); Steam update 2025-12-09; no local save file",
+    "map_meta": {
+      "pixel_size": [
+        1300,
+        1233
+      ],
+      "aspect": 1.0543,
+      "world_extent_guess": {
+        "width_m": 12000,
+        "height_m": 12000,
+        "centred_at_origin": true,
+        "vertical_axis": "Y = altitude in metres (not a map axis); the 2D map uses X and Z",
+        "basis": "need-zone Position values in found_need_zones_adf: x -12136..11465, z -13192..13184, y 1022..2232 (pooled over the 8 visited reserves)",
+        "confidence": "ROUGH",
+        "fit_advice": "fit per reserve: track (X,Z) min/max over many animals/zones, or fit affine from known landmarks; do not reuse one extent for all reserves"
+      },
+      "north_up": true,
+      "image_y_axis": "down",
+      "map_coord_space": "unknown between metres (centred at origin) and normalized 0..1; test both",
+      "confidence": "SPECULATIVE"
+    }
+  },
+  "21": {
+    "internal": "intisuyu_hunting_preserve_peru",
+    "display": "Intisuyu Hunting Preserve (Peru)",
+    "map": "MapPeru_bw.png",
+    "icon": "Peru.png",
+    "dlc": "Peru DLC",
+    "released": true,
+    "release_year": 2026,
+    "release_date": null,
+    "game_reserve_id": 21,
+    "confidence": "LIKELY",
+    "evidence": "companion reserve-id table (id 21); no local save file",
+    "map_meta": {
+      "pixel_size": [
+        1500,
+        1468
+      ],
+      "aspect": 1.0218,
+      "world_extent_guess": {
+        "width_m": 12000,
+        "height_m": 12000,
+        "centred_at_origin": true,
+        "vertical_axis": "Y = altitude in metres (not a map axis); the 2D map uses X and Z",
+        "basis": "need-zone Position values in found_need_zones_adf: x -12136..11465, z -13192..13184, y 1022..2232 (pooled over the 8 visited reserves)",
+        "confidence": "ROUGH",
+        "fit_advice": "fit per reserve: track (X,Z) min/max over many animals/zones, or fit affine from known landmarks; do not reuse one extent for all reserves"
+      },
+      "north_up": true,
+      "image_y_axis": "down",
+      "map_coord_space": "unknown between metres (centred at origin) and normalized 0..1; test both",
+      "confidence": "SPECULATIVE"
+    }
+  }
+}

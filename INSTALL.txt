@@ -1,0 +1,73 @@
+WAYPOINT 1.0.0
+Scanner de population et carte des zones de besoin
+pour theHunter: Call of the Wild
+--------------------------------------------------------------------------------
+
+CE QUE CA FAIT
+  Ouvre la carte d'une reserve avec toutes tes zones de besoin decouvertes
+  (alimentation / abreuvement / repos), leurs horaires, et la population complete
+  du fichier de sauvegarde : espece, sexe, poids, score, medaille, fourrure.
+  Plus une couche "direct" qui lit les animaux en jeu dans la memoire du jeu,
+  en lecture seule.
+
+--------------------------------------------------------------------------------
+INSTALLATION (Windows 10 / 11, 64 bits)
+--------------------------------------------------------------------------------
+1. Decompresse cette archive ou tu veux (Documents, D:\Jeux, ...).
+2. Lance Waypoint.exe.
+   Le navigateur s'ouvre sur http://127.0.0.1:8765
+3. Garde la fenetre noire ouverte : c'est le serveur local.
+   Ferme-la (ou Ctrl+C) pour arreter. Relancer Waypoint.exe quand il tourne
+   deja rouvre simplement l'interface dans le navigateur.
+
+  - Aucun Python a installer.
+  - Aucun fichier n'est ajoute au jeu, aucun mod n'est injecte.
+  - Les sauvegardes sont ouvertes en LECTURE SEULE : rien n'est ecrit dedans.
+  - Le jeu peut tourner en meme temps ; la couche direct lit sa memoire en
+    lecture seule (meme technique qu'un overlay).
+
+--------------------------------------------------------------------------------
+ETAT DE L'APPLICATION
+--------------------------------------------------------------------------------
+  Historique quotidien, 5 derniers spawns, cache du radar :
+      %LOCALAPPDATA%\Waypoint
+
+  Pour un usage portable (cle USB, dossier de jeu) :
+      Waypoint.exe --data-dir "D:\Waypoint-data"
+
+  Autres options :
+      Waypoint.exe --port 9000        autre port
+      Waypoint.exe --no-browser       serveur seul
+      Waypoint.exe --save-dir "..."   dossier de sauvegarde non standard
+      Waypoint.exe --help             tout lister
+
+--------------------------------------------------------------------------------
+SI WINDOWS DEFENDER RALE
+--------------------------------------------------------------------------------
+  Les executables fabriques avec PyInstaller declenchent parfois une alerte
+  heuristique (faux positif : le binaire embarque un interpreteur Python).
+  Le code source complet est fourni : tu peux le lire, et reconstruire l'exe
+  avec "python build.py".
+
+--------------------------------------------------------------------------------
+ENGLISH
+--------------------------------------------------------------------------------
+WAYPOINT 1.0.0 - population scanner and need-zone map for theHunter: Call of
+the Wild.
+
+INSTALL: unzip anywhere, run Waypoint.exe. Your browser opens on
+http://127.0.0.1:8765. Keep the console window open (it is the local server);
+close it to stop. No Python needed, nothing is installed into the game, saves
+are opened read-only.
+
+State files live in %LOCALAPPDATA%\Waypoint. Portable use:
+  Waypoint.exe --data-dir "D:\Waypoint-data"
+
+Options: --port, --no-browser, --save-dir, --help.
+
+Defender may flag the exe: that is the usual PyInstaller heuristic false
+positive. The full source is included; rebuild with "python build.py".
+
+--------------------------------------------------------------------------------
+Waypoint n'est pas affilie a Expansive Worlds / Avalanche Studios / THQ Nordic.
+theHunter: Call of the Wild et ses ressources appartiennent a leurs auteurs.

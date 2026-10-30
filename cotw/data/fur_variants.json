@@ -1,0 +1,28 @@
+{
+  "_meta": {
+    "note": "Fur variant hash -> display name. Recovered by matching a harvest entry's Score against the trophy rating the vendor scanner displays for the same animal, which it labels with a fur name. The hash function itself was not cracked; this table is empirical and grows as pairs are confirmed.",
+    "source": "hunting_log_adf VariationName + scanner log cross-reference",
+    "scope": "HARVESTED animals only — the population file does not persist fur for living animals",
+    "confidence": "CONFIRMED_BY_MATCH where noted per entry"
+  },
+  "variants": {
+    "E6A4B966": {
+      "name": "Noire",
+      "species": "Black Bear",
+      "evidence": "harvest Score 16.70, 16.83 and 18.06 all map to 'Noire' in the scanner log",
+      "confidence": "CONFIRMED"
+    },
+    "7573495B": {
+      "name": "Sombre",
+      "species": "Black Bear",
+      "evidence": "harvest Score 17.00 maps to 'Sombre'",
+      "confidence": "CONFIRMED"
+    },
+    "5EF18CE1": {
+      "name": "Foncé",
+      "species": "Black Bear",
+      "evidence": "harvest Score 17.10 maps to 'Foncé'",
+      "confidence": "CONFIRMED"
+    }
+  }
+}

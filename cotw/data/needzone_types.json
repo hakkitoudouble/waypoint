@@ -1,0 +1,242 @@
+{
+  "_meta": {
+    "note": "Need-zone AnimalTypeLocalizationName -> species, derived by constraint solving over reserve rosters (a type must belong to a species present in every reserve where the type appears, and types within one reserve are distinct). The hash function itself is NOT cracked; these assignments are proven only up to consistency with the rosters in the scanned saves.",
+    "method": "constraint-solving_over_rosters",
+    "reserves_used": [
+      0,
+      3,
+      4,
+      6,
+      8,
+      9,
+      14,
+      16
+    ],
+    "solutions_enumerated": 500,
+    "resolved": 43,
+    "unresolved": 4
+  },
+  "types": {
+    "01202369": {
+      "species": "Mountain Goat",
+      "confidence": "CONSTRAINED"
+    },
+    "05713E25": {
+      "species": "Mule Deer",
+      "confidence": "CONSTRAINED"
+    },
+    "06841C0E": {
+      "species": "Plains Bison",
+      "confidence": "CONSTRAINED"
+    },
+    "082FA894": {
+      "species": "Euro Bison",
+      "confidence": "CONSTRAINED"
+    },
+    "15A56C6A": {
+      "species": "Hog Deer",
+      "confidence": "CONSTRAINED"
+    },
+    "26FA9F96": {
+      "species": "Red Deer",
+      "confidence": "CONSTRAINED"
+    },
+    "27292CB5": {
+      "species": "Pronghorn",
+      "confidence": "CONSTRAINED"
+    },
+    "430803D2": {
+      "species": "Coyote",
+      "confidence": "CONSTRAINED"
+    },
+    "46DAB4DE": {
+      "species": "Sambar",
+      "confidence": "CONSTRAINED"
+    },
+    "4A0A4E9F": {
+      "species": "Puma",
+      "confidence": "CONSTRAINED"
+    },
+    "54DD4C77": {
+      "species": "Caribou",
+      "confidence": "CONSTRAINED"
+    },
+    "56E88361": {
+      "species": "Blackbuck",
+      "confidence": "CONSTRAINED"
+    },
+    "59416B54": {
+      "species": "Puma",
+      "confidence": "CONSTRAINED"
+    },
+    "5E9A73CA": {
+      "species": "Black Bear",
+      "confidence": "CONSTRAINED"
+    },
+    "6037F1CD": {
+      "species": "European Hare",
+      "confidence": "CONSTRAINED"
+    },
+    "61B01B8B": {
+      "species": "Eu.Wigeon",
+      "confidence": "CONSTRAINED"
+    },
+    "62F546BD": {
+      "species": "Gemsbok",
+      "confidence": "CONSTRAINED"
+    },
+    "6391988E": {
+      "species": "Roe Deer",
+      "confidence": "CONSTRAINED"
+    },
+    "6E0486C2": {
+      "species": "Desert Bighorn Sheep",
+      "confidence": "CONSTRAINED"
+    },
+    "7831ED11": {
+      "species": "Gredos Ibex",
+      "confidence": "CONSTRAINED"
+    },
+    "7E56B7CA": {
+      "species": "Feral Pig",
+      "confidence": "CONSTRAINED"
+    },
+    "80818794": {
+      "species": "Magpie Goose",
+      "confidence": "CONSTRAINED"
+    },
+    "828D37E0": {
+      "species": "Fallow Deer",
+      "confidence": "CONSTRAINED"
+    },
+    "862B4FB0": {
+      "species": "Blue Wildebeest",
+      "confidence": "CONSTRAINED"
+    },
+    "960BED13": {
+      "species": "Wild Boar",
+      "confidence": "CONSTRAINED"
+    },
+    "99155DEF": {
+      "species": "Javan Rusa",
+      "confidence": "CONSTRAINED"
+    },
+    "9E44DA81": {
+      "species": "Cape Buffalo",
+      "confidence": "CONSTRAINED"
+    },
+    "A2CBC896": {
+      "species": "SW Crocodile",
+      "confidence": "CONSTRAINED"
+    },
+    "A2E717D8": {
+      "species": "Pheasant",
+      "confidence": "CONSTRAINED"
+    },
+    "C4703B41": {
+      "species": "Bobcat",
+      "confidence": "CONSTRAINED"
+    },
+    "C500A572": {
+      "species": "Coll. Peccary",
+      "confidence": "CONSTRAINED"
+    },
+    "C53A960D": {
+      "species": "Bobwhite Quail",
+      "confidence": "CONSTRAINED"
+    },
+    "C6C38EF0": {
+      "species": "Cin Teal",
+      "confidence": "CONSTRAINED"
+    },
+    "D19E69E0": {
+      "species": "Banteng",
+      "confidence": "CONSTRAINED"
+    },
+    "E0E4D8A9": {
+      "species": "Axis Deer",
+      "confidence": "CONSTRAINED"
+    },
+    "E134EA44": {
+      "species": "Canada Goose",
+      "confidence": "CONSTRAINED"
+    },
+    "E4746DB6": {
+      "species": "Iberian Mouflon",
+      "confidence": "CONSTRAINED"
+    },
+    "E6149A20": {
+      "species": "Feral Goat",
+      "confidence": "CONSTRAINED"
+    },
+    "EA3FDA8A": {
+      "species": "Canada Goose",
+      "confidence": "CONSTRAINED"
+    },
+    "ED7CE362": {
+      "species": "EG Kangaroo",
+      "confidence": "CONSTRAINED"
+    },
+    "F08293A6": {
+      "species": "Red Fox",
+      "confidence": "CONSTRAINED"
+    },
+    "F7620300": {
+      "species": "Beceite Ibex",
+      "confidence": "CONSTRAINED"
+    },
+    "FAADE638": {
+      "species": "Moose",
+      "confidence": "CONSTRAINED"
+    }
+  },
+  "unresolved": {
+    "8ED8741A": {
+      "candidates": [
+        "ECt Rabbit",
+        "EW Turkey",
+        "Goldeneye",
+        "Gray Fox",
+        "Green-Winged Teal",
+        "Mallard",
+        "Raccoon",
+        "Whitetail Deer"
+      ],
+      "confidence": "AMBIGUOUS"
+    },
+    "CA2E3F19": {
+      "candidates": [
+        "ECt Rabbit",
+        "EW Turkey",
+        "Goldeneye",
+        "Gray Fox",
+        "Green-Winged Teal",
+        "Mallard",
+        "Raccoon",
+        "Whitetail Deer"
+      ],
+      "confidence": "AMBIGUOUS"
+    },
+    "EAEC75F3": {
+      "candidates": [
+        "ECt Rabbit",
+        "EW Turkey",
+        "Goldeneye"
+      ],
+      "confidence": "AMBIGUOUS"
+    },
+    "F004161E": {
+      "candidates": [
+        "ECt Rabbit",
+        "EW Turkey",
+        "Goldeneye",
+        "Gray Fox",
+        "Green-Winged Teal",
+        "Mallard",
+        "Raccoon",
+        "Whitetail Deer"
+      ],
+      "confidence": "AMBIGUOUS"
+    }
+  }
+}

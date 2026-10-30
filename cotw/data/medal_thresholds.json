@@ -1,0 +1,1810 @@
+{
+  "_meta": {
+    "note": "TR thresholds per species; medal is the highest threshold reached (TR >= diamond -> Diamond, else >= gold -> Gold, else >= silver -> Silver). TR is only comparable within a species: a 251.0 means nothing for a Roe Deer.",
+    "source_confidence": "see per-entry confidence",
+    "units": "trophy rating, same scale as the save file Score field",
+    "bronze": "NO SOURCE PUBLISHES THE BRONZE CUT-OFF. All three datasets (APS binary struct, TacMaps, 2022 community chart) store only silver/gold/diamond. bronze is therefore null in every entry. Two independent statements on the Fandom wiki imply any animal carrying a trophy organ is at least Bronze and 'None' is reserved for trophy-less animals (e.g. female deer), so a practical fallback is bronze := 0 (or bronze := silver, if you want a real gradient). The APS binary's struct has only an f32[3] at +0x1C followed by f32[2] that are always 0.0, so any bronze rule is computed in code -- worth finding in its disassembly.",
+    "great_one": "Not recorded. Great Ones (difficulty 10 'Fabled') exist for Whitetail Deer, Red Deer, Black Bear, Moose, Fallow Deer, Tahr, Red Fox, Ring-necked Pheasant, Mule Deer, Gray Wolf, Wild Boar, Roe Deer, Jaguar and Taruca (count grows with each DLC). No source publishes a per-species Great One TR threshold; observed specimens sit well above the Diamond cut-off (e.g. Red Deer 272.60, Fallow Deer 273.36). Deliberately omitted rather than guessed.",
+    "scale_warning": "TR is NOT a global scale -- it is an arbitrary per-species score, and the same number means different things for different animals. Across this file the Diamond threshold sits at roughly 1x the species' max body weight in kg for 32 species, ~10x for 4, ~100x for 7 and ~1000x for 13 (ducks, teal, quail and ptarmigan effectively score their weight in grams: Gadwall 1050 vs 1.06 kg). Never rank animals, and never colour-code, by comparing TR values across species -- always compare a Score against its own species' thresholds.",
+    "method": "Numbers come from the Animal Population Scanner binary (species_stats.json triple_0x1C, minted from the tool the user is replacing) and are marked VERIFIED when the independently maintained TacMaps dataset agrees within 1% on all three thresholds.",
+    "confidence_legend": {
+      "VERIFIED": "two independent sources agree on silver/gold/diamond",
+      "LIKELY": "one source, or sources disagree (value is from the APS binary)",
+      "SPECULATIVE": "inferred / identity unresolved"
+    },
+    "generated_by": "tools/build_medal_thresholds.py"
+  },
+  "_community": {
+    "note": "bronze thresholds and missing bands merged from a MIT-licensed community dataset; binary-derived values win where they conflict",
+    "source": "https://github.com/Pure-Winter-hue/apc-pw/blob/8f297b5a9d36cfa826a18977dc4bd8c129bfc6ce/apc/config/animal_details.json",
+    "agreements": 361,
+    "disagreements": 20
+  },
+  "???": {
+    "bronze": null,
+    "silver": 36.0,
+    "gold": 48.0,
+    "diamond": 57.0,
+    "confidence": "SPECULATIVE",
+    "sources": [
+      "APS binary (triple_0x1C)"
+    ],
+    "note": "Species identity of this hash is unresolved ('???'); the record's triple duplicates the Bengal Tiger record exactly and may be a placeholder rather than real thresholds. Do not trust."
+  },
+  "Am. Alligator": {
+    "bronze": 150.0,
+    "silver": 226.0,
+    "gold": 378.0,
+    "diamond": 492.0,
+    "confidence": "VERIFIED",
+    "source": "https://thewildregister.com/call-of-the-wild-animals/american-alligator/",
+    "sources": [
+      "APS binary (triple_0x1C)",
+      "TacMaps"
+    ],
+    "display_name": "American Alligator",
+    "community_source": "https://github.com/Pure-Winter-hue/apc-pw/blob/8f297b5a9d36cfa826a18977dc4bd8c129bfc6ce/apc/config/animal_details.json",
+    "community_confidence": "COMMUNITY"
+  },
+  "American Mink": {
+    "bronze": 70.0,
+    "silver": 88.0,
+    "gold": 124.0,
+    "diamond": 151.0,
+    "confidence": "VERIFIED",
+    "source": "https://thewildregister.com/call-of-the-wild-animals/american-mink/",
+    "sources": [
+      "APS binary (triple_0x1C)",
+      "TacMaps"
+    ],
+    "community_source": "https://github.com/Pure-Winter-hue/apc-pw/blob/8f297b5a9d36cfa826a18977dc4bd8c129bfc6ce/apc/config/animal_details.json",
+    "community_confidence": "COMMUNITY"
+  },
+  "Ant. Jackrabbit": {
+    "bronze": null,
+    "silver": 2.8,
+    "gold": 4.8,
+    "diamond": 6.3,
+    "confidence": "VERIFIED",
+    "source": "https://thewildregister.com/call-of-the-wild-animals/antelope-jackrabbit/",
+    "sources": [
+      "APS binary (triple_0x1C)",
+      "TacMaps"
+    ],
+    "display_name": "Antelope Jackrabbit"
+  },
+  "Axis Deer": {
+    "bronze": 31.565,
+    "silver": 72.83,
+    "gold": 155.38,
+    "diamond": 217.29,
+    "confidence": "VERIFIED",
+    "source": "https://thewildregister.com/call-of-the-wild-animals/axis-deer/",
+    "sources": [
+      "APS binary (triple_0x1C)",
+      "TacMaps"
+    ],
+    "community_source": "https://github.com/Pure-Winter-hue/apc-pw/blob/8f297b5a9d36cfa826a18977dc4bd8c129bfc6ce/apc/config/animal_details.json",
+    "community_confidence": "COMMUNITY"
+  },
+  "Banteng": {
+    "bronze": 53.139,
+    "silver": 71.77,
+    "gold": 109.04,
+    "diamond": 137.0,
+    "confidence": "VERIFIED",
+    "source": "https://thewildregister.com/call-of-the-wild-animals/banteng/",
+    "sources": [
+      "APS binary (triple_0x1C)",
+      "TacMaps"
+    ],
+    "community_source": "https://github.com/Pure-Winter-hue/apc-pw/blob/8f297b5a9d36cfa826a18977dc4bd8c129bfc6ce/apc/config/animal_details.json",
+    "community_confidence": "COMMUNITY"
+  },
+  "Barasingha": {
+    "bronze": 58.691,
+    "silver": 95.88,
+    "gold": 170.26,
+    "diamond": 226.05,
+    "confidence": "VERIFIED",
+    "source": "https://thewildregister.com/call-of-the-wild-animals/barasingha/",
+    "sources": [
+      "APS binary (triple_0x1C)",
+      "TacMaps"
+    ],
+    "community_source": "https://github.com/Pure-Winter-hue/apc-pw/blob/8f297b5a9d36cfa826a18977dc4bd8c129bfc6ce/apc/config/animal_details.json",
+    "community_confidence": "COMMUNITY"
+  },
+  "Beaver": {
+    "bronze": 16.0,
+    "silver": 19.2,
+    "gold": 25.6,
+    "diamond": 30.4,
+    "confidence": "VERIFIED",
+    "source": "https://thewildregister.com/call-of-the-wild-animals/north-american-beaver/",
+    "sources": [
+      "APS binary (triple_0x1C)",
+      "TacMaps"
+    ],
+    "display_name": "North American Beaver",
+    "community_source": "https://github.com/Pure-Winter-hue/apc-pw/blob/8f297b5a9d36cfa826a18977dc4bd8c129bfc6ce/apc/config/animal_details.json",
+    "community_confidence": "COMMUNITY"
+  },
+  "Beceite Ibex": {
+    "bronze": 45.55,
+    "silver": 78.0,
+    "gold": 142.9,
+    "diamond": 191.6,
+    "confidence": "VERIFIED",
+    "source": "https://thewildregister.com/call-of-the-wild-animals/beceite-ibex/",
+    "sources": [
+      "APS binary (triple_0x1C)",
+      "TacMaps"
+    ],
+    "community_source": "https://github.com/Pure-Winter-hue/apc-pw/blob/8f297b5a9d36cfa826a18977dc4bd8c129bfc6ce/apc/config/animal_details.json",
+    "community_confidence": "COMMUNITY"
+  },
+  "Bengal Tiger": {
+    "bronze": 30.0,
+    "silver": 36.0,
+    "gold": 48.0,
+    "diamond": 57.0,
+    "confidence": "VERIFIED",
+    "source": "https://thewildregister.com/call-of-the-wild-animals/bengal-tiger/",
+    "sources": [
+      "APS binary (triple_0x1C)",
+      "TacMaps"
+    ],
+    "community_source": "https://github.com/Pure-Winter-hue/apc-pw/blob/8f297b5a9d36cfa826a18977dc4bd8c129bfc6ce/apc/config/animal_details.json",
+    "community_confidence": "COMMUNITY"
+  },
+  "Black Bear": {
+    "bronze": 12.0,
+    "silver": 14.4,
+    "gold": 19.2,
+    "diamond": 22.8,
+    "confidence": "VERIFIED",
+    "source": "https://thewildregister.com/call-of-the-wild-animals/black-bear/",
+    "sources": [
+      "APS binary (triple_0x1C)",
+      "TacMaps"
+    ],
+    "community_source": "https://github.com/Pure-Winter-hue/apc-pw/blob/8f297b5a9d36cfa826a18977dc4bd8c129bfc6ce/apc/config/animal_details.json",
+    "community_confidence": "COMMUNITY"
+  },
+  "Black Caiman": {
+    "bronze": 180.0,
+    "silver": 244.0,
+    "gold": 372.0,
+    "diamond": 468.0,
+    "confidence": "VERIFIED",
+    "source": "https://thewildregister.com/call-of-the-wild-animals/black-caiman/",
+    "sources": [
+      "APS binary (triple_0x1C)",
+      "TacMaps"
+    ],
+    "community_source": "https://github.com/Pure-Winter-hue/apc-pw/blob/8f297b5a9d36cfa826a18977dc4bd8c129bfc6ce/apc/config/animal_details.json",
+    "community_confidence": "COMMUNITY"
+  },
+  "Black Grouse": {
+    "bronze": 75.0,
+    "silver": 85.0,
+    "gold": 105.0,
+    "diamond": 120.0,
+    "confidence": "VERIFIED",
+    "source": "https://thewildregister.com/call-of-the-wild-animals/black-grouse/",
+    "sources": [
+      "APS binary (triple_0x1C)",
+      "TacMaps"
+    ],
+    "community_source": "https://github.com/Pure-Winter-hue/apc-pw/blob/8f297b5a9d36cfa826a18977dc4bd8c129bfc6ce/apc/config/animal_details.json",
+    "community_confidence": "COMMUNITY"
+  },
+  "Blackbuck": {
+    "bronze": 54.534,
+    "silver": 71.8,
+    "gold": 106.3,
+    "diamond": 132.2,
+    "confidence": "VERIFIED",
+    "source": "https://thewildregister.com/call-of-the-wild-animals/blackbuck/",
+    "sources": [
+      "APS binary (triple_0x1C)",
+      "TacMaps"
+    ],
+    "community_source": "https://github.com/Pure-Winter-hue/apc-pw/blob/8f297b5a9d36cfa826a18977dc4bd8c129bfc6ce/apc/config/animal_details.json",
+    "community_confidence": "COMMUNITY"
+  },
+  "Blacktail Deer": {
+    "bronze": 48.172,
+    "silver": 76.9,
+    "gold": 134.4,
+    "diamond": 177.5,
+    "confidence": "VERIFIED",
+    "source": "https://thewildregister.com/call-of-the-wild-animals/blacktail-deer/",
+    "sources": [
+      "APS binary (triple_0x1C)",
+      "TacMaps"
+    ],
+    "community_source": "https://github.com/Pure-Winter-hue/apc-pw/blob/8f297b5a9d36cfa826a18977dc4bd8c129bfc6ce/apc/config/animal_details.json",
+    "community_confidence": "COMMUNITY"
+  },
+  "Blue Sheep": {
+    "bronze": 42.599,
+    "silver": 67.37,
+    "gold": 116.92,
+    "diamond": 154.08,
+    "confidence": "VERIFIED",
+    "source": "https://thewildregister.com/call-of-the-wild-animals/blue-sheep/",
+    "sources": [
+      "APS binary (triple_0x1C)",
+      "TacMaps"
+    ],
+    "community_source": "https://github.com/Pure-Winter-hue/apc-pw/blob/8f297b5a9d36cfa826a18977dc4bd8c129bfc6ce/apc/config/animal_details.json",
+    "community_confidence": "COMMUNITY"
+  },
+  "Blue Wildebeest": {
+    "bronze": 17.0,
+    "silver": 21.6,
+    "gold": 30.8,
+    "diamond": 37.7,
+    "confidence": "VERIFIED",
+    "source": "https://thewildregister.com/call-of-the-wild-animals/blue-wildebeest/",
+    "sources": [
+      "APS binary (triple_0x1C)",
+      "TacMaps"
+    ],
+    "community_source": "https://github.com/Pure-Winter-hue/apc-pw/blob/8f297b5a9d36cfa826a18977dc4bd8c129bfc6ce/apc/config/animal_details.json",
+    "community_confidence": "COMMUNITY"
+  },
+  "Bobcat": {
+    "bronze": 15.99,
+    "silver": 18.5,
+    "gold": 23.7,
+    "diamond": 27.6,
+    "confidence": "VERIFIED",
+    "source": "https://thewildregister.com/call-of-the-wild-animals/bobcat/",
+    "sources": [
+      "APS binary (triple_0x1C)",
+      "TacMaps"
+    ],
+    "community_source": "https://github.com/Pure-Winter-hue/apc-pw/blob/8f297b5a9d36cfa826a18977dc4bd8c129bfc6ce/apc/config/animal_details.json",
+    "community_confidence": "COMMUNITY"
+  },
+  "Bobwhite Quail": {
+    "bronze": 130.0,
+    "silver": 154.0,
+    "gold": 202.0,
+    "diamond": 238.0,
+    "confidence": "VERIFIED",
+    "source": "https://thewildregister.com/call-of-the-wild-animals/bobwhite-quail/",
+    "sources": [
+      "APS binary (triple_0x1C)",
+      "TacMaps"
+    ],
+    "community_source": "https://github.com/Pure-Winter-hue/apc-pw/blob/8f297b5a9d36cfa826a18977dc4bd8c129bfc6ce/apc/config/animal_details.json",
+    "community_confidence": "COMMUNITY"
+  },
+  "Brown Bear": {
+    "bronze": 16.0,
+    "silver": 18.6,
+    "gold": 23.8,
+    "diamond": 27.7,
+    "confidence": "VERIFIED",
+    "source": "https://thewildregister.com/call-of-the-wild-animals/eurasian-brown-bear/",
+    "sources": [
+      "APS binary (triple_0x1C)",
+      "TacMaps"
+    ],
+    "display_name": "Eurasian Brown Bear",
+    "community_source": "https://github.com/Pure-Winter-hue/apc-pw/blob/8f297b5a9d36cfa826a18977dc4bd8c129bfc6ce/apc/config/animal_details.json",
+    "community_confidence": "COMMUNITY"
+  },
+  "Canada Goose": {
+    "bronze": 3.2,
+    "silver": 4.4,
+    "gold": 6.8,
+    "diamond": 8.5,
+    "confidence": "VERIFIED",
+    "source": "https://thewildregister.com/call-of-the-wild-animals/canada-goose/",
+    "sources": [
+      "APS binary (triple_0x1C)",
+      "TacMaps"
+    ],
+    "community_source": "https://github.com/Pure-Winter-hue/apc-pw/blob/8f297b5a9d36cfa826a18977dc4bd8c129bfc6ce/apc/config/animal_details.json",
+    "community_confidence": "COMMUNITY"
+  },
+  "Cape Buffalo": {
+    "bronze": 51.0,
+    "silver": 73.3,
+    "gold": 117.9,
+    "diamond": 151.4,
+    "confidence": "VERIFIED",
+    "source": "https://thewildregister.com/call-of-the-wild-animals/cape-buffalo/",
+    "sources": [
+      "APS binary (triple_0x1C)",
+      "TacMaps"
+    ],
+    "community_source": "https://github.com/Pure-Winter-hue/apc-pw/blob/8f297b5a9d36cfa826a18977dc4bd8c129bfc6ce/apc/config/animal_details.json",
+    "community_confidence": "COMMUNITY"
+  },
+  "Capybara": {
+    "bronze": 35.0,
+    "silver": 42.0,
+    "gold": 56.0,
+    "diamond": 66.5,
+    "confidence": "VERIFIED",
+    "source": "https://thewildregister.com/call-of-the-wild-animals/capybara/",
+    "sources": [
+      "APS binary (triple_0x1C)",
+      "TacMaps"
+    ],
+    "community_source": "https://github.com/Pure-Winter-hue/apc-pw/blob/8f297b5a9d36cfa826a18977dc4bd8c129bfc6ce/apc/config/animal_details.json",
+    "community_confidence": "COMMUNITY"
+  },
+  "Caribou": {
+    "bronze": 73.194,
+    "silver": 152.53,
+    "gold": 311.21,
+    "diamond": 430.23,
+    "confidence": "VERIFIED",
+    "source": "https://thewildregister.com/call-of-the-wild-animals/grant-caribou/",
+    "sources": [
+      "APS binary (triple_0x1C)",
+      "TacMaps"
+    ],
+    "display_name": "Grant Caribou",
+    "community_source": "https://github.com/Pure-Winter-hue/apc-pw/blob/8f297b5a9d36cfa826a18977dc4bd8c129bfc6ce/apc/config/animal_details.json",
+    "community_confidence": "COMMUNITY"
+  },
+  "Chamois": {
+    "bronze": 23.083,
+    "silver": 30.8,
+    "gold": 46.3,
+    "diamond": 58.0,
+    "confidence": "VERIFIED",
+    "source": "https://thewildregister.com/call-of-the-wild-animals/chamois/",
+    "sources": [
+      "APS binary (triple_0x1C)",
+      "TacMaps"
+    ],
+    "community_source": "https://github.com/Pure-Winter-hue/apc-pw/blob/8f297b5a9d36cfa826a18977dc4bd8c129bfc6ce/apc/config/animal_details.json",
+    "community_confidence": "COMMUNITY"
+  },
+  "Cin Teal": {
+    "bronze": 3.0,
+    "silver": 3.4,
+    "gold": 4.1,
+    "diamond": 4.6,
+    "confidence": "LIKELY",
+    "source": "https://thewildregister.com/call-of-the-wild-animals/cinnamon-teal/",
+    "sources": [
+      "APS binary (triple_0x1C)",
+      "TacMaps"
+    ],
+    "note": "Sources agree on Diamond but differ on silver, gold; values above are the APS-binary ones. TacMaps says silver=3, gold=4, diamond=4.62.",
+    "display_name": "Cinnamon Teal",
+    "community_source": "https://github.com/Pure-Winter-hue/apc-pw/blob/8f297b5a9d36cfa826a18977dc4bd8c129bfc6ce/apc/config/animal_details.json",
+    "community_confidence": "COMMUNITY"
+  },
+  "Coll. Peccary": {
+    "bronze": 7.0,
+    "silver": 37.5,
+    "gold": 98.5,
+    "diamond": 144.2,
+    "confidence": "VERIFIED",
+    "source": "https://thewildregister.com/call-of-the-wild-animals/collared-peccary/",
+    "sources": [
+      "APS binary (triple_0x1C)",
+      "TacMaps"
+    ],
+    "display_name": "Collared Peccary",
+    "community_source": "https://github.com/Pure-Winter-hue/apc-pw/blob/8f297b5a9d36cfa826a18977dc4bd8c129bfc6ce/apc/config/animal_details.json",
+    "community_confidence": "COMMUNITY"
+  },
+  "Coyote": {
+    "bronze": 33.069,
+    "silver": 38.4,
+    "gold": 48.9,
+    "diamond": 56.8,
+    "confidence": "VERIFIED",
+    "source": "https://thewildregister.com/call-of-the-wild-animals/coyote/",
+    "sources": [
+      "APS binary (triple_0x1C)",
+      "TacMaps"
+    ],
+    "community_source": "https://github.com/Pure-Winter-hue/apc-pw/blob/8f297b5a9d36cfa826a18977dc4bd8c129bfc6ce/apc/config/animal_details.json",
+    "community_confidence": "COMMUNITY"
+  },
+  "Desert Bighorn Sheep": {
+    "bronze": 52.462,
+    "silver": 84.1,
+    "gold": 148.57,
+    "diamond": 196.93,
+    "confidence": "VERIFIED",
+    "source": "https://thewildregister.com/call-of-the-wild-animals/desert-bighorn-sheep/",
+    "sources": [
+      "APS binary (triple_0x1C)",
+      "TacMaps"
+    ],
+    "community_source": "https://github.com/Pure-Winter-hue/apc-pw/blob/8f297b5a9d36cfa826a18977dc4bd8c129bfc6ce/apc/config/animal_details.json",
+    "community_confidence": "COMMUNITY"
+  },
+  "Dusky Grouse": {
+    "bronze": 70.0,
+    "silver": 88.0,
+    "gold": 124.0,
+    "diamond": 151.0,
+    "confidence": "VERIFIED",
+    "source": "https://thewildregister.com/call-of-the-wild-animals/dusky-grouse/",
+    "sources": [
+      "APS binary (triple_0x1C)",
+      "TacMaps"
+    ],
+    "community_source": "https://github.com/Pure-Winter-hue/apc-pw/blob/8f297b5a9d36cfa826a18977dc4bd8c129bfc6ce/apc/config/animal_details.json",
+    "community_confidence": "COMMUNITY"
+  },
+  "ECt Rabbit": {
+    "bronze": 0.8,
+    "silver": 1.05,
+    "gold": 1.58,
+    "diamond": 1.97,
+    "confidence": "VERIFIED",
+    "source": "https://thewildregister.com/call-of-the-wild-animals/eastern-cottontail-rabbit/",
+    "sources": [
+      "APS binary (triple_0x1C)",
+      "TacMaps"
+    ],
+    "display_name": "Eastern Cottontail Rabbit",
+    "community_source": "https://github.com/Pure-Winter-hue/apc-pw/blob/8f297b5a9d36cfa826a18977dc4bd8c129bfc6ce/apc/config/animal_details.json",
+    "community_confidence": "COMMUNITY"
+  },
+  "EG Kangaroo": {
+    "bronze": 150.0,
+    "silver": 226.0,
+    "gold": 378.0,
+    "diamond": 492.0,
+    "confidence": "VERIFIED",
+    "source": "https://thewildregister.com/call-of-the-wild-animals/eastern-gray-kangaroo/",
+    "sources": [
+      "APS binary (triple_0x1C)",
+      "TacMaps"
+    ],
+    "display_name": "Eastern Gray Kangaroo",
+    "community_source": "https://github.com/Pure-Winter-hue/apc-pw/blob/8f297b5a9d36cfa826a18977dc4bd8c129bfc6ce/apc/config/animal_details.json",
+    "community_confidence": "COMMUNITY"
+  },
+  "EW Turkey": {
+    "bronze": 3.0,
+    "silver": 3.36,
+    "gold": 4.08,
+    "diamond": 4.62,
+    "confidence": "LIKELY",
+    "source": "https://thewildregister.com/call-of-the-wild-animals/eastern-wild-turkey/",
+    "sources": [
+      "APS binary (triple_0x1C)",
+      "TacMaps"
+    ],
+    "note": "Sources agree on Diamond but differ on silver, gold; values above are the APS-binary ones. TacMaps says silver=2.5, gold=3.7, diamond=4.6.",
+    "display_name": "Eastern Wild Turkey",
+    "community_source": "https://github.com/Pure-Winter-hue/apc-pw/blob/8f297b5a9d36cfa826a18977dc4bd8c129bfc6ce/apc/config/animal_details.json",
+    "community_confidence": "COMMUNITY"
+  },
+  "Eu.Teal": {
+    "bronze": 300.0,
+    "silver": 312.0,
+    "gold": 336.0,
+    "diamond": 354.0,
+    "confidence": "VERIFIED",
+    "source": "https://thewildregister.com/call-of-the-wild-animals/eurasian-teal/",
+    "sources": [
+      "APS binary (triple_0x1C)",
+      "TacMaps"
+    ],
+    "display_name": "Eurasian Teal",
+    "community_source": "https://github.com/Pure-Winter-hue/apc-pw/blob/8f297b5a9d36cfa826a18977dc4bd8c129bfc6ce/apc/config/animal_details.json",
+    "community_confidence": "COMMUNITY"
+  },
+  "Eu.Wigeon": {
+    "bronze": 500.0,
+    "silver": 590.0,
+    "gold": 770.0,
+    "diamond": 905.0,
+    "confidence": "VERIFIED",
+    "source": "https://thewildregister.com/call-of-the-wild-animals/eurasian-wigeon/",
+    "sources": [
+      "APS binary (triple_0x1C)",
+      "TacMaps"
+    ],
+    "display_name": "Eurasian Wigeon",
+    "community_source": "https://github.com/Pure-Winter-hue/apc-pw/blob/8f297b5a9d36cfa826a18977dc4bd8c129bfc6ce/apc/config/animal_details.json",
+    "community_confidence": "COMMUNITY"
+  },
+  "Eurasian Lynx": {
+    "bronze": 15.99,
+    "silver": 18.6,
+    "gold": 23.8,
+    "diamond": 27.7,
+    "confidence": "VERIFIED",
+    "source": "https://thewildregister.com/call-of-the-wild-animals/eurasian-lynx/",
+    "sources": [
+      "APS binary (triple_0x1C)",
+      "TacMaps"
+    ],
+    "community_source": "https://github.com/Pure-Winter-hue/apc-pw/blob/8f297b5a9d36cfa826a18977dc4bd8c129bfc6ce/apc/config/animal_details.json",
+    "community_confidence": "COMMUNITY"
+  },
+  "Euro Badger": {
+    "bronze": 7.0,
+    "silver": 9.0,
+    "gold": 13.0,
+    "diamond": 16.0,
+    "confidence": "VERIFIED",
+    "source": "https://thewildregister.com/call-of-the-wild-animals/european-badger/",
+    "sources": [
+      "APS binary (triple_0x1C)",
+      "TacMaps"
+    ],
+    "display_name": "European Badger",
+    "community_source": "https://github.com/Pure-Winter-hue/apc-pw/blob/8f297b5a9d36cfa826a18977dc4bd8c129bfc6ce/apc/config/animal_details.json",
+    "community_confidence": "COMMUNITY"
+  },
+  "Euro Bison": {
+    "bronze": 74.791,
+    "silver": 86.53,
+    "gold": 110.01,
+    "diamond": 127.62,
+    "confidence": "VERIFIED",
+    "source": "https://thewildregister.com/call-of-the-wild-animals/european-bison/",
+    "sources": [
+      "APS binary (triple_0x1C)",
+      "TacMaps"
+    ],
+    "display_name": "European Bison",
+    "community_source": "https://github.com/Pure-Winter-hue/apc-pw/blob/8f297b5a9d36cfa826a18977dc4bd8c129bfc6ce/apc/config/animal_details.json",
+    "community_confidence": "COMMUNITY"
+  },
+  "Euro Rabbit": {
+    "bronze": 0.9,
+    "silver": 1.2,
+    "gold": 1.9,
+    "diamond": 2.4,
+    "confidence": "VERIFIED",
+    "source": "https://thewildregister.com/call-of-the-wild-animals/european-rabbit/",
+    "sources": [
+      "APS binary (triple_0x1C)",
+      "TacMaps"
+    ],
+    "display_name": "European Rabbit",
+    "community_source": "https://github.com/Pure-Winter-hue/apc-pw/blob/8f297b5a9d36cfa826a18977dc4bd8c129bfc6ce/apc/config/animal_details.json",
+    "community_confidence": "COMMUNITY"
+  },
+  "European Hare": {
+    "bronze": 2.0,
+    "silver": 4.4,
+    "gold": 5.0,
+    "diamond": 6.5,
+    "confidence": "LIKELY",
+    "source": "https://thewildregister.com/call-of-the-wild-animals/european-hare/",
+    "sources": [
+      "APS binary (triple_0x1C)",
+      "TacMaps"
+    ],
+    "note": "Sources agree on Diamond but differ on silver; values above are the APS-binary ones. TacMaps says silver=3, gold=5, diamond=6.5.",
+    "community_source": "https://github.com/Pure-Winter-hue/apc-pw/blob/8f297b5a9d36cfa826a18977dc4bd8c129bfc6ce/apc/config/animal_details.json",
+    "community_confidence": "COMMUNITY"
+  },
+  "Fallow Deer": {
+    "bronze": 63.435,
+    "silver": 104.89,
+    "gold": 187.81,
+    "diamond": 249.99,
+    "confidence": "VERIFIED",
+    "source": "https://thewildregister.com/call-of-the-wild-animals/fallow-deer/",
+    "sources": [
+      "APS binary (triple_0x1C)",
+      "TacMaps"
+    ],
+    "community_source": "https://github.com/Pure-Winter-hue/apc-pw/blob/8f297b5a9d36cfa826a18977dc4bd8c129bfc6ce/apc/config/animal_details.json",
+    "community_confidence": "COMMUNITY"
+  },
+  "Feral Goat": {
+    "bronze": 55.369,
+    "silver": 89.4,
+    "gold": 157.6,
+    "diamond": 208.7,
+    "confidence": "VERIFIED",
+    "source": "https://thewildregister.com/call-of-the-wild-animals/feral-goat/",
+    "sources": [
+      "APS binary (triple_0x1C)",
+      "TacMaps"
+    ],
+    "community_source": "https://github.com/Pure-Winter-hue/apc-pw/blob/8f297b5a9d36cfa826a18977dc4bd8c129bfc6ce/apc/config/animal_details.json",
+    "community_confidence": "COMMUNITY"
+  },
+  "Feral Pig": {
+    "bronze": 7.0,
+    "silver": 37.5,
+    "gold": 98.5,
+    "diamond": 144.2,
+    "confidence": "VERIFIED",
+    "source": "https://thewildregister.com/call-of-the-wild-animals/feral-pig/",
+    "sources": [
+      "APS binary (triple_0x1C)",
+      "TacMaps"
+    ],
+    "community_source": "https://github.com/Pure-Winter-hue/apc-pw/blob/8f297b5a9d36cfa826a18977dc4bd8c129bfc6ce/apc/config/animal_details.json",
+    "community_confidence": "COMMUNITY"
+  },
+  "Ferruginous Duck": {
+    "bronze": 600.0,
+    "silver": 700.0,
+    "gold": 900.0,
+    "diamond": 1050.0,
+    "confidence": "VERIFIED",
+    "source": "https://thewildregister.com/call-of-the-wild-animals/ferruginous-duck/",
+    "sources": [
+      "APS binary (triple_0x1C)",
+      "TacMaps"
+    ],
+    "community_source": "https://github.com/Pure-Winter-hue/apc-pw/blob/8f297b5a9d36cfa826a18977dc4bd8c129bfc6ce/apc/config/animal_details.json",
+    "community_confidence": "COMMUNITY"
+  },
+  "Gadwall": {
+    "bronze": 600.0,
+    "silver": 700.0,
+    "gold": 900.0,
+    "diamond": 1050.0,
+    "confidence": "VERIFIED",
+    "source": "https://thewildregister.com/call-of-the-wild-animals/gadwall/",
+    "sources": [
+      "APS binary (triple_0x1C)",
+      "TacMaps"
+    ],
+    "community_source": "https://github.com/Pure-Winter-hue/apc-pw/blob/8f297b5a9d36cfa826a18977dc4bd8c129bfc6ce/apc/config/animal_details.json",
+    "community_confidence": "COMMUNITY"
+  },
+  "Gemsbok": {
+    "bronze": 154.0,
+    "silver": 194.8,
+    "gold": 276.3,
+    "diamond": 337.5,
+    "confidence": "VERIFIED",
+    "source": "https://thewildregister.com/call-of-the-wild-animals/gemsbok/",
+    "sources": [
+      "APS binary (triple_0x1C)",
+      "TacMaps"
+    ],
+    "community_source": "https://github.com/Pure-Winter-hue/apc-pw/blob/8f297b5a9d36cfa826a18977dc4bd8c129bfc6ce/apc/config/animal_details.json",
+    "community_confidence": "COMMUNITY"
+  },
+  "Goldeneye": {
+    "bronze": 600.0,
+    "silver": 740.0,
+    "gold": 1020.0,
+    "diamond": 1230.0,
+    "confidence": "VERIFIED",
+    "source": "https://thewildregister.com/call-of-the-wild-animals/goldeneye/",
+    "sources": [
+      "APS binary (triple_0x1C)",
+      "TacMaps"
+    ],
+    "display_name": "Common Goldeneye",
+    "community_source": "https://github.com/Pure-Winter-hue/apc-pw/blob/8f297b5a9d36cfa826a18977dc4bd8c129bfc6ce/apc/config/animal_details.json",
+    "community_confidence": "COMMUNITY"
+  },
+  "Gray Fox": {
+    "bronze": 3.1,
+    "silver": 3.8,
+    "gold": 5.3,
+    "diamond": 6.4,
+    "confidence": "VERIFIED",
+    "source": "https://thewildregister.com/call-of-the-wild-animals/gray-fox/",
+    "sources": [
+      "APS binary (triple_0x1C)",
+      "TacMaps"
+    ],
+    "community_source": "https://github.com/Pure-Winter-hue/apc-pw/blob/8f297b5a9d36cfa826a18977dc4bd8c129bfc6ce/apc/config/animal_details.json",
+    "community_confidence": "COMMUNITY"
+  },
+  "Greater Grison": {
+    "bronze": 140.0,
+    "silver": 188.0,
+    "gold": 284.0,
+    "diamond": 356.0,
+    "confidence": "VERIFIED",
+    "source": "https://thewildregister.com/call-of-the-wild-animals/greater-grison/",
+    "sources": [
+      "APS binary (triple_0x1C)",
+      "TacMaps"
+    ],
+    "community_source": "https://github.com/Pure-Winter-hue/apc-pw/blob/8f297b5a9d36cfa826a18977dc4bd8c129bfc6ce/apc/config/animal_details.json",
+    "community_confidence": "COMMUNITY"
+  },
+  "Gredos Ibex": {
+    "bronze": 41.251,
+    "silver": 54.3,
+    "gold": 80.5,
+    "diamond": 100.1,
+    "confidence": "VERIFIED",
+    "source": "https://thewildregister.com/call-of-the-wild-animals/gredos-ibex/",
+    "sources": [
+      "APS binary (triple_0x1C)",
+      "TacMaps"
+    ],
+    "community_source": "https://github.com/Pure-Winter-hue/apc-pw/blob/8f297b5a9d36cfa826a18977dc4bd8c129bfc6ce/apc/config/animal_details.json",
+    "community_confidence": "COMMUNITY"
+  },
+  "Green-Winged Teal": {
+    "bronze": 300.0,
+    "silver": 340.0,
+    "gold": 420.0,
+    "diamond": 480.0,
+    "confidence": "VERIFIED",
+    "source": "https://thewildregister.com/call-of-the-wild-animals/green-winged-teal/",
+    "sources": [
+      "APS binary (triple_0x1C)",
+      "TacMaps"
+    ],
+    "community_source": "https://github.com/Pure-Winter-hue/apc-pw/blob/8f297b5a9d36cfa826a18977dc4bd8c129bfc6ce/apc/config/animal_details.json",
+    "community_confidence": "COMMUNITY"
+  },
+  "Grey Wolf": {
+    "bronze": 30.0,
+    "silver": 32.0,
+    "gold": 36.0,
+    "diamond": 39.0,
+    "confidence": "VERIFIED",
+    "source": "https://thewildregister.com/call-of-the-wild-animals/gray-wolf/",
+    "sources": [
+      "APS binary (triple_0x1C)",
+      "TacMaps"
+    ],
+    "display_name": "Gray Wolf",
+    "community_source": "https://github.com/Pure-Winter-hue/apc-pw/blob/8f297b5a9d36cfa826a18977dc4bd8c129bfc6ce/apc/config/animal_details.json",
+    "community_confidence": "COMMUNITY"
+  },
+  "Greylag Goose": {
+    "bronze": 2.5,
+    "silver": 2.8,
+    "gold": 3.4,
+    "diamond": 3.85,
+    "confidence": "VERIFIED",
+    "source": "https://thewildregister.com/call-of-the-wild-animals/greylag-goose/",
+    "sources": [
+      "APS binary (triple_0x1C)",
+      "TacMaps"
+    ],
+    "community_source": "https://github.com/Pure-Winter-hue/apc-pw/blob/8f297b5a9d36cfa826a18977dc4bd8c129bfc6ce/apc/config/animal_details.json",
+    "community_confidence": "COMMUNITY"
+  },
+  "Grizzly Bear": {
+    "bronze": 48.5,
+    "silver": 52.6,
+    "gold": 60.8,
+    "diamond": 67.0,
+    "confidence": "VERIFIED",
+    "source": "https://thewildregister.com/call-of-the-wild-animals/grizzly-bear/",
+    "sources": [
+      "APS binary (triple_0x1C)",
+      "TacMaps"
+    ],
+    "community_source": "https://github.com/Pure-Winter-hue/apc-pw/blob/8f297b5a9d36cfa826a18977dc4bd8c129bfc6ce/apc/config/animal_details.json",
+    "community_confidence": "COMMUNITY"
+  },
+  "H Duck": {
+    "bronze": 4.8,
+    "silver": 5.3,
+    "gold": 6.4,
+    "diamond": 7.2,
+    "confidence": "VERIFIED",
+    "source": "https://thewildregister.com/call-of-the-wild-animals/harlequin-duck/",
+    "sources": [
+      "APS binary (triple_0x1C)",
+      "TacMaps"
+    ],
+    "display_name": "Harlequin Duck",
+    "community_source": "https://github.com/Pure-Winter-hue/apc-pw/blob/8f297b5a9d36cfa826a18977dc4bd8c129bfc6ce/apc/config/animal_details.json",
+    "community_confidence": "COMMUNITY"
+  },
+  "Hazel Grouse": {
+    "bronze": 300.0,
+    "silver": 330.0,
+    "gold": 390.0,
+    "diamond": 435.0,
+    "confidence": "VERIFIED",
+    "source": "https://thewildregister.com/call-of-the-wild-animals/hazel-grouse/",
+    "sources": [
+      "APS binary (triple_0x1C)",
+      "TacMaps"
+    ],
+    "community_source": "https://github.com/Pure-Winter-hue/apc-pw/blob/8f297b5a9d36cfa826a18977dc4bd8c129bfc6ce/apc/config/animal_details.json",
+    "community_confidence": "COMMUNITY"
+  },
+  "Hog Deer": {
+    "bronze": 32.53,
+    "silver": 49.45,
+    "gold": 83.3,
+    "diamond": 108.68,
+    "confidence": "VERIFIED",
+    "source": "https://thewildregister.com/call-of-the-wild-animals/hog-deer/",
+    "sources": [
+      "APS binary (triple_0x1C)",
+      "TacMaps"
+    ],
+    "community_source": "https://github.com/Pure-Winter-hue/apc-pw/blob/8f297b5a9d36cfa826a18977dc4bd8c129bfc6ce/apc/config/animal_details.json",
+    "community_confidence": "COMMUNITY"
+  },
+  "Iberian Mouflon": {
+    "bronze": 73.424,
+    "silver": 97.0,
+    "gold": 144.2,
+    "diamond": 179.6,
+    "confidence": "VERIFIED",
+    "source": "https://thewildregister.com/call-of-the-wild-animals/iberian-mouflon/",
+    "sources": [
+      "APS binary (triple_0x1C)",
+      "TacMaps"
+    ],
+    "community_source": "https://github.com/Pure-Winter-hue/apc-pw/blob/8f297b5a9d36cfa826a18977dc4bd8c129bfc6ce/apc/config/animal_details.json",
+    "community_confidence": "COMMUNITY"
+  },
+  "Iberian Wolf": {
+    "bronze": 30.0,
+    "silver": 32.0,
+    "gold": 36.0,
+    "diamond": 39.0,
+    "confidence": "VERIFIED",
+    "source": "https://thewildregister.com/call-of-the-wild-animals/iberian-wolf/",
+    "sources": [
+      "APS binary (triple_0x1C)",
+      "TacMaps"
+    ],
+    "community_source": "https://github.com/Pure-Winter-hue/apc-pw/blob/8f297b5a9d36cfa826a18977dc4bd8c129bfc6ce/apc/config/animal_details.json",
+    "community_confidence": "COMMUNITY"
+  },
+  "Jackrabbit": {
+    "bronze": 1.9,
+    "silver": 2.8,
+    "gold": 4.8,
+    "diamond": 6.3,
+    "confidence": "VERIFIED",
+    "source": "https://thewildregister.com/call-of-the-wild-animals/white-tailed-jackrabbit/",
+    "sources": [
+      "APS binary (triple_0x1C)",
+      "TacMaps"
+    ],
+    "display_name": "White-tailed Jackrabbit",
+    "community_source": "https://github.com/Pure-Winter-hue/apc-pw/blob/8f297b5a9d36cfa826a18977dc4bd8c129bfc6ce/apc/config/animal_details.json",
+    "community_confidence": "COMMUNITY"
+  },
+  "Jaguar": {
+    "bronze": 32.5,
+    "silver": 35.0,
+    "gold": 40.0,
+    "diamond": 43.75,
+    "confidence": "VERIFIED",
+    "source": "https://thewildregister.com/call-of-the-wild-animals/jaguar/",
+    "sources": [
+      "APS binary (triple_0x1C)",
+      "TacMaps"
+    ],
+    "community_source": "https://github.com/Pure-Winter-hue/apc-pw/blob/8f297b5a9d36cfa826a18977dc4bd8c129bfc6ce/apc/config/animal_details.json",
+    "community_confidence": "COMMUNITY"
+  },
+  "Javan Rusa": {
+    "bronze": 40.578,
+    "silver": 64.62,
+    "gold": 112.71,
+    "diamond": 148.78,
+    "confidence": "VERIFIED",
+    "source": "https://thewildregister.com/call-of-the-wild-animals/javan-rusa/",
+    "sources": [
+      "APS binary (triple_0x1C)",
+      "TacMaps"
+    ],
+    "community_source": "https://github.com/Pure-Winter-hue/apc-pw/blob/8f297b5a9d36cfa826a18977dc4bd8c129bfc6ce/apc/config/animal_details.json",
+    "community_confidence": "COMMUNITY"
+  },
+  "Lesser Kudu": {
+    "bronze": 95.317,
+    "silver": 107.8,
+    "gold": 132.8,
+    "diamond": 151.6,
+    "confidence": "VERIFIED",
+    "source": "https://thewildregister.com/call-of-the-wild-animals/lesser-kudu/",
+    "sources": [
+      "APS binary (triple_0x1C)",
+      "TacMaps"
+    ],
+    "community_source": "https://github.com/Pure-Winter-hue/apc-pw/blob/8f297b5a9d36cfa826a18977dc4bd8c129bfc6ce/apc/config/animal_details.json",
+    "community_confidence": "COMMUNITY"
+  },
+  "Lion": {
+    "bronze": 35.0,
+    "silver": 38.0,
+    "gold": 44.0,
+    "diamond": 48.5,
+    "confidence": "VERIFIED",
+    "source": "https://thewildregister.com/call-of-the-wild-animals/lion/",
+    "sources": [
+      "APS binary (triple_0x1C)",
+      "TacMaps"
+    ],
+    "community_source": "https://github.com/Pure-Winter-hue/apc-pw/blob/8f297b5a9d36cfa826a18977dc4bd8c129bfc6ce/apc/config/animal_details.json",
+    "community_confidence": "COMMUNITY"
+  },
+  "Magpie Goose": {
+    "bronze": 1.4,
+    "silver": 2.8,
+    "gold": 3.4,
+    "diamond": 3.85,
+    "confidence": "VERIFIED",
+    "source": "https://thewildregister.com/call-of-the-wild-animals/magpie-goose/",
+    "sources": [
+      "APS binary (triple_0x1C)",
+      "TacMaps"
+    ],
+    "community_source": "https://github.com/Pure-Winter-hue/apc-pw/blob/8f297b5a9d36cfa826a18977dc4bd8c129bfc6ce/apc/config/animal_details.json",
+    "community_confidence": "COMMUNITY"
+  },
+  "Mallard": {
+    "bronze": 7.2,
+    "silver": 9.9,
+    "gold": 15.4,
+    "diamond": 19.6,
+    "confidence": "VERIFIED",
+    "source": "https://thewildregister.com/call-of-the-wild-animals/mallard/",
+    "sources": [
+      "APS binary (triple_0x1C)",
+      "TacMaps"
+    ],
+    "community_source": "https://github.com/Pure-Winter-hue/apc-pw/blob/8f297b5a9d36cfa826a18977dc4bd8c129bfc6ce/apc/config/animal_details.json",
+    "community_confidence": "COMMUNITY"
+  },
+  "Manitoban Elk": {
+    "bronze": 61.007,
+    "silver": 149.13,
+    "gold": 325.38,
+    "diamond": 457.56,
+    "confidence": "VERIFIED",
+    "source": "https://thewildregister.com/call-of-the-wild-animals/manitoban-elk/",
+    "sources": [
+      "APS binary (triple_0x1C)",
+      "TacMaps"
+    ],
+    "community_source": "https://github.com/Pure-Winter-hue/apc-pw/blob/8f297b5a9d36cfa826a18977dc4bd8c129bfc6ce/apc/config/animal_details.json",
+    "community_confidence": "COMMUNITY"
+  },
+  "Mexican Bobcat": {
+    "bronze": 15.99,
+    "silver": 18.5,
+    "gold": 23.7,
+    "diamond": 27.6,
+    "confidence": "VERIFIED",
+    "source": "https://thewildregister.com/call-of-the-wild-animals/mexican-bobcat/",
+    "sources": [
+      "APS binary (triple_0x1C)",
+      "TacMaps"
+    ],
+    "community_source": "https://github.com/Pure-Winter-hue/apc-pw/blob/8f297b5a9d36cfa826a18977dc4bd8c129bfc6ce/apc/config/animal_details.json",
+    "community_confidence": "COMMUNITY"
+  },
+  "Moose": {
+    "bronze": 32.296,
+    "silver": 86.22,
+    "gold": 194.09,
+    "diamond": 274.99,
+    "confidence": "VERIFIED",
+    "source": "https://thewildregister.com/call-of-the-wild-animals/moose/",
+    "sources": [
+      "APS binary (triple_0x1C)",
+      "TacMaps"
+    ],
+    "community_source": "https://github.com/Pure-Winter-hue/apc-pw/blob/8f297b5a9d36cfa826a18977dc4bd8c129bfc6ce/apc/config/animal_details.json",
+    "community_confidence": "COMMUNITY"
+  },
+  "Mountain Goat": {
+    "bronze": 37.021,
+    "silver": 52.72,
+    "gold": 84.12,
+    "diamond": 107.67,
+    "confidence": "VERIFIED",
+    "source": "https://thewildregister.com/call-of-the-wild-animals/mountain-goat/",
+    "sources": [
+      "APS binary (triple_0x1C)",
+      "TacMaps"
+    ],
+    "community_source": "https://github.com/Pure-Winter-hue/apc-pw/blob/8f297b5a9d36cfa826a18977dc4bd8c129bfc6ce/apc/config/animal_details.json",
+    "community_confidence": "COMMUNITY"
+  },
+  "Mountain Hare": {
+    "bronze": 2.0,
+    "silver": 2.8,
+    "gold": 4.4,
+    "diamond": 5.6,
+    "confidence": "VERIFIED",
+    "source": "https://thewildregister.com/call-of-the-wild-animals/mountain-hare/",
+    "sources": [
+      "APS binary (triple_0x1C)",
+      "TacMaps"
+    ],
+    "community_source": "https://github.com/Pure-Winter-hue/apc-pw/blob/8f297b5a9d36cfa826a18977dc4bd8c129bfc6ce/apc/config/animal_details.json",
+    "community_confidence": "COMMUNITY"
+  },
+  "Mule Deer": {
+    "bronze": 37.128,
+    "silver": 98.36,
+    "gold": 220.54,
+    "diamond": 312.17,
+    "confidence": "VERIFIED",
+    "source": "https://thewildregister.com/call-of-the-wild-animals/mule-deer/",
+    "sources": [
+      "APS binary (triple_0x1C)",
+      "TacMaps"
+    ],
+    "community_source": "https://github.com/Pure-Winter-hue/apc-pw/blob/8f297b5a9d36cfa826a18977dc4bd8c129bfc6ce/apc/config/animal_details.json",
+    "community_confidence": "COMMUNITY"
+  },
+  "Muntjac": {
+    "bronze": 22.403,
+    "silver": 25.25,
+    "gold": 30.9,
+    "diamond": 35.24,
+    "confidence": "VERIFIED",
+    "source": "https://thewildregister.com/call-of-the-wild-animals/northern-red-muntjac/",
+    "sources": [
+      "APS binary (triple_0x1C)",
+      "TacMaps"
+    ],
+    "display_name": "Northern Red Muntjac",
+    "community_source": "https://github.com/Pure-Winter-hue/apc-pw/blob/8f297b5a9d36cfa826a18977dc4bd8c129bfc6ce/apc/config/animal_details.json",
+    "community_confidence": "COMMUNITY"
+  },
+  "Musk Deer": {
+    "bronze": 6.0,
+    "silver": 60.0,
+    "gold": 168.0,
+    "diamond": 249.0,
+    "confidence": "VERIFIED",
+    "source": "https://thewildregister.com/call-of-the-wild-animals/siberian-musk-deer/",
+    "sources": [
+      "APS binary (triple_0x1C)",
+      "TacMaps"
+    ],
+    "display_name": "Siberian Musk Deer",
+    "community_source": "https://github.com/Pure-Winter-hue/apc-pw/blob/8f297b5a9d36cfa826a18977dc4bd8c129bfc6ce/apc/config/animal_details.json",
+    "community_confidence": "COMMUNITY"
+  },
+  "Nilgai": {
+    "bronze": 61.832,
+    "silver": 69.17,
+    "gold": 83.87,
+    "diamond": 94.89,
+    "confidence": "VERIFIED",
+    "source": "https://thewildregister.com/call-of-the-wild-animals/nilgai/",
+    "sources": [
+      "APS binary (triple_0x1C)",
+      "TacMaps"
+    ],
+    "community_source": "https://github.com/Pure-Winter-hue/apc-pw/blob/8f297b5a9d36cfa826a18977dc4bd8c129bfc6ce/apc/config/animal_details.json",
+    "community_confidence": "COMMUNITY"
+  },
+  "Ocelot": {
+    "bronze": 15.99,
+    "silver": 18.58,
+    "gold": 23.78,
+    "diamond": 27.68,
+    "confidence": "VERIFIED",
+    "source": "https://thewildregister.com/call-of-the-wild-animals/ocelot/",
+    "sources": [
+      "APS binary (triple_0x1C)",
+      "TacMaps"
+    ],
+    "community_source": "https://github.com/Pure-Winter-hue/apc-pw/blob/8f297b5a9d36cfa826a18977dc4bd8c129bfc6ce/apc/config/animal_details.json",
+    "community_confidence": "COMMUNITY"
+  },
+  "Pheasant": {
+    "bronze": 5.9,
+    "silver": 9.1,
+    "gold": 15.5,
+    "diamond": 20.3,
+    "confidence": "VERIFIED",
+    "source": "https://thewildregister.com/call-of-the-wild-animals/ring-necked-pheasant/",
+    "sources": [
+      "APS binary (triple_0x1C)",
+      "TacMaps"
+    ],
+    "display_name": "Ring-necked Pheasant",
+    "community_source": "https://github.com/Pure-Winter-hue/apc-pw/blob/8f297b5a9d36cfa826a18977dc4bd8c129bfc6ce/apc/config/animal_details.json",
+    "community_confidence": "COMMUNITY"
+  },
+  "Pine Marten": {
+    "bronze": 100.0,
+    "silver": 124.0,
+    "gold": 172.0,
+    "diamond": 208.0,
+    "confidence": "VERIFIED",
+    "source": "https://thewildregister.com/call-of-the-wild-animals/eurasian-pine-marten/",
+    "sources": [
+      "APS binary (triple_0x1C)",
+      "TacMaps"
+    ],
+    "display_name": "Eurasian Pine Marten",
+    "community_source": "https://github.com/Pure-Winter-hue/apc-pw/blob/8f297b5a9d36cfa826a18977dc4bd8c129bfc6ce/apc/config/animal_details.json",
+    "community_confidence": "COMMUNITY"
+  },
+  "Pintail": {
+    "bronze": 500.0,
+    "silver": 620.0,
+    "gold": 860.0,
+    "diamond": 1040.0,
+    "confidence": "VERIFIED",
+    "source": "https://thewildregister.com/call-of-the-wild-animals/northern-pintail/",
+    "sources": [
+      "APS binary (triple_0x1C)",
+      "TacMaps"
+    ],
+    "display_name": "Northern Pintail",
+    "community_source": "https://github.com/Pure-Winter-hue/apc-pw/blob/8f297b5a9d36cfa826a18977dc4bd8c129bfc6ce/apc/config/animal_details.json",
+    "community_confidence": "COMMUNITY"
+  },
+  "Plains Bison": {
+    "bronze": 98.947,
+    "silver": 117.73,
+    "gold": 155.31,
+    "diamond": 183.5,
+    "confidence": "VERIFIED",
+    "source": "https://thewildregister.com/call-of-the-wild-animals/plains-bison/",
+    "sources": [
+      "APS binary (triple_0x1C)",
+      "TacMaps"
+    ],
+    "community_source": "https://github.com/Pure-Winter-hue/apc-pw/blob/8f297b5a9d36cfa826a18977dc4bd8c129bfc6ce/apc/config/animal_details.json",
+    "community_confidence": "COMMUNITY"
+  },
+  "Pronghorn": {
+    "bronze": null,
+    "silver": 36.65,
+    "gold": 72.42,
+    "diamond": 108.0,
+    "confidence": "LIKELY",
+    "source": "https://thewildregister.com/call-of-the-wild-animals/pronghorn/",
+    "sources": [
+      "APS binary (triple_0x1C)",
+      "TacMaps"
+    ],
+    "note": "Sources agree on Diamond but differ on gold; values above are the APS-binary ones. TacMaps says silver=36.65, gold=77.42, diamond=108."
+  },
+  "Puma": {
+    "bronze": 30.0,
+    "silver": 32.0,
+    "gold": 36.0,
+    "diamond": 39.0,
+    "confidence": "VERIFIED",
+    "source": "https://thewildregister.com/call-of-the-wild-animals/puma/",
+    "sources": [
+      "APS binary (triple_0x1C)",
+      "TacMaps"
+    ],
+    "community_source": "https://github.com/Pure-Winter-hue/apc-pw/blob/8f297b5a9d36cfa826a18977dc4bd8c129bfc6ce/apc/config/animal_details.json",
+    "community_confidence": "COMMUNITY"
+  },
+  "RG Turkey": {
+    "bronze": 3.0,
+    "silver": 3.3,
+    "gold": 4.0,
+    "diamond": 4.6,
+    "confidence": "VERIFIED",
+    "source": "https://thewildregister.com/call-of-the-wild-animals/rio-grande-turkey/",
+    "sources": [
+      "APS binary (triple_0x1C)",
+      "TacMaps"
+    ],
+    "display_name": "Rio Grande Turkey",
+    "community_source": "https://github.com/Pure-Winter-hue/apc-pw/blob/8f297b5a9d36cfa826a18977dc4bd8c129bfc6ce/apc/config/animal_details.json",
+    "community_confidence": "COMMUNITY"
+  },
+  "RM Elk": {
+    "bronze": 91.137,
+    "silver": 177.8,
+    "gold": 351.8,
+    "diamond": 481.4,
+    "confidence": "VERIFIED",
+    "source": "https://thewildregister.com/call-of-the-wild-animals/rocky-mountain-elk/",
+    "sources": [
+      "APS binary (triple_0x1C)",
+      "TacMaps"
+    ],
+    "display_name": "Rocky Mountain Elk",
+    "community_source": "https://github.com/Pure-Winter-hue/apc-pw/blob/8f297b5a9d36cfa826a18977dc4bd8c129bfc6ce/apc/config/animal_details.json",
+    "community_confidence": "COMMUNITY"
+  },
+  "Raccoon": {
+    "bronze": 3.0,
+    "silver": 5.0,
+    "gold": 9.0,
+    "diamond": 12.0,
+    "confidence": "VERIFIED",
+    "source": "https://thewildregister.com/call-of-the-wild-animals/common-raccoon/",
+    "sources": [
+      "APS binary (triple_0x1C)",
+      "TacMaps"
+    ],
+    "display_name": "Common Raccoon",
+    "community_source": "https://github.com/Pure-Winter-hue/apc-pw/blob/8f297b5a9d36cfa826a18977dc4bd8c129bfc6ce/apc/config/animal_details.json",
+    "community_confidence": "COMMUNITY"
+  },
+  "Raccoon Dog": {
+    "bronze": 3.0,
+    "silver": 4.4,
+    "gold": 7.2,
+    "diamond": 9.29,
+    "confidence": "VERIFIED",
+    "source": "https://thewildregister.com/call-of-the-wild-animals/raccoon-dog/",
+    "sources": [
+      "APS binary (triple_0x1C)",
+      "TacMaps"
+    ],
+    "community_source": "https://github.com/Pure-Winter-hue/apc-pw/blob/8f297b5a9d36cfa826a18977dc4bd8c129bfc6ce/apc/config/animal_details.json",
+    "community_confidence": "COMMUNITY"
+  },
+  "Red Deer": {
+    "bronze": 44.627,
+    "silver": 90.5,
+    "gold": 182.2,
+    "diamond": 251.0,
+    "confidence": "VERIFIED",
+    "source": "https://thewildregister.com/call-of-the-wild-animals/red-deer/",
+    "sources": [
+      "APS binary (triple_0x1C)",
+      "TacMaps"
+    ],
+    "community_source": "https://github.com/Pure-Winter-hue/apc-pw/blob/8f297b5a9d36cfa826a18977dc4bd8c129bfc6ce/apc/config/animal_details.json",
+    "community_confidence": "COMMUNITY"
+  },
+  "Red Fox": {
+    "bronze": 1.98,
+    "silver": 4.7,
+    "gold": 10.0,
+    "diamond": 14.1,
+    "confidence": "VERIFIED",
+    "source": "https://thewildregister.com/call-of-the-wild-animals/red-fox/",
+    "sources": [
+      "APS binary (triple_0x1C)",
+      "TacMaps"
+    ],
+    "community_source": "https://github.com/Pure-Winter-hue/apc-pw/blob/8f297b5a9d36cfa826a18977dc4bd8c129bfc6ce/apc/config/animal_details.json",
+    "community_confidence": "COMMUNITY"
+  },
+  "Red Grouse": {
+    "bronze": 52.5,
+    "silver": 57.0,
+    "gold": 66.0,
+    "diamond": 72.75,
+    "confidence": "VERIFIED",
+    "source": "https://thewildregister.com/call-of-the-wild-animals/red-grouse/",
+    "sources": [
+      "APS binary (triple_0x1C)",
+      "TacMaps"
+    ],
+    "community_source": "https://github.com/Pure-Winter-hue/apc-pw/blob/8f297b5a9d36cfa826a18977dc4bd8c129bfc6ce/apc/config/animal_details.json",
+    "community_confidence": "COMMUNITY"
+  },
+  "Reindeer": {
+    "bronze": 73.194,
+    "silver": 152.53,
+    "gold": 311.21,
+    "diamond": 430.23,
+    "confidence": "VERIFIED",
+    "source": "https://thewildregister.com/call-of-the-wild-animals/mountain-reindeer/",
+    "sources": [
+      "APS binary (triple_0x1C)",
+      "TacMaps"
+    ],
+    "display_name": "Mountain Reindeer",
+    "community_source": "https://github.com/Pure-Winter-hue/apc-pw/blob/8f297b5a9d36cfa826a18977dc4bd8c129bfc6ce/apc/config/animal_details.json",
+    "community_confidence": "COMMUNITY"
+  },
+  "Rock Ptarmigan": {
+    "bronze": 430.0,
+    "silver": 492.0,
+    "gold": 616.0,
+    "diamond": 709.0,
+    "confidence": "VERIFIED",
+    "source": "https://thewildregister.com/call-of-the-wild-animals/rock-ptarmigan/",
+    "sources": [
+      "APS binary (triple_0x1C)",
+      "TacMaps"
+    ],
+    "community_source": "https://github.com/Pure-Winter-hue/apc-pw/blob/8f297b5a9d36cfa826a18977dc4bd8c129bfc6ce/apc/config/animal_details.json",
+    "community_confidence": "COMMUNITY"
+  },
+  "Roe Deer": {
+    "bronze": 29.386,
+    "silver": 41.5,
+    "gold": 64.3,
+    "diamond": 81.8,
+    "confidence": "VERIFIED",
+    "source": "https://thewildregister.com/call-of-the-wild-animals/roe-deer/",
+    "sources": [
+      "APS binary (triple_0x1C)",
+      "TacMaps"
+    ],
+    "community_source": "https://github.com/Pure-Winter-hue/apc-pw/blob/8f297b5a9d36cfa826a18977dc4bd8c129bfc6ce/apc/config/animal_details.json",
+    "community_confidence": "COMMUNITY"
+  },
+  "Ronda Ibex": {
+    "bronze": 58.244,
+    "silver": 69.2,
+    "gold": 91.4,
+    "diamond": 107.9,
+    "confidence": "VERIFIED",
+    "source": "https://thewildregister.com/call-of-the-wild-animals/ronda-ibex/",
+    "sources": [
+      "APS binary (triple_0x1C)",
+      "TacMaps"
+    ],
+    "community_source": "https://github.com/Pure-Winter-hue/apc-pw/blob/8f297b5a9d36cfa826a18977dc4bd8c129bfc6ce/apc/config/animal_details.json",
+    "community_confidence": "COMMUNITY"
+  },
+  "Roosevelt Elk": {
+    "bronze": 56.666,
+    "silver": 128.7,
+    "gold": 272.8,
+    "diamond": 380.8,
+    "confidence": "VERIFIED",
+    "source": "https://thewildregister.com/call-of-the-wild-animals/roosevelt-elk/",
+    "sources": [
+      "APS binary (triple_0x1C)",
+      "TacMaps"
+    ],
+    "community_source": "https://github.com/Pure-Winter-hue/apc-pw/blob/8f297b5a9d36cfa826a18977dc4bd8c129bfc6ce/apc/config/animal_details.json",
+    "community_confidence": "COMMUNITY"
+  },
+  "S-Striped Jackal": {
+    "bronze": 13.228,
+    "silver": 16.8,
+    "gold": 23.8,
+    "diamond": 29.1,
+    "confidence": "VERIFIED",
+    "source": "https://thewildregister.com/call-of-the-wild-animals/side-striped-jackal/",
+    "sources": [
+      "APS binary (triple_0x1C)",
+      "TacMaps"
+    ],
+    "display_name": "Side-Striped Jackal",
+    "community_source": "https://github.com/Pure-Winter-hue/apc-pw/blob/8f297b5a9d36cfa826a18977dc4bd8c129bfc6ce/apc/config/animal_details.json",
+    "community_confidence": "COMMUNITY"
+  },
+  "SA Tapir": {
+    "bronze": 90.0,
+    "silver": 102.0,
+    "gold": 126.0,
+    "diamond": 144.0,
+    "confidence": "VERIFIED",
+    "source": "https://thewildregister.com/call-of-the-wild-animals/south-american-tapir/",
+    "sources": [
+      "APS binary (triple_0x1C)",
+      "TacMaps"
+    ],
+    "display_name": "South American Tapir",
+    "community_source": "https://github.com/Pure-Winter-hue/apc-pw/blob/8f297b5a9d36cfa826a18977dc4bd8c129bfc6ce/apc/config/animal_details.json",
+    "community_confidence": "COMMUNITY"
+  },
+  "SES Ibex": {
+    "bronze": 38.32,
+    "silver": 49.7,
+    "gold": 72.5,
+    "diamond": 89.6,
+    "confidence": "VERIFIED",
+    "source": "https://thewildregister.com/call-of-the-wild-animals/southeastern-spanish-ibex/",
+    "sources": [
+      "APS binary (triple_0x1C)",
+      "TacMaps"
+    ],
+    "display_name": "Southeastern Spanish Ibex",
+    "community_source": "https://github.com/Pure-Winter-hue/apc-pw/blob/8f297b5a9d36cfa826a18977dc4bd8c129bfc6ce/apc/config/animal_details.json",
+    "community_confidence": "COMMUNITY"
+  },
+  "SW Crocodile": {
+    "bronze": 250.0,
+    "silver": 420.0,
+    "gold": 760.0,
+    "diamond": 1015.0,
+    "confidence": "VERIFIED",
+    "source": "https://thewildregister.com/call-of-the-wild-animals/saltwater-crocodile/",
+    "sources": [
+      "APS binary (triple_0x1C)",
+      "TacMaps"
+    ],
+    "display_name": "Saltwater Crocodile",
+    "community_source": "https://github.com/Pure-Winter-hue/apc-pw/blob/8f297b5a9d36cfa826a18977dc4bd8c129bfc6ce/apc/config/animal_details.json",
+    "community_confidence": "COMMUNITY"
+  },
+  "Sambar": {
+    "bronze": 39.775,
+    "silver": 67.92,
+    "gold": 124.21,
+    "diamond": 166.24,
+    "confidence": "VERIFIED",
+    "source": "https://thewildregister.com/call-of-the-wild-animals/sambar/",
+    "sources": [
+      "APS binary (triple_0x1C)",
+      "TacMaps"
+    ],
+    "community_source": "https://github.com/Pure-Winter-hue/apc-pw/blob/8f297b5a9d36cfa826a18977dc4bd8c129bfc6ce/apc/config/animal_details.json",
+    "community_confidence": "COMMUNITY"
+  },
+  "Scrub Hare": {
+    "bronze": 1.5,
+    "silver": 2.36,
+    "gold": 4.08,
+    "diamond": 5.37,
+    "confidence": "VERIFIED",
+    "source": "https://thewildregister.com/call-of-the-wild-animals/scrub-hare/",
+    "sources": [
+      "APS binary (triple_0x1C)",
+      "TacMaps"
+    ],
+    "community_source": "https://github.com/Pure-Winter-hue/apc-pw/blob/8f297b5a9d36cfa826a18977dc4bd8c129bfc6ce/apc/config/animal_details.json",
+    "community_confidence": "COMMUNITY"
+  },
+  "Sika Deer": {
+    "bronze": 11.735,
+    "silver": 53.2,
+    "gold": 136.4,
+    "diamond": 198.7,
+    "confidence": "VERIFIED",
+    "source": "https://thewildregister.com/call-of-the-wild-animals/sika-deer/",
+    "sources": [
+      "APS binary (triple_0x1C)",
+      "TacMaps"
+    ],
+    "community_source": "https://github.com/Pure-Winter-hue/apc-pw/blob/8f297b5a9d36cfa826a18977dc4bd8c129bfc6ce/apc/config/animal_details.json",
+    "community_confidence": "COMMUNITY"
+  },
+  "Snow Goose": {
+    "bronze": 2.5,
+    "silver": 2.8,
+    "gold": 3.4,
+    "diamond": 3.85,
+    "confidence": "VERIFIED",
+    "source": "https://thewildregister.com/call-of-the-wild-animals/snow-goose/",
+    "sources": [
+      "APS binary (triple_0x1C)",
+      "TacMaps"
+    ],
+    "community_source": "https://github.com/Pure-Winter-hue/apc-pw/blob/8f297b5a9d36cfa826a18977dc4bd8c129bfc6ce/apc/config/animal_details.json",
+    "community_confidence": "COMMUNITY"
+  },
+  "Snow Leopard": {
+    "bronze": 20.0,
+    "silver": 22.0,
+    "gold": 26.0,
+    "diamond": 29.0,
+    "confidence": "VERIFIED",
+    "source": "https://thewildregister.com/call-of-the-wild-animals/snow-leopard/",
+    "sources": [
+      "APS binary (triple_0x1C)",
+      "TacMaps"
+    ],
+    "community_source": "https://github.com/Pure-Winter-hue/apc-pw/blob/8f297b5a9d36cfa826a18977dc4bd8c129bfc6ce/apc/config/animal_details.json",
+    "community_confidence": "COMMUNITY"
+  },
+  "Spectacled Bear": {
+    "bronze": 6.5,
+    "silver": 9.6,
+    "gold": 15.8,
+    "diamond": 20.45,
+    "confidence": "LIKELY",
+    "source": "https://thewildregister.com/call-of-the-wild-animals/spectacled-bear/",
+    "sources": [
+      "APS binary (triple_0x1C)",
+      "TacMaps"
+    ],
+    "note": "Sources agree on Diamond but differ on gold; values above are the APS-binary ones. TacMaps says silver=9.6, gold=15.18, diamond=20.45.",
+    "community_source": "https://github.com/Pure-Winter-hue/apc-pw/blob/8f297b5a9d36cfa826a18977dc4bd8c129bfc6ce/apc/config/animal_details.json",
+    "community_confidence": "COMMUNITY"
+  },
+  "Springbok": {
+    "bronze": 24.433,
+    "silver": 36.46,
+    "gold": 60.51,
+    "diamond": 78.55,
+    "confidence": "VERIFIED",
+    "source": "https://thewildregister.com/call-of-the-wild-animals/springbok/",
+    "sources": [
+      "APS binary (triple_0x1C)",
+      "TacMaps"
+    ],
+    "community_source": "https://github.com/Pure-Winter-hue/apc-pw/blob/8f297b5a9d36cfa826a18977dc4bd8c129bfc6ce/apc/config/animal_details.json",
+    "community_confidence": "COMMUNITY"
+  },
+  "Stubble Quail": {
+    "bronze": 90.0,
+    "silver": 154.0,
+    "gold": 202.0,
+    "diamond": 238.0,
+    "confidence": "VERIFIED",
+    "source": "https://thewildregister.com/call-of-the-wild-animals/stubble-quail/",
+    "sources": [
+      "APS binary (triple_0x1C)",
+      "TacMaps"
+    ],
+    "community_source": "https://github.com/Pure-Winter-hue/apc-pw/blob/8f297b5a9d36cfa826a18977dc4bd8c129bfc6ce/apc/config/animal_details.json",
+    "community_confidence": "COMMUNITY"
+  },
+  "T.Bean Goose": {
+    "bronze": 1.9,
+    "silver": 2.18,
+    "gold": 2.74,
+    "diamond": 3.16,
+    "confidence": "VERIFIED",
+    "source": "https://thewildregister.com/call-of-the-wild-animals/tundra-bean-goose/",
+    "sources": [
+      "APS binary (triple_0x1C)",
+      "TacMaps"
+    ],
+    "display_name": "Tundra Bean Goose",
+    "community_source": "https://github.com/Pure-Winter-hue/apc-pw/blob/8f297b5a9d36cfa826a18977dc4bd8c129bfc6ce/apc/config/animal_details.json",
+    "community_confidence": "COMMUNITY"
+  },
+  "Tahr": {
+    "bronze": 49.628,
+    "silver": 61.23,
+    "gold": 86.46,
+    "diamond": 101.87,
+    "confidence": "LIKELY",
+    "source": "https://thewildregister.com/call-of-the-wild-animals/tahr/",
+    "sources": [
+      "APS binary (triple_0x1C)",
+      "TacMaps"
+    ],
+    "note": "Sources agree on Diamond but differ on gold; values above are the APS-binary ones. TacMaps says silver=61.23, gold=84.46, diamond=101.87.",
+    "community_source": "https://github.com/Pure-Winter-hue/apc-pw/blob/8f297b5a9d36cfa826a18977dc4bd8c129bfc6ce/apc/config/animal_details.json",
+    "community_confidence": "COMMUNITY"
+  },
+  "Taruca": {
+    "bronze": 57.609,
+    "silver": 67.39,
+    "gold": 86.97,
+    "diamond": 101.66,
+    "confidence": "VERIFIED",
+    "source": "https://thewildregister.com/call-of-the-wild-animals/taruca/",
+    "sources": [
+      "APS binary (triple_0x1C)",
+      "TacMaps"
+    ],
+    "community_source": "https://github.com/Pure-Winter-hue/apc-pw/blob/8f297b5a9d36cfa826a18977dc4bd8c129bfc6ce/apc/config/animal_details.json",
+    "community_confidence": "COMMUNITY"
+  },
+  "Tibetan Fox": {
+    "bronze": 2.5,
+    "silver": 3.36,
+    "gold": 5.08,
+    "diamond": 6.37,
+    "confidence": "VERIFIED",
+    "source": "https://thewildregister.com/call-of-the-wild-animals/tibetan-fox/",
+    "sources": [
+      "APS binary (triple_0x1C)",
+      "TacMaps"
+    ],
+    "community_source": "https://github.com/Pure-Winter-hue/apc-pw/blob/8f297b5a9d36cfa826a18977dc4bd8c129bfc6ce/apc/config/animal_details.json",
+    "community_confidence": "COMMUNITY"
+  },
+  "Tufted Duck": {
+    "bronze": 630.0,
+    "silver": 704.0,
+    "gold": 852.0,
+    "diamond": 963.0,
+    "confidence": "VERIFIED",
+    "source": "https://thewildregister.com/call-of-the-wild-animals/tufted-duck/",
+    "sources": [
+      "APS binary (triple_0x1C)",
+      "TacMaps"
+    ],
+    "community_source": "https://github.com/Pure-Winter-hue/apc-pw/blob/8f297b5a9d36cfa826a18977dc4bd8c129bfc6ce/apc/config/animal_details.json",
+    "community_confidence": "COMMUNITY"
+  },
+  "Turkey": {
+    "bronze": 3.0,
+    "silver": 3.36,
+    "gold": 4.08,
+    "diamond": 4.62,
+    "confidence": "VERIFIED",
+    "source": "https://thewildregister.com/call-of-the-wild-animals/merriam-turkey/",
+    "sources": [
+      "APS binary (triple_0x1C)",
+      "TacMaps"
+    ],
+    "display_name": "Merriam Turkey",
+    "community_source": "https://github.com/Pure-Winter-hue/apc-pw/blob/8f297b5a9d36cfa826a18977dc4bd8c129bfc6ce/apc/config/animal_details.json",
+    "community_confidence": "COMMUNITY"
+  },
+  "Vicu\u00f1a": {
+    "bronze": 160.0,
+    "silver": 172.0,
+    "gold": 196.0,
+    "diamond": 214.0,
+    "confidence": "VERIFIED",
+    "source": "https://thewildregister.com/call-of-the-wild-animals/vicuna/",
+    "sources": [
+      "APS binary (triple_0x1C)",
+      "TacMaps"
+    ],
+    "community_source": "https://github.com/Pure-Winter-hue/apc-pw/blob/8f297b5a9d36cfa826a18977dc4bd8c129bfc6ce/apc/config/animal_details.json",
+    "community_confidence": "COMMUNITY"
+  },
+  "W.Capercaillie": {
+    "bronze": 1.5,
+    "silver": 2.2,
+    "gold": 3.6,
+    "diamond": 4.64,
+    "confidence": "VERIFIED",
+    "source": "https://thewildregister.com/call-of-the-wild-animals/western-capercaillie/",
+    "sources": [
+      "APS binary (triple_0x1C)",
+      "TacMaps"
+    ],
+    "display_name": "Western Capercaillie",
+    "community_source": "https://github.com/Pure-Winter-hue/apc-pw/blob/8f297b5a9d36cfa826a18977dc4bd8c129bfc6ce/apc/config/animal_details.json",
+    "community_confidence": "COMMUNITY"
+  },
+  "WM Coati": {
+    "bronze": 1.0,
+    "silver": 1.1,
+    "gold": 1.3,
+    "diamond": 1.45,
+    "confidence": "VERIFIED",
+    "source": "https://thewildregister.com/call-of-the-wild-animals/western-mountain-coati/",
+    "sources": [
+      "APS binary (triple_0x1C)",
+      "TacMaps"
+    ],
+    "display_name": "Western Mountain Coati",
+    "community_source": "https://github.com/Pure-Winter-hue/apc-pw/blob/8f297b5a9d36cfa826a18977dc4bd8c129bfc6ce/apc/config/animal_details.json",
+    "community_confidence": "COMMUNITY"
+  },
+  "Warthog": {
+    "bronze": 15.0,
+    "silver": 24.6,
+    "gold": 43.8,
+    "diamond": 58.2,
+    "confidence": "LIKELY",
+    "source": "https://thewildregister.com/call-of-the-wild-animals/warthog/",
+    "sources": [
+      "APS binary (triple_0x1C)",
+      "TacMaps"
+    ],
+    "note": "Sources agree on Diamond but differ on gold; values above are the APS-binary ones. TacMaps says silver=24.6, gold=49.8, diamond=58.2.",
+    "community_source": "https://github.com/Pure-Winter-hue/apc-pw/blob/8f297b5a9d36cfa826a18977dc4bd8c129bfc6ce/apc/config/animal_details.json",
+    "community_confidence": "COMMUNITY"
+  },
+  "Water Buffalo": {
+    "bronze": 60.488,
+    "silver": 84.2,
+    "gold": 138.1,
+    "diamond": 167.5,
+    "confidence": "VERIFIED",
+    "source": "https://thewildregister.com/call-of-the-wild-animals/water-buffalo/",
+    "sources": [
+      "APS binary (triple_0x1C)",
+      "TacMaps"
+    ],
+    "community_source": "https://github.com/Pure-Winter-hue/apc-pw/blob/8f297b5a9d36cfa826a18977dc4bd8c129bfc6ce/apc/config/animal_details.json",
+    "community_confidence": "COMMUNITY"
+  },
+  "Whitetail Deer": {
+    "bronze": 71.181,
+    "silver": 112.0,
+    "gold": 193.7,
+    "diamond": 255.0,
+    "confidence": "VERIFIED",
+    "source": "https://thewildregister.com/call-of-the-wild-animals/whitetail-deer/",
+    "sources": [
+      "APS binary (triple_0x1C)",
+      "TacMaps"
+    ],
+    "community_source": "https://github.com/Pure-Winter-hue/apc-pw/blob/8f297b5a9d36cfa826a18977dc4bd8c129bfc6ce/apc/config/animal_details.json",
+    "community_confidence": "COMMUNITY"
+  },
+  "Wild Boar": {
+    "bronze": 7.0,
+    "silver": 37.5,
+    "gold": 98.5,
+    "diamond": 144.25,
+    "confidence": "VERIFIED",
+    "source": "https://thewildregister.com/call-of-the-wild-animals/wild-boar/",
+    "sources": [
+      "APS binary (triple_0x1C)",
+      "TacMaps"
+    ],
+    "community_source": "https://github.com/Pure-Winter-hue/apc-pw/blob/8f297b5a9d36cfa826a18977dc4bd8c129bfc6ce/apc/config/animal_details.json",
+    "community_confidence": "COMMUNITY"
+  },
+  "Wild Yak": {
+    "bronze": 146.424,
+    "silver": 174.6,
+    "gold": 230.96,
+    "diamond": 273.23,
+    "confidence": "VERIFIED",
+    "source": "https://thewildregister.com/call-of-the-wild-animals/wild-yak/",
+    "sources": [
+      "APS binary (triple_0x1C)",
+      "TacMaps"
+    ],
+    "community_source": "https://github.com/Pure-Winter-hue/apc-pw/blob/8f297b5a9d36cfa826a18977dc4bd8c129bfc6ce/apc/config/animal_details.json",
+    "community_confidence": "COMMUNITY"
+  },
+  "Willow Ptarmigan": {
+    "bronze": 430.0,
+    "silver": 506.0,
+    "gold": 658.0,
+    "diamond": 772.0,
+    "confidence": "VERIFIED",
+    "source": "https://thewildregister.com/call-of-the-wild-animals/willow-ptarmigan/",
+    "sources": [
+      "APS binary (triple_0x1C)",
+      "TacMaps"
+    ],
+    "community_source": "https://github.com/Pure-Winter-hue/apc-pw/blob/8f297b5a9d36cfa826a18977dc4bd8c129bfc6ce/apc/config/animal_details.json",
+    "community_confidence": "COMMUNITY"
+  },
+  "Wood Bison": {
+    "bronze": 79.274,
+    "silver": 96.76,
+    "gold": 131.75,
+    "diamond": 158.0,
+    "confidence": "VERIFIED",
+    "source": "https://thewildregister.com/call-of-the-wild-animals/wood-bison/",
+    "sources": [
+      "APS binary (triple_0x1C)",
+      "TacMaps"
+    ],
+    "community_source": "https://github.com/Pure-Winter-hue/apc-pw/blob/8f297b5a9d36cfa826a18977dc4bd8c129bfc6ce/apc/config/animal_details.json",
+    "community_confidence": "COMMUNITY"
+  },
+  "Wood Duck": {
+    "bronze": 400.0,
+    "silver": 460.0,
+    "gold": 580.0,
+    "diamond": 670.0,
+    "confidence": "VERIFIED",
+    "source": "https://thewildregister.com/call-of-the-wild-animals/wood-duck/",
+    "sources": [
+      "APS binary (triple_0x1C)",
+      "TacMaps"
+    ],
+    "community_source": "https://github.com/Pure-Winter-hue/apc-pw/blob/8f297b5a9d36cfa826a18977dc4bd8c129bfc6ce/apc/config/animal_details.json",
+    "community_confidence": "COMMUNITY"
+  },
+  "Woodcock": {
+    "bronze": 21.5,
+    "silver": 25.84,
+    "gold": 34.52,
+    "diamond": 41.03,
+    "confidence": "VERIFIED",
+    "source": "https://thewildregister.com/call-of-the-wild-animals/eurasian-woodcock/",
+    "sources": [
+      "APS binary (triple_0x1C)",
+      "TacMaps"
+    ],
+    "display_name": "Eurasian Woodcock",
+    "community_source": "https://github.com/Pure-Winter-hue/apc-pw/blob/8f297b5a9d36cfa826a18977dc4bd8c129bfc6ce/apc/config/animal_details.json",
+    "community_confidence": "COMMUNITY"
+  },
+  "Woolly Hare": {
+    "bronze": 1.3,
+    "silver": 1.74,
+    "gold": 2.62,
+    "diamond": 3.28,
+    "confidence": "VERIFIED",
+    "source": "https://thewildregister.com/call-of-the-wild-animals/woolly-hare/",
+    "sources": [
+      "APS binary (triple_0x1C)",
+      "TacMaps"
+    ],
+    "community_source": "https://github.com/Pure-Winter-hue/apc-pw/blob/8f297b5a9d36cfa826a18977dc4bd8c129bfc6ce/apc/config/animal_details.json",
+    "community_confidence": "COMMUNITY"
+  }
+}

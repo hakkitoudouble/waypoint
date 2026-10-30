@@ -1,0 +1,24 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+
+# build output
+build/
+dist/
+*.spec
+
+# local state and scratch (state lives in %LOCALAPPDATA%\Waypoint when packaged)
+# work/ holds caches and screenshots; the jsdom tests inside it are tracked.
+work/*
+!work/uiboot/
+work/uiboot/node_modules/
+
+# editors / OS
+.vscode/
+.idea/
+Thumbs.db
+desktop.ini
+.DS_Store

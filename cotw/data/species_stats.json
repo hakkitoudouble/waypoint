@@ -1,0 +1,4345 @@
+{
+ "_schema": {
+  "description": "Per-species constants read out of the Animal Population Scanner exe. One object per species record (struct size 0x3C0, array VA 0x1400B08C0..0x1400CED70, 126 live records).",
+  "record_layout": {
+   "+0x00": "i32 stringId -> index into the runtime localization table (English names in notes/localization-en.json)",
+   "+0x08": "char* iconPath",
+   "+0x10": "i32 maxDifficultyRating (1..9)",
+   "+0x14": "i32 unknown (0..9)",
+   "+0x18": "f32 always 0.0",
+   "+0x1C": "f32[3] ascending per-species triple (semantics not proven)",
+   "+0x28": "f32[2] always 0.0",
+   "+0x30": "f32[8] ascending series, zero-padded; magnitude matches species body weight in kg",
+   "+0x50": "i32 always 1",
+   "+0x54": "i32 usually 0"
+  },
+  "difficultyLevelNames": [
+   "Trivial",
+   "Minor",
+   "Very Easy",
+   "Easy",
+   "Medium",
+   "Hard",
+   "Very Hard",
+   "Mythical",
+   "Legendary",
+   "Fabled"
+  ],
+  "confidence": {
+   "name / hash mapping": "VERIFIED (see notes/exe-data.md)",
+   "maxDifficultyRating": "LIKELY (magnitudes and known COTW ratings agree)",
+   "series_0x30 as weight kg": "LIKELY",
+   "triple_0x1C": "SPECULATIVE (min/typical/max weight or TR; ambiguous)",
+   "field_0x14": "UNKNOWN"
+  }
+ },
+ "species": [
+  {
+   "stringId": 0,
+   "icon": "data/Icons/Unknown.png",
+   "maxDifficultyRating": 2,
+   "field_0x14": 0,
+   "field_0x18": 0.0,
+   "triple_0x1C": [
+    36.0,
+    48.0,
+    57.0
+   ],
+   "field_0x28": [
+    0.0,
+    0.0
+   ],
+   "series_0x30": [
+    3.8,
+    4.4,
+    5.1,
+    6.13,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "field_0x50": 0,
+   "field_0x54": 0,
+   "name": "???",
+   "hashes": [
+    "7EB7EDF9"
+   ],
+   "hashesSeenInSaves": []
+  },
+  {
+   "stringId": 26,
+   "icon": "data/Icons/Axisdeer_frame.png",
+   "maxDifficultyRating": 3,
+   "field_0x14": 1,
+   "field_0x18": 0.0,
+   "triple_0x1C": [
+    72.830002,
+    155.380005,
+    217.289993
+   ],
+   "field_0x28": [
+    0.0,
+    0.0
+   ],
+   "series_0x30": [
+    37.099998,
+    46.099998,
+    59.799999,
+    69.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "field_0x50": 0,
+   "field_0x54": 0,
+   "name": "Axis Deer",
+   "hashes": [
+    "CB0DA701"
+   ],
+   "hashesSeenInSaves": [
+    "CB0DA701"
+   ]
+  },
+  {
+   "stringId": 27,
+   "icon": "data/Icons/Beceiteibex_frame.png",
+   "maxDifficultyRating": 4,
+   "field_0x14": 4,
+   "field_0x18": 0.0,
+   "triple_0x1C": [
+    78.0,
+    142.899994,
+    191.600006
+   ],
+   "field_0x28": [
+    0.0,
+    0.0
+   ],
+   "series_0x30": [
+    81.199997,
+    85.400002,
+    94.400002,
+    104.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "field_0x50": 0,
+   "field_0x54": 0,
+   "name": "Beceite Ibex",
+   "hashes": [
+    "6E5A275A"
+   ],
+   "hashesSeenInSaves": [
+    "6E5A275A"
+   ]
+  },
+  {
+   "stringId": 29,
+   "icon": "data/Icons/Bighornsheep_frame.png",
+   "maxDifficultyRating": 5,
+   "field_0x14": 3,
+   "field_0x18": 0.0,
+   "triple_0x1C": [
+    84.099998,
+    148.570007,
+    196.929993
+   ],
+   "field_0x28": [
+    0.0,
+    0.0
+   ],
+   "series_0x30": [
+    70.800003,
+    82.0,
+    98.0,
+    117.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "field_0x50": 0,
+   "field_0x54": 0,
+   "name": "Desert Bighorn Sheep",
+   "hashes": [
+    "4AEF8190"
+   ],
+   "hashesSeenInSaves": [
+    "4AEF8190"
+   ]
+  },
+  {
+   "stringId": 31,
+   "icon": "data/Icons/Blackbear_frame.png",
+   "maxDifficultyRating": 7,
+   "field_0x14": 1,
+   "field_0x18": 0.0,
+   "triple_0x1C": [
+    14.4,
+    19.200001,
+    22.799999
+   ],
+   "field_0x28": [
+    0.0,
+    0.0
+   ],
+   "series_0x30": [
+    67.0,
+    96.0,
+    123.0,
+    150.0,
+    180.199997,
+    207.75,
+    234.0,
+    264.0
+   ],
+   "field_0x50": 1,
+   "field_0x54": 1,
+   "name": "Black Bear",
+   "hashes": [
+    "9119DA8D"
+   ],
+   "hashesSeenInSaves": [
+    "9119DA8D"
+   ]
+  },
+  {
+   "stringId": 32,
+   "icon": "data/Icons/Blackbuck_frame.png",
+   "maxDifficultyRating": 3,
+   "field_0x14": 0,
+   "field_0x18": 0.0,
+   "triple_0x1C": [
+    71.800003,
+    106.300003,
+    132.199997
+   ],
+   "field_0x28": [
+    0.0,
+    0.0
+   ],
+   "series_0x30": [
+    35.0,
+    39.700001,
+    44.5,
+    48.299999,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "field_0x50": 0,
+   "field_0x54": 0,
+   "name": "Blackbuck",
+   "hashes": [
+    "671D4603"
+   ],
+   "hashesSeenInSaves": [
+    "671D4603"
+   ]
+  },
+  {
+   "stringId": 33,
+   "icon": "data/Icons/Blacktaildeer_frame.png",
+   "maxDifficultyRating": 4,
+   "field_0x14": 1,
+   "field_0x18": 0.0,
+   "triple_0x1C": [
+    76.900002,
+    134.399994,
+    177.5
+   ],
+   "field_0x28": [
+    0.0,
+    0.0
+   ],
+   "series_0x30": [
+    52.0,
+    65.0,
+    77.0,
+    89.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "field_0x50": 0,
+   "field_0x54": 0,
+   "name": "Blacktail Deer",
+   "hashes": [
+    "D78E5F19"
+   ],
+   "hashesSeenInSaves": [
+    "D78E5F19"
+   ]
+  },
+  {
+   "stringId": 34,
+   "icon": "data/Icons/Bluewildebeest_frame.png",
+   "maxDifficultyRating": 6,
+   "field_0x14": 1,
+   "field_0x18": 0.0,
+   "triple_0x1C": [
+    21.6,
+    30.799999,
+    37.700001
+   ],
+   "field_0x28": [
+    0.0,
+    0.0
+   ],
+   "series_0x30": [
+    218.0,
+    221.0,
+    248.0,
+    276.299988,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "field_0x50": 0,
+   "field_0x54": 0,
+   "name": "Blue Wildebeest",
+   "hashes": [
+    "0AF54EC2"
+   ],
+   "hashesSeenInSaves": [
+    "0AF54EC2"
+   ]
+  },
+  {
+   "stringId": 35,
+   "icon": "data/Icons/Brownbear_frame.png",
+   "maxDifficultyRating": 7,
+   "field_0x14": 1,
+   "field_0x18": 0.0,
+   "triple_0x1C": [
+    18.6,
+    23.799999,
+    27.700001
+   ],
+   "field_0x28": [
+    0.0,
+    0.0
+   ],
+   "series_0x30": [
+    150.0,
+    187.0,
+    234.0,
+    275.0,
+    317.0,
+    354.0,
+    400.0,
+    441.149994
+   ],
+   "field_0x50": 1,
+   "field_0x54": 2,
+   "name": "Brown Bear",
+   "hashes": [
+    "72A82AAB"
+   ],
+   "hashesSeenInSaves": []
+  },
+  {
+   "stringId": 37,
+   "icon": "data/Icons/Canadagoose_frame.png",
+   "maxDifficultyRating": 1,
+   "field_0x14": 0,
+   "field_0x18": 0.0,
+   "triple_0x1C": [
+    4.4,
+    6.8,
+    8.5
+   ],
+   "field_0x28": [
+    0.0,
+    0.0
+   ],
+   "series_0x30": [
+    4.51,
+    5.9,
+    7.25,
+    8.6,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "field_0x50": 0,
+   "field_0x54": 0,
+   "name": "Canada Goose",
+   "hashes": [
+    "C5FA6C5D"
+   ],
+   "hashesSeenInSaves": [
+    "C5FA6C5D"
+   ]
+  },
+  {
+   "stringId": 38,
+   "icon": "data/Icons/Capebuffalo_frame.png",
+   "maxDifficultyRating": 9,
+   "field_0x14": 2,
+   "field_0x18": 0.0,
+   "triple_0x1C": [
+    73.300003,
+    117.900002,
+    151.399994
+   ],
+   "field_0x28": [
+    0.0,
+    0.0
+   ],
+   "series_0x30": [
+    418.0,
+    450.0,
+    485.0,
+    639.0,
+    700.0,
+    760.0,
+    823.0,
+    883.0
+   ],
+   "field_0x50": 1,
+   "field_0x54": 3,
+   "name": "Cape Buffalo",
+   "hashes": [
+    "C55BB24F"
+   ],
+   "hashesSeenInSaves": [
+    "C55BB24F"
+   ]
+  },
+  {
+   "stringId": 39,
+   "icon": "data/Icons/Caribou_frame.png",
+   "maxDifficultyRating": 6,
+   "field_0x14": 0,
+   "field_0x18": 0.0,
+   "triple_0x1C": [
+    152.5,
+    311.200012,
+    430.200012
+   ],
+   "field_0x28": [
+    0.0,
+    0.0
+   ],
+   "series_0x30": [
+    111.0,
+    157.0,
+    170.0,
+    183.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "field_0x50": 0,
+   "field_0x54": 0,
+   "name": "Caribou",
+   "hashes": [
+    "A58D7467"
+   ],
+   "hashesSeenInSaves": [
+    "A58D7467"
+   ]
+  },
+  {
+   "stringId": 40,
+   "icon": "data/Icons/Chamois_frame.png",
+   "maxDifficultyRating": 3,
+   "field_0x14": 1,
+   "field_0x18": 0.0,
+   "triple_0x1C": [
+    30.799999,
+    46.299999,
+    58.0
+   ],
+   "field_0x28": [
+    0.0,
+    0.0
+   ],
+   "series_0x30": [
+    43.599998,
+    51.200001,
+    55.799999,
+    62.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "field_0x50": 0,
+   "field_0x54": 0,
+   "name": "Chamois",
+   "hashes": [
+    "39A2566C"
+   ],
+   "hashesSeenInSaves": []
+  },
+  {
+   "stringId": 41,
+   "icon": "data/Icons/Cinnamonteal_frame.png",
+   "maxDifficultyRating": 1,
+   "field_0x14": 0,
+   "field_0x18": 0.0,
+   "triple_0x1C": [
+    3.4,
+    4.1,
+    4.6
+   ],
+   "field_0x28": [
+    0.0,
+    0.0
+   ],
+   "series_0x30": [
+    0.39,
+    0.46,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "field_0x50": 0,
+   "field_0x54": 0,
+   "name": "Cin Teal",
+   "hashes": [
+    "68B2DEB2"
+   ],
+   "hashesSeenInSaves": [
+    "68B2DEB2"
+   ]
+  },
+  {
+   "stringId": 48,
+   "icon": "data/Icons/Coyote_frame.png",
+   "maxDifficultyRating": 2,
+   "field_0x14": 1,
+   "field_0x18": 0.0,
+   "triple_0x1C": [
+    38.400002,
+    48.900002,
+    56.799999
+   ],
+   "field_0x28": [
+    0.0,
+    0.0
+   ],
+   "series_0x30": [
+    16.4,
+    17.700001,
+    19.0,
+    20.299999,
+    21.6,
+    23.0,
+    24.4,
+    25.5
+   ],
+   "field_0x50": 1,
+   "field_0x54": 1,
+   "name": "Coyote",
+   "hashes": [
+    "B54E5E8B"
+   ],
+   "hashesSeenInSaves": [
+    "B54E5E8B"
+   ]
+  },
+  {
+   "stringId": 53,
+   "icon": "data/Icons/Lynx_frame.png",
+   "maxDifficultyRating": 3,
+   "field_0x14": 1,
+   "field_0x18": 0.0,
+   "triple_0x1C": [
+    18.6,
+    23.799999,
+    27.700001
+   ],
+   "field_0x28": [
+    0.0,
+    0.0
+   ],
+   "series_0x30": [
+    13.0,
+    16.200001,
+    20.0,
+    24.0,
+    28.0,
+    32.490002,
+    36.799999,
+    40.700001
+   ],
+   "field_0x50": 1,
+   "field_0x54": 2,
+   "name": "Eurasian Lynx",
+   "hashes": [
+    "6C1FAF80"
+   ],
+   "hashesSeenInSaves": []
+  },
+  {
+   "stringId": 54,
+   "icon": "data/Icons/Bison_frame.png",
+   "maxDifficultyRating": 9,
+   "field_0x14": 1,
+   "field_0x18": 0.0,
+   "triple_0x1C": [
+    86.529999,
+    110.010002,
+    127.620003
+   ],
+   "field_0x28": [
+    0.0,
+    0.0
+   ],
+   "series_0x30": [
+    431.0,
+    608.0,
+    728.0,
+    860.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "field_0x50": 0,
+   "field_0x54": 0,
+   "name": "Euro Bison",
+   "hashes": [
+    "3EFC8F2B"
+   ],
+   "hashesSeenInSaves": [
+    "3EFC8F2B"
+   ]
+  },
+  {
+   "stringId": 55,
+   "icon": "data/Icons/Eurorabbit_frame.png",
+   "maxDifficultyRating": 1,
+   "field_0x14": 1,
+   "field_0x18": 0.0,
+   "triple_0x1C": [
+    1.2,
+    1.9,
+    2.4
+   ],
+   "field_0x28": [
+    0.0,
+    0.0
+   ],
+   "series_0x30": [
+    1.68,
+    2.4,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "field_0x50": 0,
+   "field_0x54": 0,
+   "name": "Euro Rabbit",
+   "hashes": [
+    "1A5D1561"
+   ],
+   "hashesSeenInSaves": [
+    "1A5D1561"
+   ]
+  },
+  {
+   "stringId": 56,
+   "icon": "data/Icons/Europeanhare_frame.png",
+   "maxDifficultyRating": 1,
+   "field_0x14": 1,
+   "field_0x18": 0.0,
+   "triple_0x1C": [
+    4.4,
+    5.0,
+    6.5
+   ],
+   "field_0x28": [
+    0.0,
+    0.0
+   ],
+   "series_0x30": [
+    4.2,
+    6.3,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "field_0x50": 0,
+   "field_0x54": 0,
+   "name": "European Hare",
+   "hashes": [
+    "8800170D"
+   ],
+   "hashesSeenInSaves": [
+    "8800170D"
+   ]
+  },
+  {
+   "stringId": 57,
+   "icon": "data/Icons/Fallowdeer_frame.png",
+   "maxDifficultyRating": 4,
+   "field_0x14": 2,
+   "field_0x18": 0.0,
+   "triple_0x1C": [
+    104.889999,
+    187.809998,
+    249.990005
+   ],
+   "field_0x28": [
+    0.0,
+    0.0
+   ],
+   "series_0x30": [
+    60.0,
+    72.0,
+    83.0,
+    94.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "field_0x50": 0,
+   "field_0x54": 0,
+   "name": "Fallow Deer",
+   "hashes": [
+    "08D561A7",
+    "2F9AC7B7"
+   ],
+   "hashesSeenInSaves": [
+    "08D561A7",
+    "2F9AC7B7"
+   ]
+  },
+  {
+   "stringId": 58,
+   "icon": "data/Icons/Feralgoat_frame.png",
+   "maxDifficultyRating": 3,
+   "field_0x14": 0,
+   "field_0x18": 0.0,
+   "triple_0x1C": [
+    89.400002,
+    157.600006,
+    208.699997
+   ],
+   "field_0x28": [
+    0.0,
+    0.0
+   ],
+   "series_0x30": [
+    33.0,
+    36.0,
+    46.450001,
+    48.75,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "field_0x50": 0,
+   "field_0x54": 0,
+   "name": "Feral Goat",
+   "hashes": [
+    "C1784891"
+   ],
+   "hashesSeenInSaves": [
+    "C1784891"
+   ]
+  },
+  {
+   "stringId": 59,
+   "icon": "data/Icons/Feralpig_frame.png",
+   "maxDifficultyRating": 5,
+   "field_0x14": 8,
+   "field_0x18": 0.0,
+   "triple_0x1C": [
+    37.5,
+    98.5,
+    144.199997
+   ],
+   "field_0x28": [
+    0.0,
+    0.0
+   ],
+   "series_0x30": [
+    75.099998,
+    113.5,
+    149.899994,
+    188.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "field_0x50": 0,
+   "field_0x54": 0,
+   "name": "Feral Pig",
+   "hashes": [
+    "2D774864"
+   ],
+   "hashesSeenInSaves": [
+    "2D774864"
+   ]
+  },
+  {
+   "stringId": 62,
+   "icon": "data/Icons/Gemsbok_frame.png",
+   "maxDifficultyRating": 6,
+   "field_0x14": 1,
+   "field_0x18": 0.0,
+   "triple_0x1C": [
+    194.800003,
+    276.299988,
+    337.5
+   ],
+   "field_0x28": [
+    0.0,
+    0.0
+   ],
+   "series_0x30": [
+    130.5,
+    152.0,
+    210.0,
+    225.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "field_0x50": 0,
+   "field_0x54": 0,
+   "name": "Gemsbok",
+   "hashes": [
+    "4471AF29"
+   ],
+   "hashesSeenInSaves": [
+    "4471AF29"
+   ]
+  },
+  {
+   "stringId": 63,
+   "icon": "data/Icons/Gredosibex_frame.png",
+   "maxDifficultyRating": 4,
+   "field_0x14": 3,
+   "field_0x18": 0.0,
+   "triple_0x1C": [
+    54.299999,
+    80.5,
+    100.099998
+   ],
+   "field_0x28": [
+    0.0,
+    0.0
+   ],
+   "series_0x30": [
+    63.0,
+    78.0,
+    87.900002,
+    97.300003,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "field_0x50": 0,
+   "field_0x54": 0,
+   "name": "Gredos Ibex",
+   "hashes": [
+    "F9D247A6"
+   ],
+   "hashesSeenInSaves": [
+    "F9D247A6"
+   ]
+  },
+  {
+   "stringId": 64,
+   "icon": "data/Icons/Greywolf_frame.png",
+   "maxDifficultyRating": 6,
+   "field_0x14": 0,
+   "field_0x18": 0.0,
+   "triple_0x1C": [
+    32.0,
+    36.0,
+    39.0
+   ],
+   "field_0x28": [
+    0.0,
+    0.0
+   ],
+   "series_0x30": [
+    33.599998,
+    42.200001,
+    48.0,
+    53.0,
+    57.82,
+    63.099998,
+    68.800003,
+    74.099998
+   ],
+   "field_0x50": 1,
+   "field_0x54": 2,
+   "name": "Grey Wolf",
+   "hashes": [
+    "D15DFA04"
+   ],
+   "hashesSeenInSaves": [
+    "D15DFA04"
+   ]
+  },
+  {
+   "stringId": 65,
+   "icon": "data/Icons/Grizzlybear_frame.png",
+   "maxDifficultyRating": 8,
+   "field_0x14": 0,
+   "field_0x18": 0.0,
+   "triple_0x1C": [
+    52.599998,
+    60.799999,
+    67.0
+   ],
+   "field_0x28": [
+    0.0,
+    0.0
+   ],
+   "series_0x30": [
+    230.0,
+    334.0,
+    380.0,
+    405.0,
+    450.0,
+    501.0,
+    566.0,
+    642.0
+   ],
+   "field_0x50": 1,
+   "field_0x54": 6,
+   "name": "Grizzly Bear",
+   "hashes": [
+    "D0B0397E"
+   ],
+   "hashesSeenInSaves": [
+    "D0B0397E"
+   ]
+  },
+  {
+   "stringId": 67,
+   "icon": "data/Icons/Harlequinduck_frame.png",
+   "maxDifficultyRating": 1,
+   "field_0x14": 0,
+   "field_0x18": 0.0,
+   "triple_0x1C": [
+    5.3,
+    6.4,
+    7.2
+   ],
+   "field_0x28": [
+    0.0,
+    0.0
+   ],
+   "series_0x30": [
+    0.6,
+    0.73,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "field_0x50": 0,
+   "field_0x54": 0,
+   "name": "H Duck",
+   "hashes": [
+    "4AE050AB"
+   ],
+   "hashesSeenInSaves": [
+    "4AE050AB"
+   ]
+  },
+  {
+   "stringId": 69,
+   "icon": "data/Icons/Iberianmufflon_frame.png",
+   "maxDifficultyRating": 4,
+   "field_0x14": 0,
+   "field_0x18": 0.0,
+   "triple_0x1C": [
+    97.0,
+    144.199997,
+    179.600006
+   ],
+   "field_0x28": [
+    0.0,
+    0.0
+   ],
+   "series_0x30": [
+    44.0,
+    46.799999,
+    52.09,
+    57.200001,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "field_0x50": 0,
+   "field_0x54": 0,
+   "name": "Iberian Mouflon",
+   "hashes": [
+    "3D39E423"
+   ],
+   "hashesSeenInSaves": [
+    "3D39E423"
+   ]
+  },
+  {
+   "stringId": 70,
+   "icon": "data/Icons/Iberianwolf_frame.png",
+   "maxDifficultyRating": 6,
+   "field_0x14": 0,
+   "field_0x18": 0.0,
+   "triple_0x1C": [
+    32.0,
+    36.0,
+    39.0
+   ],
+   "field_0x28": [
+    0.0,
+    0.0
+   ],
+   "series_0x30": [
+    32.5,
+    34.299999,
+    36.650002,
+    39.0,
+    40.799999,
+    43.099998,
+    45.400002,
+    47.5
+   ],
+   "field_0x50": 1,
+   "field_0x54": 8,
+   "name": "Iberian Wolf",
+   "hashes": [
+    "117DE092"
+   ],
+   "hashesSeenInSaves": [
+    "117DE092"
+   ]
+  },
+  {
+   "stringId": 72,
+   "icon": "data/Icons/Jackrabbit_frame.png",
+   "maxDifficultyRating": 1,
+   "field_0x14": 1,
+   "field_0x18": 0.0,
+   "triple_0x1C": [
+    2.8,
+    4.8,
+    6.3
+   ],
+   "field_0x28": [
+    0.0,
+    0.0
+   ],
+   "series_0x30": [
+    4.2,
+    6.3,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "field_0x50": 0,
+   "field_0x54": 0,
+   "name": "Jackrabbit",
+   "hashes": [
+    "49241CFB"
+   ],
+   "hashesSeenInSaves": []
+  },
+  {
+   "stringId": 75,
+   "icon": "data/Icons/Lesserkudu_frame.png",
+   "maxDifficultyRating": 4,
+   "field_0x14": 1,
+   "field_0x18": 0.0,
+   "triple_0x1C": [
+    107.800003,
+    132.800003,
+    151.600006
+   ],
+   "field_0x28": [
+    0.0,
+    0.0
+   ],
+   "series_0x30": [
+    69.0,
+    77.0,
+    88.599998,
+    99.5,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "field_0x50": 0,
+   "field_0x54": 0,
+   "name": "Lesser Kudu",
+   "hashes": [
+    "7489DC93"
+   ],
+   "hashesSeenInSaves": [
+    "7489DC93"
+   ]
+  },
+  {
+   "stringId": 77,
+   "icon": "data/Icons/Lion_frame.png",
+   "maxDifficultyRating": 9,
+   "field_0x14": 1,
+   "field_0x18": 0.0,
+   "triple_0x1C": [
+    38.0,
+    44.0,
+    48.5
+   ],
+   "field_0x28": [
+    0.0,
+    0.0
+   ],
+   "series_0x30": [
+    153.0,
+    166.0,
+    180.0,
+    195.0,
+    210.0,
+    225.0,
+    239.570007,
+    253.699997
+   ],
+   "field_0x50": 1,
+   "field_0x54": 3,
+   "name": "Lion",
+   "hashes": [
+    "82770585"
+   ],
+   "hashesSeenInSaves": [
+    "82770585"
+   ]
+  },
+  {
+   "stringId": 83,
+   "icon": "data/Icons/Mallard_frame.png",
+   "maxDifficultyRating": 1,
+   "field_0x14": 0,
+   "field_0x18": 0.0,
+   "triple_0x1C": [
+    9.9,
+    15.4,
+    19.6
+   ],
+   "field_0x28": [
+    0.0,
+    0.0
+   ],
+   "series_0x30": [
+    1.36,
+    1.95,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "field_0x50": 0,
+   "field_0x54": 0,
+   "name": "Mallard",
+   "hashes": [
+    "02B03AA7",
+    "7193A92E"
+   ],
+   "hashesSeenInSaves": [
+    "02B03AA7"
+   ]
+  },
+  {
+   "stringId": 85,
+   "icon": "data/Icons/Moose_frame.png",
+   "maxDifficultyRating": 8,
+   "field_0x14": 2,
+   "field_0x18": 0.0,
+   "triple_0x1C": [
+    86.220001,
+    194.089996,
+    274.98999
+   ],
+   "field_0x28": [
+    0.0,
+    0.0
+   ],
+   "series_0x30": [
+    425.0,
+    474.0,
+    535.5,
+    593.099976,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "field_0x50": 0,
+   "field_0x54": 0,
+   "name": "Moose",
+   "hashes": [
+    "0941ABE8",
+    "6C0365E2"
+   ],
+   "hashesSeenInSaves": [
+    "0941ABE8",
+    "6C0365E2"
+   ]
+  },
+  {
+   "stringId": 86,
+   "icon": "data/Icons/Mountaingoat_frame.png",
+   "maxDifficultyRating": 4,
+   "field_0x14": 1,
+   "field_0x18": 0.0,
+   "triple_0x1C": [
+    52.720001,
+    84.120003,
+    107.669998
+   ],
+   "field_0x28": [
+    0.0,
+    0.0
+   ],
+   "series_0x30": [
+    80.0,
+    98.5,
+    112.0,
+    137.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "field_0x50": 0,
+   "field_0x54": 0,
+   "name": "Mountain Goat",
+   "hashes": [
+    "42832763"
+   ],
+   "hashesSeenInSaves": [
+    "42832763"
+   ]
+  },
+  {
+   "stringId": 88,
+   "icon": "data/Icons/Muledeer_frame.png",
+   "maxDifficultyRating": 5,
+   "field_0x14": 0,
+   "field_0x18": 0.0,
+   "triple_0x1C": [
+    98.360001,
+    220.539993,
+    312.170013
+   ],
+   "field_0x28": [
+    0.0,
+    0.0
+   ],
+   "series_0x30": [
+    130.0,
+    141.0,
+    169.5,
+    195.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "field_0x50": 0,
+   "field_0x54": 0,
+   "name": "Mule Deer",
+   "hashes": [
+    "B0113E10"
+   ],
+   "hashesSeenInSaves": [
+    "B0113E10"
+   ]
+  },
+  {
+   "stringId": 89,
+   "icon": "data/Icons/Muskdeer_frame.png",
+   "maxDifficultyRating": 2,
+   "field_0x14": 1,
+   "field_0x18": 0.0,
+   "triple_0x1C": [
+    60.0,
+    168.0,
+    249.0
+   ],
+   "field_0x28": [
+    0.0,
+    0.0
+   ],
+   "series_0x30": [
+    11.5,
+    16.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "field_0x50": 0,
+   "field_0x54": 0,
+   "name": "Musk Deer",
+   "hashes": [
+    "04705D5B"
+   ],
+   "hashesSeenInSaves": []
+  },
+  {
+   "stringId": 93,
+   "icon": "data/Icons/Plainsbison_frame.png",
+   "maxDifficultyRating": 9,
+   "field_0x14": 0,
+   "field_0x18": 0.0,
+   "triple_0x1C": [
+    117.730003,
+    155.309998,
+    183.5
+   ],
+   "field_0x28": [
+    0.0,
+    0.0
+   ],
+   "series_0x30": [
+    550.0,
+    750.0,
+    930.0,
+    1100.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "field_0x50": 0,
+   "field_0x54": 0,
+   "name": "Plains Bison",
+   "hashes": [
+    "D9CA14CA"
+   ],
+   "hashesSeenInSaves": [
+    "D9CA14CA"
+   ]
+  },
+  {
+   "stringId": 94,
+   "icon": "data/Icons/Pronghorn_frame.png",
+   "maxDifficultyRating": 3,
+   "field_0x14": 0,
+   "field_0x18": 0.0,
+   "triple_0x1C": [
+    36.650002,
+    72.419998,
+    108.0
+   ],
+   "field_0x28": [
+    0.0,
+    0.0
+   ],
+   "series_0x30": [
+    45.0,
+    49.0,
+    54.0,
+    61.5,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "field_0x50": 0,
+   "field_0x54": 0,
+   "name": "Pronghorn",
+   "hashes": [
+    "2D30B3CE"
+   ],
+   "hashesSeenInSaves": [
+    "2D30B3CE"
+   ]
+  },
+  {
+   "stringId": 95,
+   "icon": "data/Icons/Puma_frame.png",
+   "maxDifficultyRating": 5,
+   "field_0x14": 0,
+   "field_0x18": 0.0,
+   "triple_0x1C": [
+    32.0,
+    36.0,
+    39.0
+   ],
+   "field_0x28": [
+    0.0,
+    0.0
+   ],
+   "series_0x30": [
+    37.0,
+    46.0,
+    55.0,
+    60.0,
+    70.0,
+    80.0,
+    88.300003,
+    96.199997
+   ],
+   "field_0x50": 1,
+   "field_0x54": 4,
+   "name": "Puma",
+   "hashes": [
+    "2DD9214B"
+   ],
+   "hashesSeenInSaves": [
+    "2DD9214B"
+   ]
+  },
+  {
+   "stringId": 96,
+   "icon": "data/Icons/Rooseveltelk_frame.png",
+   "maxDifficultyRating": 7,
+   "field_0x14": 0,
+   "field_0x18": 0.0,
+   "triple_0x1C": [
+    177.800003,
+    351.799988,
+    481.399994
+   ],
+   "field_0x28": [
+    0.0,
+    0.0
+   ],
+   "series_0x30": [
+    325.0,
+    360.0,
+    400.0,
+    470.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "field_0x50": 0,
+   "field_0x54": 0,
+   "name": "RM Elk",
+   "hashes": [
+    "B99FE58F"
+   ],
+   "hashesSeenInSaves": [
+    "B99FE58F"
+   ]
+  },
+  {
+   "stringId": 97,
+   "icon": "data/Icons/Reddeer_frame.png",
+   "maxDifficultyRating": 6,
+   "field_0x14": 1,
+   "field_0x18": 0.0,
+   "triple_0x1C": [
+    90.5,
+    182.199997,
+    251.0
+   ],
+   "field_0x28": [
+    0.0,
+    0.0
+   ],
+   "series_0x30": [
+    147.5,
+    167.0,
+    177.0,
+    186.399994,
+    197.5,
+    207.800003,
+    218.199997,
+    228.330002
+   ],
+   "field_0x50": 1,
+   "field_0x54": 0,
+   "name": "Red Deer",
+   "hashes": [
+    "1998199C",
+    "D8B6A893"
+   ],
+   "hashesSeenInSaves": [
+    "1998199C",
+    "D8B6A893"
+   ]
+  },
+  {
+   "stringId": 98,
+   "icon": "data/Icons/Redfox_frame.png",
+   "maxDifficultyRating": 2,
+   "field_0x14": 0,
+   "field_0x18": 0.0,
+   "triple_0x1C": [
+    4.7,
+    10.0,
+    14.1
+   ],
+   "field_0x28": [
+    0.0,
+    0.0
+   ],
+   "series_0x30": [
+    3.5,
+    4.9,
+    6.3,
+    7.9,
+    9.5,
+    11.0,
+    12.43,
+    13.9
+   ],
+   "field_0x50": 1,
+   "field_0x54": 0,
+   "name": "Red Fox",
+   "hashes": [
+    "7D804490",
+    "833A5EC5",
+    "8527AFD1"
+   ],
+   "hashesSeenInSaves": [
+    "7D804490",
+    "8527AFD1"
+   ]
+  },
+  {
+   "stringId": 99,
+   "icon": "data/Icons/Reindeer_frame.png",
+   "maxDifficultyRating": 6,
+   "field_0x14": 1,
+   "field_0x18": 0.0,
+   "triple_0x1C": [
+    152.529999,
+    311.209991,
+    430.230011
+   ],
+   "field_0x28": [
+    0.0,
+    0.0
+   ],
+   "series_0x30": [
+    111.0,
+    159.0,
+    170.0,
+    178.100006,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "field_0x50": 0,
+   "field_0x54": 0,
+   "name": "Reindeer",
+   "hashes": [
+    "6A0D3A58"
+   ],
+   "hashesSeenInSaves": []
+  },
+  {
+   "stringId": 104,
+   "icon": "data/Icons/Roedeer_frame.png",
+   "maxDifficultyRating": 3,
+   "field_0x14": 0,
+   "field_0x18": 0.0,
+   "triple_0x1C": [
+    41.5,
+    64.300003,
+    81.800003
+   ],
+   "field_0x28": [
+    0.0,
+    0.0
+   ],
+   "series_0x30": [
+    24.799999,
+    33.200001,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "field_0x50": 0,
+   "field_0x54": 0,
+   "name": "Roe Deer",
+   "hashes": [
+    "7A5DC096",
+    "9BAE9443"
+   ],
+   "hashesSeenInSaves": [
+    "7A5DC096",
+    "9BAE9443"
+   ]
+  },
+  {
+   "stringId": 105,
+   "icon": "data/Icons/Rondaibex_frame.png",
+   "maxDifficultyRating": 4,
+   "field_0x14": 1,
+   "field_0x18": 0.0,
+   "triple_0x1C": [
+    69.199997,
+    91.400002,
+    107.900002
+   ],
+   "field_0x28": [
+    0.0,
+    0.0
+   ],
+   "series_0x30": [
+    48.0,
+    53.799999,
+    60.299999,
+    66.849998,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "field_0x50": 0,
+   "field_0x54": 0,
+   "name": "Ronda Ibex",
+   "hashes": [
+    "B24527CB"
+   ],
+   "hashesSeenInSaves": [
+    "B24527CB"
+   ]
+  },
+  {
+   "stringId": 106,
+   "icon": "data/Icons/Rooseveltelk_frame.png",
+   "maxDifficultyRating": 7,
+   "field_0x14": 1,
+   "field_0x18": 0.0,
+   "triple_0x1C": [
+    128.699997,
+    272.799988,
+    380.799988
+   ],
+   "field_0x28": [
+    0.0,
+    0.0
+   ],
+   "series_0x30": [
+    320.0,
+    378.0,
+    430.0,
+    474.200012,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "field_0x50": 0,
+   "field_0x54": 0,
+   "name": "Roosevelt Elk",
+   "hashes": [
+    "94979CF9"
+   ],
+   "hashesSeenInSaves": []
+  },
+  {
+   "stringId": 107,
+   "icon": "data/Icons/Sidestripedjackal_frame.png",
+   "maxDifficultyRating": 2,
+   "field_0x14": 1,
+   "field_0x18": 0.0,
+   "triple_0x1C": [
+    16.799999,
+    23.799999,
+    29.1
+   ],
+   "field_0x28": [
+    0.0,
+    0.0
+   ],
+   "series_0x30": [
+    7.0,
+    7.8,
+    8.8,
+    9.5,
+    10.5,
+    11.2,
+    12.2,
+    13.0
+   ],
+   "field_0x50": 1,
+   "field_0x54": 3,
+   "name": "S-Striped Jackal",
+   "hashes": [
+    "2FDCAF40"
+   ],
+   "hashesSeenInSaves": [
+    "2FDCAF40"
+   ]
+  },
+  {
+   "stringId": 108,
+   "icon": "data/Icons/Southeasternibex_frame.png",
+   "maxDifficultyRating": 4,
+   "field_0x14": 2,
+   "field_0x18": 0.0,
+   "triple_0x1C": [
+    49.700001,
+    72.5,
+    89.599998
+   ],
+   "field_0x28": [
+    0.0,
+    0.0
+   ],
+   "series_0x30": [
+    48.700001,
+    58.700001,
+    70.25,
+    81.400002,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "field_0x50": 0,
+   "field_0x54": 0,
+   "name": "SES Ibex",
+   "hashes": [
+    "01C2CAB9"
+   ],
+   "hashesSeenInSaves": [
+    "01C2CAB9"
+   ]
+  },
+  {
+   "stringId": 110,
+   "icon": "data/Icons/Scrubhare_frame.png",
+   "maxDifficultyRating": 1,
+   "field_0x14": 1,
+   "field_0x18": 0.0,
+   "triple_0x1C": [
+    2.36,
+    4.08,
+    5.37
+   ],
+   "field_0x28": [
+    0.0,
+    0.0
+   ],
+   "series_0x30": [
+    3.5,
+    5.4,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "field_0x50": 0,
+   "field_0x54": 0,
+   "name": "Scrub Hare",
+   "hashes": [
+    "74E5BC8E"
+   ],
+   "hashesSeenInSaves": [
+    "74E5BC8E"
+   ]
+  },
+  {
+   "stringId": 112,
+   "icon": "data/Icons/Sikadeer_frame.png",
+   "maxDifficultyRating": 4,
+   "field_0x14": 1,
+   "field_0x18": 0.0,
+   "triple_0x1C": [
+    53.200001,
+    136.399994,
+    198.699997
+   ],
+   "field_0x28": [
+    0.0,
+    0.0
+   ],
+   "series_0x30": [
+    38.099998,
+    48.200001,
+    59.5,
+    69.599998,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "field_0x50": 0,
+   "field_0x54": 0,
+   "name": "Sika Deer",
+   "hashes": [
+    "BA6F80F5"
+   ],
+   "hashesSeenInSaves": []
+  },
+  {
+   "stringId": 116,
+   "icon": "data/Icons/Springbok_frame.png",
+   "maxDifficultyRating": 3,
+   "field_0x14": 1,
+   "field_0x18": 0.0,
+   "triple_0x1C": [
+    36.459999,
+    60.509998,
+    78.550003
+   ],
+   "field_0x28": [
+    0.0,
+    0.0
+   ],
+   "series_0x30": [
+    31.0,
+    33.5,
+    37.599998,
+    40.400002,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "field_0x50": 0,
+   "field_0x54": 0,
+   "name": "Springbok",
+   "hashes": [
+    "F243B31E"
+   ],
+   "hashesSeenInSaves": [
+    "F243B31E"
+   ]
+  },
+  {
+   "stringId": 123,
+   "icon": "data/Icons/Turkey_frame.png",
+   "maxDifficultyRating": 1,
+   "field_0x14": 2,
+   "field_0x18": 0.0,
+   "triple_0x1C": [
+    3.36,
+    4.08,
+    4.62
+   ],
+   "field_0x28": [
+    0.0,
+    0.0
+   ],
+   "series_0x30": [
+    8.1,
+    9.71,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "field_0x50": 0,
+   "field_0x54": 0,
+   "name": "Turkey",
+   "hashes": [
+    "81E18062"
+   ],
+   "hashesSeenInSaves": [
+    "81E18062"
+   ]
+  },
+  {
+   "stringId": 125,
+   "icon": "data/Icons/Warthog_frame.png",
+   "maxDifficultyRating": 4,
+   "field_0x14": 2,
+   "field_0x18": 0.0,
+   "triple_0x1C": [
+    24.6,
+    43.799999,
+    58.200001
+   ],
+   "field_0x28": [
+    0.0,
+    0.0
+   ],
+   "series_0x30": [
+    70.0,
+    88.0,
+    115.0,
+    138.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "field_0x50": 0,
+   "field_0x54": 0,
+   "name": "Warthog",
+   "hashes": [
+    "B79E88B2"
+   ],
+   "hashesSeenInSaves": [
+    "B79E88B2"
+   ]
+  },
+  {
+   "stringId": 126,
+   "icon": "data/Icons/Waterbuffalo_frame.png",
+   "maxDifficultyRating": 9,
+   "field_0x14": 0,
+   "field_0x18": 0.0,
+   "triple_0x1C": [
+    84.199997,
+    138.100006,
+    167.5
+   ],
+   "field_0x28": [
+    0.0,
+    0.0
+   ],
+   "series_0x30": [
+    650.0,
+    730.0,
+    785.0,
+    858.700012,
+    935.0,
+    1011.0,
+    1082.0,
+    1150.0
+   ],
+   "field_0x50": 1,
+   "field_0x54": 4,
+   "name": "Water Buffalo",
+   "hashes": [
+    "2C52E985"
+   ],
+   "hashesSeenInSaves": [
+    "2C52E985"
+   ]
+  },
+  {
+   "stringId": 127,
+   "icon": "data/Icons/Whitetaildeer_frame.png",
+   "maxDifficultyRating": 4,
+   "field_0x14": 2,
+   "field_0x18": 0.0,
+   "triple_0x1C": [
+    112.0,
+    193.699997,
+    255.0
+   ],
+   "field_0x28": [
+    0.0,
+    0.0
+   ],
+   "series_0x30": [
+    73.75,
+    94.940002,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "field_0x50": 0,
+   "field_0x54": 0,
+   "name": "Whitetail Deer",
+   "hashes": [
+    "E53D3987"
+   ],
+   "hashesSeenInSaves": [
+    "E53D3987"
+   ]
+  },
+  {
+   "stringId": 128,
+   "icon": "data/Icons/Wildboar_frame.png",
+   "maxDifficultyRating": 5,
+   "field_0x14": 9,
+   "field_0x18": 0.0,
+   "triple_0x1C": [
+    37.5,
+    98.5,
+    144.25
+   ],
+   "field_0x28": [
+    0.0,
+    0.0
+   ],
+   "series_0x30": [
+    82.300003,
+    124.0,
+    168.699997,
+    217.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "field_0x50": 0,
+   "field_0x54": 0,
+   "name": "Wild Boar",
+   "hashes": [
+    "08CBEB4A",
+    "5DA156C9"
+   ],
+   "hashesSeenInSaves": [
+    "08CBEB4A",
+    "5DA156C9"
+   ]
+  },
+  {
+   "stringId": 168,
+   "icon": "data/Icons/Pheasant_frame.png",
+   "maxDifficultyRating": 1,
+   "field_0x14": 1,
+   "field_0x18": 0.0,
+   "triple_0x1C": [
+    9.1,
+    15.5,
+    20.299999
+   ],
+   "field_0x28": [
+    0.0,
+    0.0
+   ],
+   "series_0x30": [
+    1.62,
+    2.74,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "field_0x50": 0,
+   "field_0x54": 0,
+   "name": "Pheasant",
+   "hashes": [
+    "C5D0C033"
+   ],
+   "hashesSeenInSaves": [
+    "C5D0C033"
+   ]
+  },
+  {
+   "stringId": 169,
+   "icon": "data/Icons/Turkey_frame.png",
+   "maxDifficultyRating": 1,
+   "field_0x14": 2,
+   "field_0x18": 0.0,
+   "triple_0x1C": [
+    3.3,
+    4.0,
+    4.6
+   ],
+   "field_0x28": [
+    0.0,
+    0.0
+   ],
+   "series_0x30": [
+    8.44,
+    10.49,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "field_0x50": 0,
+   "field_0x54": 0,
+   "name": "RG Turkey",
+   "hashes": [
+    "16272898"
+   ],
+   "hashesSeenInSaves": []
+  },
+  {
+   "stringId": 170,
+   "icon": "data/Icons/Bobcat_frame.png",
+   "maxDifficultyRating": 2,
+   "field_0x14": 2,
+   "field_0x18": 0.0,
+   "triple_0x1C": [
+    18.5,
+    23.700001,
+    27.6
+   ],
+   "field_0x28": [
+    0.0,
+    0.0
+   ],
+   "series_0x30": [
+    7.33,
+    8.67,
+    8.9,
+    10.2,
+    12.3,
+    14.9,
+    15.9,
+    16.9
+   ],
+   "field_0x50": 1,
+   "field_0x54": 11,
+   "name": "Mexican Bobcat",
+   "hashes": [
+    "0AB96B2A"
+   ],
+   "hashesSeenInSaves": []
+  },
+  {
+   "stringId": 171,
+   "icon": "data/Icons/Antilopejackrabbit_frame.png",
+   "maxDifficultyRating": 1,
+   "field_0x14": 3,
+   "field_0x18": 0.0,
+   "triple_0x1C": [
+    2.8,
+    4.8,
+    6.3
+   ],
+   "field_0x28": [
+    0.0,
+    0.0
+   ],
+   "series_0x30": [
+    3.5,
+    4.3,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "field_0x50": 0,
+   "field_0x54": 0,
+   "name": "Ant. Jackrabbit",
+   "hashes": [
+    "74CDE657"
+   ],
+   "hashesSeenInSaves": []
+  },
+  {
+   "stringId": 172,
+   "icon": "data/Icons/Peccary_frame.png",
+   "maxDifficultyRating": 3,
+   "field_0x14": 1,
+   "field_0x18": 0.0,
+   "triple_0x1C": [
+    37.5,
+    98.5,
+    144.199997
+   ],
+   "field_0x28": [
+    0.0,
+    0.0
+   ],
+   "series_0x30": [
+    19.5,
+    22.219999,
+    25.799999,
+    29.700001,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "field_0x50": 0,
+   "field_0x54": 0,
+   "name": "Coll. Peccary",
+   "hashes": [
+    "6B20CB0D",
+    "C500A572"
+   ],
+   "hashesSeenInSaves": [
+    "6B20CB0D"
+   ]
+  },
+  {
+   "stringId": 174,
+   "icon": "data/Icons/Quail_frame.png",
+   "maxDifficultyRating": 1,
+   "field_0x14": 0,
+   "field_0x18": 0.0,
+   "triple_0x1C": [
+    154.0,
+    202.0,
+    238.0
+   ],
+   "field_0x28": [
+    0.0,
+    0.0
+   ],
+   "series_0x30": [
+    0.17,
+    0.24,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "field_0x50": 0,
+   "field_0x54": 0,
+   "name": "Bobwhite Quail",
+   "hashes": [
+    "641A2A22"
+   ],
+   "hashesSeenInSaves": [
+    "641A2A22"
+   ]
+  },
+  {
+   "stringId": 175,
+   "icon": "data/Icons/Turkey_frame.png",
+   "maxDifficultyRating": 1,
+   "field_0x14": 2,
+   "field_0x18": 0.0,
+   "triple_0x1C": [
+    3.36,
+    4.08,
+    4.62
+   ],
+   "field_0x28": [
+    0.0,
+    0.0
+   ],
+   "series_0x30": [
+    7.9,
+    10.2,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "field_0x50": 0,
+   "field_0x54": 0,
+   "name": "EW Turkey",
+   "hashes": [
+    "6B7BBB47"
+   ],
+   "hashesSeenInSaves": [
+    "6B7BBB47"
+   ]
+  },
+  {
+   "stringId": 176,
+   "icon": "data/Icons/ECTRabbit_frame.png",
+   "maxDifficultyRating": 1,
+   "field_0x14": 1,
+   "field_0x18": 0.0,
+   "triple_0x1C": [
+    1.05,
+    1.58,
+    1.97
+   ],
+   "field_0x28": [
+    0.0,
+    0.0
+   ],
+   "series_0x30": [
+    1.41,
+    2.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "field_0x50": 0,
+   "field_0x54": 0,
+   "name": "ECt Rabbit",
+   "hashes": [
+    "47FBE619"
+   ],
+   "hashesSeenInSaves": [
+    "47FBE619"
+   ]
+  },
+  {
+   "stringId": 177,
+   "icon": "data/Icons/Raccoon_frame.png",
+   "maxDifficultyRating": 2,
+   "field_0x14": 3,
+   "field_0x18": 0.0,
+   "triple_0x1C": [
+    5.0,
+    9.0,
+    12.0
+   ],
+   "field_0x28": [
+    0.0,
+    0.0
+   ],
+   "series_0x30": [
+    5.36,
+    7.57,
+    9.75,
+    11.9,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "field_0x50": 0,
+   "field_0x54": 0,
+   "name": "Raccoon",
+   "hashes": [
+    "3C761CE6"
+   ],
+   "hashesSeenInSaves": [
+    "3C761CE6"
+   ]
+  },
+  {
+   "stringId": 178,
+   "icon": "data/Icons/Grayfox_frame.png",
+   "maxDifficultyRating": 2,
+   "field_0x14": 1,
+   "field_0x18": 0.0,
+   "triple_0x1C": [
+    3.8,
+    5.3,
+    6.4
+   ],
+   "field_0x28": [
+    0.0,
+    0.0
+   ],
+   "series_0x30": [
+    3.0,
+    3.8,
+    4.35,
+    4.8,
+    5.195,
+    5.55,
+    6.1,
+    6.4
+   ],
+   "field_0x50": 1,
+   "field_0x54": 12,
+   "name": "Gray Fox",
+   "hashes": [
+    "7E2215FB"
+   ],
+   "hashesSeenInSaves": [
+    "7E2215FB"
+   ]
+  },
+  {
+   "stringId": 179,
+   "icon": "data/Icons/Alligator_frame.png",
+   "maxDifficultyRating": 7,
+   "field_0x14": 1,
+   "field_0x18": 0.0,
+   "triple_0x1C": [
+    226.0,
+    378.0,
+    492.0
+   ],
+   "field_0x28": [
+    0.0,
+    0.0
+   ],
+   "series_0x30": [
+    104.0,
+    200.0,
+    250.0,
+    300.0,
+    350.0,
+    394.0,
+    436.0,
+    492.0
+   ],
+   "field_0x50": 1,
+   "field_0x54": 12,
+   "name": "Am. Alligator",
+   "hashes": [
+    "BAF2D3A2"
+   ],
+   "hashesSeenInSaves": []
+  },
+  {
+   "stringId": 198,
+   "icon": "data/Icons/EurasianWigeon_frame.png",
+   "maxDifficultyRating": 1,
+   "field_0x14": 0,
+   "field_0x18": 0.0,
+   "triple_0x1C": [
+    590.0,
+    770.0,
+    905.0
+   ],
+   "field_0x28": [
+    0.0,
+    0.0
+   ],
+   "series_0x30": [
+    0.71,
+    0.905,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "field_0x50": 0,
+   "field_0x54": 0,
+   "name": "Eu.Wigeon",
+   "hashes": [
+    "0520122F"
+   ],
+   "hashesSeenInSaves": [
+    "0520122F"
+   ]
+  },
+  {
+   "stringId": 199,
+   "icon": "data/Icons/TundraBeanGoose_frame.png",
+   "maxDifficultyRating": 1,
+   "field_0x14": 0,
+   "field_0x18": 0.0,
+   "triple_0x1C": [
+    2.18,
+    2.74,
+    3.16
+   ],
+   "field_0x28": [
+    0.0,
+    0.0
+   ],
+   "series_0x30": [
+    2.2,
+    2.5,
+    2.8,
+    3.14,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "field_0x50": 0,
+   "field_0x54": 0,
+   "name": "T.Bean Goose",
+   "hashes": [
+    "52EF84DD"
+   ],
+   "hashesSeenInSaves": []
+  },
+  {
+   "stringId": 200,
+   "icon": "data/Icons/EurasianTeal_frame.png",
+   "maxDifficultyRating": 1,
+   "field_0x14": 0,
+   "field_0x18": 0.0,
+   "triple_0x1C": [
+    312.0,
+    336.0,
+    354.0
+   ],
+   "field_0x28": [
+    0.0,
+    0.0
+   ],
+   "series_0x30": [
+    0.321,
+    0.34,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "field_0x50": 0,
+   "field_0x54": 0,
+   "name": "Eu.Teal",
+   "hashes": [
+    "8B196622"
+   ],
+   "hashesSeenInSaves": []
+  },
+  {
+   "stringId": 201,
+   "icon": "data/Icons/BlackGrouse_frame.png",
+   "maxDifficultyRating": 1,
+   "field_0x14": 0,
+   "field_0x18": 0.0,
+   "triple_0x1C": [
+    85.0,
+    105.0,
+    120.0
+   ],
+   "field_0x28": [
+    0.0,
+    0.0
+   ],
+   "series_0x30": [
+    0.98,
+    1.2,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "field_0x50": 0,
+   "field_0x54": 0,
+   "name": "Black Grouse",
+   "hashes": [
+    "4D6A0968"
+   ],
+   "hashesSeenInSaves": []
+  },
+  {
+   "stringId": 202,
+   "icon": "data/Icons/Goldeneye_frame.png",
+   "maxDifficultyRating": 1,
+   "field_0x14": 0,
+   "field_0x18": 0.0,
+   "triple_0x1C": [
+    740.0,
+    1020.0,
+    1230.0
+   ],
+   "field_0x28": [
+    0.0,
+    0.0
+   ],
+   "series_0x30": [
+    0.9,
+    1.21,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "field_0x50": 0,
+   "field_0x54": 0,
+   "name": "Goldeneye",
+   "hashes": [
+    "0F0E0C0D"
+   ],
+   "hashesSeenInSaves": [
+    "0F0E0C0D"
+   ]
+  },
+  {
+   "stringId": 203,
+   "icon": "data/Icons/HazelGrouse_frame.png",
+   "maxDifficultyRating": 1,
+   "field_0x14": 0,
+   "field_0x18": 0.0,
+   "triple_0x1C": [
+    330.0,
+    390.0,
+    435.0
+   ],
+   "field_0x28": [
+    0.0,
+    0.0
+   ],
+   "series_0x30": [
+    0.37,
+    0.435,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "field_0x50": 0,
+   "field_0x54": 0,
+   "name": "Hazel Grouse",
+   "hashes": [
+    "6CF26075"
+   ],
+   "hashesSeenInSaves": []
+  },
+  {
+   "stringId": 204,
+   "icon": "data/Icons/WesternCapercaillie_frame.png",
+   "maxDifficultyRating": 1,
+   "field_0x14": 0,
+   "field_0x18": 0.0,
+   "triple_0x1C": [
+    2.2,
+    3.6,
+    4.64
+   ],
+   "field_0x28": [
+    0.0,
+    0.0
+   ],
+   "series_0x30": [
+    3.5,
+    4.65,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "field_0x50": 0,
+   "field_0x54": 0,
+   "name": "W.Capercaillie",
+   "hashes": [
+    "93119A6A"
+   ],
+   "hashesSeenInSaves": []
+  },
+  {
+   "stringId": 205,
+   "icon": "data/Icons/TuftedDuck_frame.png",
+   "maxDifficultyRating": 1,
+   "field_0x14": 0,
+   "field_0x18": 0.0,
+   "triple_0x1C": [
+    704.0,
+    852.0,
+    963.0
+   ],
+   "field_0x28": [
+    0.0,
+    0.0
+   ],
+   "series_0x30": [
+    0.79,
+    0.963,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "field_0x50": 0,
+   "field_0x54": 0,
+   "name": "Tufted Duck",
+   "hashes": [
+    "3C8F0FDF"
+   ],
+   "hashesSeenInSaves": []
+  },
+  {
+   "stringId": 206,
+   "icon": "data/Icons/WillowPtarmigan_frame.png",
+   "maxDifficultyRating": 1,
+   "field_0x14": 0,
+   "field_0x18": 0.0,
+   "triple_0x1C": [
+    492.0,
+    616.0,
+    709.0
+   ],
+   "field_0x28": [
+    0.0,
+    0.0
+   ],
+   "series_0x30": [
+    0.575,
+    0.8,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "field_0x50": 0,
+   "field_0x54": 0,
+   "name": "Rock Ptarmigan",
+   "hashes": [
+    "03130989"
+   ],
+   "hashesSeenInSaves": []
+  },
+  {
+   "stringId": 207,
+   "icon": "data/Icons/WillowPtarmigan_frame.png",
+   "maxDifficultyRating": 1,
+   "field_0x14": 0,
+   "field_0x18": 0.0,
+   "triple_0x1C": [
+    506.0,
+    658.0,
+    772.0
+   ],
+   "field_0x28": [
+    0.0,
+    0.0
+   ],
+   "series_0x30": [
+    0.6,
+    0.77,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "field_0x50": 0,
+   "field_0x54": 0,
+   "name": "Willow Ptarmigan",
+   "hashes": [
+    "68A8F118"
+   ],
+   "hashesSeenInSaves": []
+  },
+  {
+   "stringId": 208,
+   "icon": "data/Icons/GreylagGoose_frame.png",
+   "maxDifficultyRating": 1,
+   "field_0x14": 0,
+   "field_0x18": 0.0,
+   "triple_0x1C": [
+    2.8,
+    3.4,
+    3.85
+   ],
+   "field_0x28": [
+    0.0,
+    0.0
+   ],
+   "series_0x30": [
+    2.8,
+    3.18,
+    3.5,
+    3.85,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "field_0x50": 0,
+   "field_0x54": 0,
+   "name": "Greylag Goose",
+   "hashes": [
+    "CD28471F"
+   ],
+   "hashesSeenInSaves": []
+  },
+  {
+   "stringId": 209,
+   "icon": "data/Icons/MountainHare_frame.png",
+   "maxDifficultyRating": 1,
+   "field_0x14": 0,
+   "field_0x18": 0.0,
+   "triple_0x1C": [
+    2.8,
+    4.4,
+    5.6
+   ],
+   "field_0x28": [
+    0.0,
+    0.0
+   ],
+   "series_0x30": [
+    4.04,
+    5.6,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "field_0x50": 0,
+   "field_0x54": 0,
+   "name": "Mountain Hare",
+   "hashes": [
+    "1FC06069"
+   ],
+   "hashesSeenInSaves": []
+  },
+  {
+   "stringId": 210,
+   "icon": "data/Icons/RaccoonDog_frame.png",
+   "maxDifficultyRating": 2,
+   "field_0x14": 0,
+   "field_0x18": 0.0,
+   "triple_0x1C": [
+    4.4,
+    7.2,
+    9.29
+   ],
+   "field_0x28": [
+    0.0,
+    0.0
+   ],
+   "series_0x30": [
+    3.8,
+    4.5,
+    5.3,
+    6.13,
+    6.88,
+    7.66,
+    8.5,
+    9.29
+   ],
+   "field_0x50": 1,
+   "field_0x54": 13,
+   "name": "Raccoon Dog",
+   "hashes": [
+    "F26ED19D"
+   ],
+   "hashesSeenInSaves": []
+  },
+  {
+   "stringId": 223,
+   "icon": "data/Icons/EurasianTeal_frame.png",
+   "maxDifficultyRating": 1,
+   "field_0x14": 0,
+   "field_0x18": 0.0,
+   "triple_0x1C": [
+    340.0,
+    420.0,
+    480.0
+   ],
+   "field_0x28": [
+    0.0,
+    0.0
+   ],
+   "series_0x30": [
+    0.375,
+    0.446,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "field_0x50": 0,
+   "field_0x54": 0,
+   "name": "Green-Winged Teal",
+   "hashes": [
+    "CCA8FDF2"
+   ],
+   "hashesSeenInSaves": [
+    "CCA8FDF2"
+   ]
+  },
+  {
+   "stringId": 224,
+   "icon": "data/Icons/Bobcat_frame.png",
+   "maxDifficultyRating": 2,
+   "field_0x14": 2,
+   "field_0x18": 0.0,
+   "triple_0x1C": [
+    18.5,
+    23.700001,
+    27.6
+   ],
+   "field_0x28": [
+    0.0,
+    0.0
+   ],
+   "series_0x30": [
+    7.33,
+    8.67,
+    8.9,
+    10.2,
+    12.3,
+    14.9,
+    15.9,
+    16.9
+   ],
+   "field_0x50": 1,
+   "field_0x54": 14,
+   "name": "Bobcat",
+   "hashes": [
+    "98898BC6"
+   ],
+   "hashesSeenInSaves": [
+    "98898BC6"
+   ]
+  },
+  {
+   "stringId": 226,
+   "icon": "data/Icons/Kangaroo_frame.png",
+   "maxDifficultyRating": 4,
+   "field_0x14": 1,
+   "field_0x18": 0.0,
+   "triple_0x1C": [
+    226.0,
+    378.0,
+    492.0
+   ],
+   "field_0x28": [
+    0.0,
+    0.0
+   ],
+   "series_0x30": [
+    25.0,
+    29.0,
+    37.0,
+    51.0,
+    54.099998,
+    56.900002,
+    59.900002,
+    62.849998
+   ],
+   "field_0x50": 1,
+   "field_0x54": 16,
+   "name": "EG Kangaroo",
+   "hashes": [
+    "739A4F18"
+   ],
+   "hashesSeenInSaves": [
+    "739A4F18"
+   ]
+  },
+  {
+   "stringId": 227,
+   "icon": "data/Icons/Crocodile_frame.png",
+   "maxDifficultyRating": 8,
+   "field_0x14": 0,
+   "field_0x18": 0.0,
+   "triple_0x1C": [
+    420.0,
+    760.0,
+    1015.0
+   ],
+   "field_0x28": [
+    0.0,
+    0.0
+   ],
+   "series_0x30": [
+    192.0,
+    300.0,
+    490.0,
+    594.299988,
+    699.0,
+    798.0,
+    894.0,
+    996.0
+   ],
+   "field_0x50": 1,
+   "field_0x54": 16,
+   "name": "SW Crocodile",
+   "hashes": [
+    "BA302E00"
+   ],
+   "hashesSeenInSaves": [
+    "BA302E00"
+   ]
+  },
+  {
+   "stringId": 228,
+   "icon": "data/Icons/Banteng_frame.png",
+   "maxDifficultyRating": 9,
+   "field_0x14": 0,
+   "field_0x18": 0.0,
+   "triple_0x1C": [
+    71.769997,
+    109.040001,
+    137.0
+   ],
+   "field_0x28": [
+    0.0,
+    0.0
+   ],
+   "series_0x30": [
+    618.0,
+    661.0,
+    715.0,
+    771.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "field_0x50": 0,
+   "field_0x54": 0,
+   "name": "Banteng",
+   "hashes": [
+    "A46DF63D"
+   ],
+   "hashesSeenInSaves": [
+    "A46DF63D"
+   ]
+  },
+  {
+   "stringId": 229,
+   "icon": "data/Icons/JavanRusa_frame.png",
+   "maxDifficultyRating": 5,
+   "field_0x14": 0,
+   "field_0x18": 0.0,
+   "triple_0x1C": [
+    64.620003,
+    112.709999,
+    148.779999
+   ],
+   "field_0x28": [
+    0.0,
+    0.0
+   ],
+   "series_0x30": [
+    80.800003,
+    100.0,
+    161.0,
+    168.009995,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "field_0x50": 0,
+   "field_0x54": 0,
+   "name": "Javan Rusa",
+   "hashes": [
+    "D0BAD3B3"
+   ],
+   "hashesSeenInSaves": [
+    "D0BAD3B3"
+   ]
+  },
+  {
+   "stringId": 230,
+   "icon": "data/Icons/HogDeer_frame.png",
+   "maxDifficultyRating": 3,
+   "field_0x14": 0,
+   "field_0x18": 0.0,
+   "triple_0x1C": [
+    49.450001,
+    83.300003,
+    108.68
+   ],
+   "field_0x28": [
+    0.0,
+    0.0
+   ],
+   "series_0x30": [
+    33.0,
+    41.0,
+    44.849998,
+    47.900002,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "field_0x50": 0,
+   "field_0x54": 0,
+   "name": "Hog Deer",
+   "hashes": [
+    "0068A2CA"
+   ],
+   "hashesSeenInSaves": [
+    "0068A2CA"
+   ]
+  },
+  {
+   "stringId": 231,
+   "icon": "data/Icons/MagpieGoose_frame.png",
+   "maxDifficultyRating": 1,
+   "field_0x14": 1,
+   "field_0x18": 0.0,
+   "triple_0x1C": [
+    2.8,
+    3.4,
+    3.85
+   ],
+   "field_0x28": [
+    0.0,
+    0.0
+   ],
+   "series_0x30": [
+    2.0,
+    2.33,
+    2.66,
+    3.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "field_0x50": 0,
+   "field_0x54": 0,
+   "name": "Magpie Goose",
+   "hashes": [
+    "5A6BDC6E"
+   ],
+   "hashesSeenInSaves": [
+    "5A6BDC6E"
+   ]
+  },
+  {
+   "stringId": 232,
+   "icon": "data/Icons/Sambar_frame.png",
+   "maxDifficultyRating": 7,
+   "field_0x14": 2,
+   "field_0x18": 0.0,
+   "triple_0x1C": [
+    67.919998,
+    124.209999,
+    166.240005
+   ],
+   "field_0x28": [
+    0.0,
+    0.0
+   ],
+   "series_0x30": [
+    215.0,
+    240.0,
+    276.5,
+    293.899994,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "field_0x50": 0,
+   "field_0x54": 0,
+   "name": "Sambar",
+   "hashes": [
+    "8FF3825F"
+   ],
+   "hashesSeenInSaves": [
+    "8FF3825F"
+   ]
+  },
+  {
+   "stringId": 233,
+   "icon": "data/Icons/StubbleQuail_frame.png",
+   "maxDifficultyRating": 1,
+   "field_0x14": 0,
+   "field_0x18": 0.0,
+   "triple_0x1C": [
+    154.0,
+    202.0,
+    238.0
+   ],
+   "field_0x28": [
+    0.0,
+    0.0
+   ],
+   "series_0x30": [
+    0.111,
+    0.125,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "field_0x50": 0,
+   "field_0x54": 0,
+   "name": "Stubble Quail",
+   "hashes": [
+    "C7863902"
+   ],
+   "hashesSeenInSaves": [
+    "C7863902"
+   ]
+  },
+  {
+   "stringId": 236,
+   "icon": "data/Icons/BengalTiger_frame.png",
+   "maxDifficultyRating": 9,
+   "field_0x14": 0,
+   "field_0x18": 0.0,
+   "triple_0x1C": [
+    36.0,
+    48.0,
+    57.0
+   ],
+   "field_0x28": [
+    0.0,
+    0.0
+   ],
+   "series_0x30": [
+    145.199997,
+    164.0,
+    183.5,
+    203.0,
+    220.0,
+    247.0,
+    272.100006,
+    296.0
+   ],
+   "field_0x50": 1,
+   "field_0x54": 17,
+   "name": "Bengal Tiger",
+   "hashes": [
+    "BFA52415"
+   ],
+   "hashesSeenInSaves": []
+  },
+  {
+   "stringId": 237,
+   "icon": "data/Icons/SnowLeopard_frame.png",
+   "maxDifficultyRating": 4,
+   "field_0x14": 0,
+   "field_0x18": 0.0,
+   "triple_0x1C": [
+    22.0,
+    26.0,
+    29.0
+   ],
+   "field_0x28": [
+    0.0,
+    0.0
+   ],
+   "series_0x30": [
+    33.0,
+    37.700001,
+    42.0,
+    47.5,
+    53.0,
+    58.630001,
+    64.0,
+    69.0
+   ],
+   "field_0x50": 1,
+   "field_0x54": 17,
+   "name": "Snow Leopard",
+   "hashes": [
+    "667FD673"
+   ],
+   "hashesSeenInSaves": []
+  },
+  {
+   "stringId": 238,
+   "icon": "data/Icons/WildYak_frame.png",
+   "maxDifficultyRating": 9,
+   "field_0x14": 0,
+   "field_0x18": 0.0,
+   "triple_0x1C": [
+    174.600006,
+    230.960007,
+    273.230011
+   ],
+   "field_0x28": [
+    0.0,
+    0.0
+   ],
+   "series_0x30": [
+    600.0,
+    700.0,
+    800.0,
+    900.0,
+    960.0,
+    1018.0,
+    1075.0,
+    1134.0
+   ],
+   "field_0x50": 1,
+   "field_0x54": 17,
+   "name": "Wild Yak",
+   "hashes": [
+    "7DB513D7"
+   ],
+   "hashesSeenInSaves": []
+  },
+  {
+   "stringId": 239,
+   "icon": "data/Icons/Muntjac_frame.png",
+   "maxDifficultyRating": 2,
+   "field_0x14": 0,
+   "field_0x18": 0.0,
+   "triple_0x1C": [
+    25.25,
+    30.9,
+    35.240002
+   ],
+   "field_0x28": [
+    0.0,
+    0.0
+   ],
+   "series_0x30": [
+    15.0,
+    18.870001,
+    21.299999,
+    26.5,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "field_0x50": 0,
+   "field_0x54": 0,
+   "name": "Muntjac",
+   "hashes": [
+    "85AB7ECC"
+   ],
+   "hashesSeenInSaves": []
+  },
+  {
+   "stringId": 240,
+   "icon": "data/Icons/TibetanFox_frame.png",
+   "maxDifficultyRating": 2,
+   "field_0x14": 0,
+   "field_0x18": 0.0,
+   "triple_0x1C": [
+    3.36,
+    5.08,
+    6.37
+   ],
+   "field_0x28": [
+    0.0,
+    0.0
+   ],
+   "series_0x30": [
+    3.2,
+    3.62,
+    3.9,
+    4.38,
+    4.75,
+    5.07,
+    5.39,
+    5.65
+   ],
+   "field_0x50": 1,
+   "field_0x54": 17,
+   "name": "Tibetan Fox",
+   "hashes": [
+    "70B57F22"
+   ],
+   "hashesSeenInSaves": []
+  },
+  {
+   "stringId": 241,
+   "icon": "data/Icons/Nilgai_frame.png",
+   "maxDifficultyRating": 6,
+   "field_0x14": 0,
+   "field_0x18": 0.0,
+   "triple_0x1C": [
+    69.169998,
+    83.870003,
+    94.889999
+   ],
+   "field_0x28": [
+    0.0,
+    0.0
+   ],
+   "series_0x30": [
+    152.649994,
+    195.5,
+    240.0,
+    285.5,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "field_0x50": 0,
+   "field_0x54": 0,
+   "name": "Nilgai",
+   "hashes": [
+    "6AFEE60D"
+   ],
+   "hashesSeenInSaves": []
+  },
+  {
+   "stringId": 242,
+   "icon": "data/Icons/Tahr_frame.png",
+   "maxDifficultyRating": 4,
+   "field_0x14": 0,
+   "field_0x18": 0.0,
+   "triple_0x1C": [
+    61.23,
+    86.459999,
+    101.870003
+   ],
+   "field_0x28": [
+    0.0,
+    0.0
+   ],
+   "series_0x30": [
+    83.0,
+    99.300003,
+    115.589996,
+    132.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "field_0x50": 0,
+   "field_0x54": 0,
+   "name": "Tahr",
+   "hashes": [
+    "FB4C7AD6"
+   ],
+   "hashesSeenInSaves": []
+  },
+  {
+   "stringId": 243,
+   "icon": "data/Icons/Barasingha_frame.png",
+   "maxDifficultyRating": 6,
+   "field_0x14": 0,
+   "field_0x18": 0.0,
+   "triple_0x1C": [
+    95.879997,
+    170.259995,
+    226.050003
+   ],
+   "field_0x28": [
+    0.0,
+    0.0
+   ],
+   "series_0x30": [
+    184.0,
+    209.699997,
+    237.0,
+    265.5,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "field_0x50": 0,
+   "field_0x54": 0,
+   "name": "Barasingha",
+   "hashes": [
+    "A422C7F7"
+   ],
+   "hashesSeenInSaves": []
+  },
+  {
+   "stringId": 244,
+   "icon": "data/Icons/BlueSheep_frame.png",
+   "maxDifficultyRating": 4,
+   "field_0x14": 0,
+   "field_0x18": 0.0,
+   "triple_0x1C": [
+    67.370003,
+    116.919998,
+    154.080002
+   ],
+   "field_0x28": [
+    0.0,
+    0.0
+   ],
+   "series_0x30": [
+    47.5,
+    56.0,
+    64.209999,
+    71.5,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "field_0x50": 0,
+   "field_0x54": 0,
+   "name": "Blue Sheep",
+   "hashes": [
+    "1BA02D21"
+   ],
+   "hashesSeenInSaves": []
+  },
+  {
+   "stringId": 245,
+   "icon": "data/Icons/WoollyHare_frame.png",
+   "maxDifficultyRating": 1,
+   "field_0x14": 1,
+   "field_0x18": 0.0,
+   "triple_0x1C": [
+    1.74,
+    2.62,
+    3.28
+   ],
+   "field_0x28": [
+    0.0,
+    0.0
+   ],
+   "series_0x30": [
+    2.31,
+    3.29,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "field_0x50": 0,
+   "field_0x54": 0,
+   "name": "Woolly Hare",
+   "hashes": [
+    "A6600B19"
+   ],
+   "hashesSeenInSaves": []
+  },
+  {
+   "stringId": 256,
+   "icon": "data/Icons/GadwallI_frame.png",
+   "maxDifficultyRating": 1,
+   "field_0x14": 0,
+   "field_0x18": 0.0,
+   "triple_0x1C": [
+    700.0,
+    900.0,
+    1050.0
+   ],
+   "field_0x28": [
+    0.0,
+    0.0
+   ],
+   "series_0x30": [
+    0.83,
+    1.06,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "field_0x50": 0,
+   "field_0x54": 0,
+   "name": "Gadwall",
+   "hashes": [
+    "B4FA5ACB"
+   ],
+   "hashesSeenInSaves": []
+  },
+  {
+   "stringId": 257,
+   "icon": "data/Icons/FerruginousDuck_frame.png",
+   "maxDifficultyRating": 1,
+   "field_0x14": 0,
+   "field_0x18": 0.0,
+   "triple_0x1C": [
+    700.0,
+    900.0,
+    1050.0
+   ],
+   "field_0x28": [
+    0.0,
+    0.0
+   ],
+   "series_0x30": [
+    0.83,
+    1.06,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "field_0x50": 0,
+   "field_0x54": 0,
+   "name": "Ferruginous Duck",
+   "hashes": [
+    "DC04B632"
+   ],
+   "hashesSeenInSaves": []
+  },
+  {
+   "stringId": 302,
+   "icon": "data/Icons/Beaver_frame.png",
+   "maxDifficultyRating": 2,
+   "field_0x14": 0,
+   "field_0x18": 0.0,
+   "triple_0x1C": [
+    19.200001,
+    25.6,
+    30.4
+   ],
+   "field_0x28": [
+    0.0,
+    0.0
+   ],
+   "series_0x30": [
+    19.799999,
+    23.049999,
+    26.65,
+    30.200001,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "field_0x50": 0,
+   "field_0x54": 0,
+   "name": "Beaver",
+   "hashes": [
+    "E86A46B0"
+   ],
+   "hashesSeenInSaves": []
+  },
+  {
+   "stringId": 303,
+   "icon": "data/Icons/WoodBison_frame.png",
+   "maxDifficultyRating": 9,
+   "field_0x14": 0,
+   "field_0x18": 0.0,
+   "triple_0x1C": [
+    96.760002,
+    131.75,
+    158.0
+   ],
+   "field_0x28": [
+    0.0,
+    0.0
+   ],
+   "series_0x30": [
+    612.0,
+    819.0,
+    1033.400024,
+    1240.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "field_0x50": 0,
+   "field_0x54": 0,
+   "name": "Wood Bison",
+   "hashes": [
+    "2E23A6BB"
+   ],
+   "hashesSeenInSaves": []
+  },
+  {
+   "stringId": 304,
+   "icon": "data/Icons/ManitobanElk_frame.png",
+   "maxDifficultyRating": 7,
+   "field_0x14": 0,
+   "field_0x18": 0.0,
+   "triple_0x1C": [
+    149.130005,
+    325.380005,
+    457.559998
+   ],
+   "field_0x28": [
+    0.0,
+    0.0
+   ],
+   "series_0x30": [
+    328.0,
+    358.0,
+    395.0,
+    428.299988,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "field_0x50": 0,
+   "field_0x54": 0,
+   "name": "Manitoban Elk",
+   "hashes": [
+    "076BD575"
+   ],
+   "hashesSeenInSaves": []
+  },
+  {
+   "stringId": 305,
+   "icon": "data/Icons/DuskyGrouse_frame.png",
+   "maxDifficultyRating": 1,
+   "field_0x14": 0,
+   "field_0x18": 0.0,
+   "triple_0x1C": [
+    88.0,
+    124.0,
+    151.0
+   ],
+   "field_0x28": [
+    0.0,
+    0.0
+   ],
+   "series_0x30": [
+    1.18,
+    1.51,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "field_0x50": 0,
+   "field_0x54": 0,
+   "name": "Dusky Grouse",
+   "hashes": [
+    "E083E2A0"
+   ],
+   "hashesSeenInSaves": []
+  },
+  {
+   "stringId": 306,
+   "icon": "data/Icons/Pintail_frame.png",
+   "maxDifficultyRating": 1,
+   "field_0x14": 0,
+   "field_0x18": 0.0,
+   "triple_0x1C": [
+    620.0,
+    860.0,
+    1040.0
+   ],
+   "field_0x28": [
+    0.0,
+    0.0
+   ],
+   "series_0x30": [
+    0.79,
+    1.04,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "field_0x50": 0,
+   "field_0x54": 0,
+   "name": "Pintail",
+   "hashes": [
+    "359ED173"
+   ],
+   "hashesSeenInSaves": []
+  },
+  {
+   "stringId": 307,
+   "icon": "data/Icons/WoodDuck_frame.png",
+   "maxDifficultyRating": 1,
+   "field_0x14": 0,
+   "field_0x18": 0.0,
+   "triple_0x1C": [
+    460.0,
+    580.0,
+    670.0
+   ],
+   "field_0x28": [
+    0.0,
+    0.0
+   ],
+   "series_0x30": [
+    0.54,
+    0.67,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "field_0x50": 0,
+   "field_0x54": 0,
+   "name": "Wood Duck",
+   "hashes": [
+    "30B0FF0D"
+   ],
+   "hashesSeenInSaves": []
+  },
+  {
+   "stringId": 308,
+   "icon": "data/Icons/SnowGoose_frame.png",
+   "maxDifficultyRating": 1,
+   "field_0x14": 0,
+   "field_0x18": 0.0,
+   "triple_0x1C": [
+    2.8,
+    3.4,
+    3.85
+   ],
+   "field_0x28": [
+    0.0,
+    0.0
+   ],
+   "series_0x30": [
+    2.84,
+    3.19,
+    3.51,
+    3.83,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "field_0x50": 0,
+   "field_0x54": 0,
+   "name": "Snow Goose",
+   "hashes": [
+    "BD743BAE"
+   ],
+   "hashesSeenInSaves": []
+  },
+  {
+   "stringId": 309,
+   "icon": "data/Icons/WoodlandCaribou_frame.png",
+   "maxDifficultyRating": 6,
+   "field_0x14": 0,
+   "field_0x18": 0.0,
+   "triple_0x1C": [
+    152.529999,
+    311.209991,
+    430.230011
+   ],
+   "field_0x28": [
+    0.0,
+    0.0
+   ],
+   "series_0x30": [
+    150.0,
+    160.0,
+    170.399994,
+    184.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "field_0x50": 0,
+   "field_0x54": 0,
+   "name": "Caribou",
+   "hashes": [
+    "258D2BF1"
+   ],
+   "hashesSeenInSaves": []
+  },
+  {
+   "stringId": 325,
+   "icon": "data/Icons/EuroBadger_frame.png",
+   "maxDifficultyRating": 2,
+   "field_0x14": 0,
+   "field_0x18": 0.0,
+   "triple_0x1C": [
+    9.0,
+    13.0,
+    16.0
+   ],
+   "field_0x28": [
+    0.0,
+    0.0
+   ],
+   "series_0x30": [
+    9.6,
+    11.5,
+    13.68,
+    15.92,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "field_0x50": 0,
+   "field_0x54": 0,
+   "name": "Euro Badger",
+   "hashes": [
+    "9DCD15DA"
+   ],
+   "hashesSeenInSaves": []
+  },
+  {
+   "stringId": 327,
+   "icon": "data/Icons/AmericanMink_frame.png",
+   "maxDifficultyRating": 1,
+   "field_0x14": 0,
+   "field_0x18": 0.0,
+   "triple_0x1C": [
+    88.0,
+    124.0,
+    151.0
+   ],
+   "field_0x28": [
+    0.0,
+    0.0
+   ],
+   "series_0x30": [
+    0.9,
+    1.1,
+    1.3,
+    1.5,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "field_0x50": 0,
+   "field_0x54": 0,
+   "name": "American Mink",
+   "hashes": [
+    "9B24AD93"
+   ],
+   "hashesSeenInSaves": []
+  },
+  {
+   "stringId": 328,
+   "icon": "data/Icons/PineMarten_frame.png",
+   "maxDifficultyRating": 1,
+   "field_0x14": 0,
+   "field_0x18": 0.0,
+   "triple_0x1C": [
+    124.0,
+    172.0,
+    208.0
+   ],
+   "field_0x28": [
+    0.0,
+    0.0
+   ],
+   "series_0x30": [
+    1.28,
+    1.54,
+    1.8,
+    2.065,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "field_0x50": 0,
+   "field_0x54": 0,
+   "name": "Pine Marten",
+   "hashes": [
+    "8C64B1C1"
+   ],
+   "hashesSeenInSaves": []
+  },
+  {
+   "stringId": 329,
+   "icon": "data/Icons/Woodcock_frame.png",
+   "maxDifficultyRating": 1,
+   "field_0x14": 0,
+   "field_0x18": 0.0,
+   "triple_0x1C": [
+    25.84,
+    34.52,
+    41.029999
+   ],
+   "field_0x28": [
+    0.0,
+    0.0
+   ],
+   "series_0x30": [
+    0.32,
+    0.41,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "field_0x50": 0,
+   "field_0x54": 0,
+   "name": "Woodcock",
+   "hashes": [
+    "07309B0D"
+   ],
+   "hashesSeenInSaves": []
+  },
+  {
+   "stringId": 330,
+   "icon": "data/Icons/RedGrouse_frame.png",
+   "maxDifficultyRating": 1,
+   "field_0x14": 0,
+   "field_0x18": 0.0,
+   "triple_0x1C": [
+    57.0,
+    66.0,
+    72.75
+   ],
+   "field_0x28": [
+    0.0,
+    0.0
+   ],
+   "series_0x30": [
+    0.63,
+    0.73,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "field_0x50": 0,
+   "field_0x54": 0,
+   "name": "Red Grouse",
+   "hashes": [
+    "F15B4F5E"
+   ],
+   "hashesSeenInSaves": []
+  },
+  {
+   "stringId": 335,
+   "icon": "data/Icons/Tapir_frame.png",
+   "maxDifficultyRating": 6,
+   "field_0x14": 0,
+   "field_0x18": 0.0,
+   "triple_0x1C": [
+    102.0,
+    126.0,
+    144.0
+   ],
+   "field_0x28": [
+    0.0,
+    0.0
+   ],
+   "series_0x30": [
+    195.0,
+    208.0,
+    220.100006,
+    233.0,
+    247.0,
+    259.0,
+    272.5,
+    286.0
+   ],
+   "field_0x50": 1,
+   "field_0x54": 21,
+   "name": "SA Tapir",
+   "hashes": [
+    "B0D19036"
+   ],
+   "hashesSeenInSaves": []
+  },
+  {
+   "stringId": 336,
+   "icon": "data/Icons/Ocelot_frame.png",
+   "maxDifficultyRating": 2,
+   "field_0x14": 0,
+   "field_0x18": 0.0,
+   "triple_0x1C": [
+    18.58,
+    23.780001,
+    27.68
+   ],
+   "field_0x28": [
+    0.0,
+    0.0
+   ],
+   "series_0x30": [
+    7.3,
+    8.4,
+    9.45,
+    10.52,
+    11.59,
+    12.7,
+    13.75,
+    14.8
+   ],
+   "field_0x50": 1,
+   "field_0x54": 21,
+   "name": "Ocelot",
+   "hashes": [
+    "4F3179A5"
+   ],
+   "hashesSeenInSaves": []
+  },
+  {
+   "stringId": 337,
+   "icon": "data/Icons/Grison_frame.png",
+   "maxDifficultyRating": 1,
+   "field_0x14": 0,
+   "field_0x18": 0.0,
+   "triple_0x1C": [
+    188.0,
+    284.0,
+    356.0
+   ],
+   "field_0x28": [
+    0.0,
+    0.0
+   ],
+   "series_0x30": [
+    2.0,
+    2.5,
+    3.03,
+    3.5,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "field_0x50": 0,
+   "field_0x54": 0,
+   "name": "Greater Grison",
+   "hashes": [
+    "F156BC8F"
+   ],
+   "hashesSeenInSaves": []
+  },
+  {
+   "stringId": 338,
+   "icon": "data/Icons/Coati_frame.png",
+   "maxDifficultyRating": 1,
+   "field_0x14": 0,
+   "field_0x18": 0.0,
+   "triple_0x1C": [
+    1.1,
+    1.3,
+    1.45
+   ],
+   "field_0x28": [
+    0.0,
+    0.0
+   ],
+   "series_0x30": [
+    1.12,
+    1.23,
+    1.34,
+    1.44,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "field_0x50": 0,
+   "field_0x54": 0,
+   "name": "WM Coati",
+   "hashes": [
+    "26285883"
+   ],
+   "hashesSeenInSaves": []
+  },
+  {
+   "stringId": 339,
+   "icon": "data/Icons/Vicuna_frame.png",
+   "maxDifficultyRating": 3,
+   "field_0x14": 0,
+   "field_0x18": 0.0,
+   "triple_0x1C": [
+    172.0,
+    196.0,
+    214.0
+   ],
+   "field_0x28": [
+    0.0,
+    0.0
+   ],
+   "series_0x30": [
+    43.5,
+    46.799999,
+    49.5,
+    53.259998,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "field_0x50": 0,
+   "field_0x54": 0,
+   "name": "Vicuña",
+   "hashes": [
+    "9867B3EA"
+   ],
+   "hashesSeenInSaves": []
+  },
+  {
+   "stringId": 340,
+   "icon": "data/Icons/Capybara_frame.png",
+   "maxDifficultyRating": 4,
+   "field_0x14": 0,
+   "field_0x18": 0.0,
+   "triple_0x1C": [
+    42.0,
+    56.0,
+    66.5
+   ],
+   "field_0x28": [
+    0.0,
+    0.0
+   ],
+   "series_0x30": [
+    43.200001,
+    49.0,
+    58.099998,
+    65.75,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "field_0x50": 0,
+   "field_0x54": 0,
+   "name": "Capybara",
+   "hashes": [
+    "ED22CA6D"
+   ],
+   "hashesSeenInSaves": []
+  },
+  {
+   "stringId": 341,
+   "icon": "data/Icons/SpectacledBear_frame.png",
+   "maxDifficultyRating": 6,
+   "field_0x14": 0,
+   "field_0x18": 0.0,
+   "triple_0x1C": [
+    9.6,
+    15.8,
+    20.450001
+   ],
+   "field_0x28": [
+    0.0,
+    0.0
+   ],
+   "series_0x30": [
+    52.5,
+    70.699997,
+    90.0,
+    120.0,
+    129.0,
+    146.199997,
+    164.300003,
+    181.5
+   ],
+   "field_0x50": 1,
+   "field_0x54": 21,
+   "name": "Spectacled Bear",
+   "hashes": [
+    "9D77C6A9"
+   ],
+   "hashesSeenInSaves": []
+  },
+  {
+   "stringId": 342,
+   "icon": "data/Icons/Jaguar_frame.png",
+   "maxDifficultyRating": 6,
+   "field_0x14": 0,
+   "field_0x18": 0.0,
+   "triple_0x1C": [
+    35.0,
+    40.0,
+    43.75
+   ],
+   "field_0x28": [
+    0.0,
+    0.0
+   ],
+   "series_0x30": [
+    67.0,
+    73.699997,
+    80.300003,
+    90.0,
+    94.0,
+    99.5,
+    106.300003,
+    112.699997
+   ],
+   "field_0x50": 1,
+   "field_0x54": 21,
+   "name": "Jaguar",
+   "hashes": [
+    "ADF85A22"
+   ],
+   "hashesSeenInSaves": []
+  },
+  {
+   "stringId": 343,
+   "icon": "data/Icons/Caiman_frame.png",
+   "maxDifficultyRating": 7,
+   "field_0x14": 0,
+   "field_0x18": 0.0,
+   "triple_0x1C": [
+    244.0,
+    372.0,
+    468.0
+   ],
+   "field_0x28": [
+    0.0,
+    0.0
+   ],
+   "series_0x30": [
+    116.300003,
+    200.0,
+    265.0,
+    302.399994,
+    337.0,
+    378.0,
+    418.0,
+    455.0
+   ],
+   "field_0x50": 1,
+   "field_0x54": 21,
+   "name": "Black Caiman",
+   "hashes": [
+    "D5BE8FC1"
+   ],
+   "hashesSeenInSaves": []
+  },
+  {
+   "stringId": 344,
+   "icon": "data/Icons/Taruca_frame.png",
+   "maxDifficultyRating": 3,
+   "field_0x14": 0,
+   "field_0x18": 0.0,
+   "triple_0x1C": [
+    67.389999,
+    86.970001,
+    101.660004
+   ],
+   "field_0x28": [
+    0.0,
+    0.0
+   ],
+   "series_0x30": [
+    58.5,
+    68.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "field_0x50": 0,
+   "field_0x54": 0,
+   "name": "Taruca",
+   "hashes": [
+    "1EF56EFA"
+   ],
+   "hashesSeenInSaves": []
+  }
+ ]
+}

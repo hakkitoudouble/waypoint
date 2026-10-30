@@ -1,0 +1,249 @@
+{
+  "0": {
+    "min_x": -11260.0,
+    "max_x": -3054.87,
+    "min_z": 4100.0,
+    "max_z": 13339.79,
+    "flip_z": false,
+    "pixel_size": [
+      1023,
+      1152
+    ],
+    "source": "scanner-table:0xB0040",
+    "confidence": "measured"
+  },
+  "1": {
+    "min_x": 5127.0,
+    "max_x": 14343.59,
+    "min_z": 3105.0,
+    "max_z": 12169.97,
+    "flip_z": false,
+    "pixel_size": [
+      1155,
+      1136
+    ],
+    "source": "scanner-table:0xB0040",
+    "confidence": "measured"
+  },
+  "2": {
+    "min_x": -13005.0,
+    "max_x": -3637.32,
+    "min_z": -11820.0,
+    "max_z": -2812.61,
+    "flip_z": false,
+    "pixel_size": [
+      1170,
+      1125
+    ],
+    "source": "scanner-table:0xB0040",
+    "confidence": "measured"
+  },
+  "3": {
+    "min_x": 4020.0,
+    "max_x": 12978.57,
+    "min_z": -12960.0,
+    "max_z": -4499.58,
+    "flip_z": false,
+    "pixel_size": [
+      1115,
+      1053
+    ],
+    "source": "scanner-table:0xB0040",
+    "confidence": "measured"
+  },
+  "4": {
+    "min_x": -13450.0,
+    "max_x": -3634.05,
+    "min_z": 3280.0,
+    "max_z": 12903.8,
+    "flip_z": false,
+    "pixel_size": [
+      1226,
+      1202
+    ],
+    "source": "scanner-table:0xB0040",
+    "confidence": "measured"
+  },
+  "6": {
+    "min_x": -13140.0,
+    "max_x": -3419.47,
+    "min_z": -13200.0,
+    "max_z": -4639.53,
+    "flip_z": false,
+    "pixel_size": [
+      1215,
+      1070
+    ],
+    "source": "scanner-table:0xB0040",
+    "confidence": "measured"
+  },
+  "8": {
+    "min_x": -13410.0,
+    "max_x": -3701.26,
+    "min_z": 2890.0,
+    "max_z": 12895.13,
+    "flip_z": false,
+    "pixel_size": [
+      1212,
+      1249
+    ],
+    "source": "scanner-table:0xB0040",
+    "confidence": "measured"
+  },
+  "9": {
+    "min_x": -9780.0,
+    "max_x": 1001.67,
+    "min_z": -13380.0,
+    "max_z": -5191.39,
+    "flip_z": false,
+    "pixel_size": [
+      1343,
+      1020
+    ],
+    "source": "scanner-table:0xB0040",
+    "confidence": "measured"
+  },
+  "10": {
+    "min_x": 3650.0,
+    "max_x": 12813.8,
+    "min_z": 5430.0,
+    "max_z": 13190.77,
+    "flip_z": false,
+    "pixel_size": [
+      1143,
+      968
+    ],
+    "source": "scanner-table:0xB0040",
+    "confidence": "measured"
+  },
+  "11": {
+    "min_x": -12370.0,
+    "max_x": -3340.65,
+    "min_z": 4540.0,
+    "max_z": 13305.66,
+    "flip_z": false,
+    "pixel_size": [
+      1130,
+      1097
+    ],
+    "source": "scanner-table:0xB0040",
+    "confidence": "measured"
+  },
+  "12": {
+    "min_x": 3880.0,
+    "max_x": 11928.29,
+    "min_z": 4050.0,
+    "max_z": 12825.59,
+    "flip_z": false,
+    "pixel_size": [
+      1007,
+      1098
+    ],
+    "source": "scanner-table:0xB0040",
+    "confidence": "measured"
+  },
+  "13": {
+    "min_x": -12405.0,
+    "max_x": -3156.44,
+    "min_z": 4295.0,
+    "max_z": 13128.61,
+    "flip_z": false,
+    "pixel_size": [
+      1159,
+      1107
+    ],
+    "source": "scanner-table:0xB0040",
+    "confidence": "measured"
+  },
+  "14": {
+    "min_x": 4230.0,
+    "max_x": 11878.18,
+    "min_z": 2680.0,
+    "max_z": 11113.85,
+    "flip_z": false,
+    "pixel_size": [
+      954,
+      1052
+    ],
+    "source": "scanner-table:0xB0040",
+    "confidence": "measured"
+  },
+  "16": {
+    "min_x": -12700.0,
+    "max_x": -3504.6,
+    "min_z": -12940.0,
+    "max_z": -4064.44,
+    "flip_z": false,
+    "pixel_size": [
+      1150,
+      1110
+    ],
+    "source": "scanner-table:0xB0040",
+    "confidence": "measured"
+  },
+  "17": {
+    "min_x": -13600.0,
+    "max_x": -2904.81,
+    "min_z": -385.0,
+    "max_z": 8672.76,
+    "flip_z": false,
+    "pixel_size": [
+      1339,
+      1134
+    ],
+    "source": "scanner-table:0xB0040",
+    "confidence": "measured"
+  },
+  "18": {
+    "min_x": 6110.0,
+    "max_x": 10843.73,
+    "min_z": -9990.0,
+    "max_z": -5540.14,
+    "flip_z": false,
+    "pixel_size": [
+      1184,
+      1113
+    ],
+    "source": "scanner-table:0xB0040",
+    "confidence": "measured"
+  },
+  "19": {
+    "min_x": 5590.0,
+    "max_x": 13880.16,
+    "min_z": 4190.0,
+    "max_z": 12600.55,
+    "flip_z": false,
+    "pixel_size": [
+      1446,
+      1467
+    ],
+    "source": "scanner-table:0xB0040",
+    "confidence": "measured"
+  },
+  "20": {
+    "min_x": 3550.0,
+    "max_x": 12569.17,
+    "min_z": -12480.0,
+    "max_z": -3925.67,
+    "flip_z": false,
+    "pixel_size": [
+      1300,
+      1233
+    ],
+    "source": "scanner-table:0xB0040",
+    "confidence": "measured"
+  },
+  "21": {
+    "min_x": 2450.0,
+    "max_x": 12839.61,
+    "min_z": -13500.0,
+    "max_z": -3332.03,
+    "flip_z": false,
+    "pixel_size": [
+      1500,
+      1468
+    ],
+    "source": "scanner-table:0xB0040",
+    "confidence": "measured"
+  }
+}

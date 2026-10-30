@@ -1,0 +1,62 @@
+[center][size=6][b]Waypoint[/b][/size]
+[size=4]Scanner de population et carte des zones de besoin pour theHunter: Call of the Wild[/size][/center]
+[line]
+
+[b][size=4]Ce que c'est[/size][/b]
+
+Waypoint remplace l'Animal Population Scanner : au lieu d'une petite fenetre fixe, une vraie interface de carte qui repond a deux questions.
+
+[list]
+[*][b]Qu'est-ce qu'il y a dans la reserve ?[/b] Tous les animaux du fichier de sauvegarde : espece, sexe, poids, score, medaille pronostiquee et fourrure calculee, avec filtres et tri.
+[*][b]Ou aller, et a quelle heure ?[/b] Toutes tes zones de besoin decouvertes (alimentation, abreuvement, repos) placees sur la carte, avec leurs horaires, filtree par heure de jeu et par espece.
+[/list]
+
+[b][size=4]Les fonctions[/size][/b]
+
+[list]
+[*][b]Carte des zones de besoin[/b] : glisser/zoomer, infobulle (espece, horaire, altitude), legende, heure de jeu suivie depuis la sauvegarde.
+[*][b]Couche direct[/b] : les animaux simules autour de toi, lus dans la memoire du jeu en LECTURE SEULE, avec leur distance, sur la carte et dans une liste. Rayon de 500 m (au-dela, le jeu gele leur position).
+[*][b]La page suit la reserve en cours[/b] et te le dit si tu en ouvres une autre.
+[*][b]Filtres[/b] : especes (recherche), sexe, medaille, rarete de fourrure, masquer les animaux scriptes / les Great Ones. Les compteurs suivent les autres filtres.
+[*][b]Fourrures[/b] : chaque animal a sa fourrure recalculee depuis sa graine, avec sa rarete et une couleur dediee.
+[*][b]Alertes[/b] : nouveau diamant ou Great One des qu'un animal apparait ; alerte de proximite a 120 m ; banniere meme onglet en arriere-plan.
+[*][b]Nouveaux spawns en vert[/b] : les [b]5 derniers[/b] animaux apparus dans la reserve restent surlignes en vert, avec un compteur a cote du titre et l'heure d'apparition au survol.
+[*][b]Delta[/b] : ce qui est apparu et ce qui a disparu depuis le scan precedent.
+[*][b]Historique[/b] : un point par jour et par reserve (total, diamants, ors).
+[*][b]Pression de chasse[/b] (calibree sur Silver Ridge Peaks), [b]traces[/b] d'observation, [b]tournee[/b] depuis ta position, [b]mesure[/b] distance/azimut, [b]comparateur[/b] de reserves, [b]export CSV[/b], [b]tableau de chasse[/b].
+[*][b]Francais / anglais[/b] (bouton FR/EN), theme sombre ou clair, interface adaptative jusqu'au telephone.
+[/list]
+
+[b][size=4]Installation[/size][/b]
+
+[list=1]
+[*]Telecharge l'archive et decompresse-la ou tu veux.
+[*]Lance [b]Waypoint.exe[/b]. Le navigateur s'ouvre sur [i]http://127.0.0.1:8765[/i].
+[*]Garde la fenetre noire ouverte : c'est le serveur local. Ferme-la pour arreter.
+[/list]
+
+Aucun Python a installer, aucun fichier ajoute au jeu, aucune modification de sauvegarde : les fichiers sont ouverts en lecture seule. Le jeu peut tourner en meme temps.
+
+L'etat de l'application (historique, 5 derniers spawns, cache du radar) va dans [i]%LOCALAPPDATA%\Waypoint[/i].
+
+[b][size=4]Prerequis[/size][/b]
+
+Windows 10 ou 11, 64 bits. theHunter: Call of the Wild installe (la couche direct et les scans ont besoin du dossier de sauvegarde standard).
+
+[b][size=4]Limites connues[/size][/b]
+
+[list]
+[*]La position de chaque animal [b]n'est pas[/b] dans la sauvegarde : le tableau de chasse ne peut pas etre place sur la carte, et un animal vivant ne porte ni poids, ni score, ni medaille. La couche direct donne sa position, jamais son rang.
+[*]Les zones de besoin sont un instantane du dernier scan ; elles se rafraichissent quand le jeu reecrit le fichier.
+[*]La pression de chasse n'est calee que sur Silver Ridge Peaks ; sur les autres reserves le placement reste approximatif (un avertissement s'affiche).
+[*]Les noms d'especes et de reserves restent tels que les fichiers du jeu les ecrivent.
+[*]L'echelle absolue des cartes est deduite de tes propres zones decouvertes : une reserve a moitie exploree est legerement sous-estimee.
+[*]Les executables PyInstaller declenchent parfois une alerte heuristique de Defender (faux positif). Le code source est fourni.
+[/list]
+
+[b][size=4]Credits / mentions[/size][/b]
+
+Code sous licence MIT. Les cartes de reserve, les icones d'especes et les tables de jeu sont derives de theHunter: Call of the Wild et restent la propriete de Expansive Worlds / Avalanche Studios / THQ Nordic. Projet non affilie. Le format de conteneur ADF a ete documente publiquement par Rick Gibbed ; les donnees d'especes et de medailles ont ete recoupees avec The Wild Register et TacMaps.
+
+[line]
+[b]English:[/b] Waypoint is a population scanner and need-zone map for theHunter: Call of the Wild. Unzip, run Waypoint.exe, keep the console open; your browser opens on http://127.0.0.1:8765. Read-only scan of the save, no game files modified, no Python needed. Live animals are read from game memory (500 m radius). Interface in French or English.

@@ -35,7 +35,11 @@ ICON = ROOT / "assets" / "waypoint.ico"
 APP_NAME = "Waypoint"
 
 #: what ships next to the executable
-DOCS = ["README.md", "INSTALL.txt", "CHANGELOG.md", "LICENSE"]
+DOCS = ["README.md", "INSTALL.txt", "CHANGELOG.md", "LICENSE", "NOTICE.md"]
+
+#: never inside the source archive
+SOURCE_SKIP_DIRS = {".git", "build", "dist", "work", "__pycache__", ".venv", "venv", "node_modules"}
+SOURCE_SKIP_SUFFIXES = {".pyc", ".pyo"}
 
 VERSION_INFO = """VSVersionInfo(
   ffi=FixedFileInfo(
@@ -146,14 +150,44 @@ def sha256(path: Path) -> str:
     return digest.hexdigest()
 
 
+def make_source_zip(ver: str) -> Path:
+    """A source-only archive: no executable, so automated scanners have nothing to
+    flag. Useful when a mod host quarantines the Windows build, and for archiving the
+    exact code behind a release."""
+    zip_path = DIST / f"{APP_NAME}-{ver}-source.zip"
+    top = Path(f"{APP_NAME}-{ver}-source")
+    if zip_path.exists():
+        zip_path.unlink()
+    with zipfile.ZipFile(zip_path, "w", zipfile.ZIP_DEFLATED, compresslevel=9) as archive:
+        for path in sorted(ROOT.rglob("*")):
+            if path.is_dir():
+                continue
+            relative = path.relative_to(ROOT)
+            if any(part in SOURCE_SKIP_DIRS for part in relative.parts):
+                continue
+            if path.suffix in SOURCE_SKIP_SUFFIXES:
+                continue
+            archive.write(path, top / relative)
+    return zip_path
+
+
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description=__doc__,
                                      formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument("--no-zip", action="store_true", help="skip the archive")
     parser.add_argument("--clean", action="store_true", help="delete dist/ and build/ first")
+    parser.add_argument("--source-only", action="store_true",
+                        help="only write the source archive (no PyInstaller run)")
     args = parser.parse_args(argv)
 
     ver = version()
+
+    if args.source_only:
+        DIST.mkdir(exist_ok=True)
+        path = make_source_zip(ver)
+        print(f"source     : {path}  ({size_mb(path):.1f} MB)")
+        return 0
+
     print(f"Waypoint {ver} — building for Windows\n")
 
     if args.clean:
@@ -172,6 +206,10 @@ def main(argv: list[str] | None = None) -> int:
         make_zip(app, archive)
         archives.append(archive)
         print(f"archive    : {archive}  ({size_mb(archive):.1f} MB)")
+
+        source_archive = make_source_zip(ver)
+        archives.append(source_archive)
+        print(f"source     : {source_archive}  ({size_mb(source_archive):.1f} MB)")
 
         sums = DIST / "SHA256SUMS.txt"
         sums.write_text(

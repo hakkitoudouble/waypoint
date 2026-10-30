@@ -410,3 +410,18 @@ The ADF container format was first documented publicly by **Rick Gibbed** for th
 Just Cause series; his notes on the Avalanche engine were the starting point for
 this work. Species and medal data cross-checked against The Wild Register and
 TacMaps community references.
+
+---
+
+## License
+
+The **code** is MIT — see [LICENSE](LICENSE).
+
+The **game material** bundled with it (reserve maps, species icons, and the recovered
+tables under `cotw/data/`) is derived from theHunter: Call of the Wild and remains the
+property of Expansive Worlds / Avalanche Studios / THQ Nordic; it is included on the same
+basis as any game mod and is not relicensed here. Details in [NOTICE.md](NOTICE.md).
+
+Waypoint is not affiliated with, endorsed by, or supported by Expansive Worlds, Avalanche
+Studios or THQ Nordic. It only reads save files the game has already written, and never
+modifies them.

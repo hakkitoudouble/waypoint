@@ -68,4 +68,4 @@ under `Documents\Avalanche Studios\COTW\Saves\<steamid>\`. Saves are never writt
 
 Waypoint is not affiliated with Expansive Worlds, Avalanche Studios or THQ Nordic.
 Code is MIT; the bundled map images, species icons and game tables remain their owners'
-property — see `LICENSE`.
+property — see `NOTICE.md`.

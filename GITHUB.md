@@ -131,9 +131,12 @@ sous MIT ; les cartes, icônes et tables de jeu restent la propriété de leurs 
 
 ## 5. Pousser le dépôt
 
+Dépôt : **https://github.com/hakkitoudouble/waypoint** (le remote `origin` est déjà
+configuré en local ; si tu choisis un autre nom de dépôt que `waypoint`, corrige-le avec
+`git remote set-url origin …` et remplace les trois URLs du README).
+
 ```powershell
 cd C:\Users\Maelo\Documents\mods\cotw-pop
-git remote add origin https://github.com/<ton-compte>/waypoint.git
 git push -u origin main
 
 # la release : le workflow construit le zip et l'attache

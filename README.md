@@ -2,6 +2,10 @@
 
 # Waypoint — COTW population & activity map
 
+[![release](https://img.shields.io/github/v/release/hakkitoudouble/waypoint?color=e8a33d&label=release)](https://github.com/hakkitoudouble/waypoint/releases/latest)
+[![license](https://img.shields.io/badge/license-MIT-blue)](LICENSE)
+[![platform](https://img.shields.io/badge/Windows-10%20%2F%2011-0078d4)](#download)
+
 A clean-room replacement for the "Animal Population Scanner", rebuilt from the save
 file format up, with a proper map overlay instead of a cramped fixed-size window.
 
@@ -18,9 +22,9 @@ It shows two things about a reserve in theHunter: Call of the Wild:
 
 ## Download
 
-* **Nexus Mods** — the mod page carries the ready-to-run archive.
-* **GitHub** — the Releases page of this repository ships
-  `Waypoint-<version>-win64.zip`; the workflow builds it on a tag.
+* **[Latest release](https://github.com/hakkitoudouble/waypoint/releases/latest)** — grab
+  `Waypoint-<version>-win64.zip` (built by the workflow on each tag).
+* **Nexus Mods** — the same archive on the mod page.
 
 Unzip anywhere and run `Waypoint.exe`: the browser opens on
 `http://127.0.0.1:8765`. No Python, nothing installed into the game, saves are opened

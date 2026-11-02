@@ -404,6 +404,12 @@ notes/           what was recovered and how, including dead ends
 work/            scratch: disassembly harness, jsdom boot + i18n tests, screenshots
 ```
 
+The disassembly scripts under `tools/` import capstone. A copy lives in
+`tools/vendor/` for a plain checkout, but it is **left out of the release archives**
+(it contains a DLL, and a source archive with a binary in it gets quarantined by mod
+hosts). `pip install capstone` covers it; the release archives also drop `run.cmd`, so
+`python waypoint.py` is the way in.
+
 ## Credits
 
 The ADF container format was first documented publicly by **Rick Gibbed** for the

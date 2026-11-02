@@ -38,8 +38,10 @@ APP_NAME = "Waypoint"
 DOCS = ["README.md", "INSTALL.txt", "CHANGELOG.md", "LICENSE", "NOTICE.md"]
 
 #: never inside the source archive
-SOURCE_SKIP_DIRS = {".git", "build", "dist", "work", "__pycache__", ".venv", "venv", "node_modules"}
-SOURCE_SKIP_SUFFIXES = {".pyc", ".pyo"}
+SOURCE_SKIP_DIRS = {".git", "build", "dist", "work", "__pycache__", ".venv", "venv",
+                    "node_modules", "vendor"}
+SOURCE_SKIP_SUFFIXES = {".pyc", ".pyo", ".exe", ".dll", ".pyd", ".so", ".cmd", ".bat",
+                        ".ps1", ".msi"}
 
 VERSION_INFO = """VSVersionInfo(
   ffi=FixedFileInfo(
@@ -151,9 +153,14 @@ def sha256(path: Path) -> str:
 
 
 def make_source_zip(ver: str) -> Path:
-    """A source-only archive: no executable, so automated scanners have nothing to
-    flag. Useful when a mod host quarantines the Windows build, and for archiving the
-    exact code behind a release."""
+    """A source-only archive with nothing executable inside, by construction.
+
+    Some mod hosts quarantine any archive that holds an executable, and a *source*
+    archive carrying one defeats its own purpose. The vendored capstone package (a
+    7.5 MB `capstone.dll` plus C headers, used only by the reverse-engineering scripts)
+    and the `.cmd` launcher are therefore left out: `pip install capstone` covers the
+    former and `python waypoint.py` replaces the latter.
+    """
     zip_path = DIST / f"{APP_NAME}-{ver}-source.zip"
     top = Path(f"{APP_NAME}-{ver}-source")
     if zip_path.exists():
@@ -165,7 +172,7 @@ def make_source_zip(ver: str) -> Path:
             relative = path.relative_to(ROOT)
             if any(part in SOURCE_SKIP_DIRS for part in relative.parts):
                 continue
-            if path.suffix in SOURCE_SKIP_SUFFIXES:
+            if path.suffix.lower() in SOURCE_SKIP_SUFFIXES:
                 continue
             archive.write(path, top / relative)
     return zip_path

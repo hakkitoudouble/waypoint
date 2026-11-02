@@ -241,22 +241,35 @@ class Handler(BaseHTTPRequestHandler):
     _radar = None
     _player: tuple[float, float] | None = None
 
+    @classmethod
+    def warm_radar(cls):
+        """Create the radar and start its discovery, before anything asks for it.
+
+        The first pass over the entity pools takes ~10 s, and it used to start on the
+        first /api/radar call — i.e. when the page loaded, leaving a silent "0 animals"
+        for the first half minute. Starting it with the server means the animals are
+        usually there by the time the browser has finished loading.
+        """
+        from . import radar as radar_module
+
+        if cls._radar is None:
+            cls._radar = radar_module.Radar()
+            cls._radar.load_cache()
+            # Entities used to be discovered once and never again, so every animal that
+            # spawned afterwards stayed invisible and the list could only shrink. Keep
+            # discovering in the background.
+            cls._radar.start_auto()
+        return cls._radar
+
     def _radar_snapshot(self, query: dict[str, list[str]]) -> dict[str, object]:
         """Live animals. Distances come from the player's last saved position unless
         ?x=&z= override it; ?reserve=N picks which saved position to use."""
         import time as _time
 
         from . import player as player_module
-        from . import radar as radar_module
         from . import reserves as reserve_tables
 
-        if Handler._radar is None:
-            Handler._radar = radar_module.Radar()
-            Handler._radar.load_cache()
-            # Entities used to be discovered once and never again, so every animal that
-            # spawned afterwards stayed invisible and the list could only shrink. Keep
-            # discovering in the background.
-            Handler._radar.start_auto()
+        Handler.warm_radar()
 
         reserve = None
         if "reserve" in query:
@@ -291,6 +304,11 @@ class Handler(BaseHTTPRequestHandler):
                 Handler._radar.discover_async()
 
         snapshot = Handler._radar.snapshot(player)
+        # "still looking" as opposed to "nothing around you": true while the first sweep
+        # has not produced an address yet, unless the game is simply not running.
+        snapshot["discovering"] = bool(Handler._radar.discovering) or (
+            not Handler._radar.entity_addresses and not Handler._radar.last_error
+        )
         snapshot["player_source"] = source if player else None
         snapshot["player_age_seconds"] = age if player else None
         snapshot["live_reserve"] = live_reserve
@@ -571,6 +589,10 @@ class Handler(BaseHTTPRequestHandler):
 
 def serve(port: int, save_dir: Path | None) -> None:
     Handler.save_dir = save_dir
+    # Start the memory scan now rather than on the first /api/radar hit: the first pass
+    # over the entity pools takes ~10 s and the page would otherwise show an empty live
+    # layer for half a minute after every launch.
+    Handler.warm_radar()
     httpd = ThreadingHTTPServer(("127.0.0.1", port), Handler)
     print(f"COTW population overlay  ->  http://127.0.0.1:{port}")
     if save_dir:

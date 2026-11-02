@@ -51,6 +51,11 @@ MAX_ALTITUDE = 3000.0
 MIN_HORIZONTAL = 300.0
 MAX_HORIZONTAL = 30000.0
 
+#: the game allocates its entity records in pools of exactly this size (measured: 83-84
+#: regions of 16 MiB, 1.3 GiB against 8 GiB of readable address space). Used as the sweep
+#: hint when no address is known yet, e.g. on a cold start or after a reserve change.
+POOL_SIZE = 16 * 1024 * 1024
+
 #: The game only simulates animals close to the player; beyond this the records stay in
 #: memory with a frozen position, so a "live" tracker that shows them is lying — they look
 #: tracked but never move. Keep only what is actually being simulated.
@@ -287,11 +292,18 @@ class Radar:
             if len(blob) < 12:
                 continue
             x, y, z = struct.unpack("<fff", blob)
+            # The same physical plausibility refresh() applies, and it matters: the game
+            # keeps species hashes in other tables whose "position" is a scale or an
+            # offset near the origin (y = 0, x = 2 ...). The old loose test here adopted
+            # 116 of those per scan, filled the address set with junk, and — worse — made
+            # the next sweep filter on their region sizes.
             if not (math.isfinite(x) and math.isfinite(y) and math.isfinite(z)):
                 continue
-            if not (abs(x) < 30000 and abs(z) < 30000 and -2000 < y < 4000):
+            if not (MIN_ALTITUDE < y < MAX_ALTITUDE):
                 continue
-            if abs(x) < 1e-6 and abs(z) < 1e-6:
+            if not (MIN_HORIZONTAL <= abs(x) <= MAX_HORIZONTAL):
+                continue
+            if not (MIN_HORIZONTAL <= abs(z) <= MAX_HORIZONTAL):
                 continue
             if not self._looks_like_entity(handle, address):
                 continue
@@ -332,6 +344,9 @@ class Radar:
             with self._lock:
                 payload = {
                     "saved": self.last_discovery,
+                    # Which game process these addresses belong to: after a restart the
+                    # whole set is meaningless, and reusing it silently froze the radar.
+                    "pid": self.pid,
                     "entities": [[a, n] for a, n in self.entity_addresses.items()],
                 }
             CACHE_FILE.write_text(json.dumps(payload), encoding="utf-8")
@@ -391,11 +406,16 @@ class Radar:
         pools. Those 84 regions total 1.3 GiB, against 7.6 GiB for the whole address
         space, so sweeping only them is ~6x cheaper and still finds the animals the
         targeted rescan misses because they are in a pool that holds no entity yet.
+
+        With **no address known** (cold start, or the game just changed reserve and the
+        old set was dropped) the sizes cannot be derived from anything, so fall back to
+        the pool size itself: that is what makes discovery recover instead of sweeping
+        nothing at all.
         """
         sizes: set[int] = set()
         addresses = sorted(self.entity_addresses)
         if not addresses:
-            return sizes
+            return {POOL_SIZE}
         index = 0
         for base, size in regions:
             end = base + size
@@ -403,7 +423,7 @@ class Radar:
                 sizes.add(size)
                 while index < len(addresses) and addresses[index] < end:
                     index += 1
-        return sizes
+        return sizes or {POOL_SIZE}
 
     def sweep_step(self, budget_bytes: int = 256 * 1024 * 1024) -> int:
         """One slice of a full sweep, so a whole pass costs nothing in one go.
@@ -460,9 +480,25 @@ class Radar:
         if self._auto is not None and self._auto.is_alive():
             return self._auto
 
+        misses = 0
+
         def loop() -> None:
+            nonlocal misses
             while True:
                 try:
+                    # Every known address gone means the game changed reserve (or
+                    # reloaded the save): the set is worthless, and keeping it made the
+                    # sweep filter on the sizes of regions that no longer hold anything.
+                    # Dropping it is what lets _interesting_sizes fall back to the pools.
+                    if self.entity_addresses and not self.refresh(None):
+                        misses += 1
+                        if misses >= 2:
+                            with self._lock:
+                                self.entity_addresses = {}
+                            misses = 0
+                            self.last_error = None
+                    else:
+                        misses = 0
                     # budget larger than the pool set, so a single call is a full pass
                     self.sweep_step(budget_bytes=2 * 1024 * 1024 * 1024)
                     self.rescan_entity_regions()
@@ -480,6 +516,11 @@ class Radar:
         try:
             payload = json.loads(CACHE_FILE.read_text(encoding="utf-8"))
         except (OSError, ValueError):
+            return 0
+        cached_pid = payload.get("pid")
+        found = self.find_process()
+        if cached_pid is not None and found is not None and int(cached_pid) != found[0]:
+            # Another game process wrote this cache: its addresses point nowhere now.
             return 0
         with self._lock:
             self.entity_addresses = {int(a): n for a, n in payload.get("entities", [])}

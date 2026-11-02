@@ -18,6 +18,10 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 from cotw import population, reserves, save, species  # noqa: E402
 from cotw.model import Gender, Medal  # noqa: E402
 
+#: frozen copy of one real population file, so the exact counts do not drift with the
+#: player's game (see tools/fixtures/)
+FIXTURE = Path(__file__).resolve().parent / "fixtures" / "animal_population_16"
+
 FAILURES: list[str] = []
 
 
@@ -52,8 +56,14 @@ def main() -> int:
           repr(reserves.lookup(5).display_name))
 
     print("\n== population (Emerald Coast) ==")
-    pop = population.scan_population(save_dir / "animal_population_16")
-    check("animal count", len(pop.animals) == 4004, str(len(pop.animals)))
+    # The frozen fixture, not the live save: the game rewrites animal_population_16
+    # whenever it spawns or removes an animal (4004 animals on 2026-10-30, 4006 on
+    # 2026-11-01), so the exact counts below only mean something on a fixed file.
+    # The live save is still exercised by the zone checks further down.
+    pop_path = FIXTURE if FIXTURE.is_file() else save_dir / "animal_population_16"
+    print(f"  info  scanning {pop_path.name}")
+    pop = population.scan_population(pop_path)
+    check("animal count", len(pop.animals) == 4006, str(len(pop.animals)))
     by_species = Counter(a.species for a in pop.animals)
     check("14 species", len(by_species) == 14, str(len(by_species)))
     check("no unnamed species", "Unknown" not in by_species, str(by_species.get("Unknown")))

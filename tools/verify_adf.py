@@ -55,6 +55,12 @@ ACHIEVEMENTS = "achievements_adf"
 SETTINGS = "settings_adf"
 POPULATION = "animal_population_16"
 
+#: A frozen copy of one real population file, committed so the layout anchors below
+#: stay valid. The live save is rewritten whenever the game spawns an animal (4004
+#: animals on 2026-10-30, 4006 on 2026-11-01), so pinning exact counts to it made the
+#: suite fail during a play session; the fixture is what the anchors describe.
+POPULATION_FIXTURE = os.path.join(HERE, "fixtures", "animal_population_16")
+
 U8 = NATIVE_BY_NAME["UInt8"][0]
 U32 = NATIVE_BY_NAME["UInt32"][0]
 I32 = NATIVE_BY_NAME["Int32"][0]
@@ -92,10 +98,15 @@ _POPULATION_DOC = None
 
 
 def population_doc():
-    """Parse animal_population_16 once and reuse it across checks."""
+    """Parse the frozen population fixture once and reuse it across checks.
+
+    Falls back to the live save when the fixture is missing (a fresh checkout without
+    the binary, for instance) — the layout anchors then describe whatever is on disk.
+    """
     global _POPULATION_DOC
     if _POPULATION_DOC is None:
-        _POPULATION_DOC = Adf(open_save(save_path(POPULATION)))
+        path = POPULATION_FIXTURE if os.path.isfile(POPULATION_FIXTURE) else save_path(POPULATION)
+        _POPULATION_DOC = Adf(open_save(path))
     return _POPULATION_DOC
 
 
@@ -283,7 +294,7 @@ def check_population_slots():
     doc = population_doc()
     entry = doc.root
     eq(entry.offset, 104, "root instance offset")
-    eq(entry.size, 306528, "root instance size")
+    eq(entry.size, 306984, "root instance size")
 
     slot = struct.unpack_from("<4I", doc._doc, entry.offset + 8)
     eq(slot, (48, 16, 14, 0), "Populations slot (offset, capacity, count, pad)")
@@ -330,15 +341,15 @@ def check_population_values():
                     "FeatureModifiers did not resolve to a structure"
                 assert modifiers["Flags"] in (0, 1, 2, 3), \
                     "FeatureModifiers.Flags is %r" % (modifiers,)
-    eq(total, 4004, "total animal count")
+    eq(total, 4006, "total animal count")
 
     # Layout-sensitive anchors: any drift in the record grammar moves the array
     # bases and changes these numbers.
     eq([len(p["Groups"]) for p in populations],
-       [199, 98, 84, 48, 107, 56, 199, 144, 37, 150, 39, 32, 91, 108],
+       [199, 98, 84, 48, 107, 56, 201, 144, 37, 150, 39, 32, 91, 108],
        "groups per population")
     eq([sum(len(g["Animals"]) for g in p["Groups"]) for p in populations],
-       [248, 299, 302, 192, 792, 308, 249, 347, 146, 150, 201, 237, 288, 245],
+       [248, 299, 302, 192, 792, 308, 251, 347, 148, 150, 201, 237, 287, 244],
        "animals per population")
     eq([p["NameHashId"] for p in populations],
        [0x0068A2CA, 0x08D561A7, 0x1998199C, 0x2D774864, 0x5A6BDC6E,

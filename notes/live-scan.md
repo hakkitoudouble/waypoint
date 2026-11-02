@@ -226,3 +226,50 @@ est un artefact de mesure, pas une absence d'animaux. Et un animal réellement i
 (repos, alimentation) reste immobile : à l'échelle de la carte (≈ 8 m/px) un déplacement
 de 0,5 m/s vaut 0,06 px/s, invisible à l'œil — c'est la liste, pas les points, qui montre
 que ça vit.
+
+## MISE À JOUR 5 — « le radar ne marche que sur Silver Ridge Peaks »
+
+Symptôme : après être passé sur Emerald Coast, plus aucun animal en direct. L'intuition du
+joueur (« tu n'as gardé que le fichier de Silver Ridge Peaks ») était presque juste : le
+radar gardait **les adresses mémoire de la réserve précédente** et ne redécouvrait plus
+rien.
+
+La cause est un verrou en trois pièces, toutes dans `cotw/radar.py` :
+
+1. `_interesting_sizes()` déduisait les tailles de régions « intéressantes » (les pools de
+   16 Mio) **à partir des adresses connues**. Adresses périmées → aucun pool → le balayage
+   de fond (`sweep_step`) ne scannait **rien**, sans erreur.
+2. `rescan_entity_regions()` ne rescannait que les régions des adresses connues, c'est-à-dire
+   les anciens heaps : la réserve suivante n'y est jamais.
+3. Rien n'invalidait le cache quand le jeu changeait de réserve : `load_cache()` rechargeait
+   les 93 adresses du scan précédent, `refresh()` les rejetait toutes (le hash d'espèce
+   n'est plus là), et la boucle tournait à vide indéfiniment.
+
+Mesuré : 93 adresses en cache, 0 valide, 0 après 65 s de `start_auto()`. Un scan complet
+des 8 Gio lisibles trouvait 729 occurrences de hash, mais seulement 116 « entités » — toutes
+des faux positifs (positions y=0, x≈0 : des tables de définitions d'espèces, pas des
+animaux) parce que le test de plausibilité de `_scan` était beaucoup plus lâche que celui
+de `refresh`.
+
+Trois corrections :
+
+- **le repli sur les pools** : sans adresse connue, `_interesting_sizes()` renvoie la taille
+  de pool observée (16 Mio). Un démarrage à froid balaie donc 1,3 Gio au lieu de rien,
+  soit ~10 s pour retrouver la réserve entière.
+- **l'invalidation** : si `refresh()` ne valide plus aucune adresse deux cycles de suite,
+  l'ensemble est jeté (la réserve a changé, ou la partie a été rechargée) ; le cache porte
+  maintenant le **PID** du jeu, et un cache d'un autre processus est ignoré.
+- **le même filtre partout** : `_scan()` applique désormais `MIN_ALTITUDE` /
+  `MIN_HORIZONTAL` / `MAX_HORIZONTAL`, comme `refresh()`, au lieu des seuils lâches
+  (−2000 < y < 4000, |x| < 30000). Les 116 faux positifs par scan disparaissent.
+
+Vérifié après correction, jeu sur Emerald Coast : adresses périmées détectées à t+20 s,
+**90 entités retrouvées à t+30 s**, `/api/radar` → 46 animaux dans les 500 m,
+`live_reserve: 16`. Le mécanisme est donc « 20 à 30 s après un changement de réserve »,
+sans redémarrage du serveur.
+
+Corollaire pour les tests : `animal_population_16` est réécrit en cours de partie (4004
+animaux le 30/10, 4006 le 01/11). Les ancres de layout de `verify_adf.py` et le compte de
+`verify_pipeline.py` portent maintenant sur une **copie figée** du fichier
+(`tools/fixtures/animal_population_16`), et le compte de zones du boot test vient de la
+réponse de l'API au lieu d'être écrit en dur.

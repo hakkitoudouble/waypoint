@@ -479,7 +479,13 @@ async function main() {
     ],
     ["reserve name rendered", /Emerald Coast/i.test(text), ""],
     ["a species from the roster is rendered", /Red Deer|Sambar|Banteng/i.test(text), ""],
-    ["zone count rendered", /\b191\b/.test(text), ""],
+    [
+      /* The save is live: its zone count moves as the game discovers zones, so the
+         expectation comes from the API payload, not from a number pinned here. */
+      `zone count rendered (${(zones.json.zones || []).length} from the API)`,
+      new RegExp(`\\b${(zones.json.zones || []).length}\\b`).test(text),
+      "the zone total from /api/needzones is not in the page",
+    ],
     ["empty-state overlay is hidden", isHidden("mapEmpty"), "mapEmpty still visible"],
     [
       `species list populated (${rendered.length}/${speciesNames.length} names in the DOM)`,

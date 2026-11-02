@@ -1,5 +1,28 @@
 # Changelog
 
+## 1.0.1 — 2026-11-02
+
+### Fixed
+
+- **The live layer died after a reserve change.** The radar kept the entity addresses it
+  had discovered in the previous reserve, and the background sweep derived the "entity
+  pool" region sizes from those same addresses: with none valid, it swept nothing at all,
+  silently. Nothing invalidated the cache either, so the radar stayed empty until the
+  server was restarted — it looked like it "only worked on Silver Ridge Peaks".
+  - the sweep now falls back to the observed pool size (16 MiB) when no address is known,
+    so a cold start re-discovers the whole reserve in ~10 s;
+  - two consecutive scans that validate no address drop the stale set, and the cache now
+    stores the game's PID, so a cache from another process is ignored;
+  - discovery applies the same physical plausibility test as the live refresh
+    (altitude 200–3000 m, |x| and |z| ≥ 300 m) instead of a loose one that adopted ~116
+    false positives per scan.
+
+  Measured after the fix: stale addresses noticed at t+20 s, 90 entities back at t+30 s.
+- Tests no longer pin live save data: the ADF layout anchors and the population count use
+  a frozen fixture (`tools/fixtures/animal_population_16`), and the UI boot takes the zone
+  count from the API instead of a hard-coded number. The game rewrites that file while
+  playing (4004 animals on 2026-10-30, 4006 on 2026-11-01).
+
 ## 1.0.0 — 2026-10-30
 
 First public release. Clean-room replacement for the *Animal Population Scanner*,

@@ -277,6 +277,8 @@
     live: {
       on: false, animals: [], player: null, source: null, age: null,
       error: null, count: 0, timer: 0, busy: false, colors: Object.create(null),
+      /* true while the scanner is still looking (first sweep after a launch) */
+      discovering: false,
       /* which reserve the entities in memory belong to, and whether this page is on it */
       reserve: null, reserveName: null
     },
@@ -2955,6 +2957,7 @@
       state.live.known = payload && payload.known != null ? payload.known : list.length;
       state.live.reserve = payload && payload.live_reserve != null ? payload.live_reserve : null;
       state.live.reserveName = payload ? payload.live_reserve_name : null;
+      state.live.discovering = !!(payload && payload.discovering);
       recordTrails(list);
       checkProximity(list);
       recordPlayerTrail(payload ? payload.player : null);
@@ -2995,6 +2998,9 @@
     var meta;
     if (live.error) {
       meta = t("not available — {error}", { error: live.error });
+    } else if (live.discovering && !live.count) {
+      /* The first sweep over the entity pools takes ~10 s: say so instead of a bare 0. */
+      meta = t("looking for the animals around you…");
     } else if (!live.player) {
       meta = t("waiting for the game…");
     } else {

@@ -88,6 +88,7 @@
       /* filters — population */
       "Live animals": "Animaux en direct",
       "waiting for the game…": "en attente du jeu…",
+      "looking for the animals around you…": "recherche des animaux autour de vous…",
       "The game is running {reserve}.": "Le jeu tourne sur {reserve}.",
       "Open that reserve": "Ouvrir cette réserve",
       "Population": "Population",

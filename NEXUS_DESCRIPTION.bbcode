@@ -39,9 +39,23 @@ Aucun Python a installer, aucun fichier ajoute au jeu, aucune modification de sa
 
 L'etat de l'application (historique, 5 derniers spawns, cache du radar) va dans [i]%LOCALAPPDATA%\Waypoint[/i].
 
+[b][size=4]Version source (sans executable)[/size][/b]
+
+Le fichier [b]Source - no executable[/b] contient exactement la meme application, en Python : elle ne s'installe pas, elle se lance. Aucun acces administrateur, rien a copier dans le jeu. Ca sert si ton antivirus refuse l'exe, si tu veux lire le code, ou si tu veux modifier l'outil.
+
+[list=1]
+[*]Installer [b]Python 3.12 (64 bits)[/b] depuis [url=https://www.python.org/downloads/windows/]python.org[/url] en cochant [b]« Add python.exe to PATH »[/b]. Evite la version du Microsoft Store : elle n'installe qu'un raccourci vers le Store.
+[*]Dezipper l'archive ou tu veux, ouvrir un terminal [b]dans ce dossier[/b] (clic droit dans le dossier > « Ouvrir dans le Terminal »), puis :
+[font=Courier New]pip install numpy
+python waypoint.py[/font]
+[*]Le navigateur s'ouvre sur [i]http://127.0.0.1:8765[/i]. Garde le terminal ouvert : c'est le serveur local, le fermer arrete l'outil.
+[/list]
+
+Meme comportement que la version exe : sauvegardes ouvertes en lecture seule, etat dans [i]%LOCALAPPDATA%\Waypoint[/i], options identiques ([font=Courier New]--port[/font], [font=Courier New]--data-dir[/font], [font=Courier New]--no-browser[/font], [font=Courier New]--help[/font]). Si une commande n'est pas trouvee, utilise [font=Courier New]py -3[/font] au lieu de [font=Courier New]python[/font]. Et pour reconstruire l'exe toi-meme : [font=Courier New]pip install pyinstaller numpy[/font] puis [font=Courier New]python build.py[/font] (le zip apparait dans [font=Courier New]dist\[/font]).
+
 [b][size=4]Prerequis[/size][/b]
 
-Windows 10 ou 11, 64 bits. theHunter: Call of the Wild installe (la couche direct et les scans ont besoin du dossier de sauvegarde standard).
+Windows 10 ou 11, 64 bits. theHunter: Call of the Wild installe (la couche direct et les scans ont besoin du dossier de sauvegarde standard). Version source : Python 3.10 ou plus recent. Aucun Python n'est necessaire pour la version exe.
 
 [b][size=4]Limites connues[/size][/b]
 
@@ -60,3 +74,5 @@ Code sous licence MIT. Les cartes de reserve, les icones d'especes et les tables
 
 [line]
 [b]English:[/b] Waypoint is a population scanner and need-zone map for theHunter: Call of the Wild. Unzip, run Waypoint.exe, keep the console open; your browser opens on http://127.0.0.1:8765. Read-only scan of the save, no game files modified, no Python needed. Live animals are read from game memory (500 m radius). Interface in French or English.
+
+[b]Source package (no executable):[/b] the "Source - no executable" file is the same app in Python. Install Python 3.10+ 64-bit from python.org (tick "Add python.exe to PATH"), unzip, open a terminal in the folder and run [font=Courier New]pip install numpy[/font] then [font=Courier New]python waypoint.py[/font] (or [font=Courier New]py -3 waypoint.py[/font]). Your browser opens on http://127.0.0.1:8765; keep the terminal open, it is the local server. Same read-only behaviour, state in %LOCALAPPDATA%\Waypoint. To rebuild the exe yourself: [font=Courier New]pip install pyinstaller numpy[/font] then [font=Courier New]python build.py[/font].

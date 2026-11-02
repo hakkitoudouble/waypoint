@@ -39,6 +39,7 @@ jobs:
           name: Waypoint-win64
           path: |
             dist/Waypoint-*-win64.zip
+            dist/Waypoint-*-source.zip
             dist/SHA256SUMS.txt
           if-no-files-found: error
 
@@ -46,7 +47,12 @@ jobs:
         if: startsWith(github.ref, 'refs/tags/')
         uses: softprops/action-gh-release@v2
         with:
+          # "v1.0.1" -> "Waypoint 1.0.1", so the release title matches the mod page
+          name: Waypoint ${{ github.ref_name }}
+          # everything SHA256SUMS.txt hashes is attached, so the file never lists an
+          # archive a downloader cannot fetch
           files: |
             dist/Waypoint-*-win64.zip
+            dist/Waypoint-*-source.zip
             dist/SHA256SUMS.txt
           body_path: .github/release-notes.md

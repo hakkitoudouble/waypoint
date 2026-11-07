@@ -29,7 +29,7 @@ from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
 from urllib.parse import parse_qs, unquote, urlparse
 
-from . import paths, save
+from . import paths, save, settings
 from .model import Animal, Population, WorldBounds
 
 WEB_ROOT = paths.resource_dir("web")
@@ -41,6 +41,64 @@ PRISTINE_MAX_BYTES = 3000
 #: Fallback world box. COTW reserves are square and roughly centred on the
 #: origin; this is only used until per-reserve metadata is known.
 DEFAULT_WORLD = WorldBounds(min_x=-8192.0, max_x=8192.0, min_y=-8192.0, max_y=8192.0)
+
+
+def _no_save_error() -> FileNotFoundError:
+    """An error that says where we looked — the whole point of the message."""
+    searched = [str(root) for root in save.save_roots()]
+    return FileNotFoundError(
+        "no COTW save folder found; looked in: " + " | ".join(searched)
+    )
+
+
+def _resolve_custom_save_dir(raw: str) -> tuple[Path | None, str | None]:
+    """Turn whatever the user pasted into a folder that holds population files.
+
+    Accepts the account folder itself, the Saves folder above it, the Documents folder
+    above that, and the usual Explorer paste decorations: surrounding quotes,
+    ``%USERPROFILE%``, a trailing backslash. When several account folders qualify, the
+    most recently written one wins — the same rule as the automatic search.
+    Returns ``(path, error)``.
+    """
+    text = (raw or "").strip().strip('"').strip("'").strip()
+    if not text:
+        return None, "empty path"
+    try:
+        expanded = os.path.expandvars(os.path.expanduser(text))
+    except (OSError, RuntimeError):
+        return None, "cannot read that path"
+    base = Path(expanded)
+    if not base.is_dir():
+        return None, "that folder does not exist"
+
+    def population_files(folder: Path) -> list[Path]:
+        try:
+            return save.list_population_files(folder)
+        except OSError:
+            return []
+
+    # the folder itself, the two well-known layouts above it, then one level below each
+    seen: list[Path] = []
+
+    def add(folder: Path) -> None:
+        try:
+            if folder.is_dir() and folder not in seen:
+                seen.append(folder)
+        except OSError:
+            pass
+
+    add(base)
+    add(base / save.SAVE_ROOT_RELATIVE)
+    for folder in list(seen):
+        try:
+            for child in sorted(folder.iterdir()):
+                add(child)
+        except OSError:
+            continue
+    hits = [folder for folder in seen if population_files(folder)]
+    if not hits:
+        return None, "no animal_population_* file in that folder (or in the folders inside it)"
+    return save.best_save_dir(hits) or hits[0], None
 
 
 def _scan(path: Path) -> Population:
@@ -62,12 +120,9 @@ def _resolve_population_file(query: dict[str, list[str]], save_dir: Path | None)
     wanted = query.get("reserve", [None])[0]
     directory = save_dir
     if directory is None:
-        found = save.find_save_dirs()
-        if not found:
-            raise FileNotFoundError(
-                "no COTW save folder found under Documents/Avalanche Studios/COTW/Saves"
-            )
-        directory = found[0]
+        directory = save.best_save_dir()
+    if directory is None:
+        raise _no_save_error()
 
     files = save.list_population_files(directory)
     if not files:
@@ -160,18 +215,29 @@ class Handler(BaseHTTPRequestHandler):
         try:
             if route == "/api/ping":
                 # Cheap liveness probe: it tells the launcher whether Waypoint is
-                # already running on the port, and gives the version a name.
+                # already running on the port, gives the version a name, and reports
+                # which save folder the server settled on — the page shows a setup
+                # panel when there is none.
                 from . import __version__
 
+                directory, source = self._effective_save_dir()
+                usable = bool(directory is not None and save.list_population_files(directory))
                 self._send_json({
                     "app": "waypoint",
                     "version": __version__,
                     "frozen": paths.frozen(),
                     "data_dir": str(paths.data_dir()),
+                    # only reported when it really holds population files: the page shows
+                    # its setup panel when this is null
+                    "save_dir": str(directory) if usable else None,
+                    "save_dir_source": source if usable else "none",
+                    "save_dir_custom": bool(usable) and source in ("saved", "argument"),
+                    "save_dir_configured": str(directory) if directory else None,
+                    "searched": self._searched_roots(),
                 })
                 return
             if route == "/api/population":
-                path = _resolve_population_file(query, self.save_dir)
+                path = _resolve_population_file(query, self._effective_save_dir()[0])
                 self._send_json(_scan(path).as_contract())
                 return
             if route == "/api/needzones":
@@ -225,6 +291,38 @@ class Handler(BaseHTTPRequestHandler):
         if not isinstance(payload, dict):
             payload = {}
 
+        if route == "/api/save-dir":
+            # The interface's "where are my saves?" field. An empty path forgets the
+            # custom folder and goes back to the automatic search.
+            raw_path = payload.get("path")
+            if raw_path in (None, ""):
+                settings.update(save_dir=None)
+                cls = type(self)
+                cls.save_dir = None
+                cls.save_dir_source = None
+                directory, source = self._effective_save_dir()
+                self._send_json({
+                    "save_dir": str(directory) if directory else None,
+                    "save_dir_source": source,
+                })
+                return
+            resolved, error = _resolve_custom_save_dir(str(raw_path))
+            if resolved is None:
+                self._send_json({"error": "invalid", "message": error}, status=400)
+                return
+            cls = type(self)
+            cls.save_dir = resolved
+            cls.save_dir_source = "saved"
+            settings.update(save_dir=str(resolved))
+            self._send_json({
+                "save_dir": str(resolved),
+                "save_dir_source": "saved",
+                "reserves": sum(
+                    1 for path in save.list_population_files(resolved)
+                    if save.read_container(path).unpacked_size > PRISTINE_MAX_BYTES
+                ),
+            })
+            return
         if route == "/api/radar/player":
             try:
                 x = float(payload["x"])
@@ -240,6 +338,36 @@ class Handler(BaseHTTPRequestHandler):
     # -- radar -----------------------------------------------------------
     _radar = None
     _player: tuple[float, float] | None = None
+    #: where the save folder came from: "argument" (--save-dir), "saved" (chosen in the
+    #: interface once), "auto" (found automatically) or None when there is none
+    save_dir_source: str | None = None
+
+    @classmethod
+    def _searched_roots(cls) -> list[str]:
+        """The folders we would look in, so a failure can say where it looked."""
+        if cls.save_dir is not None:
+            return [str(cls.save_dir)]
+        return [str(root) for root in save.save_roots()]
+
+    @classmethod
+    def _effective_save_dir(cls) -> tuple[Path | None, str]:
+        """The folder holding ``animal_population_*`` files, and where it came from."""
+        if cls.save_dir is not None:
+            return cls.save_dir, (cls.save_dir_source or "argument")
+        remembered = settings.get("save_dir")
+        if remembered:
+            candidate = Path(str(remembered))
+            try:
+                if candidate.is_dir() and save.list_population_files(candidate):
+                    cls.save_dir = candidate
+                    cls.save_dir_source = "saved"
+                    return candidate, "saved"
+            except OSError:
+                pass
+        best = save.best_save_dir()
+        if best is None:
+            return None, "none"
+        return best, "auto"
 
     @classmethod
     def warm_radar(cls):
@@ -475,12 +603,10 @@ class Handler(BaseHTTPRequestHandler):
         from . import population as pop_module
         from . import reserves as reserve_tables
 
-        directory = self.save_dir
+        directory, source = self._effective_save_dir()
         if directory is None:
-            found = save.find_save_dirs()
-            if not found:
-                return {"zones": [], "error": "no save folder found"}
-            directory = found[0]
+            return {"zones": [], "error": "no save folder found",
+                    "searched": self._searched_roots()}
 
         zones = pop_module.scan_need_zones(directory)
         wanted = query.get("reserve", [None])[0]
@@ -534,12 +660,11 @@ class Handler(BaseHTTPRequestHandler):
     def _list_reserves(self) -> dict[str, object]:
         from . import reserves as reserve_tables
 
-        directory = self.save_dir
+        directory, source = self._effective_save_dir()
         if directory is None:
-            found = save.find_save_dirs()
-            if not found:
-                return {"reserves": [], "error": "no save folder found"}
-            directory = found[0]
+            return {"reserves": [], "error": "no save folder found",
+                    "save_dir": None, "save_dir_source": "none",
+                    "searched": self._searched_roots()}
 
         entries = []
         for path in save.list_population_files(directory):
@@ -563,7 +688,8 @@ class Handler(BaseHTTPRequestHandler):
                     "populated": size is not None and size > PRISTINE_MAX_BYTES,
                 }
             )
-        return {"save_dir": str(directory), "reserves": entries}
+        return {"save_dir": str(directory), "save_dir_source": source,
+                "reserves": entries, "searched": self._searched_roots()}
 
     def _serve_static(self, route: str) -> None:
         if route in ("/", "."):
@@ -589,6 +715,7 @@ class Handler(BaseHTTPRequestHandler):
 
 def serve(port: int, save_dir: Path | None) -> None:
     Handler.save_dir = save_dir
+    Handler.save_dir_source = "argument" if save_dir is not None else None
     # Start the memory scan now rather than on the first /api/radar hit: the first pass
     # over the entity pools takes ~10 s and the page would otherwise show an empty live
     # layer for half a minute after every launch.

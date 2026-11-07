@@ -234,8 +234,14 @@ Options:
 --data-dir <path>    keep history / spawns / radar cache somewhere else
 ```
 
-Saves are auto-detected at
-`%USERPROFILE%\Documents\Avalanche Studios\COTW\Saves\<steamid>\`.
+Saves are auto-detected through the Windows shell (`SHGetKnownFolderPath`), so a
+Documents folder redirected to OneDrive or to another drive is followed. When several
+accounts exist under `Saves`, the one written most recently wins.
+
+If the folder cannot be found, the page shows a **"no save folder found" panel**: paste
+the path of the folder that contains `animal_population_*`, press *Use this folder*, and
+the choice is remembered in `%LOCALAPPDATA%\Waypoint\settings.json`. `--save-dir` still
+works and takes precedence; `POST /api/save-dir {"path": ""}` forgets the custom folder.
 
 ### Building the Windows release
 

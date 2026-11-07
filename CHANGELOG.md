@@ -1,5 +1,35 @@
 # Changelog
 
+## 1.0.2 — 2026-11-06
+
+### Fixed
+
+- **"Sample data" and "no reserve found" on a machine that has saves.** The app searched
+  `%USERPROFILE%\Documents\Avalanche Studios\COTW\Saves` and nothing else, so it found
+  nothing wherever Windows redirects Documents (OneDrive, another drive) — the most
+  common first-run problem. The folder is now resolved through the Windows shell
+  (`SHGetKnownFolderPath`), with `OneDrive\Documents`, `OneDriveCommercial\Documents` and
+  other drives as fallbacks.
+- With several accounts in `Saves` (family sharing, an old account), the first one
+  alphabetically used to win — it could be an account that was never played. The folder
+  whose population files were written most recently is used instead.
+
+### Added
+
+- **A "where are my saves?" panel in the interface.** When no usable save folder is
+  found, the map area shows one field, one button, the folders that were searched and a
+  short "where is it" help. The path is validated (it must contain
+  `animal_population_*`, or a folder that does), remembered in
+  `%LOCALAPPDATA%\Waypoint\settings.json`, and survives restarts. No more command line,
+  no more shortcut with an argument.
+- `/api/ping` now reports the save folder, where it came from (`argument`, `saved`,
+  `auto`, `none`) and the folders searched, so a report can be diagnosed from one URL.
+- `/api/save-dir` (POST) applies a folder, or resets to the automatic search.
+
+### Changed
+
+- Error messages name the folders that were searched instead of a fixed sentence.
+
 ## 1.0.1 — 2026-11-02
 
 ### Fixed

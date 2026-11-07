@@ -238,13 +238,31 @@ async function main() {
     points: [{ date: "2026-10-30", total: 4004, diamonds: 6, golds: 430 }],
   };
 
+  /* Does the server know where the saves are? COTW_NO_SAVE=1 pretends it does not,
+     which is the "sample data + no reserve found" report from Nexus. */
+  const NO_SAVE = process.env.COTW_NO_SAVE === "1";
+  const pingPayload = {
+    app: "waypoint",
+    version: "1.0.2",
+    frozen: false,
+    data_dir: "C:\\Users\\test\\AppData\\Local\\Waypoint",
+    save_dir: NO_SAVE ? null : "C:\\Users\\test\\Documents\\Avalanche Studios\\COTW\\Saves\\7656119",
+    save_dir_source: NO_SAVE ? "none" : "auto",
+    save_dir_custom: false,
+    searched: [
+      "C:\\Users\\test\\Documents\\Avalanche Studios\\COTW\\Saves",
+      "C:\\Users\\test\\OneDrive\\Documents\\Avalanche Studios\\COTW\\Saves",
+    ],
+  };
+
   /* Every URL the page asked for, so the boot can prove which reserve it followed. */
   window.__fetched = [];
   window.fetch = (url) => {
     const target = String(url);
     window.__fetched.push(target);
     let payload = null;
-    if (target.includes("/api/population")) payload = population.json;
+    if (target.includes("/api/ping")) payload = pingPayload;
+    else if (target.includes("/api/population")) payload = population.json;
     else if (target.includes("/api/needzones")) payload = zones.json;
     else if (target.includes("/api/radar")) payload = radarPayload;
     else if (target.includes("/api/harvests")) payload = harvestPayload;
@@ -611,6 +629,20 @@ async function main() {
       "a row that did not spawn stays unmarked",
       doc.querySelectorAll(".animal-row:not(.is-new)").length > markedRows.length,
       "every rendered row is marked",
+    ],
+    /* --- "where are my saves?" --------------------------------------------- */
+    [
+      NO_SAVE
+        ? "the setup panel appears when no save folder is found"
+        : "the setup panel stays hidden when the save folder is known",
+      NO_SAVE
+        ? !doc.getElementById("setupPanel").hasAttribute("hidden")
+          && doc.getElementById("saveDirInput") !== null
+          && doc.getElementById("saveDirSearched").children.length > 0
+        : doc.getElementById("setupPanel").hasAttribute("hidden"),
+      NO_SAVE
+        ? "panel hidden, or the field / searched list is missing"
+        : "panel visible although the server reported a save folder",
     ],
     /* --- the live layer must be anchored on the reserve the game is in ------ */
     [

@@ -66,6 +66,7 @@ def main() -> int:
         ("medal thresholds", [PY, "tools/verify_thresholds.py"], {}, False),
         ("alerts watcher", [PY, "tools/verify_alerts.py"], {}, False),
         ("delta + history", [PY, "tools/verify_delta.py"], {}, False),
+        ("save folder setup", [PY, "tools/verify_setup.py"], {}, False),
         ("HTTP endpoints", [PY, "tools/verify_endpoints.py"], {}, True),
         ("radar discovery", [PY, "tools/verify_radar_discovery.py"], {}, True),
         ("web UI wiring", [PY, "tools/check_ui.py"], {}, False),
@@ -77,6 +78,8 @@ def main() -> int:
             ("UI boot (en)", [node, "work/uiboot/boot.js"], {"COTW_LOCALE": "en"}, True),
             ("UI boot (filters restored)", [node, "work/uiboot/boot.js"],
              {"COTW_SEED_FILTERS": "1"}, True),
+            ("UI boot (no save folder)", [node, "work/uiboot/boot.js"],
+             {"COTW_NO_SAVE": "1"}, True),
             ("i18n units", [node, "work/uiboot/i18n.js"], {}, False),
         ]
     else:

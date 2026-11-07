@@ -53,6 +53,14 @@ python waypoint.py[/font]
 
 Meme comportement que la version exe : sauvegardes ouvertes en lecture seule, etat dans [i]%LOCALAPPDATA%\Waypoint[/i], options identiques ([font=Courier New]--port[/font], [font=Courier New]--data-dir[/font], [font=Courier New]--no-browser[/font], [font=Courier New]--help[/font]). Si une commande n'est pas trouvee, utilise [font=Courier New]py -3[/font] au lieu de [font=Courier New]python[/font]. Et pour reconstruire l'exe toi-meme : [font=Courier New]pip install pyinstaller numpy[/font] puis [font=Courier New]python build.py[/font] (le zip apparait dans [font=Courier New]dist\[/font]).
 
+[b][size=4]« Donnees d'exemple » et « Aucune reserve trouvee »[/size][/b]
+
+Le badge en haut indique [i]Donnees d'exemple[/i] et le menu des reserves est vide : l'outil n'a pas trouve ton dossier de sauvegarde (Windows le range souvent dans OneDrive, ou il y a plusieurs comptes dans le meme dossier Saves).
+
+Depuis la [b]1.0.2[/b], un panneau s'affiche au centre de la carte : colle le chemin du dossier qui contient [font=Courier New]animal_population_0[/font], [font=Courier New]animal_population_9[/font], … et clique [b]« Utiliser ce dossier »[/b]. Le choix est memorise, l'outil redemarre dessus, et il n'y a plus rien a faire ensuite.
+
+Pour trouver ce chemin : Explorateur > barre d'adresse > [font=Courier New]%USERPROFILE%[/font] > [font=Courier New]Documents\Avalanche Studios\COTW\Saves[/font] (ou [font=Courier New]OneDrive\Documents\...[/font]) > le dossier dont le nom fait 17 chiffres. Clique une fois dans la barre d'adresse pour obtenir le chemin en texte.
+
 [b][size=4]Prerequis[/size][/b]
 
 Windows 10 ou 11, 64 bits. theHunter: Call of the Wild installe (la couche direct et les scans ont besoin du dossier de sauvegarde standard). Version source : Python 3.10 ou plus recent. Aucun Python n'est necessaire pour la version exe.

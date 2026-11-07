@@ -313,7 +313,10 @@
     sheet: null,
     lastDpr: 1,
     fatal: false,
-    persistentNote: ""
+    persistentNote: "",
+    /* /api/ping: version, data dir, and where the save folder was found */
+    app: null,
+    needsSetup: false
   };
 
   var PAL = {
@@ -394,6 +397,26 @@
     } catch (err) {
       return Promise.reject(err);
     }
+  }
+
+  /** POST JSON, and keep the server's own message when it answers 4xx. */
+  function postJson(url, body) {
+    return fetch(url, {
+      method: "POST",
+      cache: "no-store",
+      headers: { "Content-Type": "application/json", Accept: "application/json" },
+      body: JSON.stringify(body)
+    }).then(function (res) {
+      return res.json().catch(function () { return {}; }).then(function (payload) {
+        if (!res.ok) {
+          var message = (payload && payload.message) || ("HTTP " + res.status);
+          var error = new Error(message);
+          error.payload = payload;
+          throw error;
+        }
+        return payload;
+      });
+    });
   }
 
   function normaliseAnimal(raw, i) {
@@ -1340,7 +1363,81 @@
     els.listNew.title = spawnTitle();
   }
 
+  /* ── "where are my saves?" ────────────────────────────────────────────────
+   * The save folder is the one thing the app cannot guess on every machine
+   * (Documents is often redirected to OneDrive). When the server reports that it
+   * found none, this panel takes over the map area: one field, one button, and the
+   * list of folders that were searched, so the user can fix it without a terminal.
+   * ─────────────────────────────────────────────────────────────────────────── */
+
+  function paintSetup() {
+    if (!els.setupPanel) return;
+    els.setupPanel.hidden = !state.needsSetup;
+    if (!state.needsSetup) return;
+    if (els.mapEmpty) els.mapEmpty.hidden = true;
+    if (els.mapLoading) els.mapLoading.hidden = true;
+    els.saveDirSearched.textContent = "";
+    var roots = (state.app && state.app.searched) || [];
+    for (var i = 0; i < roots.length; i++) {
+      els.saveDirSearched.appendChild(el("li", null, roots[i]));
+    }
+  }
+
+  function showSetupError(message) {
+    if (!els.saveDirError) return;
+    els.saveDirError.textContent = message;
+    els.saveDirError.hidden = false;
+  }
+
+  /** The server answers in English on purpose (it is shared by the CLI); translate the
+   *  three cases a user can actually hit. */
+  function setupErrorText(err) {
+    var raw = (err && err.message) || "";
+    if (/does not exist/.test(raw)) return t("That folder does not exist.");
+    if (/no animal_population_/.test(raw)) {
+      return t("There is no animal_population_* file in that folder, or in the folder inside it.");
+    }
+    if (/empty path/.test(raw)) return t("Paste the folder path first.");
+    return t("That folder was refused.") + (raw ? " (" + raw + ")" : "");
+  }
+
+  function bindSetup() {
+    if (!els.saveDirApply) return;
+
+    function apply() {
+      var path = els.saveDirInput.value.trim();
+      els.saveDirError.hidden = true;
+      if (!path) {
+        showSetupError(t("Paste the folder path first."));
+        return;
+      }
+      els.saveDirApply.disabled = true;
+      postJson("/api/save-dir", { path: path })
+        .then(function () {
+          els.saveDirApply.textContent = t("Folder accepted — reloading…");
+          window.location.reload();
+        })
+        .catch(function (err) {
+          els.saveDirApply.disabled = false;
+          showSetupError(setupErrorText(err));
+        });
+    }
+
+    els.saveDirApply.addEventListener("click", apply);
+    els.saveDirInput.addEventListener("keydown", function (event) {
+      if (event.key === "Enter") {
+        event.preventDefault();
+        apply();
+      }
+    });
+  }
+
   function renderMapEmpty() {
+    /* The setup panel owns the map area while the save folder is unknown. */
+    if (state.needsSetup) {
+      els.mapEmpty.hidden = true;
+      return;
+    }
     var visible = state.visibleZones.length;
     els.mapEmpty.hidden = visible > 0;
     if (visible > 0) return;
@@ -2468,6 +2565,11 @@
     els.emptyText = $("emptyText");
     els.btnEmptyClear = $("btnEmptyClear");
     els.mapLoading = $("mapLoading");
+    els.setupPanel = $("setupPanel");
+    els.saveDirInput = $("saveDirInput");
+    els.saveDirApply = $("saveDirApply");
+    els.saveDirError = $("saveDirError");
+    els.saveDirSearched = $("saveDirSearched");
     els.legend = $("legend");
 
     els.hourSlider = $("hourSlider");
@@ -2767,9 +2869,21 @@
     bindLive();
     bindLayers();
     bindAlerts();
+    bindSetup();
     syncCompact();
     syncSortBar();
     resizeCanvas();
+
+    /* Does the server know where the saves are? If not, the setup panel is the first
+       thing the user must see — the rest of the page would show sample data and look
+       broken. */
+    try {
+      state.app = await fetchJson("/api/ping");
+    } catch (err) {
+      state.app = null;   // file:// or a server too old to answer: no setup panel
+    }
+    state.needsSetup = !!(state.app && state.app.save_dir == null);
+    paintSetup();
 
     var loaded = null;
     try {

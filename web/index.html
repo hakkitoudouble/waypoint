@@ -442,6 +442,32 @@
           <span class="spinner" aria-hidden="true"></span>
           <span data-i18n="Reading population and zones…">Reading population and zones…</span>
         </div>
+
+        <!-- Shown when the server cannot find the save folder: the one thing the app
+             cannot guess, and the first question every new user asks. -->
+        <div class="map-empty" id="setupPanel" hidden>
+          <div class="empty-card setup-card">
+            <span class="empty-glyph" aria-hidden="true">
+              <svg class="ico" aria-hidden="true"><use href="#i-alert"/></svg>
+            </span>
+            <h3 data-i18n="No save folder found">No save folder found</h3>
+            <p data-i18n="Waypoint could not find the game's save folder. Paste the full path of the folder that contains the animal_population_* files.">Waypoint could not find the game's save folder. Paste the full path of the folder that contains the animal_population_* files.</p>
+            <div class="setup-row">
+              <input id="saveDirInput" type="text" spellcheck="false" autocomplete="off"
+                     aria-label="Save folder path" data-i18n-aria-label="Save folder path"
+                     placeholder="…\Documents\Avalanche Studios\COTW\Saves\7656119…" />
+              <button class="btn btn-accent" id="saveDirApply" type="button"
+                      data-i18n="Use this folder">Use this folder</button>
+            </div>
+            <p class="setup-error" id="saveDirError" hidden></p>
+            <details class="setup-help">
+              <summary data-i18n="Where is that folder?">Where is that folder?</summary>
+              <p data-i18n="Open Explorer, paste %USERPROFILE% in the address bar, then look for Documents\Avalanche Studios\COTW\Saves. If it is not there, look in OneDrive\Documents\Avalanche Studios\COTW\Saves. Inside Saves there is a folder whose name is 17 digits; open it (it contains animal_population_0, animal_population_9, …), click once in the address bar to get the path as text, and paste it above.">Open Explorer, paste %USERPROFILE% in the address bar, then look for Documents\Avalanche Studios\COTW\Saves. If it is not there, look in OneDrive\Documents\Avalanche Studios\COTW\Saves. Inside Saves there is a folder whose name is 17 digits; open it (it contains animal_population_0, animal_population_9, …), click once in the address bar to get the path as text, and paste it above.</p>
+              <p class="setup-searched-label" data-i18n="Folders searched:">Folders searched:</p>
+              <ul class="setup-searched" id="saveDirSearched"></ul>
+            </details>
+          </div>
+        </div>
       </div>
 
       <div class="summarybar" aria-live="polite">

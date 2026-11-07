@@ -93,14 +93,142 @@ def adf_payload(container: Container) -> bytes:
     return container.payload[PAYLOAD_PREFIX:]
 
 
+def _documents_known_folder() -> Path | None:
+    """The user's Documents folder as Windows itself defines it.
+
+    ``Path.home() / "Documents"`` is wrong on the many machines where Windows redirects
+    Documents — to OneDrive, or to another drive. The shell knows the real location, so
+    ask it (SHGetKnownFolderPath with FOLDERID_Documents) and fall back to the
+    conventional paths when that fails (non-Windows, locked-down shell).
+    """
+    if os.name != "nt":
+        return None
+    try:
+        import ctypes
+
+        class GUID(ctypes.Structure):
+            _fields_ = [
+                ("Data1", ctypes.c_uint32),
+                ("Data2", ctypes.c_uint16),
+                ("Data3", ctypes.c_uint16),
+                ("Data4", ctypes.c_ubyte * 8),
+            ]
+
+        # {FDD39AD0-238F-46AF-ADB4-6C85480369C7}
+        documents = GUID(
+            0xFDD39AD0, 0x238F, 0x46AF,
+            (ctypes.c_ubyte * 8)(0xAD, 0xB4, 0x6C, 0x85, 0x48, 0x03, 0x69, 0xC7),
+        )
+        shell32 = ctypes.WinDLL("shell32", use_last_error=True)
+        ole32 = ctypes.WinDLL("ole32")
+        out = ctypes.c_wchar_p()
+        shell32.SHGetKnownFolderPath.argtypes = [
+            ctypes.POINTER(GUID), ctypes.c_uint32, ctypes.c_void_p,
+            ctypes.POINTER(ctypes.c_wchar_p),
+        ]
+        shell32.SHGetKnownFolderPath.restype = ctypes.c_long
+        result = shell32.SHGetKnownFolderPath(ctypes.byref(documents), 0, None,
+                                              ctypes.byref(out))
+        if result != 0 or not out.value:
+            return None
+        try:
+            return Path(out.value)
+        finally:
+            ole32.CoTaskMemFree(out)
+    except Exception:  # noqa: BLE001 - any failure just means "use the fallbacks"
+        return None
+
+
+def documents_candidates() -> list[Path]:
+    """Every folder that may hold Documents, most likely first, without duplicates."""
+    candidates: list[Path] = []
+
+    def add(path: Path | None) -> None:
+        if path is None:
+            return
+        try:
+            resolved = path.expanduser()
+        except (OSError, RuntimeError):
+            return
+        if resolved not in candidates:
+            candidates.append(resolved)
+
+    add(_documents_known_folder())
+    home = Path.home()
+    add(home / "Documents")
+    for variable in ("OneDrive", "OneDriveConsumer", "OneDriveCommercial"):
+        value = os.environ.get(variable)
+        if value:
+            add(Path(value) / "Documents")
+    try:
+        for folder in sorted(home.glob("OneDrive*/Documents")):
+            add(folder)
+    except OSError:
+        pass
+    # Documents is sometimes moved to another drive instead of OneDrive.
+    for drive in ("D:", "E:", "F:", "G:"):
+        add(Path(drive + "\\") / "Documents")
+    return candidates
+
+
+def save_roots() -> list[Path]:
+    """Every ``…/Avalanche Studios/COTW/Saves`` folder we would look in, in order."""
+    roots: list[Path] = []
+    for documents in documents_candidates():
+        root = documents / SAVE_ROOT_RELATIVE
+        if root not in roots:
+            roots.append(root)
+    return roots
+
+
 def find_save_dirs(documents: str | os.PathLike[str] | None = None) -> list[Path]:
-    """Return every per-account save folder under Documents/Avalanche Studios/COTW/Saves."""
-    if documents is None:
-        documents = Path.home() / "Documents"
-    root = Path(documents) / SAVE_ROOT_RELATIVE
-    if not root.is_dir():
-        return []
-    return sorted(p for p in root.iterdir() if p.is_dir())
+    """Every per-account save folder, searched in the locations :func:`save_roots` gives.
+
+    Passing ``documents`` restricts the search to that one folder (the tests and
+    ``--save-dir`` use it that way).
+    """
+    if documents is not None:
+        roots = [Path(documents) / SAVE_ROOT_RELATIVE]
+    else:
+        roots = save_roots()
+    found: list[Path] = []
+    for root in roots:
+        try:
+            if not root.is_dir():
+                continue
+            found.extend(sorted(p for p in root.iterdir() if p.is_dir()))
+        except OSError:
+            continue
+    return found
+
+
+def best_save_dir(dirs: list[Path] | None = None) -> Path | None:
+    """The account folder most likely to be the one being played.
+
+    A machine can hold several (family sharing, an old account): pick the one whose
+    population files were written most recently, then the biggest. The old code took the
+    first alphabetically, which could be an account that has never been played — and then
+    the app reported "no reserve found" on a machine that had perfectly good saves.
+    """
+    dirs = find_save_dirs() if dirs is None else dirs
+    if not dirs:
+        return None
+    if len(dirs) == 1:
+        return dirs[0]
+
+    def rank(path: Path) -> tuple[float, int]:
+        newest = 0.0
+        total = 0
+        for entry in list_population_files(path):
+            try:
+                stat = entry.stat()
+            except OSError:
+                continue
+            newest = max(newest, stat.st_mtime)
+            total += stat.st_size
+        return (newest, total)
+
+    return max(dirs, key=rank)
 
 
 def list_population_files(save_dir: str | os.PathLike[str]) -> list[Path]:

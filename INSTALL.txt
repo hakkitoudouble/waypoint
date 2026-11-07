@@ -42,6 +42,22 @@ ETAT DE L'APPLICATION
       Waypoint.exe --help             tout lister
 
 --------------------------------------------------------------------------------
+SI L'APPLICATION NE TROUVE PAS TA SAUVEGARDE
+--------------------------------------------------------------------------------
+  Symptome : le badge en haut affiche "Donnees d'exemple" et le menu des reserves
+  dit "Aucune reserve trouvee". C'est le cas quand Windows range "Documents"
+  ailleurs (OneDrive, autre disque) ou quand aucun compte n'a encore joue.
+
+  Le panneau au centre de la carte permet de regler ca sans ligne de commande :
+  colle le chemin du dossier qui contient animal_population_0, animal_population_9,
+  ... puis clique "Utiliser ce dossier". Le choix est memorise et reutilise au
+  prochain lancement.
+
+  Pour retrouver ce dossier : Explorateur > barre d'adresse > %USERPROFILE%,
+  puis Documents\Avalanche Studios\COTW\Saves (ou OneDrive\Documents\...). A
+  l'interieur de Saves il y a un dossier dont le nom fait 17 chiffres.
+
+--------------------------------------------------------------------------------
 SI WINDOWS DEFENDER RALE
 --------------------------------------------------------------------------------
   Les executables fabriques avec PyInstaller declenchent parfois une alerte

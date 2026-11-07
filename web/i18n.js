@@ -215,6 +215,24 @@
       "No animal type in this scan": "Aucun type d'espèce dans ce scan",
 
       /* empty / loading states */
+      "No save folder found": "Aucune sauvegarde trouvée",
+      "Waypoint could not find the game's save folder. Paste the full path of the folder that contains the animal_population_* files.":
+        "Waypoint ne trouve pas le dossier de sauvegarde du jeu. Colle le chemin complet du dossier qui contient les fichiers animal_population_*.",
+      "Save folder path": "Chemin du dossier de sauvegarde",
+      /* the input's placeholder is a path example: the same in every language, so it is
+         left out of the table (a translation identical to the key fails the i18n check)
+       */
+      "Use this folder": "Utiliser ce dossier",
+      "Where is that folder?": "Où est ce dossier ?",
+      "Open Explorer, paste %USERPROFILE% in the address bar, then look for Documents\\Avalanche Studios\\COTW\\Saves. If it is not there, look in OneDrive\\Documents\\Avalanche Studios\\COTW\\Saves. Inside Saves there is a folder whose name is 17 digits; open it (it contains animal_population_0, animal_population_9, …), click once in the address bar to get the path as text, and paste it above.":
+        "Ouvre l'Explorateur, colle %USERPROFILE% dans la barre d'adresse, puis cherche Documents\\Avalanche Studios\\COTW\\Saves. S'il n'y est pas, regarde dans OneDrive\\Documents\\Avalanche Studios\\COTW\\Saves. Dans Saves il y a un dossier dont le nom fait 17 chiffres : ouvre-le (il contient animal_population_0, animal_population_9, …), clique une fois dans la barre d'adresse pour obtenir le chemin en texte, et colle-le ci-dessus.",
+      "Folders searched:": "Dossiers cherchés :",
+      "Paste the folder path first.": "Colle d'abord le chemin du dossier.",
+      "That folder does not exist.": "Ce dossier n'existe pas.",
+      "There is no animal_population_* file in that folder, or in the folder inside it.":
+        "Aucun fichier animal_population_* dans ce dossier, ni dans le dossier qu'il contient.",
+      "That folder was refused.": "Ce dossier a été refusé.",
+      "Folder accepted — reloading…": "Dossier accepté — rechargement…",
       "No need zones found": "Aucune zone de besoin trouvée",
       "Discover food, water and rest spots in game, then scan again.":
         "Découvrez des zones de nourriture, d'eau et de repos en jeu, puis relancez un scan.",

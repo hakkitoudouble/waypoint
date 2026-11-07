@@ -2324,3 +2324,97 @@ html.i18n-pending body {
 .live-hint a:hover {
   color: var(--accent-2, var(--accent));
 }
+
+/* ==========================================================================
+   "Where are my saves?" panel
+   Shown over the map when the server found no save folder (Documents
+   redirected to OneDrive, another account, no populated save yet). One field,
+   one button, and the folders that were searched.
+   ========================================================================== */
+
+.setup-card {
+  max-width: min(560px, calc(100% - 24px));
+  text-align: left;
+}
+
+.setup-card h3 {
+  text-align: center;
+}
+
+.setup-row {
+  display: flex;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.setup-row input {
+  flex: 1 1 auto;
+  min-width: 0;
+  height: 34px;
+  padding: 0 10px;
+  border-radius: 8px;
+  border: 1px solid var(--line-2);
+  background: var(--surface-2);
+  color: var(--text);
+  font: inherit;
+  font-size: 0.78rem;
+}
+
+.setup-row input:focus {
+  outline: 2px solid var(--accent);
+  outline-offset: 1px;
+}
+
+.setup-error {
+  margin: 8px 0 0;
+  font-size: 0.75rem;
+  color: var(--medal-bronze);
+}
+
+.setup-error[hidden] {
+  display: none;
+}
+
+.setup-help {
+  margin-top: 10px;
+  font-size: 0.72rem;
+  line-height: 1.45;
+  color: var(--dim);
+}
+
+.setup-help summary {
+  cursor: pointer;
+  color: var(--accent);
+}
+
+.setup-help ul {
+  margin: 6px 0 0;
+  padding-left: 18px;
+}
+
+.setup-help li {
+  font-family: var(--mono);
+  font-size: 0.66rem;
+  color: var(--faint);
+  word-break: break-all;
+}
+
+.setup-searched-label {
+  margin: 8px 0 0;
+}
+
+/* the panel is the only thing on the map when it is up: give it room to breathe */
+.setup-card {
+  width: min(560px, calc(100% - 32px));
+  max-width: min(560px, calc(100% - 32px));
+}
+
+/* the 30ch cap is right for the short empty-state lines, not for this explanation */
+.setup-card h3,
+.setup-card p {
+  max-width: none;
+}
+
+.setup-card h3 {
+  text-align: center;
+}

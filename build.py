@@ -22,6 +22,7 @@ from __future__ import annotations
 
 import argparse
 import hashlib
+import os
 import shutil
 import subprocess
 import sys
@@ -178,6 +179,56 @@ def make_source_zip(ver: str) -> Path:
     return zip_path
 
 
+def sign_executable(path: Path, pfx: Path, password_env: str,
+                    timestamp: str = "http://timestamp.digicert.com") -> str:
+    """Authenticode-sign ``path`` with the certificate in ``pfx``.
+
+    Signing is what makes Windows (and the mod hosts' scanners) accept the executable:
+    an unsigned bundle carries no publisher at all. It needs a *real* certificate —
+    the PFX must come from a CA, with the project's identity in it. Nothing here
+    invents one; a self-signed certificate only proves the plumbing.
+
+    The password is read from the environment by name, never from the command line
+    (arguments are visible in the process list). Returns the signature status.
+    """
+    if not pfx.is_file():
+        raise SystemExit(f"signing certificate not found: {pfx}")
+    if not os.environ.get(password_env):
+        raise SystemExit(f"set {password_env} to the certificate password")
+    shell = shutil.which("powershell") or shutil.which("pwsh")
+    if not shell:
+        raise SystemExit("PowerShell is required to sign on Windows")
+    script = (
+        f"$ErrorActionPreference = 'Stop'; "
+        f"$cert = New-Object System.Security.Cryptography.X509Certificates.X509Certificate2("
+        f"'{pfx}', (Get-Item -Path \"Env:{password_env}\").Value); "
+        f"$sig = Set-AuthenticodeSignature -FilePath '{path}' -Certificate $cert "
+        f"-TimestampServer '{timestamp}' -HashAlgorithm SHA256; "
+        f"if (-not $sig.SignerCertificate) {{ throw 'signing produced no signer' }}; "
+        f"$sig.Status.ToString()"
+    )
+    result = subprocess.run([shell, "-NoProfile", "-NonInteractive", "-Command", script],
+                            capture_output=True, text=True)
+    output = (result.stdout or "").strip()
+    if result.returncode != 0:
+        raise SystemExit(f"signing failed: {(result.stderr or result.stdout).strip()}")
+    print(f"signature  : {path.name}  status={output}  "
+          f"subject={os.environ.get('WAYPOINT_SIGN_SUBJECT', '(see certificate)')}")
+    return output
+
+
+def verify_signature(path: Path) -> str:
+    """The signature status Windows reports for ``path`` ("NotSigned" when absent)."""
+    shell = shutil.which("powershell") or shutil.which("pwsh")
+    if not shell:
+        return "unknown"
+    result = subprocess.run(
+        [shell, "-NoProfile", "-NonInteractive", "-Command",
+         f"(Get-AuthenticodeSignature -LiteralPath '{path}').Status.ToString()"],
+        capture_output=True, text=True)
+    return (result.stdout or "").strip()
+
+
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description=__doc__,
                                      formatter_class=argparse.RawDescriptionHelpFormatter)
@@ -185,6 +236,13 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--clean", action="store_true", help="delete dist/ and build/ first")
     parser.add_argument("--source-only", action="store_true",
                         help="only write the source archive (no PyInstaller run)")
+    parser.add_argument("--sign-pfx", metavar="PATH",
+                        help="Authenticode-sign the executable with this PFX certificate")
+    parser.add_argument("--sign-password-env", metavar="NAME",
+                        default="WAYPOINT_SIGN_PASSWORD",
+                        help="environment variable holding the PFX password")
+    parser.add_argument("--timestamp-url", default="http://timestamp.digicert.com",
+                        help="RFC 3161 timestamp server used while signing")
     args = parser.parse_args(argv)
 
     ver = version()
@@ -206,6 +264,18 @@ def main(argv: list[str] | None = None) -> int:
     app = build_executable()
     copy_docs(app)
     print(f"\napp folder : {app}  ({size_mb(app):.1f} MB)")
+
+    # Sign before zipping: the archive has to hold the signed bytes, not a signature
+    # added afterwards. A certificate is optional — an unsigned build is what the
+    # project ships until one exists — but a *failed* signature must stop the build,
+    # otherwise a release could go out claiming to be signed.
+    if args.sign_pfx:
+        status = sign_executable(app / f"{APP_NAME}.exe", Path(args.sign_pfx),
+                                 args.sign_password_env, args.timestamp_url)
+        if status in ("NotSigned", "HashMismatch", "Incompatible"):
+            raise SystemExit(f"the executable is not signed (status {status})")
+    else:
+        print("signature  : none (pass --sign-pfx to sign the executable)")
 
     archives: list[Path] = []
     if not args.no_zip:

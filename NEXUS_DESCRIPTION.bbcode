@@ -53,6 +53,18 @@ python waypoint.py[/font]
 
 Meme comportement que la version exe : sauvegardes ouvertes en lecture seule, etat dans [i]%LOCALAPPDATA%\Waypoint[/i], options identiques ([font=Courier New]--port[/font], [font=Courier New]--data-dir[/font], [font=Courier New]--no-browser[/font], [font=Courier New]--help[/font]). Si une commande n'est pas trouvee, utilise [font=Courier New]py -3[/font] au lieu de [font=Courier New]python[/font]. Et pour reconstruire l'exe toi-meme : [font=Courier New]pip install pyinstaller numpy[/font] puis [font=Courier New]python build.py[/font] (le zip apparait dans [font=Courier New]dist\[/font]).
 
+[b][size=4]Lancer l'outil (la fenetre noire, c'est normal)[/size][/b]
+
+Waypoint n'a [b]pas de fenetre d'application[/b] : c'est un petit serveur local qui affiche son interface dans ton navigateur. La fenetre noire (console) n'affiche que du texte, et c'est normal.
+
+[list=1]
+[*]Lance [font=Courier New]Waypoint.exe[/font] (ou, en version source, [font=Courier New]python waypoint.py[/font]). Le navigateur doit s'ouvrir tout seul.
+[*]S'il ne s'ouvre pas : ouvre ton navigateur et tape [b]http://127.0.0.1:8765[/b]
+[*]Garde la fenetre noire ouverte : c'est le serveur. La fermer arrete l'outil. Pour arreter proprement : Ctrl+C.
+[/list]
+
+Si l'adresse ne repond pas, le serveur n'est pas lance (fenetre fermee) ou il a pris un autre port : la ligne [i]« Open this address in your browser »[/i] de la fenetre noire donne l'adresse exacte.
+
 [b][size=4]« Donnees d'exemple » et « Aucune reserve trouvee »[/size][/b]
 
 Le badge en haut indique [i]Donnees d'exemple[/i] et le menu des reserves est vide : l'outil n'a pas trouve ton dossier de sauvegarde (Windows le range souvent dans OneDrive, ou il y a plusieurs comptes dans le meme dossier Saves).

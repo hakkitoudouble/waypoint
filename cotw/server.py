@@ -721,10 +721,19 @@ def serve(port: int, save_dir: Path | None) -> None:
     # layer for half a minute after every launch.
     Handler.warm_radar()
     httpd = ThreadingHTTPServer(("127.0.0.1", port), Handler)
-    print(f"COTW population overlay  ->  http://127.0.0.1:{port}")
+    # The interface is a web page, not a window: people who see "only words" in the
+    # console do not know they have to open the address. Say it in capitals.
+    line = "=" * 64
+    print()
+    print(line)
+    print("  Waypoint is running.")
+    print(f"  Open this address in your browser:  http://127.0.0.1:{port}")
+    print("  Keep this window open: closing it stops Waypoint.")
+    print(line)
     if save_dir:
-        print(f"save dir override: {save_dir}")
-    print("Ctrl+C to stop")
+        print(f"  save dir override: {save_dir}")
+    print("  Ctrl+C to stop")
+    print()
     try:
         httpd.serve_forever()
     except KeyboardInterrupt:

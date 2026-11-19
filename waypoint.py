@@ -101,11 +101,11 @@ def main(argv: list[str] | None = None) -> int:
     port = _free_port(args.port)
     url = f"http://127.0.0.1:{port}/"
     print(BANNER.format(version=__version__))
-    print(f"  interface : {url}")
+    # the address and the "keep this window open" line come from server.serve(), so the
+    # two entry points (this launcher and `python -m cotw.server`) print the same thing
     print(f"  state     : {data_dir()}")
     if port != args.port:
         print(f"  note      : port {args.port} was busy, using {port}")
-    print("  keep this window open - close it (or press Ctrl+C) to stop\n")
 
     if not args.no_browser:
         threading.Thread(target=_open_when_ready, args=(url, port), daemon=True).start()

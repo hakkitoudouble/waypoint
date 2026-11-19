@@ -20,6 +20,15 @@ INSTALLATION (Windows 10 / 11, 64 bits)
    Ferme-la (ou Ctrl+C) pour arreter. Relancer Waypoint.exe quand il tourne
    deja rouvre simplement l'interface dans le navigateur.
 
+  IMPORTANT : il n'y a pas de fenetre d'application. La fenetre noire n'affiche
+  que du texte, c'est normal : l'interface est une page web.
+  Si le navigateur ne s'ouvre pas, ouvre-le toi-meme et tape l'adresse
+  affichee dans la fenetre noire : http://127.0.0.1:8765
+  (le numero de port peut changer si celui-la est deja pris : lis la ligne
+  "Open this address in your browser").
+  Meme chose avec la version source : "python waypoint.py" affiche cette
+  adresse, puis tu cliques dessus.
+
   - Aucun Python a installer.
   - Aucun fichier n'est ajoute au jeu, aucun mod n'est injecte.
   - Les sauvegardes sont ouvertes en LECTURE SEULE : rien n'est ecrit dedans.
